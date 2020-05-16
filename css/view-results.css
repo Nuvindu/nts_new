@@ -1,0 +1,36 @@
+
+* {
+	font-family: 'Work Sans', sans-serif;
+}
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	/* 	height: 100%; */
+	width: 100%;
+	box-sizing: border-box;
+}.logger{
+	text-align: right;
+	padding-right: 5px;
+}
+.header {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.header h1 {
+  padding-top: 25px;
+  text-align: center;
+}
+main h1{
+	margin: 10px 0px 0px 10px;
+}
+
+main .back{
+	text-align: right;
+}
+main h1 span a{
+	float: right;font-size: 17px;padding-right: 5px;
+}

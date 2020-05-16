@@ -1,0 +1,58 @@
+body {
+	background: url("img/bg-image-B&W.jpeg");
+}
+
+
+body:hover {
+	background: url("img/bg-image.jpeg");
+	transition: 1s;
+}
+.top{
+	width: 80px;
+	padding: 10px; 
+	font-size: 19px;
+	
+}
+.top a{
+	color:red;
+}
+.top:hover {
+	background: #ffcc66;
+}
+h1 , form.userform{
+	margin: 20px 0px 25px 100px;
+	color: #ffe6b3;
+}
+h1 {
+	color: gold;
+}
+
+h1 span a {
+	margin: 15px;
+	font-size: 16px;
+	float: right;
+
+}
+fieldset {
+	margin-left: 100px;
+	margin-right: 160px;
+	margin-bottom: 30px;
+}
+
+form.userform label{
+	width: 30%;
+	float: left;
+	font-size: 19px;
+	padding: 4px;
+}
+
+form.userform input {
+	width: 50%;
+	height: 20px;
+	padding: 4px;
+	border-radius: 5px;
+}
+
+form.userform p{
+	padding: 15px;
+}
