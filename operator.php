@@ -15,6 +15,7 @@
 		$user_list .= "<td>{$user['first_name']}</td>";
 		$user_list .= "<td>{$user['last_name']}</td>";
 		$user_list .= "<td>{$user['last_login']}</td>";
+		$user_list .= "<td>{$user['type']}</td>";
 		$user_list .= "<td><a href=\"modify-user.php?user_id={$user['id']}\">Edit</a></td>";
 		$user_list .= "<td><a href=\"delete-user.php?user_id={$user['id']}\">Delete</a></td>";
 		$user_list .= "</tr>";
@@ -49,7 +50,7 @@
 
             </div>
         </div>
-	<div class="add"><a href="add-user.php">Add New User &gt&gt</a> </br></div>
+	<div class="add"><a href="add-user.php?last_id=<?php echo($last_id) ?>">Add New User &gt&gt</a> </br></div>
 	<h1>Users</h1>
 
 	<table class="masterlist">
@@ -57,6 +58,7 @@
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Last Login</th>
+			<th>Type</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
