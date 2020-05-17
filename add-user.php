@@ -14,6 +14,7 @@
 	$index_no = '';
 	$batch = '20';
 	$last_id = 0;
+	$type = '';
 
 	if(isset($_GET['last_id'])){
 		$last_id = $_GET['last_id'];
@@ -51,16 +52,20 @@
 		if (strlen($index_no)==6) {
 			$batch .= substr($index_no,0, 2);
 			$batch = intval($batch);
+			$type = "Student";
 		} elseif (strlen($index_no)==4) {
 			$batch = 1111;
+			$type = "Lecturer";
 		} elseif (strlen($index_no)==2) {
 			$batch = 9999;
+			$type = "Operator";
 		}
 
 		// checking email address
 		//if (!is_email($_POST['email'])) {
 			//$errors[] = 'Email address is invalid.';
 		//}
+		
 		$email = mysqli_real_escape_string($connection, $_POST['email']);
 		$query = "SELECT * FROM user WHERE email = '{$email}' LIMIT 1";
 		$result_set = mysqli_query($connection,$query);
@@ -99,12 +104,13 @@
 			$first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
 			$last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
 			$password= mysqli_real_escape_string($connection, $_POST['password']);
+			$index_no= mysqli_real_escape_string($connection, $_POST['index_no']);
 			$hashed_password = sha1($password);
 
 			$query = "INSERT INTO user ( ";
-			$query .= "first_name, last_name, NIC, index_no, email, password, batch, is_deleted";
+			$query .= "first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted";
 			$query .= ") VALUES (";
-			$query .= " '{$first_name}' , '{$last_name}', '{$nic}', '{$index_no}', '{$email}', '{$hashed_password}', {$batch},0";
+			$query .= " '{$first_name}' , '{$last_name}', '{$nic}', '{$index_no}', '{$type}', '{$email}', '{$hashed_password}', {$batch},0";
 			$query .= ")";
 
 			$result = mysqli_query($connection,$query);
