@@ -52,12 +52,11 @@ if (!isset($_SESSION['user_id'])) {
                     padding-left: 17px;
                 "></i></span>
             <ul>
-                <li><a href="user-page.php"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="student.php"><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="exams.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+                <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-                <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
                 <li><a href="#"><i class="fas fa-map-pin"></i>Student Details</a></li>
             </ul>
         </div>
@@ -169,6 +168,20 @@ if (!isset($_SESSION['user_id'])) {
 
             </div>
         </div>
+    </div>
+        <footer>
+        <div class="column clearfix">
+        <h3>Contact Us</h3>
+        <ul>
+            <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+            <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+            <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+            <li>Email - nts-galle@gov.lk</li>
+            <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+            <li>Telephone Number - 0912234452</li>
+        </ul>
+        </div>
+        </footer>
 
         <script src="./js/js-student-profile-sidebar.js"></script>
         <script src="./js/js-student-profile-modals.js"></script>

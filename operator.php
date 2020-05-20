@@ -4,6 +4,9 @@
 	if (!isset($_SESSION['user_id'])){
 		header('Location: login.php');
 	}
+	if (strlen($_SESSION['index_no']) != 2) {
+		header('Location: index.php');
+	}
 	//if ($_SESSION['admin']!=1){
 	//	header('Location: user-page.php');
 	//}

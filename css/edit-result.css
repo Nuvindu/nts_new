@@ -1,0 +1,88 @@
+*{
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Work Sans', sans-serif;
+}
+.logger {
+  text-align: right;
+}
+.header h1 {
+  padding-top: 15px;
+}
+body{
+  background:  #e6ffe6;
+}
+h1 , form.userform{
+  margin: 20px 0px 25px 100px;
+
+}
+main h1{
+  font-style: italic;
+  padding-top: 20px;
+}
+main h1 span a {
+  padding-right: 5px;
+  font-size: 17px;
+  float: right;
+}
+form.userform label{
+
+  width: 30%;
+  float: left;
+  font-size: 16.5px;
+  padding: 4px;
+}
+
+form.userform input {
+  width: 15%;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+form.userform p{
+
+  padding: 5px;
+}
+form p button{
+  padding: 4px;
+  margin-left: 50px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+div.column{
+  
+  background: #3a3a3a;
+  padding-left: 10px;
+  padding-bottom: 2px;
+
+}
+div.column h3{
+  padding: 10px;
+  font-size: 22px;
+  font-family: sans-serif;
+  color: white;
+}
+
+div.column ul{
+  list-style: none;
+  font-size: 16px;
+  color: white;
+}
+div.column ul li{
+  padding-bottom: 10px;
+}
+
+div.icon1{
+  float: left;
+  margin-left: 15px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}

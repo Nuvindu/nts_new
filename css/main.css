@@ -126,20 +126,7 @@ div.icon1{
 	margin-right: 5px;
 }
 
-table.masterlist {
-	width: 100%;
-	border-collapse: collapse;
-}
 
-table.masterlist th {
-	background: #aaa;
-	text-align: left;
-}
-
-table.masterlist th, table.masterlist td {
-	padding: 10px;
-	border-bottom: 1px solid #aaa;
-}
 
 table.sem_result {
 	table-layout: fixed;

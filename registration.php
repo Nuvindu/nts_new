@@ -57,7 +57,7 @@
 			$type = "Operator";
 		}
 		if($type=="Operator"){
-			$errors[] = "Invalid Index Type"  //To avoid creating opeartor accounts from sign up page
+			$errors[] = "Invalid Index Type" ; //To avoid creating opeartor accounts from sign up page
 		}
 		// checking email address
 		//if (!is_email($_POST['email'])) {

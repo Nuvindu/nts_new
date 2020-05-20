@@ -1,7 +1,14 @@
 <?php session_start(); ?>
 <?php include_once('inc/connection.php'); ?>
 <?php include_once('inc/functions.php'); ?>
-
+<?php 
+    if (!isset($_SESSION['user_id'])){
+            header('Location: login.php');
+        }
+    if (strlen($_SESSION['index_no']) != 4) {
+        header('Location: index.php');
+    }
+?>
 <?php 
 
 if (isset($_POST['submit']) || isset($_GET['batch']) ) {
@@ -44,7 +51,7 @@ if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 			$user_list .= "<td>{$user['index_no']}</td>";
 			$user_list .= "<td>{$user['first_name']}</td>";
 			$user_list .= "<td>{$user['last_name']}</td>";
-			$user_list .= "<td>{$user["{$module_code}"]}</td>";
+			$user_list .= "<td >{$user["{$module_code}"]}</td>";
 			$user_list .= "<td><a href=\"edit-result.php?user_id={$user['id']}&module_code={$module_code}\">Edit</a></td>";
 			$user_list .= "</tr>";
 		}
@@ -62,16 +69,32 @@ if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 <head>
 	<meta charset="UTF-8"> 
 	<title>Add/Modify Results</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="./style/style-header.css">
+	<link rel="stylesheet" type="text/css" href="css/results.css">
 </head>
 <body>
 	<header>
 
-	<div class="loggedin">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
-	</header>
+	<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
+	<div class="header">
+            <div class="nts-text" style="margin:10px 10px 5px 10px">
+                <div>
+                    <a href="index.php">
+                    <img class="logo" src="./img/logo-0.png" alt="logo">
+                    </a>
+                </div>
+                <div style="flex-grow: 8">
+                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
+                </div>
 
+            </div>
+        </div>
+	</header>
+	<div class="middle">
+	<div class="dash"><span><a href="lecturer.php"><< Back to Dashboard</a></span> </div>
 	<main>
-	<h1>Results <?php echo $module; ?> <span><a href="go-to-results.php">< Change Module</a></span></h1>
+
+	<h1><?php echo $module; ?> Results <div class="change"><span><a href="go-to-results.php"> Change Module</a></span></div></h1>
 
 	<table class="masterlist">
 		<tr>
@@ -85,8 +108,26 @@ if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 		<?php echo $user_list; ?>
 
 	</table>
-		
+	
+	<footer>
+            <div class="column clearfix">
+            <h3>Contact Us</h3>
+            <ul>
+                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                <li>Email - nts-galle@gov.lk</li>
+                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                <li>Telephone Number - 0912234452</li>
+            </ul>
+            </div>
+        </footer>
+        </div>
+        </div>
 	</main>
+
+
+
 </body>
 </html>
 

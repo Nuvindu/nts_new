@@ -73,3 +73,31 @@
     margin-right: 15px;
     margin-bottom: 25px;
 }
+
+
+div.column{
+    position: relative;
+    background: #3a3a3a;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+div.column h3{
+    padding: 15px;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: white;
+}
+
+div.column ul{
+    list-style: none;
+    font-size: 16px;
+    color: white;
+}
+div.column ul li{
+    padding-bottom: 10px;
+}
+
+div.icon1{
+    float: left;
+    margin-left: 15px;
+}

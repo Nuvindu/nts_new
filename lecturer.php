@@ -4,6 +4,9 @@
     if (!isset($_SESSION['user_id'])){
             header('Location: login.php');
         }
+    if (strlen($_SESSION['index_no']) != 4) {
+        header('Location: index.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@
 <head>
 	<meta charset="UTF-8">
     <title>Side Navigation Bar</title>
-    <link rel="stylesheet" type="text/css" href="css/user-page.css">
+    <link rel="stylesheet" type="text/css" href="css/lecturer.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/student-profile.css">
@@ -107,7 +110,19 @@
       
     </div>
 </div>
-
+        <footer>
+            <div class="column clearfix">
+            <h3>Contact Us</h3>
+            <ul>
+                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                <li>Email - nts-galle@gov.lk</li>
+                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                <li>Telephone Number - 0912234452</li>
+            </ul>
+            </div>
+        </footer>
 
 </body>
 </html>

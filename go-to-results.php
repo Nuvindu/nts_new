@@ -6,6 +6,9 @@
     if (!isset($_SESSION['user_id'])){
             header('Location: login.php');
         }
+    if (strlen($_SESSION['index_no']) != 4) {
+        header('Location: index.php');
+    }
 ?>
 
 <?php if (isset($_GET['err'])) {
@@ -18,18 +21,32 @@
 <head>
 	<meta charset="UTF-8"> 
 	<title>Module Selection</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/go-to-results.css">
+	<link rel="stylesheet" href="./style/style-header.css">
 </head>
 <body>
-	<header>
+	<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
+	<div class="header">
+            <div class="nts-text" style="margin:10px 10px 5px 10px">
+                <div>
+                    <a href="index.php">
+                    <img class="logo" src="./img/logo-0.png" alt="logo">
+                    </a>
+                </div>
+                <div style="flex-grow: 8">
+                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
+                </div>
 
-	<div class="loggedin">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
-	</header>
+            </div>
+        </div>
+    <div class="middle">
+    <div class="dash"><span><a href="lecturer.php"><< Back to Dashboard</a></span> </div>
 	<div class="login">
+
 		<form action="results.php" method="post">
 			
 			<fieldset>
-				<legend><h1>Select Module<span><a href="lecturer.php">< Back to Dashboard</a></span></h1></legend>
+				<legend><h1>&nbspSelect Module&nbsp</h1></legend>
 
 				<p>
 					<label for="">Batch:</label>            
@@ -69,9 +86,27 @@
 				<p>
 					<button type="submit" name="submit">Add/Modify Results</button>
 				</p>
+
 			</fieldset>
 		</form>
 	</div> <!-- .login -->
+
+	
+        </div>
+
+        <footer>
+            <div class="column clearfix">
+            <h3>Contact Us</h3>
+            <ul>
+                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                <li>Email - nts-galle@gov.lk</li>
+                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                <li>Telephone Number - 0912234452</li>
+            </ul>
+            </div>
+        </footer>
 </body>
 </html>
 <?php mysqli_close($connection) ?>

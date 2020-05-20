@@ -1,0 +1,92 @@
+*{
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Work Sans', sans-serif;
+}
+.logger {
+  text-align: right;
+}
+body{
+	background: #cccccc;
+}
+
+.header h1 {
+  padding-top: 15px;
+}
+
+.dash{
+	padding: 10px;
+	text-align: right;
+}
+.login p{
+	padding: 10px;
+}
+.login select{
+	width: 8%;
+	margin-left: 40px;
+	border-radius: 5px;
+}
+#batch {
+	margin-left: 52px;
+}
+#term{
+	margin-left: 57px;
+}
+.login label{
+	font-weight: bold;
+	color: #1a1a1a;
+	width: 50%;
+	height: 20px;
+	margin-left: 40px;
+	border-radius: 5px;
+}
+.login p button{
+	padding: 3px;
+	margin-left: 60px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+fieldset {
+	margin-left: 100px;
+	margin-right: 160px;
+}
+fieldset legend {
+	font-style: italic; 
+}
+
+div.column{
+  position: relative;
+  background: #3a3a3a;
+  padding-left: 10px;
+  padding-bottom: 8px;
+
+}
+div.column h3{
+  padding: 15px;
+  padding-bottom: 5px;
+  font-size: 22px;
+  font-family: sans-serif;
+  color: white;
+}
+
+div.column ul{
+  list-style: none;
+  font-size: 16px;
+  color: white;
+}
+div.column ul li{
+  padding-bottom: 10px;
+}
+
+div.icon1{
+  float: left;
+  margin-left: 15px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

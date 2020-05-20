@@ -4,7 +4,9 @@
 	if (!isset($_SESSION['user_id'])) {
 		header('Location: login.php');
 	}
-
+	if (strlen($_SESSION['index_no']) != 2) {
+		header('Location: index.php');
+	}
 	$errors = array();
 	$first_name = '';
 	$last_name = '';

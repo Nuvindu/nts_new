@@ -15,15 +15,14 @@ html {
 	padding-right: 5px;
 }
 .container {
-	height: 60%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	margin-bottom: 200px;
 }
 
 .side-bar {
-	height: 70%;
+	height: 65%;
 	float: left;
 	width: 50px;
 	background: slateblue;
@@ -140,7 +139,6 @@ i {
 	/* border-radius: 8px; */
 	/* border-right-color: white; */
 	border-bottom: 1px solid slateblue;
-
 }
 .profile-img {
 	display: flex;
@@ -211,21 +209,17 @@ textarea.valid {
 	font-size: 105%;
 	margin-right: 5vw;
 }
-#courses-tab {
-	padding-bottom: 177px;
-}
-#profile-tab {
-	padding-bottom: 45px;
-}
+
+
 
 div.column{
 	position: relative;
 	background: #3a3a3a;
 	padding-left: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 }
 div.column h3{
-	padding: 15px 0px 0px 15px;
+	padding: 15px;
 	font-size: 22px;
 	font-family: sans-serif;
 	color: white;

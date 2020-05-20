@@ -6,7 +6,9 @@
 	if (!isset($_SESSION['user_id'])) {
 		header('Location: index.php');
 	}
-
+	if (strlen($_SESSION['index_no']) != 4) {
+		header('Location: index.php');
+	}
 	$errors = array();
 	$user_id = '';
 	$first_name = '';
@@ -102,15 +104,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>View / Modify User</title>
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/edit-result.css">
+	<link rel="stylesheet" href="./style/style-header.css">
 </head>
 <body>
-	<header>
-		<div class="loggedin">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
-	</header>
+		<div class="logger">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
+	<div class="header">
+            <div class="nts-text" style="margin:10px 10px 5px 10px">
+                <div>
+                    <a href="index.php">
+                    <img class="logo" src="./img/logo-0.png" alt="logo">
+                    </a>
+                </div>
+                <div style="flex-grow: 8">
+                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
+                </div>
+
+            </div>
+        </div>
 
 	<main>
-		<h1>Add/Modify Result<span> <a href="results.php">< Back to Result Set</a></span></h1>
+		<h1>Add/Modify Result<span> <a href="results.php"><< Back to Results</a></span></h1>
 
 		<?php 
 
@@ -151,8 +165,21 @@
 
 		</form>
 
-		
-		
 	</main>
+
+	<footer>
+            <div class="column clearfix">
+            <h3>Contact Us</h3>
+            <ul>
+                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                <li>Email - nts-galle@gov.lk</li>
+                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                <li>Telephone Number - 0912234452</li>
+            </ul>
+            </div>
+        </footer>
+
 </body>
 </html>

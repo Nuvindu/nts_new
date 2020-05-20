@@ -24,6 +24,9 @@ html {
   padding-top: 25px;
   text-align: center;
 }
+main {
+	padding-bottom: 150px;
+}
 main h1{
 	margin: 10px 0px 0px 10px;
 }
@@ -33,4 +36,30 @@ main .back{
 }
 main h1 span a{
 	float: right;font-size: 17px;padding-right: 5px;
+}
+
+div.column{
+	position: relative;
+	background: #3a3a3a;
+	padding-left: 10px;
+}
+div.column h3{
+	font-size: 22px;
+	font-family: sans-serif;
+	color: white;
+	padding: 2px 0px 0px 10px;
+}
+
+div.column ul{
+	list-style: none;
+	font-size: 16px;
+	color: white;
+}
+div.column ul li{
+	padding-bottom: 8px;
+}
+
+div.icon1{
+	float: left;
+	margin-left: 10px;
 }
