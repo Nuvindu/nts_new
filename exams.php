@@ -27,42 +27,51 @@
         <h2>Exam Time Tables</h2>
     </div>
     <div id="courses">
-    <div class="Semester1 results">
-        <h2>Semester 1 </h2>
+    <div class="year1">
+    <center><h1>First Year </h1></center>
+        <h2>First Term </h2>
+        <img src="img/hea.jfif" width="15%" alt="results">
+        
+        <a href="view-exam-timeTableY1T1.php"><button class="view ">View exam time table</button></a>
+        <h2>Second Term </h2>
+        <img src="img/hea.jfif" width="15%" alt="results">
+        
+        <a href="#"><button class="view ">View exam time table</button></a>
+        <h2>Third Term </h2>
         <img src="img/hea.jfif" width="15%" alt="results">
         
         <a href="#"><button class="view ">View exam time table</button></a>
     </div>
-    <div class="Semester2 results">
-        <h2>Semester 2 </h2>
+    <div class="year2 ">
+    <center><h1>Second Year </h1></center>
+        <h2>First Term </h2>
+        <img src="img/hea.jfif" width="15%" alt="results">
+        
+        <a href="#"><button class="view ">View exam time table</button></a>
+        <h2>Second Term </h2>
+        <img src="img/hea.jfif" width="15%" alt="results">
+        
+        <a href="#"><button class="view ">View exam time table</button></a>
+        <h2>Third Term </h2>
         <img src="img/hea.jfif" width="15%" alt="results">
         
         <a href="#"><button class="view ">View exam time table</button></a>
     </div>
-    <div class="Semester3 results">
-            <h2>Semester 3 </h2>
-            <img src="img/hea.jfif" width="15%" alt="results">
-            
-            <a href="#"><button class="view ">View exam time table</button></a>
-    </div>
-    <div class="Semester4 results">
-        <h2>Semester 4 </h2>
+    <div class="year3">
+    <center><h1>Third Year </h1></center>
+        <h2>First Term </h2>
         <img src="img/hea.jfif" width="15%" alt="results">
         
         <a href="#"><button class="view ">View exam time table</button></a>
-        </div>
-        <div class="Semester5 results">
-            <h2>Semester 5 </h2>
-            <img src="img/hea.jfif" width="15%" alt="results">
-            
-            <a href="#"><button class="view ">View exam time table</button></a>
-        </div>
-        <div class="Semester6 results">
-                <h2>Semester 6 </h2>
-                <img src="img/hea.jfif" width="15%" alt="results">
-                
-                <a href="#"><button class="view">View exam time table</button></a>
-        </div>
+        <h2>Second Term </h2>
+        <img src="img/hea.jfif" width="15%" alt="results">
+        
+        <a href="#"><button class="view ">View exam time table</button></a>
+        <h2>Third Term </h2>
+        <img src="img/hea.jfif" width="15%" alt="results">
+        
+        <a href="#"><button class="view ">View exam time table</button></a>
+    </div>
     </div>
     </div>
     <footer>
