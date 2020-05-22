@@ -16,7 +16,6 @@
 		$timeTable_list .= "<td>{$timeTable['Place']}</td>";
         $timeTable_list .= "<td>{$timeTable['Module_code']}</td>";
 		$timeTable_list .= "<td>{$timeTable['Module_name']}</td>";
-		$timeTable_list .= "<td><a href=\"modify-user.php?timeTable_Place={$timeTable['Place']}\">Edit</a></td>";
 		$timeTable_list .= "<td><a href=\"delete-rowY1T1.php?del=$timeTable[Module_code]\">Delete</a></td>";
 		$timeTable_list .= "</tr>";
 	}
@@ -59,11 +58,10 @@
 	<table class="masterlist">
 		<tr>
 			<th>Date </th>
-            <th>Time </th>
+            		<th>Time </th>
 			<th>Place</th>
 			<th>Module code</th>
 			<th>Module name</th>
-			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
 
