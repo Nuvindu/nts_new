@@ -1,5 +1,5 @@
-<?php session_start(); ?>
 <?php require_once('inc/connection.php'); ?>
+<?php include_once('inc/functions.php'); ?>
 <?php 
 	$errors = array();
 	$first_name = '';
@@ -12,9 +12,13 @@
 	$last_id = 0;
 	$type = '';
 
-	if(isset($_GET['last_id'])){
-		$last_id = $_GET['last_id'];
-	}
+	
+	$query = "SELECT id FROM user WHERE id = ( SELECT MAX(id) FROM user)";
+	$result = mysqli_query($connection, $query); 
+	verify_query($result);
+	$result = mysqli_fetch_assoc($result);
+	$last_id = intval($result['id'])+1;
+	
 
 	if (isset($_POST['submit'])) {
 		
@@ -105,9 +109,9 @@
 			$hashed_password = sha1($password);
 
 			$query = "INSERT INTO user ( ";
-			$query .= "first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted";
+			$query .= "id, first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted";
 			$query .= ") VALUES (";
-			$query .= " '{$first_name}' , '{$last_name}', '{$nic}', '{$index_no}', '{$type}', '{$email}', '{$hashed_password}', {$batch},0";
+			$query .= " {$last_id}, '{$first_name}' , '{$last_name}', '{$nic}', '{$index_no}', '{$type}', '{$email}', '{$hashed_password}', {$batch},0";
 			$query .= ")";
 
 			$result = mysqli_query($connection,$query);

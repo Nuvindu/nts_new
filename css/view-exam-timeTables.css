@@ -62,21 +62,25 @@ div.icon1{
 	float: left;
 	margin-left: 10px;
 }
-main table.masterlist {
-	width: 80%;
-	border-collapse: separate;
+table.masterlist {
+	margin-top: 50px;
+	text-align:center; 
+    margin-left:auto; 
+    margin-right:auto; 
+	width: 60%;
+	border-collapse: collapse;
 	border-color: black;
-	border-left: 1px solid #aaa;
+	border: 2px solid;
 }
 
-main table.masterlist th {
-	background-color: #4CAF50;
-	text-align: left;
+table.masterlist th {
+	text-align: center;
 }
 
-main table.masterlist th, table.masterlist td {
+table.masterlist th, table.masterlist td {
 	padding: 10px;
-	border-bottom: 1px solid #aaa;
-	border-left: 1px solid #aaa;
+	border-bottom: 2px solid ;
+	border-left: 2px solid ;
 }
+
 

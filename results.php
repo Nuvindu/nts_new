@@ -10,7 +10,6 @@
     }
 ?>
 <?php 
-
 if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 	if(isset($_POST['submit'])){
 		$batch= $_POST['batch'];
@@ -64,13 +63,15 @@ if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 
  ?>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8"> 
 	<title>Add/Modify Results</title>
 	<link rel="stylesheet" href="./style/style-header.css">
 	<link rel="stylesheet" type="text/css" href="css/results.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<header>
@@ -95,8 +96,14 @@ if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 	<main>
 
 	<h1><?php echo $module; ?> Results <div class="change"><span><a href="go-to-results.php"> Change Module</a></span></div></h1>
-
-	<table class="masterlist">
+	<!-- <div class="search">
+		<form action="results.php">
+			<input type="text" name="search" placeholder="Search by username" autofocus> live search input
+			<a href="results.php"><i class="fas fa-times-circle 5x"></i></a>
+		</form>
+		<span id="hint"></span>
+	</div> -->
+	<table class="masterlist" id = "table">
 		<tr>
 			<th>Index Number</th>
 			<th>First Name</th>
@@ -131,3 +138,4 @@ if (isset($_POST['submit']) || isset($_GET['batch']) ) {
 </body>
 </html>
 
+<?php mysqli_close($connection); ?>

@@ -103,6 +103,7 @@
 		}
 
 		if (empty($errors)){
+			$last_id = mysqli_real_escape_string($connection, $_POST['last_id']);
 			$first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
 			$last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
 			$password= mysqli_real_escape_string($connection, $_POST['password']);
@@ -110,9 +111,9 @@
 			$hashed_password = sha1($password);
 
 			$query = "INSERT INTO user ( ";
-			$query .= "first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted";
+			$query .= "id, first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted";
 			$query .= ") VALUES (";
-			$query .= " '{$first_name}' , '{$last_name}', '{$nic}', '{$index_no}', '{$type}', '{$email}', '{$hashed_password}', {$batch},0";
+			$query .= " {$last_id}, '{$first_name}' , '{$last_name}', '{$nic}', '{$index_no}', '{$type}', '{$email}', '{$hashed_password}', {$batch},0";
 			$query .= ")";
 
 			$result = mysqli_query($connection,$query);

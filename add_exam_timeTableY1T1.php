@@ -29,7 +29,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Exam Time Table</title>
-	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="stylesheet" type="text/css" href="css/exam-timetable.css">
 	<link rel="stylesheet" href="./style/style-header.css">
 </head>
 <body bgcolor="#b3ffff">
@@ -58,7 +58,7 @@
 	<table class="masterlist">
 		<tr>
 			<th>Date </th>
-            		<th>Time </th>
+            <th>Time </th>
 			<th>Place</th>
 			<th>Module code</th>
 			<th>Module name</th>

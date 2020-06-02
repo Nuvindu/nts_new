@@ -48,7 +48,11 @@ h1 {
 	padding: 60px 200px 10px 5px;
 	text-align: left;
 }
-
+div.search form input {
+	width:60%;
+	height: 25px;
+	margin:10px 0px 10px 5px;
+}
 table.masterlist {
 	width: 100%;
 	border-collapse: separate;

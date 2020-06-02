@@ -28,6 +28,13 @@ main h1{
 	padding-left: 10px;
 	color: #004d00;
 }
+div.search form input {
+  width:60%;
+  height: 30px;
+  margin:10px 0px 10px 5px;
+  padding: 4px;
+  border-radius: 2px;
+}
 
 table.masterlist {
 	width: 100%;

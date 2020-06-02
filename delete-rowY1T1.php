@@ -1,19 +1,17 @@
 <?php session_start(); ?>
 <?php require_once('inc/connection.php'); ?>
 <?php 
-	
-	mysqli_select_db($connection,'userdb');
-	$sql="SELECT * FROM timeTable";
-	$records=mysqli_query($connection,$query);
+	$sql="SELECT * FROM timetable";
+	$records=mysqli_query($connection,$sql);
 
 
 	if (isset($_GET['del'])) {
 		// getting the timeTable information
 		//$id=$_GET['del'];
 		$del= mysqli_real_escape_string($connection, $_GET['del']);
-		$sql="DELETE FROM timeTable WHERE module_code={$del}";
-		$query = "UPDATE timeTable SET is_deleted = 1 WHERE module_code = {$del} LIMIT 1 ";
-		$res=mysqli_query($connection,$sql) or die("failed".mysqli_connect_error());
+		$query = "UPDATE timetable SET is_deleted = 1 WHERE module_code = '{$del}' LIMIT 1 ";
+		$sql="DELETE FROM timetable WHERE module_code='{$del}'";
+		$res=mysqli_query($connection,$query);
 		echo "<meta http-equiv='refresh' content='0;url=add_exam_timeTableY1T1.php'>";
 
 		}

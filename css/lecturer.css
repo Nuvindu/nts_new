@@ -65,6 +65,9 @@ i {
   font-size: 14px;
   box-sizing: border-box;
 }
+#timetable {
+  width: 250px;
+}
 .side-bar ul li i {
   width: 15px;
   box-sizing: border-box;
