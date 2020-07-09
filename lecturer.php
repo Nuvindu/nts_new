@@ -1,13 +1,7 @@
 <?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
-<?php 
-    if (!isset($_SESSION['user_id'])){
-            header('Location: login.php');
-        }
-    if (strlen($_SESSION['index_no']) != 4) {
-        header('Location: index.php');
-    }
-?>
+<?php require_once('inc/dbconnection.php'); ?>
+<?php require_once('Service/Lecturer-service.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +23,7 @@
 <body>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log Out</a> </div>
+    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log Out</a> </div>
     <div class="header">
             <div class="nts-text" style="margin:10px 10px 5px 10px">
                 <div>
@@ -62,7 +56,7 @@
                 "></i></span>
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
 		        <li><a href="go-to-exam-timeTables.php" id="timetable"><i class="fas fa-project-diagram"></i>Exam Time Table</a></li>

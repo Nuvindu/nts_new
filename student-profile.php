@@ -1,7 +1,7 @@
 <?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
+<?php require_once('inc/dbconnection.php'); ?>
 <?php
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['index_no'])) {
     header('Location: login.php');
 }
 ?>
@@ -52,7 +52,8 @@ if (!isset($_SESSION['user_id'])) {
                     padding-left: 17px;
                 "></i></span>
             <ul>
-                <li><a href="student.php"><i class="fas fa-home"></i>Dashboard</a></li>
+
+                <li><a href=<?php if (strlen($_SESSION['index_no'])==4) {echo "lecturer.php";} else if(strlen($_SESSION['index_no'])==6){echo "student.php";}?> ><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="exams.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
                 <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
@@ -79,11 +80,11 @@ if (!isset($_SESSION['user_id'])) {
                         height: 145px;
                         width: 145px;
                         padding:13px;
-                    ">
+                    " id="profile-pic">
                         <!-- change profile picture -->
-                        
-                            <button class="change-btn" id="change-pp">change</button>
-                        
+
+                        <button class="change-btn" id="change-pp">change</button>
+
                         <div id="modal-pp" class="modal">
                             <!-- modalpp content -->
 
@@ -104,7 +105,7 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="profile-info">
                         <span id="name-html"></span>
                         <span id="NIC-html"></span>
-                        <span id="id-html"><?php echo $_SESSION['user_id']; ?></span>
+                        <span id="id-html"><?php echo $_SESSION['index_no']; ?></span>
                         <span id="email-html"></span>
 
 
@@ -169,25 +170,28 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
-        <footer>
+    <footer style="
+    margin-left: 80px;
+    margin-right: 8px;
+" id="footer">
         <div class="column clearfix">
-        <h3>Contact Us</h3>
-        <ul>
-            <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
-            <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
-            <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
-            <li>Email - nts-galle@gov.lk</li>
-            <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
-            <li>Telephone Number - 0912234452</li>
-        </ul>
+            <h3>Contact Us</h3>
+            <ul>
+                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                <li>Email - nts-galle@gov.lk</li>
+                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                <li>Telephone Number - 0912234452</li>
+            </ul>
         </div>
-        </footer>
+    </footer>
 
-        <script src="./js/js-student-profile-sidebar.js"></script>
-        <script src="./js/js-student-profile-modals.js"></script>
-        <script src="./js/js-student-profile-updateInfo.js"></script>
-        <script src="./js/js-student-profile-updateAvatar.js"></script>
-        <script src="./js/js-student-profile-changePassword.js"></script>
+    <script src="./js/js-student-profile-sidebar.js"></script>
+    <script src="./js/js-student-profile-modals.js"></script>
+    <script src="./js/js-student-profile-updateInfo.js"></script>
+    <script src="./js/js-student-profile-updateAvatar.js"></script>
+    <script src="./js/js-student-profile-changePassword.js"></script>
 
 
 </body>

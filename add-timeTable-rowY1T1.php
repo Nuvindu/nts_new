@@ -1,73 +1,8 @@
 <?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
+<?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('inc/functions.php'); ?>
-<?php 
-	
-	$errors = array();
-	$Date = '';
-	$Time = '';
-	$Place='';
-	$Module_code = '';
-	$Module_name = '';
+<?php require_once('Service/add-timetable-rowY1T1-service.php'); ?>
 
-    
-	if (isset($_POST['submit'])) {
-		
-		$Date = $_POST['Date'];
-		$Time = $_POST['Time'];
-		$Place= $_POST['Place'];
-		$Module_code = $_POST['Module_code'];
-		$Module_name= $_POST['Module_name'];
-
-		// checking required fields
-		$req_fields = array('Date', 'Time', 'Place', 'Module_code', 'Module_name');
-
-		foreach ($req_fields as $field) {
-			if (empty(trim($_POST[$field]))) {
-				$errors[] = $field . ' is required';
-			}
-		}
-
-		// checking max length
-		$max_len_fields = array('Date' => 50, 'Time' =>100, 'Place' =>100, 'Module_code' =>6, 'Module_name' => 100);
-
-		foreach ($max_len_fields as $field => $max_len) {
-			if (strlen(trim($_POST[$field])) > $max_len) {
-				$errors[] = $field . ' must be less than ' . $max_len . ' characters';
-			}
-		}
-
-	
-	
-		if (empty($errors)){
-			$Date= mysqli_real_escape_string($connection, $_POST['Date']);
-			$Time = mysqli_real_escape_string($connection, $_POST['Time']);
-			$Place= mysqli_real_escape_string($connection, $_POST['Place']);
-			$Module_code= mysqli_real_escape_string($connection, $_POST['Module_code']);
-			$Module_name= mysqli_real_escape_string($connection, $_POST['Module_name']);
-
-			$query = "INSERT INTO timetable ( ";
-			$query .= "Date, Time, Place, Module_code, Module_name,is_deleted";
-			$query .= ") VALUES (";
-			$query .= " '{$Date}' , '{$Time}', '{$Place}', '{$Module_code}', '{$Module_name}',0";
-			$query .= ")";
-
-			$timeTables = mysqli_query($connection,$query);
-
-			if ($timeTables){
-				header('Location: add_exam_timeTableY1T1.php?timeTable_added=true&result_created=true');
-			} else {
-				die("Database query failed: ".mysqli_error($connection));
-				header('Location:add_exam_timeTableY1T1 .php?timeTable_added=true&result_created=false');
-			}
-
-		}
-
-	}
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,19 +17,7 @@
 		<div class="top"><a href="index.php">Home</a></div>
 		<div class="logger" style="padding-top: 5px;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log Out</a> </div>
 	</header>
-	<?php 
-
-			if (!empty($errors)) {
-				echo '<div class="errmsg">';
-				echo '<b>There were error(s) on your form.</b><br>';
-				foreach ($errors as $error) {
-					$error = ucfirst(str_replace("_", " ", $error));
-					echo "<b> - $error </b>". '<br>';
-				}
-				echo '</div>';
-			}
-
-		 ?>
+	<?php if (!empty($errors)) {($errors);}?>
 	<div class="container">
 
         <!-- header -->

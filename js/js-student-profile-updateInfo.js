@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var UserSessionName = document.getElementById('id-html').innerHTML;
 	$.ajax({
 		type: 'POST',
-		url: '/nts_galle-master/dbOperations/db_load_profileInfo.php',
+		url: '/newdb/dbOperations/db_load_profileInfo.php',
 		data: {
 			// send this variable to server to identify user to database manipulate
 			UserSessionName: UserSessionName
@@ -10,11 +10,11 @@ $(document).ready(function() {
 		dataType: 'JSON',
 		success: function(data) {
 			// change name,NIC,email in html to updated info
-			$('#name-html').html(data['fname']);
+			$('#name-html').html(data['first_name']);
 			$('#NIC-html').html(data['NIC']);
 			$('#email-html').html(data['email']);
 			$('#id-html').html(UserSessionName);
-			$('#name').attr('value', data['fname']);
+			$('#name').attr('value', data['first_name']);
 			$('#NIC').attr('value', data['NIC']);
 			$('#email').attr('value', data['email']);
 		}
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: 'POST',
-			url: '/nts_galle-master/dbOperations/db_update_profileInfo.php',
+			url: '/newdb/dbOperations/db_update_profileInfo.php',
 			data: {
 				// data to send to server that to be updated
 				name: name,
@@ -40,7 +40,7 @@ $(document).ready(function() {
 				alert('Data updated');
 				$.ajax({
 					type: 'POST',
-					url: '/nts_galle-master/dbOperations/db_load_profileInfo.php',
+					url: '/newdb/dbOperations/db_load_profileInfo.php',
 					data: {
 						// send this variable to server to identify user to database manipulate
 						UserSessionName: UserSessionName
@@ -48,11 +48,12 @@ $(document).ready(function() {
 					dataType: 'JSON',
 					success: function(data) {
 						// change name,NIC,email in html to updated info
-						$('#name-html').html(data['fname']);
+						console.log(data);
+						$('#name-html').html(data['first_name']);
 						$('#NIC-html').html(data['NIC']);
 						$('#email-html').html(data['email']);
 						$('#id-html').html(UserSessionName);
-						$('#name').attr('value', data['fname']);
+						$('#name').attr('value', data['first_name']);
 						$('#NIC').attr('value', data['NIC']);
 						$('#email').attr('value', data['email']);
 					}

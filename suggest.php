@@ -1,8 +1,8 @@
 <?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
+<?php require_once('inc/dbconnection.php'); ?>
 <?php
 // Name Array
-$query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY id";
+$query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";
 $user_list = '';
 $users = mysqli_query($connection, $query);
 while ($user = mysqli_fetch_assoc($users)) {
@@ -37,10 +37,10 @@ if ($q !== "") {
         }
     }
     if ($hint !== ""){
-        $query = "SELECT * FROM user WHERE (first_name LIKE '%{$hint}%') AND  is_deleted=0 ORDER BY id";
+        $query = "SELECT * FROM user WHERE (first_name LIKE '%{$hint}%') AND  is_deleted=0 ORDER BY index_no";
     }
     else {
-        $query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY id";
+        $query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";
     }
 
 }
@@ -51,8 +51,8 @@ while ($user = mysqli_fetch_assoc($users)) {
         $user_list .= "<td>{$user['last_name']}</td>";
         $user_list .= "<td>{$user['last_login']}</td>";
         $user_list .= "<td>{$user['type']}</td>";
-        $user_list .= "<td><a href=\"modify-user.php?user_id={$user['id']}\">Edit</a></td>";
-        $user_list .= "<td><a href=\"delete-user.php?user_id={$user['id']}\">Delete</a></td>";
+        $user_list .= "<td><a href=\"modify-user.php?user_index={$user['index_no']}\">Edit</a></td>";
+        $user_list .= "<td><a href=\"delete-user.php?user_index={$user['index_no']}\">Delete</a></td>";
         $user_list .= "</tr>";
 }
 

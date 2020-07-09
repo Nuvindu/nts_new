@@ -1,10 +1,11 @@
 function resizeInfoAreaUp() {
 	document.getElementById('info-tab').style.marginLeft = '106px';
+	document.getElementById('footer').style.marginLeft = '180px';
 }
 function resizeInfoAreaDown() {
 	document.getElementById('info-tab').style.marginLeft = '0px';
+	document.getElementById('footer').style.marginLeft = '80px';
 }
-
 
 function showContent(evt, tabname) {
 	var i, tablinks, tabcontent;

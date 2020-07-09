@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
+<?php require_once('inc/dbconnection.php'); ?>
 <?php 
     if (!isset($_SESSION['user_id'])){
             header('Location: login.php');
@@ -24,7 +24,7 @@
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log Out</a> </div>
+    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log Out</a> </div>
     <div class="header">
             <div class="nts-text" style="margin:10px 10px 5px 10px">
                 <div>

@@ -3,6 +3,7 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Work Sans', sans-serif;
+  
 }
 .logger {
   text-align: right;
@@ -62,7 +63,7 @@ div.column{
   position: relative;
   background: #3a3a3a;
   padding-left: 10px;
-  padding-bottom: 8px;
+  padding-bottom: 2px;
 
 }
 div.column h3{
@@ -87,7 +88,7 @@ div.icon1{
   margin-left: 15px;
 }
 footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;

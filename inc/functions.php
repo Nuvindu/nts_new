@@ -36,13 +36,14 @@
 
 	function display_errors($errors) {
 		// format and displays form errors
-		echo '<div class="errmsg">';
-		echo '<b>There were error(s) on your form.</b><br>';
-		foreach ($errors as $error) {
-			$error = ucfirst(str_replace("_", " ", $error));
-			echo '- ' . $error . '<br>';
+		if (!empty($errors)){
+			echo '<div class="errmsg">';
+			foreach ($errors as $error) {
+				$error = ucfirst(str_replace("_", " ", $error));
+				echo "<b>  $error </b>". '<br>';
+			}
+			echo '</div>';
 		}
-		echo '</div>';
 	}
 
 	function is_email($email)
