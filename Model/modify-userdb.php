@@ -48,6 +48,7 @@
 						$myrec = mysqli_query($connection, $mysql);
 						$new_rec1 = mysqli_fetch_assoc($myrec);
 						$department = $new_rec1['department_name'];
+						$department = str_replace(" ", "_", $department);
 					}
 				}
 

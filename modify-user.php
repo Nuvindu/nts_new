@@ -62,11 +62,12 @@
 				<label for="">Department:</label>
 				<select name="department" id = "department" style = "border: black;border-radius: 3px;padding: 5px;padding-right: 20px;">
                			<?php $departments = array('Fundamentals_of_Nursing','Medical_Nursing','Surgical_Nursing','Maternal_&_Child_Care_Nursing','Management_&_Research');
-               				echo "<option value = {$department}>{$department}</option>";
                				foreach ($departments as $dep) {
-               						echo "<option value = {$dep}>{$dep}</option>";
-               					
-               			} ?>
+               					$x = str_replace("_", " ", $dep);
+               					if($department == $dep){echo "<option value = {$dep} selected>{$x}</option>";}
+               					else{echo "<option value = {$dep}>{$dep}</option>";}
+               				}
+               			 ?>
              		</select>
 			</p>
 			<p <?php if(strlen($index_no)!=6){ echo "style = display:none; ";} ?>>
