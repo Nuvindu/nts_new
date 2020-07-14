@@ -212,7 +212,6 @@ CREATE TABLE `timetable` (
   `Date` date DEFAULT NULL,
   `Time` time DEFAULT NULL,
   `Place` varchar(50) NOT NULL,
-  `Module_code` varchar(100) NOT NULL,
   `Module_name` varchar(50) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -221,9 +220,54 @@ CREATE TABLE `timetable` (
 -- Dumping data for table `timetable`
 --
 
-INSERT INTO `timetable` (`Date`, `Time`, `Place`, `Module_code`, `Module_name`, `is_deleted`) VALUES
-('0000-00-00', '12:30:00', 'Assembly hall', '1022', 'Emergency nursing', 0),
-('2020-07-14', '07:01:00', 'Classroom 1', '1600', 'Psychology', 0);
+INSERT INTO `timetable` (`Date`, `Time`, `Place`, `Module_name`, `is_deleted`) VALUES
+('2020-07-14', '07:01:00', 'Classroom 1', 'Psychology', 0);
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable2`
+--
+
+CREATE TABLE `timetable2` (
+  `Date` date DEFAULT NULL,
+  `Time` time DEFAULT NULL,
+  `Place` varchar(50) NOT NULL,
+  `Module_name` varchar(50) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `timetable2`
+--
+
+INSERT INTO `timetable2` (`Date`, `Time`, `Place`, `Module_name`, `is_deleted`) VALUES
+('2020-07-17', '07:01:00', 'Classroom 1', 'Health', 0);
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable3`
+--
+
+CREATE TABLE `timetable3` (
+  `Date` date DEFAULT NULL,
+  `Time` time DEFAULT NULL,
+  `Place` varchar(50) NOT NULL,
+  `Module_name` varchar(50) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `timetable3`
+--
+
+INSERT INTO `timetable3` (`Date`, `Time`, `Place`, `Module_name`, `is_deleted`) VALUES
+('2020-07-14', '07:01:00', 'Classroom 2', 'Psychology 2', 0);
 
 -- --------------------------------------------------------
 
@@ -289,8 +333,17 @@ ALTER TABLE `students`
 -- Indexes for table `timetable`
 --
 ALTER TABLE `timetable`
-  ADD PRIMARY KEY (`Module_code`);
-
+  ADD PRIMARY KEY (`Module_name`);
+--
+-- Indexes for table `timetable2`
+--
+ALTER TABLE `timetable2`
+  ADD PRIMARY KEY (`Module_name`);
+--
+-- Indexes for table `timetable3`
+--
+ALTER TABLE `timetable3`
+  ADD PRIMARY KEY (`Module_name`);
 --
 -- Indexes for table `user`
 --
