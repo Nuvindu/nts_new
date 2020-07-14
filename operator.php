@@ -59,7 +59,7 @@
 	<h1>Users</h1>
 	<div class="search">
 		<form action="operator.php">
-			<input type="text" onkeyup="Suggest(this.value)" name="search" placeholder="Search by username" autofocus> <!-- live search input -->
+			<input type="text" onkeyup="Suggest(this.value)" name="search" placeholder="Search by Username or Type" autofocus> <!-- live search input -->
 			<a href="operator.php"><i class="fas fa-times-circle 5x"></i></a>
 		</form>
 		<span id="hint"></span>

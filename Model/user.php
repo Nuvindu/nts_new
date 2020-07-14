@@ -12,6 +12,8 @@ abstract class User{
 	private $index_no = '';
 	private $type = '';
 	private $batch = '';
+	private $department = '';
+	private $year= '';
 
 	public function __construct($first_name, $last_name, $nic, $email, $password, $index_no){
 		$this->first_name = $first_name;
@@ -81,6 +83,12 @@ class Student extends User{
 	public function getType(){
 		return $this->type;
 	}
+	public function setYear($year){
+		$this->year = $year;
+	}
+	public function getYear(){
+		return $this->year;
+	}
 
 }
 
@@ -98,6 +106,12 @@ class Lecturer extends User{
 
 	public function getType(){
 		return $this->type;
+	}
+	public function setDepartment($department){
+		$this->department = $department;
+	}
+	public function getDepartment(){
+		return $this->department;
 	}
 
 }

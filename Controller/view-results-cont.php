@@ -21,9 +21,9 @@
 
 	$user = Model::viewResults();
 	$modules = Result::$modules;
-
-	$allKeys = array_keys($user);
-
+	if($user){
+		$allKeys = array_keys($user);
+	}
 	for ($i=4; $i < 12 ; $i++) { 
 		$first_term .= generate_result_table_row($i);
 	}

@@ -41,11 +41,22 @@ class UserController extends Controller implements IUserController{
 
 	public function updateUser($user_index){
 		global $connection;		
+		$department = "Fundamentals of Nursing";
 		$email = mysqli_real_escape_string($connection, $_POST['email']);
 		$index_no = mysqli_real_escape_string($connection, $_POST['index_no']);
 		$first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
 		$last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
-		return UserDB::modifyUser($first_name,$last_name,$email,$index_no,$user_index);	
+		$user = (new UserFactory())->newUser();
+		if(strlen($index_no)==4){
+			$d = str_replace('_',' ' , $_POST['department']);
+			$department = mysqli_real_escape_string($connection, $d);
+			$user->setDepartment($department); 
+		}
+		else if(strlen($index_no)==6){
+			$year = mysqli_real_escape_string($connection,$_POST['year']);
+			$user->setYear($year);
+		}
+		return UserDB::modifyUser($user,$user_index);	
 	}
 
 	public function deleteUser($user_index){

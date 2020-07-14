@@ -83,32 +83,55 @@ class UserDB extends Model implements IUserDB{
 
 	}
 
-	public static function modifyUser($first_name,$last_name,$email,$index_no,$user_index){
+	public static function modifyUser($user,$user_index){
 		global $connection;
 
 		$query = "UPDATE user SET ";
-		$query .= "first_name = '{$first_name}', ";
-		$query .= "last_name = '{$last_name}', ";
-		$query .= "index_no = '{$index_no}', ";			
-		$query .= "email = '{$email}' ";
+		$query .= "first_name = '{$user->getFirstName()}', ";
+		$query .= "last_name = '{$user->getLastName()}', ";
+		$query .= "index_no = '{$user->getIndexNo()}', ";			
+		$query .= "email = '{$user->getEmail()}' ";
 		$query .= "WHERE index_no = '{$user_index}' LIMIT 1";
 
 		$result = mysqli_query($connection, $query);
 
 		if ($result) {
-			if(strlen($index_no)==6){
+			if(strlen($user->getIndexNo())==6){
 				$sql = "UPDATE result SET ";
-				$sql .= "index_no = '{$index_no}', ";	
-				$sql .= "first_name = '{$first_name}', ";
-				$sql .= "last_name = '{$last_name}' ";		
+				$sql .= "index_no = '{$user->getIndexNo()}', ";	
+				$sql .= "first_name = '{$user->getFirstName()}', ";
+				$sql .= "last_name = '{$user->getLastName()}' ";		
 				$sql .= "WHERE index_no = '{$user_index}' LIMIT 1";
 				
 				$resulttable = mysqli_query($connection, $sql);
 				if ($resulttable) {
-		 			// query successful... redirecting to users page
-					header('Location: operator.php?user_modified=true&true');
+					$update = mysqli_query($connection,"UPDATE students SET index_no = '{$user->getIndexNo()}', year = '{$user->getYear()}' WHERE index_no = '{$user_index}' LIMIT 1");
+					if($update){// query successful... redirecting to users page
+						header('Location: operator.php?user_modified=true&true&true');}
+		 			
 				} else {
 					$errors[] = 'Failed to modify the record.';
+				}
+
+
+			}
+			else if(strlen($user->getIndexNo())==4){
+				$sql ="SELECT * FROM department WHERE department_name = '{$user->getDepartment()}' LIMIT 1";
+				$resulttable = mysqli_query($connection, $sql);
+				$result = mysqli_fetch_assoc($resulttable);
+				$department_code = $result['department_code'];
+				if($department_code!=0){
+					$mysql = "UPDATE lecturers SET ";
+					$mysql .= "index_no = '{$user->getIndexNo()}', ";	
+					$mysql .= "department = '{$department_code}' ";	
+					$mysql .= "WHERE index_no = '{$user_index}' LIMIT 1";
+					$res = mysqli_query($connection, $mysql); 
+
+					header('Location: operator.php?lecturer_modified=true&true');
+				}
+				else{
+					// $_SESSION['lecturer_modified'] = false;
+					header('Location: operator.php?lecturer_modified=false');
 				}
 			}
 			else{

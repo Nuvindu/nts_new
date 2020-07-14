@@ -6,9 +6,11 @@
 	if (strlen($_SESSION['index_no']) != 2) {
 		header('Location: index.php');
 	}
-	//if ($_SESSION['admin']!=1){
-	//	header('Location: user-page.php');
-	//}
+	// if(isset($_SESSION['lecturer_modified'])){
+	// 	if($_SESSION['lecturer_modified']==false){
+	// 		echo '<script>alert("Invalid.")</script>';
+	// 	}
+	// }
 	$user_list = '';
 	$search = '';
 	$query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";

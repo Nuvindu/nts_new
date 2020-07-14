@@ -58,6 +58,29 @@
 				<input type="text" name="email" <?php echo 'value="' . $email . '"'; ?>>
 			</p>
 
+			<p <?php if(strlen($index_no)!=4){ echo "style = display:none; ";} ?>>
+				<label for="">Department:</label>
+				<select name="department" id = "department" style = "border: black;border-radius: 3px;padding: 5px;padding-right: 20px;">
+               			<?php $departments = array('Fundamentals_of_Nursing','Medical_Nursing','Surgical_Nursing','Maternal_&_Child_Care_Nursing','Management_&_Research');
+               				echo "<option value = {$department}>{$department}</option>";
+               				foreach ($departments as $dep) {
+               						echo "<option value = {$dep}>{$dep}</option>";
+               					
+               			} ?>
+             		</select>
+			</p>
+			<p <?php if(strlen($index_no)!=6){ echo "style = display:none; ";} ?>>
+				<label for="">Year:</label>
+				<select name="year" id = "year" style = "border: black;border-radius: 3px;padding: 5px;padding-right: 20px;">
+               			<?php $years = array('1','2','3');
+               				// echo "<option value = {$year} >  {$year}</option>";
+               				foreach ($years as $i) {
+               					if($year == $i){echo "<option value = {$i} selected> {$i} </option>";}
+               					else{echo "<option value = {$i}> {$i} </option>";}
+               					
+               			} ?>
+             		</select>
+			</p>
 			<p>
 				<label for="">Password:</label>
 				<span>******</span> | <a href="change-password.php?user_index=<?php echo $user_index; ?>">Change Password</a>

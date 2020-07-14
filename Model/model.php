@@ -47,6 +47,7 @@ class Model {
 		} else {
 			// no record in result table
 			$errors[] = 'No Record in Result Table';
+			return null;
 		}
 	}
 

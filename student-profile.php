@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require_once('inc/dbconnection.php'); ?>
+<?php require_once('Model/student-profile-db.php'); ?>
 <?php
 if (!isset($_SESSION['index_no'])) {
     header('Location: login.php');
@@ -158,13 +159,13 @@ if (!isset($_SESSION['index_no'])) {
                 <div id="courses-tab" class="tabContent" style="display: none;">
                     <div>
                         <h1 class="heading">Enrolled Courses</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui ad corporis in possimus nam
-                            impedit voluptates
-                            maxime labore ipsum. Nihil nulla eum vitae dolore iusto laborum quibusdam vel quo
-                            voluquas
-                            quibusdam eaque culpa natus expedita. Asperiores perferendis quisquam dolorolutem harum?
-                            Velit, blanditiis!</p>
+                        <?php foreach ($record as $rec) {
+                            echo $rec[1];
+                            echo "<br>";
+                        } ?>
                     </div>
+                     
+                    
                 </div>
 
             </div>

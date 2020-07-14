@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require_once('inc/dbconnection.php'); ?>
+<?php require_once('inc/functions.php'); ?>
 <?php
 // Name Array
 $query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";
@@ -37,7 +38,10 @@ if ($q !== "") {
         }
     }
     if ($hint !== ""){
-        $query = "SELECT * FROM user WHERE (first_name LIKE '%{$hint}%') AND  is_deleted=0 ORDER BY index_no";
+        $query = "SELECT * FROM user WHERE (first_name LIKE '%{$hint}%')  AND  is_deleted=0 ORDER BY index_no";
+    }
+    else if (startsWith($q,"s") || startsWith($q,"l") || startsWith($q,"o")){
+        $query = "SELECT * FROM user WHERE (type LIKE '%{$q}%')  AND  is_deleted=0 ORDER BY index_no";
     }
     else {
         $query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";

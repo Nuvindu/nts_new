@@ -11,6 +11,8 @@
 	$last_name = '';
 	$index_no = '';
 	$email = '';
+	$department = '';
+	$year= '';
 
 	if (isset($_GET['user_index'])) {
 		// getting the user information
@@ -20,6 +22,7 @@
 		$query = "SELECT * FROM user WHERE index_no = '{$user_index}' LIMIT 1";
 
 		$result_set = mysqli_query($connection, $query);
+
 
 		if ($result_set) {
 			if (mysqli_num_rows($result_set) == 1) {
@@ -35,6 +38,24 @@
 						header('Location: index.php');
 					}
 				}
+				if (strlen($index_no) ==4) {
+					$sql = "SELECT * FROM lecturers WHERE index_no = '{$index_no}' LIMIT 1";
+					$rec = mysqli_query($connection, $sql);
+					if (mysqli_num_rows($rec) == 1) {
+						$new_rec = mysqli_fetch_assoc($rec);
+						$dprtmnt = $new_rec['department'];
+						$mysql ="SELECT * FROM department WHERE department_code = '{$dprtmnt}' LIMIT 1";
+						$myrec = mysqli_query($connection, $mysql);
+						$new_rec1 = mysqli_fetch_assoc($myrec);
+						$department = $new_rec1['department_name'];
+					}
+				}
+
+				else if(strlen($index_no) ==6){
+					$sql = "SELECT * FROM students WHERE index_no = '{$index_no}' LIMIT 1";
+				    $rec_set = mysqli_query($connection, $sql);
+				    $rec = mysqli_fetch_assoc($rec_set);
+				    $year = $rec['year'];
 			} else {
 				// user not found
 				header('Location: ../operator.php?err=user_not_found');	
@@ -44,6 +65,7 @@
 			header('Location: ../operator.php?err=query_failed');
 		}
 	}
+}
 	
 
  ?>
