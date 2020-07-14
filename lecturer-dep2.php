@@ -59,7 +59,7 @@
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
-		        <li><a href="go-to-exam-timeTables.php" id="timetable"><i class="fas fa-project-diagram"></i>Exam Time Table</a></li>
+		<li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-project-diagram"></i>Exam Timetables</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
                 <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
             </ul>
