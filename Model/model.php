@@ -54,20 +54,57 @@ class Model {
 	public static function addTimeTable($timetable){
 		global $connection;
 		$query = "INSERT INTO timetable ( ";
-		$query .= "Date, Time, Place, Module_code, Module_name,is_deleted";
+		$query .= "Date, Time, Place, Module_name,is_deleted";
 		$query .= ") VALUES (";
-		$query .= " '{$timetable->getDate()}' , '{$timetable->getTime()}', '{$timetable->getPlace()}', '{$timetable->getModuleCode()}', '{$timetable->getModuleName()}',0";
+		$query .= " '{$timetable->getDate()}' , '{$timetable->getTime()}', '{$timetable->getPlace()}',  '{$timetable->getModuleName()}',0";
 		$query .= ")";
 
 		$timeTables = mysqli_query($connection,$query);
 
 		if ($timeTables){
-			header('Location: add_exam_timeTableY1T1.php?timeTable_added=true&result_created=true');
+			header('Location: add_exam_timetables.php?record_created=true');
 		} else {
-			die("Database query failed: ".mysqli_error($connection));
-			header('Location:add_exam_timeTableY1T1 .php?timeTable_added=true&result_created=false');
+			//die("Database query failed: ".mysqli_error($connection));
+			header('Location:add_exam_timetables.php?err=duplicate_code');
+			
+			
 		}
 	}
+	public static function addTimetable2($timetable){
+		global $connection;
+		$query = "INSERT INTO timetable2 ( ";
+		$query .= "Date, Time, Place,  Module_name,is_deleted";
+		$query .= ") VALUES (";
+		$query .= " '{$timetable->getDate()}' , '{$timetable->getTime()}', '{$timetable->getPlace()}', '{$timetable->getModuleName()}',0";
+		$query .= ")";
+
+		$timeTables = mysqli_query($connection,$query);
+
+		if ($timeTables){
+			header('Location: add_exam_timetables.php?record_created=true');
+		} else {
+			//die("Database query failed: ".mysqli_error($connection));
+			header('Location:add_exam_timetables.php?err=duplicate_code');
+		}
+	}
+	public static function addTimetable3($timetable){
+		global $connection;
+		$query = "INSERT INTO timetable3 ( ";
+		$query .= "Date, Time, Place,  Module_name,is_deleted";
+		$query .= ") VALUES (";
+		$query .= " '{$timetable->getDate()}' , '{$timetable->getTime()}', '{$timetable->getPlace()}', '{$timetable->getModuleName()}',0";
+		$query .= ")";
+
+		$timeTables = mysqli_query($connection,$query);
+
+		if ($timeTables){
+			header('Location: add_exam_timetables.php?record_created=true');
+		} else {
+			//die("Database query failed: ".mysqli_error($connection));
+			header('Location:add_exam_timetables.php?err=duplicate_code');
+		}
+	}
+
 
 
 }
