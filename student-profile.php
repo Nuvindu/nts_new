@@ -56,7 +56,7 @@ if (!isset($_SESSION['index_no'])) {
 
                 <li><a href=<?php if (strlen($_SESSION['index_no'])==4) {echo "lecturer.php";} else if(strlen($_SESSION['index_no'])==6){echo "student.php";}?> ><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="exams.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+                <li><a href="view-exam-timetables.php"><i class="fas fa-project-diagram"></i>Exam TimeTable</a></li>
                 <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
                 <li><a href="#"><i class="fas fa-map-pin"></i>Student Details</a></li>
