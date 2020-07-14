@@ -61,7 +61,7 @@ CREATE TABLE `lecturers` (
 
 INSERT INTO `lecturers` (`index_no`, `department`) VALUES
 ('0001', 1),
-('0003', 2);
+('0002', 2);
 
 -- --------------------------------------------------------
 
