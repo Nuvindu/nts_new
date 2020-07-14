@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include_once('Model/view-exam-timetableY1T1.php'); ?>
+<?php include_once('Model/view-exam-timetables.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,23 +26,51 @@
 	</header>
 
 	<main>
-	<h1>View Exam Time Table  <span><a href="student.php"><< Back to Dashboard</a></span></h1>
+	<h1>View Exam Timetables<span><a href="student.php"><< Back to Dashboard</a></span></h1>
 	
 	<center><h1>First Year </h1></center>
 
-	<h2>First Term </h2>
 <table class="masterlist">
 		<tr>
 			<th>Date </th>
             <th>Time </th>
 			<th>Place</th>
-			<th>Module code</th>
 			<th>Module name</th>
 		</tr>
 
 		<?php echo $timeTable_list; ?>
 
 	</table>
+	<br><br><br><center><h1>Second Year </h1></center>
+
+<table class="masterlist">
+		<tr>
+			<th>Date </th>
+            <th>Time </th>
+			<th>Place</th>
+			<th>Module name</th>
+		</tr>
+
+		<?php echo $timeTable2_list; ?>
+
+	</table>
+
+	<br><br><br><center><h1>Third Year </h1></center>
+
+<table class="masterlist">
+		<tr>
+			<th>Date </th>
+            <th>Time </th>
+			<th>Place</th>
+			<th>Module name</th>
+		</tr>
+
+		<?php echo $timeTable3_list; ?>
+
+	</table>
+	
+	
+	
 	
 	</main>
 	<footer>
