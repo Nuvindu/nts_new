@@ -65,7 +65,7 @@ class Model {
 			header('Location: add_exam_timetables.php?record_created=true');
 		} else {
 			//die("Database query failed: ".mysqli_error($connection));
-			header('Location:add_exam_timetables.php?err=duplicate_code');
+			header('Location:add_exam_timetables.php?err=duplicate_module/module_not_inserted');
 			
 			
 		}
@@ -84,7 +84,7 @@ class Model {
 			header('Location: add_exam_timetables.php?record_created=true');
 		} else {
 			//die("Database query failed: ".mysqli_error($connection));
-			header('Location:add_exam_timetables.php?err=duplicate_code');
+			header('Location:add_exam_timetables.php?err=duplicate_module/module_not_inserted');
 		}
 	}
 	public static function addTimetable3($timetable){
@@ -101,7 +101,7 @@ class Model {
 			header('Location: add_exam_timetables.php?record_created=true');
 		} else {
 			//die("Database query failed: ".mysqli_error($connection));
-			header('Location:add_exam_timetables.php?err=duplicate_code');
+			header('Location:add_exam_timetables.php?err=duplicate_module/module_not_inserted');
 		}
 	}
 
