@@ -27,12 +27,37 @@ class Controller {
 		$Date= mysqli_real_escape_string($connection, $_POST['Date']);
 		$Time = mysqli_real_escape_string($connection, $_POST['Time']);
 		$Place= mysqli_real_escape_string($connection, $_POST['Place']);
-		$Module_code= mysqli_real_escape_string($connection, $_POST['Module_code']);
 		$Module_name= mysqli_real_escape_string($connection, $_POST['Module_name']);
 
-		$timetable =  new TimeTable($Time,$Date,$Place,$Module_code,$Module_name);
+		$timetable =  new TimeTable($Time,$Date,$Place,$Module_name);
 
 		return Model::addTimeTable($timetable);
+
+
+	}
+	public function addTimetable2(){
+		global $connection;
+		$Date= mysqli_real_escape_string($connection, $_POST['Date']);
+		$Time = mysqli_real_escape_string($connection, $_POST['Time']);
+		$Place= mysqli_real_escape_string($connection, $_POST['Place']);
+		$Module_name= mysqli_real_escape_string($connection, $_POST['Module_name']);
+
+		$timetable =  new TimeTable($Time,$Date,$Place,$Module_name);
+
+		return Model::addTimetable2($timetable);
+
+
+	}
+	public function addTimetable3(){
+		global $connection;
+		$Date= mysqli_real_escape_string($connection, $_POST['Date']);
+		$Time = mysqli_real_escape_string($connection, $_POST['Time']);
+		$Place= mysqli_real_escape_string($connection, $_POST['Place']);
+		$Module_name= mysqli_real_escape_string($connection, $_POST['Module_name']);
+
+		$timetable =  new TimeTable($Time,$Date,$Place,$Module_name);
+
+		return Model::addTimetable3($timetable);
 
 
 	}
