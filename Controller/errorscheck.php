@@ -185,11 +185,10 @@ class ErrorCheck extends Controller{
 		$Date = $_POST['Date'];
 		$Time = $_POST['Time'];
 		$Place= $_POST['Place'];
-		$Module_code = $_POST['Module_code'];
 		$Module_name= $_POST['Module_name'];
 
 		// checking required fields
-		$req_fields = array('Date', 'Time', 'Place', 'Module_code', 'Module_name');
+		$req_fields = array('Date', 'Time', 'Place',  'Module_name');
 
 		foreach ($req_fields as $field) {
 			if (empty(trim($_POST[$field]))) {
@@ -198,7 +197,7 @@ class ErrorCheck extends Controller{
 		}
 
 		// checking max length
-		$max_len_fields = array('Date' => 50, 'Time' =>100, 'Place' =>100, 'Module_code' =>6, 'Module_name' => 100);
+		$max_len_fields = array('Date' => 50, 'Time' =>100, 'Place' =>100,  'Module_name' => 100);
 
 		foreach ($max_len_fields as $field => $max_len) {
 			if (strlen(trim($_POST[$field])) > $max_len) {
