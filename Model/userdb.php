@@ -85,9 +85,16 @@ class UserDB extends Model implements IUserDB{
 				$sql = "DELETE from result WHERE index_no = {$user_index} LIMIT 1";
 				$del = mysqli_query($connection,$sql);
 				if($del){
-					header('Location: ../operator.php?msg=student_user_deleted');
-
+					$delete = mysqli_query($connection,"DELETE from students WHERE index_no = {$user_index} LIMIT 1");
+					if($delete){header('Location: ../operator.php?msg=student_user_deleted&result_is_removed');}
+					else{header('Location: ../operator.php?msg=student_user_deleted');}
+					
 				}
+			}
+			else if(strlen($user_index)==4){
+				$delete = mysqli_query($connection,"DELETE from lecturers WHERE index_no = {$user_index} LIMIT 1");
+				if($delete){header('Location: ../operator.php?msg=lecture_user_deleted&department_is_removed');}
+				else{header('Location: ../operator.php?msg=student_user_deleted');}
 			}
 			else{
 				header('Location: ../operator.php?msg=user_deleted');
