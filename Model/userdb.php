@@ -15,7 +15,6 @@ class UserDB extends Model implements IUserDB{
 
 	public function addUser($user){
 		global $connection;
-
 		$query = "INSERT INTO user (first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted) VALUES ('{$user->getFirstName()}','{$user->getLastName()}','{$user->getNIC()}','{$user->getIndexNo()}','{$user->getType()}','{$user->getEmail()}','{$user->getPassword()}','1111',0)";
 
 		$result = mysqli_query($connection,$query);
@@ -25,7 +24,7 @@ class UserDB extends Model implements IUserDB{
 		
 			if (strlen($user->getIndexNo()) == 6) {
 				// create record in the result table
-				$query = "INSERT INTO result (index_no, first_name, last_name, batch, 1T1100, 1T1200, 1T1300, 1T2110, 1T2120, 1T2250, 1T2260, 1T2290, 2T1100, 2T2110, 2T2140, 2T2160, 2T2170, 2T2250, 2T2260, 2T2218, 3T2130, 3T2150, 3T2160, 3T2230, 3T2250, 3T2260, 3T2210, 4T2240, 4T2260, 4T2270, 4T2210, 4T2211, 4T2217, 5T2280, 5T2210, 5T2211, 5T2214, 5T2216, 5T2217, 6T2310, 6T2211, 6T2215, 6T2217, 7T2320, 7T2211, 7T2212, 7T2213, 7T2217, 8T2211, 8T2217, 8T2219, 9T2211, 9T2219, 9T2220, is_deleted) VALUES ('{$user->getIndexNo()}', '{$user->getFirstName()}', '{$user->getLastName()}', 2019,'Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null', 0)";
+				$query = "INSERT INTO result (index_no, first_name, last_name, batch, 1Y01, 1Y02, 1Y03, 1Y04, 1Y05, 1Y06, 1Y07, 2Y01, 2Y02, 3Y01, 3Y02, 3Y03, 3Y04, 3Y05, is_deleted) VALUES ('{$user->getIndexNo()}', '{$user->getFirstName()}', '{$user->getLastName()}', '{$user->getBatch()}','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null','Null', 0)";
 				$result = mysqli_query($connection, $query);
 
 				if ($result) {

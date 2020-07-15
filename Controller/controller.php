@@ -17,8 +17,9 @@ class Controller {
 		$last_name = $_POST['last_name'];
 		$index_no = $_POST['index_no'];
 		$result = $_POST['result'];
+		$year = substr($module_code, 0,2);	
 		$result = mysqli_real_escape_string($connection, $_POST['result']);
-		$results = new Result($first_name, $last_name, $index_no,$module_code,$result);
+		$results = new Result($first_name, $last_name, $index_no,$module_code,$result,$year);
 		return Model::editResults($user_id,$results);
 	}
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2020 at 11:14 AM
+-- Generation Time: Jul 15, 2020 at 04:29 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -181,7 +181,8 @@ CREATE TABLE `result` (
 
 INSERT INTO `result` (`index_no`, `first_name`, `last_name`, `batch`, `1T1100`, `1T1200`, `1T1300`, `1T2110`, `1T2120`, `1T2250`, `1T2260`, `1T2290`, `2T1100`, `2T2110`, `2T2140`, `2T2160`, `2T2170`, `2T2250`, `2T2260`, `2T2218`, `3T2130`, `3T2150`, `3T2160`, `3T2230`, `3T2250`, `3T2260`, `3T2210`, `4T2240`, `4T2260`, `4T2270`, `4T2210`, `4T2211`, `4T2217`, `5T2280`, `5T2210`, `5T2211`, `5T2214`, `5T2216`, `5T2217`, `6T2310`, `6T2211`, `6T2215`, `6T2217`, `7T2320`, `7T2211`, `7T2212`, `7T2213`, `7T2217`, `8T2211`, `8T2217`, `8T2219`, `9T2211`, `9T2219`, `9T2220`, `is_deleted`) VALUES
 ('190001', 'Mahesh', 'Madushan', 2019, 'B', 'Null', 'A', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'A+', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('190029', 'Kaveesh', 'Charuka', 2019, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
+('190029', 'Kaveesh', 'Charuka', 2019, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('190051', 'X', 'Y', 2019, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
 
 -- --------------------------------------------------------
 
@@ -221,9 +222,8 @@ CREATE TABLE `timetable` (
 --
 
 INSERT INTO `timetable` (`Date`, `Time`, `Place`, `Module_name`, `is_deleted`) VALUES
+('2020-07-24', '09:15:00', 'Main Hall', 'Paediatric', 0),
 ('2020-07-14', '07:01:00', 'Classroom 1', 'Psychology', 0);
-
--- --------------------------------------------------------
 
 -- --------------------------------------------------------
 
@@ -245,8 +245,6 @@ CREATE TABLE `timetable2` (
 
 INSERT INTO `timetable2` (`Date`, `Time`, `Place`, `Module_name`, `is_deleted`) VALUES
 ('2020-07-17', '07:01:00', 'Classroom 1', 'Health', 0);
-
--- --------------------------------------------------------
 
 -- --------------------------------------------------------
 
@@ -294,12 +292,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`index_no`, `type`, `first_name`, `last_name`, `NIC`, `batch`, `email`, `password`, `last_login`, `is_deleted`, `profile_picture_dir`) VALUES
-('0001', 'Lecturer', 'Kavinda', 'Pathirana', '1234567895', 1111, 'geeth@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 14:43:42', 0, '0001.png'),
+('0001', 'Lecturer', 'Kavinda', 'Pathirana', '1234567895', 1111, 'geeth@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-15 11:17:00', 0, '0001.png'),
 ('0002', 'Lecturer', 'Gowantha', 'Charithal', '0000002345', 1111, 'gowan@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 0, ''),
 ('01', 'Operator', 'Nuvindu', 'Nirmana', '1234567890', 9999, 'nuvidu@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-06-26 16:29:24', 0, ''),
 ('02', 'Operator', 'Vinoja', 'Rathnayake', '1234567890', 9999, 'vinoja1@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-13 16:36:14', 0, ''),
-('190001', 'Student', 'Mahesh', 'Madushan', '123456789', 2019, 'mahesh123@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 14:43:19', 0, '190001.png'),
-('190029', 'Student', 'Kaveesh', 'Charuka', '8887779990', 1111, 'kaveesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 09:52:41', 0, '');
+('190001', 'Student', 'Mahesh', 'Madushan', '123456789', 2019, 'mahesh123@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 20:34:54', 0, '190001.png'),
+('190029', 'Student', 'Kaveesh', 'Charuka', '8887779990', 1111, 'kaveesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 09:52:41', 0, ''),
+('192890', 'Student', 'FF', 'SS', '7777777777', 1111, 'fhfoa@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 1, ''),
+('2345', 'Lecturer', 'CC', 'DD', '0000445987', 1111, 'oidhihd@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 1, '');
 
 --
 -- Indexes for dumped tables
@@ -334,16 +334,19 @@ ALTER TABLE `students`
 --
 ALTER TABLE `timetable`
   ADD PRIMARY KEY (`Module_name`);
+
 --
 -- Indexes for table `timetable2`
 --
 ALTER TABLE `timetable2`
   ADD PRIMARY KEY (`Module_name`);
+
 --
 -- Indexes for table `timetable3`
 --
 ALTER TABLE `timetable3`
   ADD PRIMARY KEY (`Module_name`);
+
 --
 -- Indexes for table `user`
 --

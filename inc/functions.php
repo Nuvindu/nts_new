@@ -59,7 +59,8 @@
 		global $modules;
 		global $user;
 		$module_code = $allKeys[$i];
-		$module_name = $modules[substr($module_code, 2)];
+		//$module_name = $modules[substr($module_code, 2)];
+		$module_name = $modules[$module_code];
 		$grade = $user[$module_code]; if (strtolower($grade) == 'null' ) {
 			$grade = 'Pending';
 		}

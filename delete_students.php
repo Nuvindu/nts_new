@@ -28,8 +28,10 @@ $result = mysqli_query($connection, $query);
  <body style="background-color:rgb(218, 213, 213);">
   <div class="container">
    <br />
-   <h3 align="center">Delete multiple rows by selecting checkboxes using Ajax Jquery with PHP</h3><br />
-   <div class="add" style="float:right;"><a href="operator.php" style="color:black;">&nbsp&nbsp  Back &gt&gt</a> </br></div>
+   <h3 align="center">Delete Students</h3>
+   <button type="button" name="btn_delete" id="btn_delete" class="btn btn-success" style="background-color:black;float:left;">Delete</button><br>
+   <div class="add" style="float:right;"><a href="operator.php" style="color:black;">&nbsp&nbsp  Back &gt&gt</a> </div><br>
+   <br>
    <?php
    if(mysqli_num_rows($result) > 0)
    {
@@ -63,7 +65,7 @@ $result = mysqli_query($connection, $query);
    }
    ?>
    <div align="center">
-    <button type="button" name="btn_delete" id="btn_delete" class="btn btn-success" style="background-color:black;">Delete</button>
+    
    </div>
  </body>
 </html>

@@ -57,7 +57,7 @@
         </div>
 		
 		<?php include "dropdown.php"?>
-	<div class="add"><a href="add-user.php">Add New User &gt&gt</a> </br></div>
+	<div class="add"><a href="add-user.php">Add New User</a> </br></div>
 	
 	<h1>Users</h1>
 	<div class="search">

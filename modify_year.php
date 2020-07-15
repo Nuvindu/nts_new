@@ -1,6 +1,6 @@
 <html>  
     <head>  
-        <title>Update Multiple Mysql Data using Checkbox with Ajax in PHP</title>
+        <title>Update Student Year</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
@@ -10,14 +10,14 @@
         <div class="container" >  
             <br />
    <div class="table-responsive">  
-    <h3 align="center">Update Multiple Mysql Data using Checkbox with Ajax in PHP</h3><br />
+    <h3 align="center">Update Student Year</h3><br />
     <div class="add" style="float:right"><a href="operator.php" style="color:black;">Back &gt&gt</a> </br></div>
     <form method="post" id="update_form">
                     <div align="left" > 
                         <input type="submit" style="background-color:black;" name="multiple_update" id="multiple_update" class="btn btn-info"  value="Multiple Update" />
                     </div>
                     <br />
-                    <div class="table-responsive" ">
+                    <div class="table-responsive" >
                         <table class="table table-bordered table-striped">
                             <thead style="background-color:rgb(133, 128, 128);">
                                 <th width="5%">Select</th>

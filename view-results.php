@@ -30,93 +30,33 @@
 
 	<main>
 	<h1>View Academic Results  <span><a href="student.php"><< Back to Dashboard</a></span></h1>
-	
-	<center><h1>First Year </h1></center>
 
-	<h2>First Term </h2>
+	<h2>First Year </h2>
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
 			<th class="grade">Grade/Mark</th>
 		</tr>
-		<?php echo $first_term; ?>
+		<?php echo $first_year; ?>
 	</table>
 		
-	<h2>Second Term </h2>	
+	<h2>Second Year </h2>	
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
 			<th class="grade">Grade/Mark</th>
 		</tr>
-		<?php echo $second_term; ?>
+		<?php echo $second_year; ?>
 	</table>
 		
-	<h2>Third Term </h2>		
+	<h2>Third Year </h2>		
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
 			<th class="grade">Grade/Mark</th>
 		</tr>
-		<?php echo $third_term; ?>
+		<?php echo $third_year; ?>
 	</table><br><br><br>
-		
-	<center><h1>Second Year </h1></center>
-
-	<h2>First Term </h2>	
-	<table class="sem_result">
-		<tr>
-			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
-		</tr>
-		<?php echo $fourth_term; ?>
-	</table>
-
-	<h2>Second Term </h2>
-	<table class="sem_result">
-		<tr>
-			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
-		</tr>
-		<?php echo $fifth_term; ?>
-	</table>
-		
-	<h2>Third Term </h2>
-	<table class="sem_result">
-		<tr>
-			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
-		</tr>
-		<?php echo $sixth_term; ?>
-	</table><br><br><br>
-
-	<center><h1>Third Year </h1></center>
-
-	<h2>First Term </h2>
-	<table class="sem_result">
-		<tr>
-			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
-		</tr>
-		<?php echo $seventh_term; ?>
-	</table>
-
-	<h2>Second Term </h2>
-	<table class="sem_result">
-		<tr>
-			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
-		</tr>
-		<?php echo $eighth_term; ?>
-	</table>
-
-	<h2>Third Term </h2>
-	<table class="sem_result">
-		<tr>
-			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
-		</tr>
-		<?php echo $ninth_term; ?>
-	</table>
 						
 	</main>
 	<footer>

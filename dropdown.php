@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="dropdown" style="float:right;">
 
-  <button onclick="myFunction()" class="dropbtn"><i class="fa fa-caret-square-o-down"></i>&nbspStudent Updates</button>
+  <button onclick="myFunction()" class="dropbtn">Student Updates&nbsp&nbsp<i class="fa fa-caret-square-o-down"></i></button>
   <div id="myDropdown" class="dropdown-content">
     <a href="modify_year.php">Modify Years</a>
     <a href="delete_students.php">Delete Students</a>

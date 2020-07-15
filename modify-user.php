@@ -65,7 +65,7 @@
                				foreach ($departments as $dep) {
                					$x = str_replace("_", " ", $dep);
                					if($department == $dep){echo "<option value = {$dep} selected>{$x}</option>";}
-               					else{echo "<option value = {$dep}>{$dep}</option>";}
+               					else{echo "<option value = {$dep}>{$x}</option>";}
                				}
                			 ?>
              		</select>

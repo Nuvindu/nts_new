@@ -18,12 +18,14 @@
 	$result = '';
 	$module_code = '';
 	$code = '';
+	$year='';
 
 	if (isset($_GET['user_id'])) {
 		global $connection;
 		// getting the user information
 		$user_id = mysqli_real_escape_string($connection, $_GET['user_id']);
-		$module_code = mysqli_real_escape_string($connection, $_GET['module_code']);		
+		$module_code = mysqli_real_escape_string($connection, $_GET['module_code']);
+		$year = substr($module_code, 0,2);		
 		$query = "SELECT index_no,first_name,last_name,{$module_code} FROM result WHERE index_no = {$user_id} LIMIT 1";
 
 		$result_set = mysqli_query($connection, $query);

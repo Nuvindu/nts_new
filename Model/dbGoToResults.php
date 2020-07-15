@@ -9,6 +9,6 @@
 ?>
 
 <?php if (isset($_GET['err'])) {
-		echo"<script>alert('Invalid module for the term or no students registered.');</script>";
+		echo"<script>alert('Invalid module for the year or no students registered.');</script>";
 	} 
 ?>

@@ -12,6 +12,7 @@
 	<title>Module Selection</title>
 	<link rel="stylesheet" type="text/css" href="css/go-to-results.css">
 	<link rel="stylesheet" href="./style/style-header.css">
+	<script src="./js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
@@ -40,6 +41,7 @@
 				<p>
 					<label for="">Batch:</label>            
 					<select name="batch" id = "batch">
+						<option></option>						
 					<?php $year = date("Y");
 						for ($i=$year-3; $i <= $year+1 ; $i++) { 
 							echo "<option value = {$i}>{$i}</option>";
@@ -49,9 +51,10 @@
              		</select>
    				</p>
 				<p>
-					<label for="">Term:</label>            
-					<select name="term" id = "term">
-					<?php 	for ($i=1; $i <= 9 ; $i++) { 
+					<label for="">Year:</label>            
+					<select name="year" id = "year">
+						<option></option>
+					<?php 	for ($i=1; $i <= 3 ; $i++) { 
 								echo "<option value = {$i}>{$i}</option>";
 							}
 					
@@ -61,15 +64,7 @@
 				<p>
 					<label for="">Module:</label>            
 					<select name="module" id = "module">
-               			<?php $modules = array('English', 'Psychology', 'Sociology', 'Anatomy & Physiology', 'Micro Biology', 'Pathology', 'Pharmacology I', 'Pharmacology II', 'Nutrition', 'General Science', 'Community Health', 'Community Health Practice', 'First Aid', 'First Aid Practice', 'Fundamental of Nursing', 'Fundamental of Nursing Practice', 'Gynecologycal Nursing', 'Gynecologycal Nursing Practice', 'History of Nursing', 'Medical Surgical Nursing', 'Medical Surgical Nursing Practice', 'Mental Health & Psychiatric Nursing', 'Mental Health & Psychiatric Nursing Practice', 'Obstetric Nursing', 'Obstetric Nursing Practice','Paediatric Nursing', 'Paediatric Practice', 'Professional Adjustment', 'Ward Management', 'Ward Management Practice', 'Work Shop', 'Research in Nursing');
-
-               				foreach ($modules as $module) {
-               					echo "<option value = {$module}>{$module}</option>";
-               				}
- 
-
-
-               			 ?>
+						<option></option>
              		</select>
    				</p>
 				<p>
@@ -97,5 +92,57 @@
             </div>
         </footer>
 </body>
+<script>
+$(document).ready(function(){
+	$("#year").change(function(){
+		$("#module").find('option').remove().end();
+		var year = $("option:selected",this).val();
+		if(year == 1){
+            var yaerOneModules = {
+            	"Fundamentals&nbspof&nbspNursing(FirstYear)":"1Y01",
+            	"Anatomy&nbspand&nbspPhysiology":"1Y02",
+            	"History&nbspand&nbspTrends&nbspin&nbspNursing":"1Y03",
+            	"Psychology&nbspand&nbspSociology":"1Y04",
+            	"Pharmacology&nbspand&nbspMicrobiology":"1Y05",
+            	"English":"1Y06",
+            	"Practical&nbspExam(FirstYear)":"1Y07"
+            }; 
+
+            var $el = $("#module");
+            $.each(yaerOneModules,function(key,value){
+            	$el.append($("<option></option>")
+            		.attr("value",value).text(key));
+            });
+		}else if (year ==2) {
+            var yaerTwoModules = {
+            	"Combined&nbspPaper(Nursing)":"2Y01",
+            	"Practical&nbspExam(SecondYear)":"2Y02"
+            }; 
+
+            var $el = $("#module");
+            $.each(yaerTwoModules,function(key,value){
+            	$el.append($("<option></option>")
+            		.attr("value",value).text(key));
+            });
+		}else{
+            var yaerThreeModules = {
+            	"Fundamentals&nbspof&nbspNursing(ThirdYear)":"3Y01",
+            	"Medicine&nbspand&nbspMedical&nbspNursing":"3Y02",
+            	"Surgery&nbspand&nbspSurgical&nbspNursing":"3Y03",
+            	"Paediatric/Gynecology&nbspand&nbspObstetric&nbspNursing":"3Y04",
+            	"Practical&nbspExam(ThirdYear)":"3Y05"            	
+            }; 
+
+            var $el = $("#module");
+            $.each(yaerThreeModules,function(key,value){
+            	$el.append($("<option></option>")
+            		.attr("value",value).text(key));
+            });
+		}
+	});
+});	
+
+</script>
+
 </html>
 <?php mysqli_close($connection) ?>

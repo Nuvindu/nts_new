@@ -22,6 +22,7 @@ abstract class User{
 		$this->email = $email;
 		$this->password = sha1($password);
 		$this->index_no = $index_no;
+		$this->batch = "20".substr($index_no,0,2)+0;
 	}
 
 	public function getFirstName(){
@@ -50,6 +51,12 @@ abstract class User{
 	}
 	public function setEmail($email){
 		$this->email = $email;
+	}
+	public function getBatch(){
+		return $this->batch;
+	}
+	public function setBatch($batch){
+		$this->batch = $batch;
 	}
 
 	public function getPassword(){

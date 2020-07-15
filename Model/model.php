@@ -25,7 +25,7 @@ class Model {
 
 		if ($result) {
 			// query successful... redirecting to users page
-			header("Location: results.php?user_modified=true&batch={$results->getBatch()}&term={$results->getTerm()}&module={$results->getModule()}");
+			header("Location: results.php?user_modified=true&batch={$results->getBatch()}&year={$results->getYear()}&module={$results->getModuleCode()}");
 		} else {
 			$errors[] = 'Failed to modify the record.';
 		}
