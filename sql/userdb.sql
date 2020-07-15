@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2020 at 04:29 PM
+-- Generation Time: Jul 15, 2020 at 10:00 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -122,56 +122,20 @@ CREATE TABLE `result` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `batch` int(4) NOT NULL,
-  `1T1100` varchar(4) NOT NULL,
-  `1T1200` varchar(4) NOT NULL,
-  `1T1300` varchar(4) NOT NULL,
-  `1T2110` varchar(4) NOT NULL,
-  `1T2120` varchar(4) NOT NULL,
-  `1T2250` varchar(4) NOT NULL,
-  `1T2260` varchar(4) NOT NULL,
-  `1T2290` varchar(4) NOT NULL,
-  `2T1100` varchar(4) NOT NULL,
-  `2T2110` varchar(4) NOT NULL,
-  `2T2140` varchar(4) NOT NULL,
-  `2T2160` varchar(4) NOT NULL,
-  `2T2170` varchar(4) NOT NULL,
-  `2T2250` varchar(4) NOT NULL,
-  `2T2260` varchar(4) NOT NULL,
-  `2T2218` varchar(4) NOT NULL,
-  `3T2130` varchar(4) NOT NULL,
-  `3T2150` varchar(4) NOT NULL,
-  `3T2160` varchar(4) NOT NULL,
-  `3T2230` varchar(4) NOT NULL,
-  `3T2250` varchar(4) NOT NULL,
-  `3T2260` varchar(4) NOT NULL,
-  `3T2210` varchar(4) NOT NULL,
-  `4T2240` varchar(4) NOT NULL,
-  `4T2260` varchar(4) NOT NULL,
-  `4T2270` varchar(4) NOT NULL,
-  `4T2210` varchar(4) NOT NULL,
-  `4T2211` varchar(4) NOT NULL,
-  `4T2217` varchar(4) NOT NULL,
-  `5T2280` varchar(4) NOT NULL,
-  `5T2210` varchar(4) NOT NULL,
-  `5T2211` varchar(4) NOT NULL,
-  `5T2214` varchar(4) NOT NULL,
-  `5T2216` varchar(4) NOT NULL,
-  `5T2217` varchar(4) NOT NULL,
-  `6T2310` varchar(4) NOT NULL,
-  `6T2211` varchar(4) NOT NULL,
-  `6T2215` varchar(4) NOT NULL,
-  `6T2217` varchar(4) NOT NULL,
-  `7T2320` varchar(4) NOT NULL,
-  `7T2211` varchar(4) NOT NULL,
-  `7T2212` varchar(4) NOT NULL,
-  `7T2213` varchar(4) NOT NULL,
-  `7T2217` varchar(4) NOT NULL,
-  `8T2211` varchar(4) NOT NULL,
-  `8T2217` varchar(4) NOT NULL,
-  `8T2219` varchar(4) NOT NULL,
-  `9T2211` varchar(4) NOT NULL,
-  `9T2219` varchar(4) NOT NULL,
-  `9T2220` varchar(4) NOT NULL,
+  `1Y01` varchar(4) NOT NULL,
+  `1Y02` varchar(4) NOT NULL,
+  `1Y03` varchar(4) NOT NULL,
+  `1Y04` varchar(4) NOT NULL,
+  `1Y05` varchar(4) NOT NULL,
+  `1Y06` varchar(4) NOT NULL,
+  `1Y07` varchar(4) NOT NULL,
+  `2Y01` varchar(4) NOT NULL,
+  `2Y02` varchar(4) NOT NULL,
+  `3Y01` varchar(4) NOT NULL,
+  `3Y02` varchar(4) NOT NULL,
+  `3Y03` varchar(4) NOT NULL,
+  `3Y04` varchar(4) NOT NULL,
+  `3Y05` varchar(4) NOT NULL,
   `is_deleted` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -179,10 +143,9 @@ CREATE TABLE `result` (
 -- Dumping data for table `result`
 --
 
-INSERT INTO `result` (`index_no`, `first_name`, `last_name`, `batch`, `1T1100`, `1T1200`, `1T1300`, `1T2110`, `1T2120`, `1T2250`, `1T2260`, `1T2290`, `2T1100`, `2T2110`, `2T2140`, `2T2160`, `2T2170`, `2T2250`, `2T2260`, `2T2218`, `3T2130`, `3T2150`, `3T2160`, `3T2230`, `3T2250`, `3T2260`, `3T2210`, `4T2240`, `4T2260`, `4T2270`, `4T2210`, `4T2211`, `4T2217`, `5T2280`, `5T2210`, `5T2211`, `5T2214`, `5T2216`, `5T2217`, `6T2310`, `6T2211`, `6T2215`, `6T2217`, `7T2320`, `7T2211`, `7T2212`, `7T2213`, `7T2217`, `8T2211`, `8T2217`, `8T2219`, `9T2211`, `9T2219`, `9T2220`, `is_deleted`) VALUES
-('190001', 'Mahesh', 'Madushan', 2019, 'B', 'Null', 'A', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'A+', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('190029', 'Kaveesh', 'Charuka', 2019, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('190051', 'X', 'Y', 2019, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
+INSERT INTO `result` (`index_no`, `first_name`, `last_name`, `batch`, `1Y01`, `1Y02`, `1Y03`, `1Y04`, `1Y05`, `1Y06`, `1Y07`, `2Y01`, `2Y02`, `3Y01`, `3Y02`, `3Y03`, `3Y04`, `3Y05`, `is_deleted`) VALUES
+('190001', 'Mahesh', 'Madushan', 2019, 'PASS', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('200001', 'Kaveesh', 'Charuka', 2020, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
 
 -- --------------------------------------------------------
 
@@ -201,7 +164,7 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`index_no`, `year`) VALUES
 ('190001', 1),
-('190029', 3);
+('200001', 2);
 
 -- --------------------------------------------------------
 
@@ -292,14 +255,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`index_no`, `type`, `first_name`, `last_name`, `NIC`, `batch`, `email`, `password`, `last_login`, `is_deleted`, `profile_picture_dir`) VALUES
-('0001', 'Lecturer', 'Kavinda', 'Pathirana', '1234567895', 1111, 'geeth@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-15 11:17:00', 0, '0001.png'),
+('0001', 'Lecturer', 'Kavinda', 'Pathirana', '1234567895', 1111, 'geeth@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-16 01:25:19', 0, '0001.png'),
 ('0002', 'Lecturer', 'Gowantha', 'Charithal', '0000002345', 1111, 'gowan@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 0, ''),
 ('01', 'Operator', 'Nuvindu', 'Nirmana', '1234567890', 9999, 'nuvidu@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-06-26 16:29:24', 0, ''),
 ('02', 'Operator', 'Vinoja', 'Rathnayake', '1234567890', 9999, 'vinoja1@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-13 16:36:14', 0, ''),
-('190001', 'Student', 'Mahesh', 'Madushan', '123456789', 2019, 'mahesh123@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 20:34:54', 0, '190001.png'),
-('190029', 'Student', 'Kaveesh', 'Charuka', '8887779990', 1111, 'kaveesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-14 09:52:41', 0, ''),
-('192890', 'Student', 'FF', 'SS', '7777777777', 1111, 'fhfoa@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 1, ''),
-('2345', 'Lecturer', 'CC', 'DD', '0000445987', 1111, 'oidhihd@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 1, '');
+('190001', 'Student', 'Mahesh', 'Madushan', '7777777771', 1111, 'mahesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-16 00:59:20', 0, ''),
+('200001', 'Student', 'Kaveesh', 'Charuka', '7777777772', 1111, 'kaveesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 0, '');
 
 --
 -- Indexes for dumped tables
