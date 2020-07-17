@@ -27,7 +27,7 @@ if ($q !== "") {
                 $x = $hint;
                 $hint='';
                 $len = strlen($name);
-                for ($i = 0; $i <= $len; $i++) {
+                for ($i = 0; $i <= $len-1; $i++) {
                     if ($x[$i]==$name[$i]){
                         $hint .= "$name[$i]";
                     }
