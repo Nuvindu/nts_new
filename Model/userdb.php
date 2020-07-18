@@ -31,27 +31,27 @@ class UserDB extends Model implements IUserDB{
 					$update = mysqli_query($connection,"INSERT INTO students (index_no,year) VALUES ('{$user->getIndexNo()}','1')");
 					if($update){
 						// query successful... redirecting to users page
-						header('Location: operator.php?user_added=true&result_created=true&student_added=true');}
+						header('Location: add-user.php?user_added=true&result_created=true&student_added=true');}
 					else{
-						header('Location: operator.php?user_added=true&result_created=true');
+						header('Location: add-user.php?user_added=true&result_created=true');
 					}
 				} else {
 					die("Database query failed: ".mysqli_error($connection));
-					header('Location: operator.php?user_added=true&result_created=false');
+					header('Location: add-user.php?user_added=true&result_created=false');
 				}
 			} 
 			else if(strlen($user->getIndexNo()) == 4){
 				$update = mysqli_query($connection,"INSERT INTO lecturers (index_no,department) VALUES ('{$user->getIndexNo()}','1')");
 				if($update){
 					// query successful... redirecting to users page
-					header('Location: operator.php?user_added=true&lecturer_added=true');
+					header('Location: add-user.php?user_added=true&lecturer_added=true');
 				}
 				else{
-					header('Location: operator.php?user_added=true');
+					header('Location: add-user.php?user_added=true');
 				}
 			}
 			else {
-				header('Location: operator.php?user_added=true');
+				header('Location: add-user.php?user_added=true');
 			}
 
 		} else{
