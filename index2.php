@@ -8,61 +8,62 @@
   <link rel="stylesheet" href="css/main1.css">
   <title>Nurse Training School</title>
 </head>
-
-</head>
 <body>
-
-<section id="header">
+  <!-- Header -->
+  <section id="header">
     <div class="header container" style="background-color:yellow;">
     <div class="logo" style="float:left;">
-      <img src="./img/logo-0.png" alt="Logo" style="width:90%;">
+			<img src="./img/logo-0.png" alt="Logo" style="width:90%;">
         </div>
       <div class="nav-bar">
       
         <div class="brand">
           <a href="#hero"><h1><span>N</span>urses <span>T</span>raining <span>S</span>chool </h1></a>
           <br><div class="name">
-      
-    
-    </div>  
-    
+			
+		
+		</div>	
+		
         </div>
         <div class="nav-list">
           <div class="hamburger"><div class="bar"></div></div>
           <ul>
-            <li><a href="#hero" data-after="Home" onclick="topFunction()">Home</a></li>
+            <li><a href="#hero" data-after="Home">Home</a></li>
             <li><a href="#about" data-after="About">About</a></li>
             <li><a href="#contact" data-after="Contact">Contact</a></li>
-            <li><a href="login.php">Login</a></li>
+			      <li><a href="login.php">Login</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-
-<div class="slideshow-container" style="padding-top:16%;background:#ffffcc;">
-
-<div class="mySlides fade" >
-  <div class="numbertext">1 / 2</div>
-  <img src="img/download3.jpg" style="width:100%;margin-top: 67px;">
-</div>
-<a class="back" onclick="plusSlides(-1)">&#10094;</a>
-<a class="forward" onclick="plusSlides(1)">&#10095;</a>
-<div class="mySlides fade">
-  <div class="numbertext">2 / 2</div>
-  <img src="img/download1.jpg" style="width:100%;margin-top: 67px;">
-</div>
+  <!-- End Header -->
 
 
-</div>
-<br>
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+	<div class="intro clearfix" >
+		<div class="introimage clearfix" >
+			<img src="img/nts.jpg" alt="nts" style="padding-top:15%;width:100%;">
+		</div>
+		<div class="introtext">
+      <br>
+			<h4>Our Mission</h4>
+			<p>"to facilitate the development f an eficient, effective, knowledgeable,creative and forward lookingnurses to serve health care system of the country."</p>
+      <br>
+      <h4>Our Vission</h4>
+			<p>"to be the best nursing school in Sri Lanka by providin well organized training for the students."</p>
+		</div>
+	</div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-</div>
+  
 
-<section id="about">
+  <!-- About Section -->
+  <section id="about">
     <div class="about container">
       <div class="col-left">
         <div class="about-img">
@@ -138,33 +139,3 @@
   <script src="js/app.js"></script>
 </body>
 </html>
-
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
