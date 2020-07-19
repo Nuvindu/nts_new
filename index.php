@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main1.css">
+  <link rel="stylesheet" href="css/frontPage.css">
   <title>Nurse Training School</title>
 </head>
 
@@ -20,7 +20,7 @@
       <div class="nav-bar">
       
         <div class="brand">
-          <a href="#hero"><h1><span>N</span>urses <span>T</span>raining <span>S</span>chool </h1></a>
+          <a href="#home"><h1><span>N</span>urses <span>T</span>raining <span>S</span>chool </h1></a>
           <br><div class="name">
       
     
@@ -30,7 +30,7 @@
         <div class="nav-list">
           <div class="hamburger"><div class="bar"></div></div>
           <ul>
-            <li><a href="#hero" data-after="Home" onclick="topFunction()">Home</a></li>
+            <li><a href="#home" data-after="Home" onclick="topFunction()">Home</a></li>
             <li><a href="#about" data-after="About">About</a></li>
             <li><a href="#contact" data-after="Contact">Contact</a></li>
             <li><a href="login.php">Login</a></li>
@@ -39,9 +39,10 @@
       </div>
     </div>
   </section>
-
+<section id="home">
 <div class="slideshow-container" style="padding-top:16%;background:#ffffcc;">
-
+<br>
+<center><h3>SERVE TO BE PREFECT. PERFECT TO BE SERVE</h3></center>
 <div class="mySlides fade" >
   <div class="numbertext">1 / 2</div>
   <img src="img/download3.jpg" style="width:100%;margin-top: 67px;">
@@ -52,7 +53,14 @@
   <div class="numbertext">2 / 2</div>
   <img src="img/download1.jpg" style="width:100%;margin-top: 67px;">
 </div>
-
+<div class="introtext">
+      <br>
+			<h4>Our Mission</h4>
+			<p>"to facilitate the development of an eficient, effective, knowledgeable,creative and forward looking nurses to serve health care system of the country."</p>
+      <br>
+      <h4>Our Vission</h4>
+			<p>"to be the best nursing school in Sri Lanka by providing well organized training for the students."</p>
+		</div>
 
 </div>
 <br>
@@ -61,6 +69,7 @@
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
 </div>
+</section>
 
 <section id="about">
     <div class="about container">
@@ -87,7 +96,7 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact container">
-      <div><h1 class="section-title">Contact <span>info</span></h1></div>
+      <div><h1 class="section-title">Contact <span>us</span></h1></div>
       <div class="contact-items">
         <div class="contact-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png"/></div>
@@ -135,7 +144,7 @@
     </div>
   </section>
   <!-- End Footer -->
-  <script src="js/app.js"></script>
+  <script src="js/frontPage.js"></script>
 </body>
 </html>
 
