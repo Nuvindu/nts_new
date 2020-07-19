@@ -56,10 +56,10 @@
 <div class="introtext">
       <br>
 			<h4>Our Mission</h4>
-			<p>"to facilitate the development of an eficient, effective, knowledgeable,creative and forward looking nurses to serve health care system of the country."</p>
+			<p><b>"to facilitate the development of an eficient, effective, knowledgeable,creative and forward looking nurses to serve health care system of the country."</b></p>
       <br>
       <h4>Our Vission</h4>
-			<p>"to be the best nursing school in Sri Lanka by providing well organized training for the students."</p>
+			<p><b>"to be the best nursing school in Sri Lanka by providing well organized training for the students."</b></p>
 		</div>
 
 </div>
@@ -82,10 +82,10 @@
       <div class="col-right">
         <h1 class="section-title">About <span>Us</span></h1>
         <h2>We Secure Health</h2>
-        <p>Formal nursing education was started in 1939 in Sri Lanka at Nurses training school (NTS) in Colombo. Thereafter, it was expanded to 17 other Schools of Nursing throughout the country conferring a basic Diploma in Nursing.
+        <p><b>Formal nursing education was started in 1939 in Sri Lanka at Nurses training school (NTS) in Colombo. Thereafter, it was expanded to 17 other Schools of Nursing throughout the country conferring a basic Diploma in Nursing.
         Nts Galle offers a 3 year diploma program.Twenty different modules are included in the program. Academic staff consists with qualified lecturers.
         We train nurses for state hospitals and other state health institutions. There is a principal for each NTS.
-        NTS is the best place where you can gain both theoritical and practical knowledge at the same time.
+        NTS is the best place where you can gain both theoritical and practical knowledge at the same time.</b>
       </p>
         
       </div>
