@@ -30,10 +30,10 @@
         <div class="nav-list">
           <div class="hamburger"><div class="bar"></div></div>
           <ul>
-            <li><a href="#home" data-after="Home" onclick="topFunction()">Home</a></li>
-            <li><a href="#about" data-after="About">About</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-            <li><a href="login.php">Login</a></li>
+		  <li><a href="#home" data-after="Home" onclick="topFunction()"><b>Home</b></a></li>
+		  <li><a href="#about" data-after="About"><b>About</b></a></li>
+		  <li><a href="#contact" data-after="Contact"><b>Contact</b></a></li>
+		  <li><a href="login.php"><b>Login</b></a></li>
           </ul>
         </div>
       </div>
