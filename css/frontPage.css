@@ -47,23 +47,7 @@ p {
 	color: crimson;
 }
 
-.cta {
-	display: inline-block;
-	padding: 10px 30px;
-	color: white;
-	background-color: transparent;
-	border: 2px solid crimson;
-	font-size: 2rem;
-	text-transform: uppercase;
-	letter-spacing: .1rem;
-	margin-top: 30px;
-	transition: .3s ease;
-	transition-property: background-color, color;
-}
-.cta:hover {
-	color:rgb(81, 146, 199);
-	background-color: rgb(204, 88, 98);
-}
+
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
@@ -121,7 +105,7 @@ p {
 	font-weight: 500;
 	letter-spacing: .2rem;
 	text-decoration: none;
-	color:black;
+	color:rgb(59, 187, 159);
 	text-transform: uppercase;
 	padding: 20px;
 	display: block;
@@ -149,7 +133,7 @@ p {
 	height: 60px;
 	width: 60px;
 	display: inline-block;
-	border: 3px solid white;
+	border: 3px solid rgb(36, 148, 156);
 	border-radius: 50%;
 	position: relative;
 	display: flex;
@@ -166,14 +150,14 @@ p {
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 3px solid white;
+	border: 3px solid rgb(30, 176, 196);
 	animation: hamburger_puls 1s ease infinite;
 }
 #header .hamburger .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
-	background-color: white;
+	background-color: rgb(55, 185, 218);
 	z-index: -1;
 }
 #header .hamburger .bar::after,
@@ -183,7 +167,7 @@ p {
 	height: 100%;
 	width: 100%;
 	left: 0;
-	background-color: white;
+	background-color: rgb(33, 152, 189);
 	transition: .3s ease;
 	transition-property: top, bottom;
 }
@@ -369,27 +353,7 @@ p {
 		transform: scale(1.4);
 	}
 }
-@keyframes text_reveal_box {
-	50% {
-		width: 100%;
-		left: 0;
-	}
-	100% {
-		width: 0;
-		left: 100%;
-	}
-}
-@keyframes text_reveal {
-	100% {
-		color: white;
-	}
-}
-@keyframes text_reveal_name {
-	100% {
-		color: crimson;
-		font-weight: 500;
-	}
-}
+
 /* End Keyframes */
 
 /* Media Query For Tablet */
