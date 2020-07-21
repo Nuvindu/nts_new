@@ -91,7 +91,7 @@ if (!isset($_SESSION['index_no'])) {
                 <br><br>
                 <h3>Ward Management</h3>
                 <a href="module.php?moduleName=wardmanagement"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['wardmanagement'] = "This course is designed to give students in-depth knowledge in ward management. There will be concurrent practical sessions." ?>
+                <?php $_SESSION['wardmanagement'] = "This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems. Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions." ?>
                 <p><?php echo $_SESSION['wardmanagement'] ?></p>
                
             </div>
