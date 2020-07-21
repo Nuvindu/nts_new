@@ -25,6 +25,7 @@
 
 
 		if ($result_set) {
+
 			if (mysqli_num_rows($result_set) == 1) {
 				// user found
 				$result = mysqli_fetch_assoc($result_set);
@@ -38,6 +39,7 @@
 						header('Location: index.php');
 					}
 				}
+
 				if (strlen($index_no) ==4) {
 					$sql = "SELECT * FROM lecturers WHERE index_no = '{$index_no}' LIMIT 1";
 					$rec = mysqli_query($connection, $sql);
@@ -57,9 +59,9 @@
 				    $rec_set = mysqli_query($connection, $sql);
 				    $rec = mysqli_fetch_assoc($rec_set);
 				    $year = $rec['year'];
-			} else {
+				} else if(strlen($index_no) !=2){
 				// user not found
-				header('Location: ../operator.php?err=user_not_found');	
+					header('Location: ../operator.php?err=user_not_found');	
 			}
 		} else {
 			// query unsuccessful

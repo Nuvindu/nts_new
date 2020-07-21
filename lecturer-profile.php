@@ -23,7 +23,8 @@ if (!isset($_SESSION['index_no'])) {
 </head>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log Out</a> </div>
+    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log Out</a><span
+            id="index-no" style="display: none;"> </div>
     <div class="container">
 
         <!-- header -->
@@ -35,7 +36,10 @@ if (!isset($_SESSION['index_no'])) {
                 <div style="flex-grow: 8">
                     <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
                 </div>
-
+                <div>
+                    <a href="index.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
+                            style="border-radius: 100px;"></a>
+                </div>
             </div>
         </div>
 
@@ -57,7 +61,8 @@ if (!isset($_SESSION['index_no'])) {
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
-		        <li><a href="go-to-exam-timeTables.php" id="timetable"><i class="fas fa-project-diagram"></i>Exam Time Table</a></li>
+                <li><a href="go-to-exam-timeTables.php" id="timetable"><i class="fas fa-project-diagram"></i>Exam Time
+                        Table</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
                 <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
             </ul>
@@ -81,7 +86,7 @@ if (!isset($_SESSION['index_no'])) {
                         height: 145px;
                         width: 145px;
                         padding:13px;
-                    " id="profile-pic">
+                    " class="profile-pic">
                         <!-- change profile picture -->
 
                         <button class="change-btn" id="change-pp">change</button>
@@ -157,7 +162,9 @@ if (!isset($_SESSION['index_no'])) {
                 </div>
                 <!-- courses information tab -->
                 <div id="courses-tab" class="tabContent" style="display: none;">
-                    <div>
+                    <div style="
+    width: 100%;
+">
                         <h1 class="heading">Lecturing Modules</h1>
                         <?php foreach ($record as $rec) {
                             echo $rec[1];
@@ -191,7 +198,6 @@ if (!isset($_SESSION['index_no'])) {
     <script src="./js/js-student-profile-updateInfo.js"></script>
     <script src="./js/js-student-profile-updateAvatar.js"></script>
     <script src="./js/js-student-profile-changePassword.js"></script>
-
 
 </body>
 

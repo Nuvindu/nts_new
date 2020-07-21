@@ -20,22 +20,28 @@ if (!isset($_SESSION['index_no'])) {
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
 </head>
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log Out</a> </div>
+    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+            Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+    </div>
     <div class="header">
-            <div class="nts-text" style="margin:10px 10px 5px 10px">
-                <div>
-                    <a href="index.php">
+        <div class="nts-text" style="margin:10px 10px 5px 10px">
+            <div>
+                <a href="index.php">
                     <img class="logo" src="./img/logo-0.png" alt="logo">
-                    </a>
-                </div>
-                <div style="flex-grow: 8">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
-
+                </a>
+            </div>
+            <div style="flex-grow: 8">
+                <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
+            </div>
+            <div>
+                <a href="student-profile.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
+                        style="border-radius: 100px;"></a>
             </div>
         </div>
+    </div>
 
 <div class="wrapper">
         
@@ -69,35 +75,40 @@ if (!isset($_SESSION['index_no'])) {
             <div class="psychiatry">
                 <br><br>
                 <h3>Mental Health & Psychiatric Nursing</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems.  Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions. </p>
+                <a href="module.php?moduleName=psychiatry"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['psychiatry'] = "This course is designed to give students in-depth knowledge in psychiatry. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['psychiatry'] ?></p>
             </div>
             <div class="psychiatricpractice">
                 <br><br>
                 <h3> Mental Health & Psychiatric Nursing Practice</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course is designed to give students in-depth knowledge in the general function and physiological processes of the normal human body. Students will study the functions and specific biophysiochemical properties of organs in the circulatory, respiratory and digestive systems as well as metabolisms. There will be concurrent practical sessions.</p>
+                <a href="module.php?moduleName=psychiatricpractice"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['psychiatricpractice'] = "This course is designed to give students in-depth knowledge in psychiatric practice. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['psychiatricpractice'] ?></p>
                 
             </div>
             <div class="wardmanagement">
                 <br><br>
                 <h3>Ward Management</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course introduces students to the history, processes and methods of community health nursing. Students will also discuss the concept of health, personal and environmental health. They will develop competencies in promoting health in the community and managing home accidents. The students will be expected to select a community or group and examine their environmental health practices.</p>
+                <a href="module.php?moduleName=wardmanagement"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['wardmanagement'] = "This course is designed to give students in-depth knowledge in ward management. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['wardmanagement'] ?></p>
                
             </div>
             <div class="wardmanagementpractice">
                 <br><br>
                 <h3>Ward Management Practice</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course introduces students to the various types of trauma and their management. It will also equip the students with knowledge and skills that can be utilized to provide safety / emergency care to individuals in the community.  The course would include practical sessions in the laboratory and students would be expected to do return demonstration on competencies demonstrated.</p>
+                <a href="module.php?moduleName=wardmanagementpractice"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['wardmanagementpractice'] = "This course is designed to give students in-depth knowledge in ward management practice. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['wardmanagementpractice'] ?></p>
                
             </div>
             <div class="research">
                 <br><br>
                 <h3>Research in Nursing</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course is designed to equip students with knowledge and skills in carrying out comprehensive health assessment. Students will be taken through the physical assessment of the human body in relation to the various body systems. They will gain competency in determining normal and abnormal functioning of organs and systems. The course will consist of classroom teaching and skills demonstration.</p>
+                <a href="module.php?moduleName=research"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['research'] = "This course is designed to give students in-depth knowledge in research. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['research'] ?></p>
                 
             </div>
         </div> 
@@ -118,7 +129,34 @@ if (!isset($_SESSION['index_no'])) {
         </ul>
     </div>
 </footer>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/nts/dbOperations/db_load_profilePicture.php',
+            data: {
+                // send this variable to server to identify user to database manipulate
+                UserSessionName: document.getElementById('index-no').textContent
+            },
+            dataType: 'JSON',
+            success: function(data) {
+                var profPicDir = data[0];
+                if (profPicDir == '') {
+                    // $('img').attr('src', './img/empty-pp.png');
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './img/empty-pp.png');
+                } else {
 
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './profile-pictures/' + profPicDir);
+
+                }
+            }
+        });
+
+
+    })
+    </script>
 </body>
 </html>
 <?php mysqli_close($connection); ?>

@@ -18,23 +18,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
 </head>
 </head>
 <body>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log Out</a> </div>
-    <div class="header">
+    <span id="index-no" style="display: none;"><?php echo $_SESSION["index_no"]; ?></span>
+        <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+                Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+        </div>
+        <div class="header">
             <div class="nts-text" style="margin:10px 10px 5px 10px">
                 <div>
                     <a href="index.php">
-                    <img class="logo" src="./img/logo-0.png" alt="logo">
+                        <img class="logo" src="./img/logo-0.png" alt="logo">
                     </a>
                 </div>
                 <div style="flex-grow: 8">
                     <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
                 </div>
-
+                <div>
+                    <a href="index.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
+                            style="border-radius: 100px;"></a>
+                </div>
             </div>
         </div>
 
@@ -70,22 +77,25 @@
             <div class="psychology">
                 <br><br>
                 <h3>Psychology</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course is designed to give students in-depth knowledge in the general function and physiological processes of the normal human body. Students will study the functions and specific biophysiochemical properties of organs in the circulatory, respiratory and digestive systems as well as metabolisms. There will be concurrent practical sessions.</p>
+                <a href="module.php?moduleName=psychology"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['psychology'] = "This course is designed to give students in-depth knowledge in psychology. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['psychology'] ?></p>
                 
             </div>
             <div class="sociology">
                 <br><br>
                 <h3>Sociology</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course introduces students to the history, processes and methods of community health nursing. Students will also discuss the concept of health, personal and environmental health. They will develop competencies in promoting health in the community and managing home accidents. The students will be expected to select a community or group and examine their environmental health practices.</p>
+                <a href="module.php?moduleName=sociology"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['sociology'] = "This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems. Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['sociology'] ?></p>
                
             </div>
             <div class="historyofnursing">
                 <br><br>
                 <h3>History of Nursing</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course introduces students to the history, processes and methods of community health nursing. Students will also discuss the concept of health, personal and environmental health. They will develop competencies in promoting health in the community and managing home accidents. The students will be expected to select a community or group and examine their environmental health practices.</p>
+                <a href="module.php?moduleName=historyofnursing"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['historyofnursing'] = "This course is designed to give students in-depth knowledge in history of nursing. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['historyofnursing'] ?></p>
                
             </div>
         </div> 
@@ -105,7 +115,34 @@
             </ul>
             </div>
         </footer>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/nts/dbOperations/db_load_profilePicture.php',
+            data: {
+                // send this variable to server to identify user to database manipulate
+                UserSessionName: document.getElementById('index-no').textContent
+            },
+            dataType: 'JSON',
+            success: function(data) {
+                var profPicDir = data[0];
+                if (profPicDir == '') {
+                    // $('img').attr('src', './img/empty-pp.png');
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './img/empty-pp.png');
+                } else {
 
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './profile-pictures/' + profPicDir);
+
+                }
+            }
+        });
+
+
+    })
+    </script>
 </body>
 </html>
 <?php mysqli_close($connection); ?>

@@ -1,14 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	var UserSessionName = document.getElementById('id-html').innerHTML;
 	$.ajax({
 		type: 'POST',
-		url: '/newdb/dbOperations/db_load_profileInfo.php',
+		url: '/nts/dbOperations/db_load_profileInfo.php',
 		data: {
 			// send this variable to server to identify user to database manipulate
 			UserSessionName: UserSessionName
 		},
 		dataType: 'JSON',
-		success: function(data) {
+		success: function (data) {
 			// change name,NIC,email in html to updated info
 			$('#name-html').html(data['first_name']);
 			$('#NIC-html').html(data['NIC']);
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		}
 	});
 	// on click in save button in modal will update profile info in html and database
-	$('#save').click(function() {
+	$('#save').click(function () {
 		var name = $('#name').val();
 		var NIC = $('#NIC').val();
 		var email = $('#email').val();
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: 'POST',
-			url: '/newdb/dbOperations/db_update_profileInfo.php',
+			url: '/nts/dbOperations/db_update_profileInfo.php',
 			data: {
 				// data to send to server that to be updated
 				name: name,
@@ -36,17 +36,17 @@ $(document).ready(function() {
 				NIC: NIC,
 				UserSessionName: UserSessionName
 			},
-			success: function(data) {
+			success: function (data) {
 				alert('Data updated');
 				$.ajax({
 					type: 'POST',
-					url: '/newdb/dbOperations/db_load_profileInfo.php',
+					url: '/nts/dbOperations/db_load_profileInfo.php',
 					data: {
 						// send this variable to server to identify user to database manipulate
 						UserSessionName: UserSessionName
 					},
 					dataType: 'JSON',
-					success: function(data) {
+					success: function (data) {
 						// change name,NIC,email in html to updated info
 						console.log(data);
 						$('#name-html').html(data['first_name']);

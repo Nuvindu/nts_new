@@ -53,7 +53,7 @@
   <div class="numbertext">2 / 2</div>
   <img src="img/download1.jpg" style="width:100%;margin-top: 67px;">
 </div>
-<div class="introtext">
+<!-- <div class="introtext">
       <br>
 			<h4>Our Mission</h4>
 			<p><b>"to facilitate the development of an eficient, effective, knowledgeable,creative and forward looking nurses to serve health care system of the country."</b></p>
@@ -62,7 +62,7 @@
 			<p><b>"to be the best nursing school in Sri Lanka by providing well organized training for the students."</b></p>
 		</div>
 
-</div>
+</div> -->
 <br>
 
 <div style="text-align:center">
@@ -149,31 +149,4 @@
 </html>
 
 
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
+<script src= "js/js-slideshow.js"></script>

@@ -18,23 +18,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
+
 </head>
 </head>
 <body>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log Out</a> </div>
-    <div class="header">
+    <span id="index-no" style="display: none;"><?php echo $_SESSION["index_no"]; ?></span>
+        <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+                Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+        </div>
+        <div class="header">
             <div class="nts-text" style="margin:10px 10px 5px 10px">
                 <div>
                     <a href="index.php">
-                    <img class="logo" src="./img/logo-0.png" alt="logo">
+                        <img class="logo" src="./img/logo-0.png" alt="logo">
                     </a>
                 </div>
                 <div style="flex-grow: 8">
                     <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
                 </div>
-
+                <div>
+                    <a href="index.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
+                            style="border-radius: 100px;"></a>
+                </div>
             </div>
         </div>
 
@@ -70,36 +78,41 @@
             <div class="anatomy">
                 <br><br>
                 <h3>Anatomy & Physiology</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course introduces students to the various types of trauma and their management. It will also equip the students with knowledge and skills that can be utilized to provide safety / emergency care to individuals in the community.  The course would include practical sessions in the laboratory and students would be expected to do return demonstration on competencies demonstrated.</p>
-               
+                <a href="module.php?moduleName=anatomy"><button class="apply">Go to this
+                        module</button></a>
+                <?php $_SESSION['anatomy'] = "This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems. Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions. " ?>
+                <p><?php echo $_SESSION['anatomy'] ?></p>
             </div>
             <div class="microbiology">
                 <br><br>
                 <h3>Microbiology</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course is designed to equip students with knowledge and skills in carrying out comprehensive health assessment. Students will be taken through the physical assessment of the human body in relation to the various body systems. They will gain competency in determining normal and abnormal functioning of organs and systems. The course will consist of classroom teaching and skills demonstration.</p>
+                <a href="module.php?moduleName=microbiology"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['microbiology'] = "This course is designed to give students in-depth knowledge in microbiology. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['microbiology'] ?></p>
                 
             </div>
             <div class="pathology">
                 <br><br>
                 <h3>Pathology</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course introduces students to the history, processes and methods of community health nursing. Students will also discuss the concept of health, personal and environmental health. They will develop competencies in promoting health in the community and managing home accidents. The students will be expected to select a community or group and examine their environmental health practices.</p>
+                <a href="module.php?moduleName=pathology"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['pathology'] = "This course is designed to give students in-depth knowledge in pathology. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['pathology'] ?></p>
                
             </div>
             <div class="medicalnursing">
                 <br><br>
                 <h3>Medical Nursing & Medicine</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course introduces students to the various types of trauma and their management. It will also equip the students with knowledge and skills that can be utilized to provide safety / emergency care to individuals in the community.  The course would include practical sessions in the laboratory and students would be expected to do return demonstration on competencies demonstrated.</p>
+                <a href="module.php?moduleName=medicalnursing"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['medicalnursing'] = "This course is designed to give students in-depth knowledge in medical nursing. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['medicalnursing'] ?></p>
                
             </div>
             <div class="medicalpractice">
                 <br><br>
                 <h3>Medical Nursing Practice</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course introduces students to the various types of trauma and their management. It will also equip the students with knowledge and skills that can be utilized to provide safety / emergency care to individuals in the community.  The course would include practical sessions in the laboratory and students would be expected to do return demonstration on competencies demonstrated.</p>
+                <a href="module.php?moduleName=medicalpractice"><button class="apply">Go to this module</button></a>
+                <?php $_SESSION['medicalpractice'] = "This course is designed to give students in-depth knowledge in medical practice. There will be concurrent practical sessions." ?>
+                <p><?php echo $_SESSION['medicalpractice'] ?></p>
                
             </div>
         </div> 
@@ -119,7 +132,34 @@
             </ul>
             </div>
         </footer>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/nts/dbOperations/db_load_profilePicture.php',
+            data: {
+                // send this variable to server to identify user to database manipulate
+                UserSessionName: document.getElementById('index-no').textContent
+            },
+            dataType: 'JSON',
+            success: function(data) {
+                var profPicDir = data[0];
+                if (profPicDir == '') {
+                    // $('img').attr('src', './img/empty-pp.png');
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './img/empty-pp.png');
+                } else {
 
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './profile-pictures/' + profPicDir);
+
+                }
+            }
+        });
+
+
+    })
+    </script>
 </body>
 </html>
 <?php mysqli_close($connection); ?>

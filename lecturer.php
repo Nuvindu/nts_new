@@ -6,8 +6,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Side Navigation Bar</title>
     <link rel="stylesheet" type="text/css" href="css/lecturer.css">
     <meta charset="UTF-8">
@@ -19,32 +20,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
 </head>
 </head>
-<body>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log Out</a> </div>
-    <div class="header">
+        <span id="index-no" style="display: none;"><?php echo $_SESSION["index_no"]; ?></span>
+        <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+                Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+        </div>
+        <div class="header">
             <div class="nts-text" style="margin:10px 10px 5px 10px">
                 <div>
                     <a href="index.php">
-                    <img class="logo" src="./img/logo-0.png" alt="logo">
+                        <img class="logo" src="./img/logo-0.png" alt="logo">
                     </a>
                 </div>
                 <div style="flex-grow: 8">
                     <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
                 </div>
-
+                <div>
+                    <a href="index.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
+                            style="border-radius: 100px;"></a>
+                </div>
             </div>
         </div>
 
-<div class="wrapper">
-        
-    <div class="main_content">
-        <div class="header">Tutoring Modules</div> 
-        <div class="side-bar" >
-            <span style="
+        <div class="wrapper">
+
+            <div class="main_content">
+                <div class="header">Tutoring Modules</div>
+                <div class="side-bar">
+                    <span style="
                                     text-align: center;
                                     margin: 0;
                                     height: 50px;
@@ -55,71 +62,156 @@
                                 "><i class="fas fa-align-justify" aria-hidden="true" style="
                     padding-left: 17px;
                 "></i></span>
-            <ul>
-                <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-                <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
-		        <li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-project-diagram"></i>Exam Timetables</a></li>
-                <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-                <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
-            </ul>
-        </div> <!-- side-bar -->
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+                        <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
+                        <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+                        <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
+                        <li><a href="go-to-exam-timeTables.php" id="timetable"><i
+                                    class="fas fa-project-diagram"></i>Exam Time Table</a></li>
+                        <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+                        <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
+                    </ul>
+                </div> <!-- side-bar -->
 
-         
-        <div id="courses">
-            <div class="antomy">
-                <br><br>
-                <h3>  Human Anatomy</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems.  Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions. </p>
+
+                <div id="courses">
+                    <div class="antomy">
+                        <br><br>
+                        <h3> Human Anatomy</h3>
+                        <a href="module.php?moduleName=Human Anatomy"><button class="apply">Go to this
+                                module</button></a>
+                        <?php $_SESSION['Human Anatomy'] = "This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems. Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions. " ?>
+                        <p><?php echo $_SESSION['Human Anatomy'] ?></p>
+                    </div>
+                    <div class="Physiology">
+                        <br><br>
+                        <h3>Human Physiology</h3>
+                        <a href="module.php?moduleName=Human Physiology"><button class="apply">Go to this
+                                module</button></a>
+                        <?php $_SESSION['Human Physiology'] = "This course is designed to give students in-depth knowledge in the general function and
+                        physiological processes of the normal human body. Students will study the functions and specific
+                        biophysiochemical properties of organs in the circulatory, respiratory and digestive systems as
+                        well as metabolisms. There will be concurrent practical sessions." ?>
+                        <p>This course is designed to give students in-depth knowledge in the general function and
+                            physiological processes of the normal human body. Students will study the functions and
+                            specific
+                            biophysiochemical properties of organs in the circulatory, respiratory and digestive
+                            systems
+                            as
+                            well as metabolisms. There will be concurrent practical sessions.</p>
+
+                    </div>
+                    <div class="Mental Health">
+                        <br><br>
+                        <h3>Intoduction to Mental Health Nursing</h3>
+                        <a href="module.php?moduleName=Mental Health"><button class="apply">Go to this
+                                module</button></a>
+                        <?php $_SESSION['Mental Health'] = "This course introduces students to the history, processes and methods of community health
+                        nursing. Students will also discuss the concept of health, personal and environmental health.
+                        They will develop competencies in promoting health in the community and managing home accidents.
+                        The students will be expected to select a community or group and examine their environmental
+                        health practices." ?>
+                        <p>This course introduces students to the history, processes and methods of community health
+                            nursing. Students will also discuss the concept of health, personal and environmental
+                            health.
+                            They will develop competencies in promoting health in the community and managing home
+                            accidents.
+                            The students will be expected to select a community or group and examine their
+                            environmental
+                            health practices.</p>
+
+                    </div>
+                    <div class="Emergency nursing">
+                        <br><br>
+                        <h3>Emergency Nursing</h3>
+                        <a href="module.php?moduleName=Emergency nursing"><button class="apply">Go to this
+                                module</button></a>
+                        <?php $_SESSION['Emergency nursing'] = "The course introduces students to the various types of trauma and their management. It will also
+                        equip the students with knowledge and skills that can be utilized to provide safety / emergency
+                        care to individuals in the community. The course would include practical sessions in the
+                        laboratory and students would be expected to do return demonstration on competencies
+                        demonstrated." ?>
+                        <p>The course introduces students to the various types of trauma and their management. It
+                            will
+                            also
+                            equip the students with knowledge and skills that can be utilized to provide safety /
+                            emergency
+                            care to individuals in the community. The course would include practical sessions in the
+                            laboratory and students would be expected to do return demonstration on competencies
+                            demonstrated.</p>
+
+                    </div>
+                    <div class="health Assement">
+                        <br><br>
+                        <h3>Principles and Practice of Health Assement</h3>
+                        <a href="module.php?moduleName=health Assement"><button class="apply">Go to this
+                                module</button></a>
+                        <?php $_SESSION['health Assement'] = "The course is designed to equip students with knowledge and skills in carrying out comprehensive
+                        health assessment. Students will be taken through the physical assessment of the human body in
+                        relation to the various body systems. They will gain competency in determining normal and
+                        abnormal functioning of organs and systems. The course will consist of classroom teaching and
+                        skills demonstration." ?>
+                        <p>The course is designed to equip students with knowledge and skills in carrying out
+                            comprehensive
+                            health assessment. Students will be taken through the physical assessment of the human
+                            body
+                            in
+                            relation to the various body systems. They will gain competency in determining normal
+                            and
+                            abnormal functioning of organs and systems. The course will consist of classroom
+                            teaching
+                            and
+                            skills demonstration.</p>
+
+                    </div>
+                </div>
+
             </div>
-            <div class="Physiology">
-                <br><br>
-                <h3>Human Physiology</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course is designed to give students in-depth knowledge in the general function and physiological processes of the normal human body. Students will study the functions and specific biophysiochemical properties of organs in the circulatory, respiratory and digestive systems as well as metabolisms. There will be concurrent practical sessions.</p>
-                
-            </div>
-            <div class="Mental Health">
-                <br><br>
-                <h3>Intoduction to Mental Health Nursing</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>This course introduces students to the history, processes and methods of community health nursing. Students will also discuss the concept of health, personal and environmental health. They will develop competencies in promoting health in the community and managing home accidents. The students will be expected to select a community or group and examine their environmental health practices.</p>
-               
-            </div>
-            <div class="Emergency nursing">
-                <br><br>
-                <h3>Emergency Nursing</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course introduces students to the various types of trauma and their management. It will also equip the students with knowledge and skills that can be utilized to provide safety / emergency care to individuals in the community.  The course would include practical sessions in the laboratory and students would be expected to do return demonstration on competencies demonstrated.</p>
-               
-            </div>
-            <div class="health Assement">
-                <br><br>
-                <h3>Principles and Practice of Health Assement</h3>
-                <a href="#"><button class="apply">Go to this module</button></a>
-                <p>The course is designed to equip students with knowledge and skills in carrying out comprehensive health assessment. Students will be taken through the physical assessment of the human body in relation to the various body systems. They will gain competency in determining normal and abnormal functioning of organs and systems. The course will consist of classroom teaching and skills demonstration.</p>
-                
-            </div>
-        </div> 
-      
-    </div>
-</div>
+        </div>
         <footer>
             <div class="column clearfix">
-            <h3>Contact Us</h3>
-            <ul>
-                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
-                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
-                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
-                <li>Email - nts-galle@gov.lk</li>
-                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
-                <li>Telephone Number - 0912234452</li>
-            </ul>
+                <h3>Contact Us</h3>
+                <ul>
+                    <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                    <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                    <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                    <li>Email - nts-galle@gov.lk</li>
+                    <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                    <li>Telephone Number - 0912234452</li>
+                </ul>
             </div>
         </footer>
 
-</body>
+    </body>
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/nts/dbOperations/db_load_profilePicture.php',
+            data: {
+                // send this variable to server to identify user to database manipulate
+                UserSessionName: document.getElementById('index-no').textContent
+            },
+            dataType: 'JSON',
+            success: function(data) {
+                var profPicDir = data[0];
+                if (profPicDir == '') {
+                    // $('img').attr('src', './img/empty-pp.png');
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './img/empty-pp.png');
+                } else {
+
+                    document.getElementById('profile-pic').setAttribute('src',
+                        './profile-pictures/' + profPicDir);
+
+                }
+            }
+        });
+
+
+    })
+    </script>
+
 </html>
 <?php mysqli_close($connection); ?>
