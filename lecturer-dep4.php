@@ -5,10 +5,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Side Navigation Bar</title>
-    <link rel="stylesheet" type="text/css" href="css/lecturer.css">
+    <link rel="stylesheet" type="text/css" href="css/user-page.css">
+    <link rel="stylesheet" href="./css/student.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/student-profile.css">
@@ -21,35 +23,194 @@
     <script src="./js/jquery-3.3.1.js"></script>
 </head>
 </head>
-<body>
 
 <body>
-    <span id="index-no" style="display: none;"><?php echo $_SESSION["index_no"]; ?></span>
+
+    <body>
+        <span id="index-no" style="display: none;"><?php echo $_SESSION["index_no"]; ?></span>
         <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
                 Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
         </div>
         <div class="header">
-            <div class="nts-text" style="margin:10px 10px 5px 10px">
-                <div>
-                    <a href="index.php">
-                        <img class="logo" src="./img/logo-0.png" alt="logo">
-                    </a>
-                </div>
-                <div style="flex-grow: 8">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
-                <div>
-                    <a href="index.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
-                            style="border-radius: 100px;"></a>
+            <?php include_once('header.php'); ?>
+        </div>
+        <?php include_once('navbar.php'); ?>
+        <div class="wrapper">
+
+            <div class="main_content">
+                <div class="header">Tutoring Modules</div>
+
+
+
+                <div id="courses">
+                    <div class="gynecology background">
+                        <?php $_SESSION['gynecology'] = "This course is designed to give students in-depth knowledge in research. There will be concurrent practical sessions." ?>
+                        <div class="fix">
+                            <div class="heading">
+                                <h3>Gynecological Nursing & Gynecology</h3>
+                            </div>
+                            <div class="para">
+                                <p>
+                                    <?php echo $_SESSION['gynecology'] ?>
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="module.php?moduleName=gynecology">
+                                    <button class="apply">
+                                        <img id="arrow-icon"
+                                            src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        
+
+                    </div>
+                    <div class="gynecologypractice background">
+                        <?php $_SESSION['gynecologypractice'] = "This course is designed to give students in-depth knowledge in research. There will be concurrent practical sessions." ?>
+                        <div class="fix">
+                            <div class="heading">
+                                <h3>Gynecological Nursing Practice</h3>
+                            </div>
+                            <div class="para">
+                                <p>
+                                    <?php echo $_SESSION['gynecologypractice'] ?>
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="module.php?moduleName=gynecologypractice">
+                                    <button class="apply">
+                                        <img id="arrow-icon"
+                                            src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        
+
+                    </div>
+                    <div class="obstetric background">
+                        <?php $_SESSION['obstetric'] = "This course is designed to give students in-depth knowledge in research. There will be concurrent practical sessions." ?>
+                        <div class="fix">
+                            <div class="heading">
+                                <h3>Obstetric Nursing & Obstetric</h3>
+                            </div>
+                            <div class="para">
+                                <p>
+                                    <?php echo $_SESSION['obstetric'] ?>
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="module.php?moduleName=obstetric">
+                                    <button class=" apply">
+                                        <img id="arrow-icon"
+                                            src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        
+
+                    </div>
+                    <div class="obstetricpractice background">
+                        <?php $_SESSION['obstetricpractice'] = "This course is designed to give students in-depth knowledge in research. There will be concurrent practical sessions." ?>
+                        <div class="fix">
+                            <div class="heading">
+                                <h3>Obstetric Nursing Practice</h3>
+                            </div>
+                            <div class="para">
+                                <p>
+                                    <?php echo $_SESSION['obstetricpractice'] ?>
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="module.php?moduleName=obstetricpractice">
+                                    <button class="apply">
+                                        <img id="arrow-icon"
+                                            src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        
+
+                    </div>
+                    <div class="paediatric background">
+                        <?php $_SESSION['paediatric'] = "This course is designed to give students in-depth knowledge in psychiatric practice. There will be concurrent practical sessions." ?>
+                        <div class="fix">
+                            <div class="heading">
+                                <h3>Paediatric Nursing & Paediatric</h3>
+                            </div>
+                            <div class="para">
+                                <p>
+                                    <?php echo $_SESSION['paediatric'] ?>
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="module.php?moduleName=paediatric">
+                                    <button class="apply">
+                                        <img id="arrow-icon"
+                                            src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        
+
+                    </div>
+                    <div class="psychiatricpractice background">
+                        <?php $_SESSION['psychiatricpractice'] = "This course is designed to give students in-depth knowledge in psychiatric practice. There will be concurrent practical sessions." ?>
+                        <div class="fix">
+                            <div class="heading">
+                                <h3>Paediatric Practice</h3>
+                            </div>
+                            <div class="para">
+                                <p>
+                                    <?php echo $_SESSION['psychiatricpractice'] ?>
+                                </p>
+                            </div>
+                            <div class="link">
+                                <a href="module.php?moduleName=psychiatricpractice">
+                                    <button class="apply">
+                                        <img id="arrow-icon"
+                                            src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        
+
+                    </div>
+
                 </div>
             </div>
         </div>
-
-<div class="wrapper">
-        
-    <div class="main_content">
-        <div class="header">Tutoring Modules</div> 
-        <div class="side-bar" >
+        <footer>
+            <div class="column clearfix">
+                <h3>Contact Us</h3>
+                <ul>
+                    <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                    <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                    <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                    <li>Email - nts-galle@gov.lk</li>
+                    <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                    <li>Telephone Number - 0912234452</li>
+                </ul>
+            </div>
+        </footer>
+        <div class="side-bar">
             <span style="
                                     text-align: center;
                                     margin: 0;
@@ -66,104 +227,42 @@
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
-		<li><a href="add_exam_timetables.php" id="timetable"><i class="f=fa fa-book"></i>Exam Timetables</a></li>
+                <li><a href="add_exam_timetables.php" id="timetable"><i class="f=fa fa-book"></i>Exam
+                        Timetables</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
                 <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
             </ul>
         </div> <!-- side-bar -->
 
-         
-        <div id="courses">
-            <div class="gynecology">
-                <br><br>
-                <h3>Gynecological Nursing & Gynecology</h3>
-                <a href="module.php?moduleName=gynecology"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['gynecology'] = "This course is designed to give students in-depth knowledge in gynecology. There will be concurrent practical sessions." ?>
-                <p><?php echo $_SESSION['gynecology'] ?></p>
-                
-            </div>
-            <div class="gynecologypractice">
-                <br><br>
-                <h3>Gynecological Nursing Practice</h3>
-                 <a href="module.php?moduleName=gynecologypractice"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['gynecologypractice'] = "This course is designed to help students appreciate the normal structure of the human body and apply this knowledge in nursing. The students will be exposed to the cell structure, embryology, the circulatory, respiratory and digestive systems. Students will also be exposed to preserved body structures to aid understanding. Diagrams of anatomical structures will also be presented as part of the course. There will be concurrent practical sessions." ?>
-                <p><?php echo $_SESSION['gynecologypractice'] ?></p>
-            </div>
-            <div class="obstetric">
-                <br><br>
-                <h3>Obstetric Nursing & Obstetric</h3>
-                <a href="module.php?moduleName=obstetric"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['obstetric'] = "This course is designed to give students in-depth knowledge in obstetric. There will be concurrent practical sessions." ?>
-                <p><?php echo $_SESSION['obstetric'] ?></p>
-                
-            </div>
-            <div class="obstetricpractice">
-                <br><br>
-                <h3>Obstetric Nursing Practice</h3>
-                <a href="module.php?moduleName=obstetricpractice"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['obstetricpractice'] = "This course is designed to give students in-depth knowledge in obstetric practice. There will be concurrent practical sessions." ?>
-                <p><?php echo $_SESSION['obstetricpractice'] ?></p>
-                
-            </div>
-            <div class="paediatric">
-                <br><br>
-                <h3>Paediatric Nursing & Paediatric</h3>
-                <a href="module.php?moduleName=paediatric"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['paediatric'] = "This course is designed to give students in-depth knowledge in paediatric. There will be concurrent practical sessions." ?>
-                <p><?php echo $_SESSION['paediatric'] ?></p>
-                
-            </div>
-            <div class="paediatricpractice">
-                <br><br>
-                <h3>Paediatric Practice</h3>
-                <a href="module.php?moduleName=paediatricpractice"><button class="apply">Go to this module</button></a>
-                <?php $_SESSION['paediatricpractice'] = "This course is designed to give students in-depth knowledge in paediatric practice. There will be concurrent practical sessions." ?>
-                <p><?php echo $_SESSION['paediatricpractice'] ?></p>
-            </div> 
-      
-    </div>
-</div>
-        <footer>
-            <div class="column clearfix">
-            <h3>Contact Us</h3>
-            <ul>
-                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
-                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
-                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
-                <li>Email - nts-galle@gov.lk</li>
-                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
-                <li>Telephone Number - 0912234452</li>
-            </ul>
-            </div>
-        </footer>
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            type: 'POST',
-            url: '/nts/dbOperations/db_load_profilePicture.php',
-            data: {
-                // send this variable to server to identify user to database manipulate
-                UserSessionName: document.getElementById('index-no').textContent
-            },
-            dataType: 'JSON',
-            success: function(data) {
-                var profPicDir = data[0];
-                if (profPicDir == '') {
-                    // $('img').attr('src', './img/empty-pp.png');
-                    document.getElementById('profile-pic').setAttribute('src',
-                        './img/empty-pp.png');
-                } else {
+        <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: 'POST',
+                url: '/nts_new/dbOperations/db_load_profilePicture.php',
+                data: {
+                    // send this variable to server to identify user to database manipulate
+                    UserSessionName: document.getElementById('index-no').textContent
+                },
+                dataType: 'JSON',
+                success: function(data) {
+                    var profPicDir = data[0];
+                    if (profPicDir == '') {
+                        // $('img').attr('src', './img/empty-pp.png');
+                        document.getElementById('profile-pic').setAttribute('src',
+                            './img/empty-pp.png');
+                    } else {
 
-                    document.getElementById('profile-pic').setAttribute('src',
-                        './profile-pictures/' + profPicDir);
+                        document.getElementById('profile-pic').setAttribute('src',
+                            './profile-pictures/' + profPicDir);
 
+                    }
                 }
-            }
-        });
+            });
 
 
-    })
-    </script>
-</body>
+        })
+        </script>
+    </body>
+
 </html>
 <?php mysqli_close($connection); ?>

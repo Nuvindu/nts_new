@@ -5,12 +5,12 @@
 .clearfix{ overflow: auto; }
 
 body {
-	background: url("img/bg-image-B&W.jpeg");
+	background: url("../img/bg-image-B&W.jpeg");
 }
 
 
 body:hover {
-	background: url("img/bg-image.jpeg");
+	background: url("../img/bg-image.jpeg");
 	transition: 1s;
 }
 header {

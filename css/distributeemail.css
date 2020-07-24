@@ -1,0 +1,64 @@
+@import 'https://fonts.googleapis.com/css?family=Caesar Dressing:300, 400, 700&display=swap';
+* {
+	margin:0;
+	text-decoration: none;
+	/* margin-left: 11px; */
+}
+body {
+    background: linear-gradient(-45deg, blue, #e73c7e, brown, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+}
+h2{
+	color: #4d0000;
+	font-family: 'Caesar Dressing';font-size: 22px;
+	font-size: 35px;
+	padding: 50px;
+	padding-bottom: 0px;
+}
+@keyframes gradient {
+    0% {
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 10% 50%;
+    }
+}
+label{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size: 15px;
+	font:bold;
+}
+form {
+	padding: 60px;
+	padding-left: 200px;
+}
+button {
+	background-color: lightblue;
+	padding: 10px;
+	margin-left: 88px;
+	font-family: 'Cabin Sketch';
+	font-size:15px;
+	font:bold;
+	border:black 2px solid;
+	margin-top: 19px;
+    margin-left: 72px;
+}
+select {
+	margin-left: 11px;
+}
+.subject{
+	margin-left: 14px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.message{
+    margin: -17px 0px 0px 71px;
+    height: 213px;
+    width: 365px;
+    border:1px solid;
+    border-radius: 5px;
+}

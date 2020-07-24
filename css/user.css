@@ -35,6 +35,33 @@ header {
     font-size: 16px;
     border: none;
 }
+.add a:hover{
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #29b9ad;
+}
+
+.distribute {
+	margin-top: 6px;
+	float: right;
+	padding: 10px;
+}
+.distribute a{
+	background-color: #bdb3ff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.distribute a:hover{
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #29b9ad;
+}
 header .top {
 	width: 50px;
 	font-size: 19px;

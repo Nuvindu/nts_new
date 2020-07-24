@@ -3,11 +3,15 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
-    background-color: #d6d2d2;
+    /* background-color: #acdc1b; */
+    background-image: url("../img/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 body {
-    padding: 0;
+    box-sizing: border-box;
 }
 
 table,
@@ -22,6 +26,7 @@ th,
 td {
     padding: 5px;
     text-align: center;
+    /* display: flex; */
 }
 
 * {
@@ -110,7 +115,7 @@ td {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #403dd8;
+    background-color: #8ed83d;
     color: white;
     /* border-radius: 12px; */
 }
@@ -127,7 +132,7 @@ td {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #403dd8;
+    background-color: #8ed83d;
     color: white;
     /* border-radius: 10px; */
 }
@@ -165,6 +170,7 @@ td {
 
 button:hover {
     opacity: 1;
+    /* background: blue; */
 }
 
 /* Float cancel and delete buttons and add an equal width */
@@ -267,31 +273,32 @@ hr {
 }
 
 #Upload {
-    display: block;
+
     /* Hidden by default */
-    position: fixed;
+display: block;
+position: fixed;
     /* Fixed/sticky position */
-    bottom: 20px;
+bottom: 20px;
     /* Place the button at the bottom of the page */
-    right: 30px;
+right: 30px;
     /* Place the button 30px from the right */
-    z-index: 99;
+z-index: 99;
     /* Make sure it does not overlap */
-    border: none;
+border: none;
     /* Remove borders */
-    outline: none;
+outline: none;
     /* Remove outline */
-    background-color: red;
+background-color: #060848;
     /* Set a background color */
-    color: white;
+color: white;
     /* Text color */
-    cursor: pointer;
+cursor: pointer;
     /* Add a mouse pointer on hover */
-    padding: 15px;
+padding: 15px;
     /* Some padding */
-    border-radius: 10px;
+border-radius: 10px;
     /* Rounded corners */
-    font-size: 18px;
+font-size: 18px;
     /* Increase font size */
 }
 
@@ -300,8 +307,7 @@ hr {
     /* Add a dark-grey background on hover */
 }
 
-#save-file,
-#update-file {
+#save-file {
     transition-duration: 0.4s;
     background-color: #e61a1a;
     /* Green */
@@ -324,17 +330,11 @@ hr {
     color: white;
 }
 
-#update-file:hover {
-    background-color: #4CAF50;
-    /* Green */
-    color: white;
-}
-
 #name {
     overflow-wrap: anywhere;
     text-align: center;
     text-overflow: inherit;
-    font-size: 50px;
+    font-size: 20px;
     margin: 0;
     letter-spacing: 20px;
     font-family: 'Archivo', sans-serif;
@@ -356,7 +356,11 @@ p {
     transition: margin-left 1s;
     min-height: 53%;
     border-radius: 20px;
-    background-color: #fbfbf7;
+    background-color: #fbfbf700;
+    margin-left: 70px;
+    backdrop-filter: blur(80px);
+    /* position: absolute; */
+    min-height: 378px;
 }
 
 .card:hover {
@@ -365,30 +369,33 @@ p {
 
 .delete-file,
 .edit-file {
+    backdrop-filter: blur(154px);
     border: none;
     color: white;
-    padding: 6px 6px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.8;
+    /* padding: 6px 6px; */
+    /* text-align: center; */
+    /* font-size: 16px; */
+    /* margin: 4px 2px; */
+    /* opacity: 0.8; */
     transition: 0.3s;
 }
 
 .delete-file {
-    background-color: #f4511e;
+    background-color: #f4511e00;
 }
 
 .edit-file {
-    background-color: #30f41e;
+    background-color: #1ed1f400;
 }
 
 .delete-file:hover {
     opacity: 1;
+    background-color: red;
 }
 
 .edit-file:hover {
     opacity: 1;
+    background-color: #44c515;
 }
 
 a:link {
@@ -412,20 +419,22 @@ a {
 }
 
 .side-bar {
-    height: 70%;
-    float: left;
+    /* height: 70%; */
+    /* float: left; */
     width: 50px;
-    top: 175px;
-    background: slateblue;
+    /* background: #1626c0; */
     transition: width 1s;
     overflow: hidden;
     position: fixed;
     border-radius: 12px;
-    margin-bottom: -142px;
+    top: 175px;
+    /* margin-bottom: -142px; */
+    box-shadow: 0px 10px 20px 0px grey;
+    backdrop-filter: blur(50px);
 }
 
 .side-bar:hover {
-    width: 159px;
+    width: 190px;
 }
 
 .side-bar ul {
@@ -443,7 +452,7 @@ i {
 
 .side-bar ul li a {
     display: block;
-    width: 159px;
+    width: 199px;
     padding: 17px 16px;
     height: 100%;
     text-decoration: none;
@@ -453,6 +462,8 @@ i {
     font: menu;
     font-size: 14px;
     box-sizing: border-box;
+    color: #000000;
+    font-size: 17px;
 }
 
 .side-bar ul li i {
@@ -462,7 +473,7 @@ i {
 
 div.column {
     position: relative;
-    background: #3a3a3a;
+    background: #3a3a3a00;
     padding-left: 9px;
     padding-bottom: 6px;
     padding-top: 0px;
@@ -481,9 +492,256 @@ div.column ul {
 
 div.column ul li {
     padding-bottom: 10px;
+    font-weight: 800;
+    color: black;
 }
 
 div.icon1 {
     float: left;
     margin-left: 15px;
+}
+
+footer {
+    margin-left: 80px;
+    margin-right: 8px;
+    transition: margin-left 1s;
+}
+
+.navbar {
+    display: none;
+}
+
+.navbar-icon {
+    display: none;
+}
+
+footer {
+    margin-left: 80px;
+    margin-right: 8px;
+    transition: margin-left 1s;
+}
+
+.navbar {
+    display: none;
+}
+
+.navbar-icon {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.priviledge-icon {
+    height: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .profile-img {
+        position: relative;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        /* flex-direction: row; */
+        width: 100%;
+        /* padding-right: 48px; */
+        /* margin: 15px; */
+        /* padding-left: 48px; */
+        /* right: -20px; */
+        align-content: center;
+    }
+
+    .profile-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* align-content: end; */
+        width: 100%;
+    }
+
+    .nts-text1 span {
+        display: none;
+    }
+
+
+    .side-bar {
+        display: none;
+    }
+
+    .info-tab {
+        /* float: right; */
+        height: 100%;
+        /* overflow: hidden; */
+        padding-left: 16px;
+        padding-right: 16px;
+        /* position: absolute; */
+        /* left: 111px; */
+        /* /* transition */
+    }
+
+    footer {
+        margin-left: 0px;
+        margin-right: 0px;
+        bottom: 0;
+        position: relative;
+    }
+
+    .navactive {
+        display: block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 60px;
+        height: 204px;
+        animation-name: navbar;
+        animation-duration: 500ms;
+        overflow: hidden;
+        transform: scale(1);
+        /* box-shadow: 10px 10px 8px #888888; */
+        /* padding: 9px; */
+        margin: 9px;
+        border-radius: 15px;
+        backdrop-filter: blur(50px);
+        z-index: 99;
+    }
+
+    .navbar {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+    }
+
+    @keyframes navbar {
+        from {
+            height: 0px;
+            transform: scale(0);
+        }
+
+        to {
+            height: 204px;
+            transform: scale(1);
+        }
+    }
+
+    .navbaractive {
+        display: block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        min-height: 204px;
+    }
+
+    .navactive ul {
+        display: block;
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        /* list-style-type: none; */
+        background-color: #1728ca08;
+        /* box-shadow: 10px 10px 8px #888888; */
+        /* opacity: 3.9; */
+        backdrop-filter: blur(50px);
+    }
+
+    .navactive ul li a {
+        width: 100%;
+        text-decoration: none;
+        color: #050506;
+        font-weight: 900;
+    }
+
+    .navactive ul li a i {
+        text-decoration: none;
+        color: #161619;
+        float: left;
+    }
+
+    .navactive ul li {
+        padding: 5px;
+        background-color: #0000000d;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .navbar-icon {
+        display: block;
+        padding-left: 10px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 10px;
+        width: 97px;
+        height: 47px;
+        /* backdrop-filter: blur(50px); */
+        /* box-shadow: 0px 0px 20px 0px grey; */
+        margin: 9px;
+        border-radius: 180px;
+        /* align-items: baseline; */
+        z-index: 99;
+        background-color: #1626c000;
+    }
+
+    .navbar-icon img {
+        height: 50px;
+        z-index: 999;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        float: left;
+    }
+
+    .card {
+        margin-left: 20px;
+        min-height: 444px;
+    }
+
+    #name {
+        font-size: 20px;
+    }
+
+    td a h1 {
+        font-size: 15px;
+    }
+
+
+    .priviledge-icon {
+        height: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card {
+        min-height: 800px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .card {
+        min-height: 1050px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .card {
+        min-height: 315px;
+    }
 }

@@ -1,0 +1,76 @@
+@import 'https://fonts.googleapis.com/css?family=Caesar Dressing:300, 400, 700&display=swap';
+* {
+	margin:0;
+	text-decoration: none;
+	/* margin-left: 11px; */
+}
+body {
+    background: linear-gradient(-45deg, blue, #e73c7e, brown, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 10% 50%;
+    }
+}
+h2{
+	color: #4d0000;
+	font-family: 'Caesar Dressing';font-size: 22px;
+	font-size: 35px;
+	padding: 50px;
+	padding-bottom: 0px;
+}
+form {
+	padding: 60px;
+	padding-left: 200px;
+}
+input textarea{
+	color: #3CBC8D;
+	margin: 20px;
+	padding: 5px;
+}
+label{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size: 15px;
+	font:bold;
+}
+.subject{
+	background: linear-gradient(-45deg, lightblue, aqua, lightgray, gray);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+    padding: 5px; 
+	padding-right: 55px;
+	margin-left: 33px;
+	border:black 3px solid;
+}
+.feedlabel{
+}
+.feedback{
+	background: linear-gradient(-45deg, lightblue, aqua, lightgray, gray);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+	/*padding-left: 7px;*/
+	margin: -17px 0px 12px 87px;
+    width: 478px;
+    height: 220px;
+    padding-right: 30px;
+    padding-bottom: 51px;
+    border:black 3px solid;
+}
+
+button {
+	background-color: lightblue;
+	padding: 10px;
+	margin-left: 88px;
+	font-family: 'Cabin Sketch';
+	font-size:15px;
+	font:bold;
+	border:black 2px solid;
+}

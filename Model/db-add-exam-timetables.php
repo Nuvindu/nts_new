@@ -1,6 +1,8 @@
 <?php require_once('inc/dbconnection.php'); ?>
 <?php
-
+    if (!isset($_SESSION['index_no'])){
+        header('Location: login.php');
+    }
 	//if ($_SESSION['admin']!=1){
 	//	header('Location: user-page.php');
 	//}

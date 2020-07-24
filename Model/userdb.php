@@ -196,11 +196,11 @@ class UserDB extends Model implements IUserDB{
 			verify_query($result_set);
 
 			if (strlen($_SESSION['index_no']) == 6) {
-				header('Location: student.php');
+				header('Location: student-db.php');
 			} elseif (strlen($_SESSION['index_no']) == 2) {
 				header('Location: operator.php');
 			}elseif (strlen($_SESSION['index_no']) == 4) {
-				header('Location: lecturer.php');
+				header('Location: lecturer-db.php');
 			}
 
 			return 0;

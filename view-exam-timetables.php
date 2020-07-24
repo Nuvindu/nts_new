@@ -4,29 +4,44 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8"> 
-	<title>Exam Time Tables</title>
+	<title>Exam Timetables</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/view-exam-timeTables.css">
 	<link rel="stylesheet" href="./style/style-header.css">
 </head>
 <body>
-	<header>
-		<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
-		<div class="header clearfix">
-            <div class="nts-text" style="">
-                <div>
-                    <a href="index.php"><img class="logo" src="./img/logo-0.png" alt="logo"></a>
-                </div>
-                <div style="flex-grow: 8">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
+<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+            Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+    </div>
 
-            </div>
-        </div>
-	</header>
+<div class="header">
+        <?php include_once('header.php'); ?>
+    </div>
 
-	<main>
-	<h1>View Exam Timetables<span><a href="student.php"><< Back to Dashboard</a></span></h1>
+    <!-- navbar -->
+    <?php include_once('navbar.php'); ?>
+    <div class="side-bar">
+        <span style="
+                                    text-align: center;
+                                    margin: 0;
+                                    height: 50px;
+                                    align-items: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    /* padding-left: 11px; */
+                                "><i class="fas fa-align-justify" aria-hidden="true" style="
+                    padding-left: 17px;
+                "></i></span>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="view-exam-timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
+            <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-blog"></i>Feedback</a></li>
+
+        </ul>
+    </div> <!-- side-bar -->
+	<h1 style="padding-left:4%;">View Exam Timetables<span></h1>
 	
 	<center><h1>First Year </h1></center>
 

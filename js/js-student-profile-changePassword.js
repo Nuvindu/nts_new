@@ -35,7 +35,7 @@ $(document).ready(function() {
 		} else if (new_pass == confirm_new_pass) {
 			if (new_pass.length > 7) {
 				$.ajax({
-					url: 'dbOperations/db_reset_passwordStudent.php',
+					url: 'dbOperations/db_reset_passwordstudent-db.php',
 					method: 'POST',
 					data: {
 						current_pass: current_pass,

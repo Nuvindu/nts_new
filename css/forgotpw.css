@@ -1,0 +1,63 @@
+@import 'https://fonts.googleapis.com/css?family=Audiowide';
+body{
+    max-width: 500px;
+    margin: auto;
+    margin-top: 200px;
+    background: linear-gradient(-45deg, blue, #e73c7e, brown, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+    font-family: 'Audiowide';
+
+}
+
+#entercode{
+    margin-left: 101px;
+    margin-top: 16px;
+}
+input {
+    border-radius: 5px;
+    font:bold;
+    padding: 5px 5px 5px 3px;
+}
+label{
+    font:30px;
+}
+button{
+    padding: 4px 7px 4px 7px;
+    border-radius: 5px;
+    font-family: 'Audiowide';
+}
+#verifylabel{
+    padding-left: 130px;
+    font-size: 19px;
+}
+#verifycode{
+    margin-left: 98px;
+    margin-top: 16px;
+}
+.verifybtn{
+    margin-left: 154px;
+    margin-top: 12px;
+}
+.enterbtn{
+    margin-left: 160px;
+    margin-top: 12px;
+}
+#submitlabel{
+    padding-left: 64px;
+    font-size: 19px;
+}
+.progress{
+    padding-left: 125px;
+}
+@keyframes gradient {
+    0% {
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 10% 50%;
+    }
+}

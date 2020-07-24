@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/view-results.css">
 	<link rel="stylesheet" href="./style/style-header.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<header>
@@ -29,9 +30,9 @@
 	</header>
 
 	<main>
-	<h1>View Academic Results  <span><a href="student.php"><< Back to Dashboard</a></span></h1>
+	<h1>View Academic Results  <span id="backtodashboardlink"><a href="student-db.php"><< Back to Dashboard</a></span></h1>
 
-	<h2>First Year </h2>
+	<h2 id="year">First Year </h2>
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
@@ -40,7 +41,7 @@
 		<?php echo $first_year; ?>
 	</table>
 		
-	<h2>Second Year </h2>	
+	<h2 id="year">Second Year </h2>	
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
@@ -49,7 +50,7 @@
 		<?php echo $second_year; ?>
 	</table>
 		
-	<h2>Third Year </h2>		
+	<h2 id="year">Third Year </h2>		
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>

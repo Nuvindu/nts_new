@@ -15,23 +15,54 @@ class Model {
 		$this->user = $user;
 	}
 
-	public function editResults($user_id,$results){
+	public static function compareCode($verifycode,$index){    
 		global $connection;
-		$query = "UPDATE result SET ";		
-		$query .= "{$results->getModuleCode()} = '{$results->getResult()}' ";    // module code
-		$query .= "WHERE index_no = {$user_id} LIMIT 1";
-
-		$result = mysqli_query($connection, $query);
-
-		if ($result) {
-			// query successful... redirecting to users page
-			header("Location: results.php?user_modified=true&batch={$results->getBatch()}&year={$results->getYear()}&module={$results->getModuleCode()}");
-		} else {
-			$errors[] = 'Failed to modify the record.';
+		$sql ="SELECT * FROM verifypassword WHERE index_no = '{$index}' LIMIT 1";
+		$resulttable = mysqli_query($connection, $sql);
+		$result = mysqli_fetch_assoc($resulttable);
+		$table_time_str = $result['request_time'];  // get the code requested time from the table 
+		$compare = compareTime($table_time_str); // compare the current time table time and check the difference is less than 10 mins
+		if($compare){
+			$table_code = $result['code'];  // get the hash code from the table
+			if(sha1($verifycode)==$table_code){  
+				$_SESSION['fgtpw'] = "true";  //setting a session to access the change password page
+				echo "<script>window.location.href = 'changepw-verify.php?user_index={$index}';</script>";
+			}
+			else{   //count the tries and if it is more than three redirect to index page and blocking the access to the change password page
+				
+				if(intval($_SESSION['w'])==3){      
+					unset($_SESSION['fgtpw']);
+					echo "<script>alert('You tried three times.Password change is not accessible!!!');</script>";
+					echo "<script>window.location.href = 'index.php';</script>";
+				}
+				else{
+					echo "<script>alert('Verify Code is Invalid');</script>";
+				}
+				$x = array("1","2","3","4");
+				foreach ($x as $alpha) {
+					if($_SESSION['w']==$alpha){
+						$key = array_search($alpha, $x)+1;
+						$_SESSION['w'] = $x[$key];
+						// echo $_SESSION['w'];
+						break;
+					}
+				}
+				
+				
+				
+				
+			}
 		}
-	}
+		else{
+			echo "<script>alert('Error Ocurred!!!!');</script>";
+		}
 
-	
+	}
+	public static function createPasswordTable($code,$time,$index){
+		global $connection;
+		$query = "INSERT INTO verifypassword (index_no, request_time, code) VALUES ('{$index}','{$time}','{$code}')";
+		$record = mysqli_query($connection, $query);
+	}
 	public static function viewResults(){
 		global $connection;
 		$query = "SELECT * FROM result WHERE index_no = '{$_SESSION['index_no']}'";

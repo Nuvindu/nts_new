@@ -358,10 +358,7 @@ p {
 
 /* Media Query For Tablet */
 @media only screen and (min-width: 768px) {
-	.cta {
-		font-size: 2.5rem;
-		padding: 20px 60px;
-	}
+
 	h1.section-title {
 		font-size: 6rem;
 	}
@@ -557,4 +554,80 @@ p {
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .back, .forward,.text {font-size: 11px}
+}
+
+.text-box{
+	text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.text-box span{
+    animation: mover 10s linear infinite;
+    display: inline-block;
+    color: rgb(13, 40, 97);
+	font-weight: bolder;
+	
+
+}
+@keyframes mover
+{
+	0%{
+		text-shadow: 0 0 30px;
+	  }
+	50%{
+		text-shadow: 0 0 30px;
+		transform: translateY(30px);
+	  }
+	  75%{
+		text-shadow: 0 0 30px;
+		transform: translateY(30px);
+	  }
+	100%
+	  {
+		text-shadow: 0 0 30px;
+	  }
+}
+.text-box span:nth-child(1)
+{
+    animation-delay: 0.5s;
+}
+.text-box span:nth-child(2)
+{
+    animation-delay: 1s;
+}
+.text-box span:nth-child(3)
+{
+    animation-delay: 1.5s;
+}
+.text-box span:nth-child(4)
+{
+    animation-delay: 2s;
+}
+.text-box span:nth-child(5)
+{
+    animation-delay: 2.5s;
+}
+.text-box span:nth-child(6)
+{
+    animation-delay: 3s;
+}
+.text-box span:nth-child(7)
+{
+    animation-delay: 3.5s;
+}
+.text-box span:nth-child(8)
+{
+    animation-delay: 4s;
+}
+.text-box span:nth-child(9)
+{
+    animation-delay: 4.5s;
+}
+.text-box span:nth-child(10)
+{
+    animation-delay: 5s;
 }

@@ -21,15 +21,16 @@
 		</div>
 		<div class="login-content">
 			<form action="login.php" method="post">
-			<?php 
-					if (!empty($errors)) {
-						display_errors($errors);
-					}
-			?>	
+
 			<h2 style="font-size:1.5rem;">Nurses Training School<br>Galle</h2>
 			
 				<img src="img/logo-0.png">
 				<h2 style="font-size:1.5rem;">Welcome</h2>
+              <?php 
+                if (!empty($errors)) {
+                  display_errors($errors);
+                }
+              ?>  
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
@@ -48,7 +49,7 @@
            		    	<input type="password"  name="password" id="" class="input">
             	   </div>
             	</div>
-            	<a href="#">Forgot Password?</a>
+            	<a href="forgotpassword.php">Forgot Password?</a>
             	<input type="submit" class="btn" name="submit" value="Login">
             <!-- </form> -->
         </div>

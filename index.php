@@ -53,6 +53,7 @@
   <div class="numbertext">2 / 2</div>
   <img src="img/download1.jpg" style="width:100%;margin-top: 67px;">
 </div>
+
 <!-- <div class="introtext">
       <br>
 			<h4>Our Mission</h4>
@@ -69,6 +70,19 @@
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
 </div>
+</div>
+<br><br><br><br><br>
+<div class="text-box">
+ 
+    <span>Our</span>
+    <span>Vission</span><br><br>
+    <span>to be the</span>
+    <span>best nursing school</span>
+    <span>in Sri Lanka</span>
+    <span>by providing well</span>
+    <span>organized training</span>
+    <span>for the students</span>
+    </div>
 </section>
 
 <section id="about">

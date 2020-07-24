@@ -1,5 +1,13 @@
 <html>  
+<<<<<<< HEAD
     <head>  
+    <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+=======
+    <head>
+        <meta charset="UTF-8"> 
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> 000845976b18b8757fa790debb93552e0a28ebf5
         <title>Update Student Year</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  

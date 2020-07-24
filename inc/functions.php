@@ -9,7 +9,34 @@
 		}
 
 	}
-
+	function getTime(){  //get the current time string according to the time zone
+		date_default_timezone_set("Asia/Colombo");
+		$time = strval(date("Y")).strval(date("m")).strval(date("d")).strval(date("H")).strval(date("i")).strval(date("s"));
+		return $time;
+	}
+	function compareTime($table_time_str){   //compare time difference
+		$new_time_str = getTime();
+		$new_time_int = intval($new_time_str);
+		$table_time_int = intval($table_time_str);
+		$compare= true;	
+		for($i=0;$i<9;$i++){
+			if($table_time_str[$i]!=$new_time_str[$i]){  // compare the the date is similar in both codes
+				$compare= false;
+				return false;
+			}
+		}
+		if($compare){
+			if(($new_time_int-$table_time_int)<1000){  // check the time difference is less than 10 mins
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
 	function check_req_fields($req_fields) {
 		// checks required fields
 		$errors = array();
@@ -59,7 +86,6 @@
 		global $modules;
 		global $user;
 		$module_code = $allKeys[$i];
-		//$module_name = $modules[substr($module_code, 2)];
 		$module_name = $modules[$module_code];
 		$grade = $user[$module_code]; if (strtolower($grade) == 'null' ) {
 			$grade = 'Pending';

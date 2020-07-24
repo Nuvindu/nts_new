@@ -29,18 +29,7 @@ if (!isset($_SESSION['index_no'])) {
 
         <!-- header -->
         <div class="header">
-            <div class="nts-text" style="margin:10px 10px 5px 10px">
-                <div>
-                    <a href="index.php"><img class="logo" src="./img/logo-0.png" alt="logo"></a>
-                </div>
-                <div style="flex-grow: 8">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
-                <div>
-                    <a href="index.php"><img class="logo profile-pic" src="" alt="logo" id="profile-pic"
-                            style="border-radius: 100px;"></a>
-                </div>
-            </div>
+            <?php include_once('header.php'); ?>
         </div>
 
         <!-- sidebar -->
@@ -58,20 +47,47 @@ if (!isset($_SESSION['index_no'])) {
                 "></i></span>
             <ul>
 
-                <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
-                                echo "lecturer.php";
-                            } else if (strlen($_SESSION['index_no']) == 6) {
-                                echo "student.php";
-                            } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="view-exam-timetables.php"><i class="fas fa-project-diagram"></i>Exam TimeTable</a></li>
-                <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
-                <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-                <li><a href="#"><i class="fas fa-map-pin"></i>Student Details</a></li>
+            <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
+                            echo "lecturer-db.php";
+                        } else if (strlen($_SESSION['index_no']) == 6) {
+                            echo "student-db.php";
+                        } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
             </ul>
         </div>
 
 
+        <!-- navbaricon -->
+        <script>
+        function myFunction() {
+            if (document.getElementById('navbar').className == 'navbar') {
+                document.getElementById('navbar').className = 'navactive';
+            } else {
+                document.getElementById('navbar').className = 'navbar';
+            }
+        }
+        </script>
+        <div class="navbar-icon" onclick="myFunction()">
+            <img src="./img/menu-icon-removebg.png" alt="menu-icon" srcset="">
+        </div>
+        <!-- navbar -->
+        <div class="navbar" id="navbar">
+            <ul>
+
+            <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
+                            echo "lecturer-db.php";
+                        } else if (strlen($_SESSION['index_no']) == 6) {
+                            echo "student-db.php";
+                        } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            </ul>
+        </div>
 
         <!-- info-tab -->
         <div class="info-tab" id="info-tab">
@@ -84,81 +100,66 @@ if (!isset($_SESSION['index_no'])) {
                 <!-- profile information tab -->
                 <div id="profile-tab" class="tabContent" style="display: flex;flex-wrap: wrap;">
                     <h1 class="heading">Profile information</h1>
-                    <div class="profile-img">
-                        <img src="" alt="profile-picture" style="
-                        height: 145px;
-                        width: 145px;
-                        padding:13px;
-                    " class="profile-pic">
-                        <!-- change profile picture -->
-
-                        <button class="change-btn" id="change-pp">change</button>
-
-                        <div id="modal-pp" class="modal">
-                            <!-- modalpp content -->
-
-                            <div class="modal-content" style="display: block;">
-                                <form action="" method="post" enctype="multipart/form-data" id="myform">
-                                    Enter image file here(.jpg,.jpeg,.png):
-                                    <input type="file" name="image-file" id="image-file" accept=".jpg,.jpeg,.png">
-                                    <button class="change-btn" id="save-img">Save</button>
-                                </form>
-
-
+                    <div class="profile-img profile-img-mobile">
+                        <div id="change-pp" style="
+    height: 145px;
+    top: 24px;
+    position: relative;
+">
+                            <div style="
+    height: 145px;
+    width: 145px;
+    z-index: 1;
+    background-color: #0a0e104f;
+    position: relative;
+    text-align: center;
+    /* align-items: center; */
+    /* align-content: center; */
+    top: -32px;
+">
+                                <img src="./img/camera.png" style="
+    height: 50px;
+    top: 56px;
+    position: relative;
+">
                             </div>
 
+                            <img src="./img/empty-pp.png" alt="profile-picture" style="
+                        height: 143px;
+                        width: 145px;
+                        padding: 0;
+                        position: relative;
+                        bottom: 175px;
+                    " class="profile-pic">
                         </div>
+
+
 
 
                     </div>
                     <div class="profile-info">
-                        <span id="name-html"></span>
-                        <span id="NIC-html"></span>
-                        <span id="id-html"><?php echo $_SESSION['index_no']; ?></span>
-                        <span id="email-html"></span>
+                        <div style="display: flex;width: 100%;"><img src="./img/name.png" alt=""
+                                style="height: 20px;top: 8px;position: relative;"><span class="info"
+                                id="name-html"></span></div>
+                        <div style="display: flex;width: 100%;"><img src="./img/staff.png" alt=""
+                                style="height: 20px;top: 8px;position: relative;"><span class="info"
+                                id="NIC-html"></span></div>
+                        <div style="display: flex;width: 100%;"><img src="./img/license.png" alt=""
+                                style="height: 20px;top: 8px;position: relative;"><span class="info"
+                                id="id-html"><?php echo $_SESSION['index_no']; ?></span></div>
+                        <div style="display: flex;width: 100%;"><img src="./img/mail.png" alt=""
+                                style="height: 20px;top: 8px;position: relative;"><span class="info"
+                                id="email-html"></span></div>
+
 
 
                         <!-- change profile info -->
                         <button class="change-btn" id="change-Info">change Info</button>
-                        <div id="modal-Info" class="modal">
-                            <!-- modalinfo content -->
-                            <div class="modal-content">
-                                <div class="info">
-                                    Name : <input type="text" id="name" value="" required>
-                                    NIC : <input type="text" id="NIC" value="" required>
-                                    email : <input type="email" id="email" value="" required>
-                                </div>
-                                <button class="change-btn" type="submit" id="save"
-                                    style="width: 100%;margin:20px 0px;">save</button>
-                            </div>
-                        </div>
+
 
                         <button class="change-btn" id="change-password">Change
                             password</button>
-                        <!-- modal for change password -->
-                        <div id="modal-password" class="modal">
-                            <!-- modalinfo content -->
-                            <div class="modal-content" style="display: block;">
-                                <div class="password-reset-content" id="password-reset">
-                                    <label class="lable" for="password" style="color:black">Current Password</label>
-                                    <input id="current_password" name="password" type="password">
-                                    <label class="lable" for="password" style="color:black;">New Password</label>
-                                    <input id="new_password" name="newpassword" type="password">
-                                    <span id="error" class="error">include 8
-                                        characters,at lest one highercase letter,at least onelowercase letter and at
-                                        least one special character</span><br>
-                                    <label class="lable" for="confirmpassword" style="color:black;">Confirm
-                                        Password</label>
-                                    <input id="reent_new_password" name="confirmpassword" type="password">
-                                    <button class="change-btn" id="password-reset-abort"
-                                        style="width: 100%;margin: 20px 0px;">Cancel</button>
-                                    <button class="change-btn" id="change_pass"
-                                        style="width: 100%;margin: 20px 0px;">Confirm</button>
-                                </div>
 
-                            </div>
-
-                        </div>
 
                     </div>
 
@@ -181,10 +182,57 @@ if (!isset($_SESSION['index_no'])) {
             </div>
         </div>
     </div>
-    <footer style="
-    margin-left: 80px;
-    margin-right: 8px;
-" id="footer">
+    <!-- change profile picture -->
+
+
+    <div id="modal-pp" class="modal">
+        <!-- modalpp content -->
+
+        <div class="modal-content" style="display: block;">
+            <form action="" method="post" enctype="multipart/form-data" id="myform">
+                Enter image file here(.jpg,.jpeg,.png):
+                <input type="file" name="image-file" id="image-file" accept=".jpg,.jpeg,.png">
+                <button class="change-btn" id="save-img">Save</button>
+            </form>
+
+
+        </div>
+    </div>
+    <div id="modal-Info" class="modal">
+        <!-- modalinfo content -->
+        <div class="modal-content">
+            <div class="info">
+                Name : <input type="text" id="name" value="" required>
+                NIC : <input type="text" id="NIC" value="" required>
+                email : <input type="email" id="email" value="" required>
+            </div>
+            <button class="change-btn" type="submit" id="save" style="width: 100%;margin:20px 0px;">save</button>
+        </div>
+    </div>
+    <!-- modal for change password -->
+    <div id="modal-password" class="modal">
+        <!-- modalinfo content -->
+        <div class="modal-content" style="display: block;">
+            <div class="password-reset-content" id="password-reset">
+                <label class="lable" for="password" style="color:black">Current Password</label>
+                <input id="current_password" name="password" type="password">
+                <label class="lable" for="password" style="color:black;">New Password</label>
+                <input id="new_password" name="newpassword" type="password">
+                <span id="error" class="error">include 8
+                    characters,at lest one highercase letter,at least onelowercase letter and at
+                    least one special character</span><br>
+                <label class="lable" for="confirmpassword" style="color:black;">Confirm
+                    Password</label>
+                <input id="reent_new_password" name="confirmpassword" type="password">
+                <button class="change-btn" id="password-reset-abort"
+                    style="width: 100%;margin: 20px 0px;">Cancel</button>
+                <button class="change-btn" id="change_pass" style="width: 100%;margin: 20px 0px;">Confirm</button>
+            </div>
+
+        </div>
+
+    </div>
+    <footer id="footer">
         <div class="column clearfix">
             <h3>Contact Us</h3>
             <ul>

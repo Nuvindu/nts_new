@@ -77,6 +77,9 @@ abstract class User{
 	public function setType($type){
 		$this->type = $type;
 	}
+	public function distributeEmail($subject,$message){  //mediator design pattern
+		return Controller::distributeEmail($this->email,$subject,$message);
+	}
 
 }
 

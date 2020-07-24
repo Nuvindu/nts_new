@@ -1,27 +1,145 @@
 .nts-text {
 	display: flex;
-	margin: 20px 10px 50px 10px;
+	position: sticky;
+	/* margin: 20px 10px 50px 10px; */
 	padding: 0.9vw;
-	background-color: rgba(251, 251, 246, 0.9);
+	background-color: #80808000;
 	border-radius: 15px;
 	font-weight: 1000;
 	font-family: 'Noto Sans TC', sans-serif;
 	text-align: center;
 	font-size: 1em;
 	letter-spacing: 10px;
+	/* backdrop-filter: blur(90px); */
+	height: 116px;
+	top: 0;
+	transition: height 0.8s cubic-bezier(0, 0.04, 1, 1.03);
+	z-index: 99;
+	/* height: 80px; */
 }
 
-.nts-text > nts-text1 {
-	height: 100%;
-	margin: 10px;
-	font-weight: 1000;
-	font-family: 'Noto Sans TC', sans-serif;
-	text-align: center;
-	font-size: 2em;
+.color-change {
+	background-color: #9c9c9c;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 0;
 }
+
+
+
+.nts-text-image {
+	position: relative;
+	top: -149px;
+	right: 50;
+	transform: scale(1);
+	transition: all 0.88s ease;
+}
+
 
 .logo {
 	width: 100px;
 	height: 100px;
 	float: left;
+	transition: all 0.8s ease;
+}
+
+.logo-change {
+	width: 40px;
+	height: 40px;
+}
+
+.logo-pp {
+	width: 100px;
+	height: 100px;
+	float: right;
+	transition: all 0.8s ease;
+}
+
+.logo-pp-change {
+	width: 40px;
+	height: 40px;
+}
+
+.logo-lowres {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+	.logo {
+		display: none;
+	}
+
+	.nts-text1::after {
+		content: "NTS";
+	}
+
+	.nts-text-image {
+		display: none;
+	}
+
+	.nts-text {
+		/* height: 80px; */
+	}
+
+	.logo-pp {
+		width: 75px;
+		height: 75px;
+	}
+
+	.logo-lowres {
+		width: 75px;
+		height: 75px;
+		float: left;
+		display: block;
+		transition: all 0.88s ease;
+	}
+
+	.logo-lowres-resize {
+		width: 50px;
+		height: 50px;
+	}
+
+	.logo-pp-resize {
+		width: 50px;
+		height: 50px;
+
+	}
+}
+
+.nts-text-image-none {
+	transform: scale(0.5);
+	top: -180px;
 }

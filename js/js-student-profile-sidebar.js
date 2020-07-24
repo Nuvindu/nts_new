@@ -1,10 +1,14 @@
 function resizeInfoAreaUp() {
-	document.getElementById('info-tab').style.marginLeft = '106px';
-	document.getElementById('footer').style.marginLeft = '180px';
+	document.getElementById('info-tab').style.marginLeft = '140px';
+
+	$('footer').css("margin-left", '199px');
 }
+
 function resizeInfoAreaDown() {
 	document.getElementById('info-tab').style.marginLeft = '0px';
-	document.getElementById('footer').style.marginLeft = '80px';
+
+	$('footer').css("margin-left", '80px');
+
 }
 
 function showContent(evt, tabname) {

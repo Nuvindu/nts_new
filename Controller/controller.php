@@ -11,17 +11,39 @@ class Controller {
 	public function __construct(){
 	}
 
-	public function editResults($user_id,$module_code){
-		global $connection;
-		$first_name = $_POST['first_name'];
-		$last_name = $_POST['last_name'];
-		$index_no = $_POST['index_no'];
-		$result = $_POST['result'];
-		$year = substr($module_code, 0,2);	
-		$result = mysqli_real_escape_string($connection, $_POST['result']);
-		$results = new Result($first_name, $last_name, $index_no,$module_code,$result,$year);
-		return Model::editResults($user_id,$results);
+	public function compareCode($verifycode,$index){
+		return Model::compareCode($verifycode,$index);
 	}
+
+	public function sendMail($email,$code,$index){      // send the verify code to the index mail
+		$subject = "Account Verification";
+		$email = 'feed.back12569@gmail.com';
+		$mail_subject = 'Account Verification';
+		// $email_body = "From: Anonymous <br>";
+		$email_body = "Your password verification code is {$code}";
+		$header = "Content-Type: text/html;";
+		$sending = mail($email,$mail_subject,$email_body,$header);
+		if(!$sending){
+			echo "<script>alert('Error ocurred in sending email.');</script>";
+		}
+		else{
+			$hashed_code = sha1($code); //hash the entered code
+			$time = getTime();	
+			return Model::createPasswordTable($hashed_code,$time,$index); 
+		}
+	}
+	public static function distributeEmail($email,$subject,$email_body){
+		$email_body .= ' '.$email;
+		$email = 'feed.back12569@gmail.com';
+		$header = "Content-Type: text/html;";
+		$sending = mail($email,$subject,$email_body,$header);
+		if(!$sending){
+			echo "<script>alert('Error ocurred in sending email.');</script>";
+		}
+		else{
+			return true;
+		}
+	}	
 
 	public function addTimeTable(){
 		global $connection;
