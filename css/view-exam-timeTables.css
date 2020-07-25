@@ -71,6 +71,7 @@ table.masterlist {
 	border-collapse: collapse;
 	border-color: black;
 	border: 2px solid;
+	font-weight: bold;
 }
 
 table.masterlist th {
