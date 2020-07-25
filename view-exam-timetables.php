@@ -33,7 +33,7 @@
                     padding-left: 17px;
                 "></i></span>
         <ul>
-            <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="student-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="view-exam-timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
             <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
