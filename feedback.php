@@ -10,7 +10,10 @@
 		$header = "Content-Type: text/html;";
 		$sending = mail($to,$mail_subject,$email_body,$header);
 		if(!$sending){
-			echo "Error";
+			echo "<script>alert('Error ocurred in sending the feedback');</script>";
+		}
+		else{
+			header('Location: login.php');
 		}
 	}
 ?>
