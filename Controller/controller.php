@@ -1,10 +1,10 @@
 <?php require_once __DIR__ . "/../inc/functions.php" ?>
 <?php require_once __DIR__ . "/../Model/model.php" ?>
 <?php require_once __DIR__ . "/../inc/dbconnection.php" ?>
-
+<?php require_once('controllerinterface.php'); ?>
 <?php 
 
-class Controller {
+class Controller implements IController{
 
 	private Model $model;
 
@@ -32,7 +32,7 @@ class Controller {
 			return Model::createPasswordTable($hashed_code,$time,$index); 
 		}
 	}
-	public static function distributeEmail($email,$subject,$email_body){
+	public function distributeEmail($email,$subject,$email_body){
 		$email_body .= ' '.$email;
 		$email = 'feed.back12569@gmail.com';
 		$header = "Content-Type: text/html;";

@@ -9,6 +9,7 @@ if(isset($_POST['submit'])) {
 	$record_set = mysqli_query($connection, $sql);
 	$record = mysqli_fetch_all($record_set);
 	$x = false;
+	$controller = new Controller();
 	foreach ($record as $rec) {
 		$emailval = $rec[6];
 		$index_no = $rec[0];
@@ -18,6 +19,7 @@ if(isset($_POST['submit'])) {
 			$message.=' '.$index_no;  
 			$user =  new Lecturer('','','','','',$index_no);
 			$user->setEmail($emailval);
+			$user->setController($controller);
 			$x = $user->distributeEmail($subject,$message);
 		}
 		else if($type=='Student'){
@@ -26,6 +28,7 @@ if(isset($_POST['submit'])) {
 			$message.=' '.$index_no;  
 			$user =  new Student('','','','','',$index_no);
 			$user->setEmail($emailval);
+			$user->setController($controller);
 			$x = $user->distributeEmail($subject,$message);
 		}
 		if($x==false){

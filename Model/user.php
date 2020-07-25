@@ -14,6 +14,7 @@ abstract class User{
 	private $batch = '';
 	private $department = '';
 	private $year= '';
+	private Controller $controller;
 
 	public function __construct($first_name, $last_name, $nic, $email, $password, $index_no){
 		$this->first_name = $first_name;
@@ -78,7 +79,10 @@ abstract class User{
 		$this->type = $type;
 	}
 	public function distributeEmail($subject,$message){  //mediator design pattern
-		return Controller::distributeEmail($this->email,$subject,$message);
+		return $this->controller->distributeEmail($this->email,$subject,$message);
+	}
+	public function setController($controller){
+		$this->controller = $controller;
 	}
 
 }
