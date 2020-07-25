@@ -32,6 +32,8 @@ if (!isset($_SESSION['index_no'])) {
     <div class="header">
         <?php include_once('header.php'); ?>
     </div>
+     <!-- navbar -->
+     <?php include_once('navbar.php'); ?>
     <div class="side-bar">
         <span style="
                                     text-align: center;
