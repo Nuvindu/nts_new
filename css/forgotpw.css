@@ -15,16 +15,15 @@ body{
     margin-top: 16px;
 }
 input {
-    border-radius: 5px;
-    font:bold;
-    padding: 5px 5px 5px 3px;
+    
+    padding: 10px 10px 10px 10px;
 }
 label{
     font:30px;
 }
 button{
-    padding: 4px 7px 4px 7px;
-    border-radius: 5px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 2px;
     font-family: 'Audiowide';
 }
 #verifylabel{
@@ -33,11 +32,11 @@ button{
 }
 #verifycode{
     margin-left: 98px;
-    margin-top: 16px;
+    margin-top: 39px;
 }
 .verifybtn{
     margin-left: 154px;
-    margin-top: 12px;
+    margin-top: 32px;
 }
 .enterbtn{
     margin-left: 160px;
@@ -45,7 +44,7 @@ button{
 }
 #submitlabel{
     padding-left: 64px;
-    font-size: 19px;
+    font-size: 25px;
 }
 .progress{
     padding-left: 125px;
