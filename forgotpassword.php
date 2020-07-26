@@ -50,18 +50,19 @@
 <head>
 
 	<title>Forgot Password</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 	<script src="js/jquery-3.3.1.js"></script>
 	<script src="js/forgotpassword.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/forgotpw.css">
 </head>
 <body>
-	<div class="sendindex" id="sendindex">
+	<div class="sendindex" id="sendindex" style="align-content:center;">
 		<form id="subform" autocomplete="off">
-			<label id = "submitlabel">Enter Your Index Number</label>
+			<label id = "submitlabel" class="enterIndex" style="align-self:center;">Enter Index Number</label>
 			<br>
-			<input type="text" name="verifycode" id="verifycode" class="verifycode" >
+			<input type="text" name="verifycode" id="verifycode" class="verifycode" style="align-items:center;font-size:15px;">
 			<br>
-			<button type="submit" class="verifybtn">Submit</button>
+			<button type="submit" class="verifybtn" style="font-size:15px;"><center>Submit</center></button>
 		</form>
 	</div>
 	<div class="progress" style="display: none;">
