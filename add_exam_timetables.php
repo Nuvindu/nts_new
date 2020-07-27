@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/">
 	<link rel="stylesheet" href="./style/style-header.css"> -->
 </head>
-<body bgcolor="#b3ffff">
+<body>
 
 <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
             Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>

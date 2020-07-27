@@ -38,7 +38,7 @@
     </script>
 </head>
 
-<body bgcolor="#b3ffff">
+<body>
 
     <header>
         <div class="icon"><img src="img/home.ico" width="22" height="22"></div>
@@ -56,7 +56,7 @@
         <?php include "dropdown.php" ?>
 
         <div class="add"><a href="add-user.php">Add New User</a> </br></div>
-        <div class="distribute"><a href="distributemail.php">Send Notifications</a> </br></div>
+        <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;"><a href="distributemail.php">Send Notifications</a> </br></div>
         <h1>Users</h1>
         <div class="search">
             <form action="operator.php">
