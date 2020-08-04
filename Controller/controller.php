@@ -32,16 +32,18 @@ class Controller implements IController{
 			return Model::createPasswordTable($hashed_code,$time,$index); 
 		}
 	}
-	public function distributeEmail($email,$subject,$email_body){
+	public function distributeEmail($index_no,$email,$subject,$email_body){
 		$email_body .= ' '.$email;
 		$email = 'feed.back12569@gmail.com';
 		$header = "Content-Type: text/html;";
-		$sending = mail($email,$subject,$email_body,$header);
+		// $sending = mail($email,$subject,$email_body,$header);
+		$sending = true;
 		if(!$sending){
 			echo "<script>alert('Error ocurred in sending email.');</script>";
 		}
-		else{
-			return true;
+		else{	
+			return Model::distributeEmail($index_no,$subject,$email_body);
+			
 		}
 	}	
 

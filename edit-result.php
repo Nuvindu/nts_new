@@ -20,7 +20,7 @@
     </div>
 
     <main>
-        <h1>Add/Modify Result<span> <a href="lecturer-db.php">
+        <h1>Add/Modify Result<span> <a href="Model/lecturer-db.php">
                     << Back to Dashboard</a> </span> </h1> <?php
 
 															if (!empty($errors)) {

@@ -9,7 +9,7 @@ html {
 	/* 	height: 100%; */
 	width: 100%;
 	box-sizing: border-box;
-	background-image: url('../img/bg.jpg');
+	/* background-image: url('../img/bg.jpg'); */
 	/* background-attachment: fixed; */
 	background-size: cover;
 	background-position: center;
@@ -24,7 +24,6 @@ html {
 .container {
 	height: 100%;
 	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 	/* margin-bottom: 200px; */
 }

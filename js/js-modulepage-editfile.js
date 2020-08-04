@@ -59,7 +59,7 @@ function EditFile(fileId) {
 
             $.ajax({
                 type: 'POST',
-                url: '/nts_new/dbOperations/db_update_file.php',
+                url: '/nts_new/Model/db_update_file.php',
                 data: fd,
                 processData: false,
                 contentType: false,

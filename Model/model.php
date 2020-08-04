@@ -15,6 +15,35 @@ class Model {
 		$this->user = $user;
 	}
 
+	public static function distributeEmail($index_no,$subject,$email_body){
+		global $connection;
+		$sql ="SELECT * FROM notifications WHERE index_no = '{$index_no}' LIMIT 1";
+		$resulttable = mysqli_query($connection, $sql);
+		$result = mysqli_fetch_assoc($resulttable);
+		$finalarray = array();		
+		if($result){
+			$arraylist = $result['notification'];
+			$array = array('Subject' => $subject, 'Message' => $email_body);
+			// var_dump(json_decode($q));	
+			$finalarray = unserialize($arraylist);
+			$finalarray[sizeof($finalarray)] = $array;
+			$finalarray = serialize($finalarray);
+			$query = "UPDATE notifications SET notification = '{$finalarray}' , seen = 0 WHERE index_no = $index_no LIMIT 1";
+			$result = mysqli_query($connection,$query);	
+			return true;	
+		}
+		else{
+			$finalarray = array('Subject' => $subject, 'Message' => $email_body);
+			$finalarray = array($finalarray);
+			$finalarray = serialize($finalarray);
+			$query = "INSERT INTO notifications (index_no,notification,seen) VALUES ('{$index_no}','{$finalarray}',0)";
+			$result = mysqli_query($connection,$query);	
+			return true;	
+		}
+
+	}
+
+
 	public static function compareCode($verifycode,$index){    
 		global $connection;
 		$sql ="SELECT * FROM verifypassword WHERE index_no = '{$index}' LIMIT 1";

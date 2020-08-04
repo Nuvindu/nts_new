@@ -15,7 +15,7 @@ class UserDB extends Model implements IUserDB{
 
 	public function addUser($user){
 		global $connection;
-		$query = "INSERT INTO user (first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted) VALUES ('{$user->getFirstName()}','{$user->getLastName()}','{$user->getNIC()}','{$user->getIndexNo()}','{$user->getType()}','{$user->getEmail()}','{$user->getPassword()}','1111',0)";
+		$query = "INSERT INTO user (first_name, last_name, NIC, index_no, type, email, password, batch, is_deleted) VALUES ('{$user->getFirstName()}','{$user->getLastName()}','{$user->getNIC()}','{$user->getIndexNo()}','{$user->getType()}','{$user->getEmail()}','{$user->getPassword()}','{$user->getBatch()}',0)";
 
 		$result = mysqli_query($connection,$query);
 
@@ -31,27 +31,27 @@ class UserDB extends Model implements IUserDB{
 					$update = mysqli_query($connection,"INSERT INTO students (index_no,year) VALUES ('{$user->getIndexNo()}','1')");
 					if($update){
 						// query successful... redirecting to users page
-						header('Location: add-user.php?user_added=true&result_created=true&student_added=true');}
+						header('Location: add-user-responsive.php?user_added=true&result_created=true&student_added=true');}
 					else{
-						header('Location: add-user.php?user_added=true&result_created=true');
+						header('Location: add-user-responsive.php?user_added=true&result_created=true');
 					}
 				} else {
 					die("Database query failed: ".mysqli_error($connection));
-					header('Location: add-user.php?user_added=true&result_created=false');
+					header('Location: add-user-responsive.php?user_added=true&result_created=false');
 				}
 			} 
 			else if(strlen($user->getIndexNo()) == 4){
 				$update = mysqli_query($connection,"INSERT INTO lecturers (index_no,department) VALUES ('{$user->getIndexNo()}','1')");
 				if($update){
 					// query successful... redirecting to users page
-					header('Location: add-user.php?user_added=true&lecturer_added=true');
+					header('Location: add-user-responsive.php?user_added=true&lecturer_added=true');
 				}
 				else{
-					header('Location: add-user.php?user_added=true');
+					header('Location: add-user-responsive.php?user_added=true');
 				}
 			}
 			else {
-				header('Location: add-user.php?user_added=true');
+				header('Location: add-user-responsive.php?user_added=true');
 			}
 
 		} else{
@@ -173,7 +173,6 @@ class UserDB extends Model implements IUserDB{
 		global $connection;
 		$query = "SELECT * FROM user 
 						WHERE index_no = '{$index_no}' 
-						AND password = '{$password}' 
 						LIMIT 1";
 
 		$result_set = mysqli_query($connection, $query);
@@ -183,27 +182,32 @@ class UserDB extends Model implements IUserDB{
 		if (mysqli_num_rows($result_set) == 1) {
 			// valid user found
 			$user = mysqli_fetch_assoc($result_set);
-			$_SESSION['user_id'] = $user['index_no'];
-			$_SESSION['first_name'] = $user['first_name'];
-			$_SESSION['index_no'] = $user['index_no'];
+			if(password_verify($password, $user['password'])){
+				$_SESSION['user_id'] = $user['index_no'];
+				$_SESSION['first_name'] = $user['first_name'];
+				$_SESSION['index_no'] = $user['index_no'];
 
-			// updating last login
-			$query = "UPDATE user SET last_login = NOW() ";
-			$query .= "WHERE index_no = {$_SESSION['user_id']} LIMIT 1";
+				// updating last login
+				$query = "UPDATE user SET last_login = NOW() ";
+				$query .= "WHERE index_no = {$_SESSION['user_id']} LIMIT 1";
 
-			$result_set = mysqli_query($connection, $query);
+				$result_set = mysqli_query($connection, $query);
 
-			verify_query($result_set);
+				verify_query($result_set);
 
-			if (strlen($_SESSION['index_no']) == 6) {
-				header('Location: student-db.php');
-			} elseif (strlen($_SESSION['index_no']) == 2) {
-				header('Location: operator.php');
-			}elseif (strlen($_SESSION['index_no']) == 4) {
-				header('Location: lecturer-db.php');
+				if (strlen($_SESSION['index_no']) == 6) {
+					header('Location: Model/student-db.php');
+				} elseif (strlen($_SESSION['index_no']) == 2) {
+					header('Location: operator.php');
+				}elseif (strlen($_SESSION['index_no']) == 4) {
+					header('Location: Model/lecturer-db.php');
+				}
+				return 0;
 			}
-
-			return 0;
+			else{
+				$errors[] = 'Invalid Username / Password';
+				return $errors;				
+			}
 		} else {
 			// user name and password invalid
 			$errors[] = 'Invalid Username / Password';

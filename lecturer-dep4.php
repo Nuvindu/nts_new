@@ -224,10 +224,16 @@
                 "></i></span>
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="notifications.php">
+                    <?php 
+                        if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
+                        else{echo '<i class="fas fa-bell"></i>';}
+                    ?>
+                    Notifications</a></li>
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
-                <li><a href="add_exam_timetables.php" id="timetable"><i class="f=fa fa-book"></i>Exam
+                <li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-book"></i>Exam
                         Timetables</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
                 <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
@@ -238,7 +244,7 @@
         $(document).ready(function() {
             $.ajax({
                 type: 'POST',
-                url: '/nts_new/dbOperations/db_load_profilePicture.php',
+                url: '/nts_new/Model/db_load_profilePicture.php',
                 data: {
                     // send this variable to server to identify user to database manipulate
                     UserSessionName: document.getElementById('index-no').textContent

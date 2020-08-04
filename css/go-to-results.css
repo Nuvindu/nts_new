@@ -27,12 +27,6 @@ body{
 	margin-left: 40px;
 	border-radius: 5px;
 }
-#batch {
-	margin-left: 52px;
-}
-#term{
-	margin-left: 57px;
-}
 .login label{
 	font-weight: bold;
 	color: #1a1a1a;

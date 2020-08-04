@@ -7,7 +7,7 @@
 .clearfix{ overflow: auto; }
 
 header {
-	background: #008080;
+	/*background: #008080;*/
 	overflow: auto;
 	padding: 8px;
 }
@@ -25,7 +25,7 @@ header {
 }
 
 .add {
-	margin-top: 6px;
+	
 	float: right;
 	padding-left: 16px;
 	padding-top: 17px;
@@ -72,10 +72,10 @@ header .top {
 	float: left;
 	padding-top: 3px;
 }
-header .top a{
+header .top {
 	color:black;
 }
-header .top a:hover {
+header .top:hover {
 	color:white;
 }
 .icon { 
@@ -161,7 +161,48 @@ form.userform p{
 @media screen and (min-width: 768px){
 	.distribute {
 		padding: 10px;
-		margin-top: 6px;
+		margin-top: 1px;
 		float: right;
 	}
+}
+
+
+div.column {
+	position: static;
+	background: #d4242400;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	bottom: 0;
+}
+
+div.column h3 {
+	padding: 15px 0px 0px 15px;
+	font-size: 22px;
+	font-family: sans-serif;
+	color: white;
+	z-index: 5;
+	font-weight: 800;
+	color: black;
+}
+
+div.column ul {
+	list-style: none;
+	font-size: 16px;
+	font-weight: 800;
+	color: black;
+}
+
+div.column ul li {
+	padding-bottom: 10px;
+}
+
+div.icon1 {
+	float: left;
+	margin-left: 15px;
+}
+
+footer {
+	margin-left: 80px;
+	margin-right: 8px;
+	transition: margin-left 1s;
 }

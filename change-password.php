@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Change Password</title>
 	<link rel="stylesheet" type="text/css" href="css/change-password.css">
 	<link rel="stylesheet" href="./style/style-header.css">
@@ -15,21 +16,12 @@
         <div class="logger">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
         
 	</header>
+	<!-- header -->
 	<div class="header">
-            <div class="nts-text" style="margin:0px 0px 5px 0px">
-                <div>
-                    <a href="index.php"><img class="logo" src="./img/logo-0.png" alt="logo"></a>
-                </div>
-                <div style="flex-grow: 8; padding-top: 20px;">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
-
-            </div>
+            <?php include_once('header.php'); ?>
         </div>
 	<main>
-		<h1>User Modification</h1>
-		<div class="back"><span> <a href="operator.php"><< Back to User List</a></span></div>
-
+	<div class="add" style="text-align:right;"><a href="operator.php">Back &gt&gt</a> </div>
 		<?php 
 
 			if (!empty($errors)) {

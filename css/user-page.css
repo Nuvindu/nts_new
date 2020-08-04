@@ -22,123 +22,13 @@
 
 body {
   background-color: #f3f5f9;
-  background-image: url("../img/bg.png");
+  /* background-image: url("../img/bg.png"); */
   background-attachment: fixed;
   background-clip: border-box;
   background-position: center;
   background-size: cover;
   /* background: #efbb00; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .wrapper {
   display: flex;

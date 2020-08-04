@@ -1,0 +1,156 @@
+@charset "UTF-8";
+a{text-decoration: none;}
+.clearfix{ overflow: auto; }
+.wrapper{
+	margin:0 auto;
+	
+}
+
+.top-bar{
+	border-radius: 8px;
+	background: blue;
+}
+.top-bar ul{
+	list-style: none;
+}
+.top-bar ul li{
+	padding: 0px 15px 0px 15px;
+	display: inline-block;
+	border-right: 1px solid white;
+}
+.top-bar ul li:last-child{
+	border:0;
+}
+.top-bar ul li a{
+	color: white;
+}
+.top-bar ul li a:hover{
+	text-decoration:underline;
+}
+
+
+.top-bar ul {
+	list-style: none;
+}
+
+.top-bar-links-left{
+	float: left;
+}
+
+.top-bar-links-right{
+	float: right;
+}
+header{
+	background:hsl(0, 0%, 99%);
+}
+header .name {
+	float: left;
+	margin: 60px 0px 0px 20px;
+
+}
+
+header .name h1 {
+
+	font-size: 58px;
+	color: darkblue;
+	font-variant: small-caps;
+	line-height: 5px;
+}
+
+header .name p{
+	font-size: 24px;
+	font-style: italic;
+	color: lightblue;
+}
+
+header .logo {
+	margin-top: 10px;
+	float: right;
+}
+
+div.border {
+	background-color: black;
+	color:black;
+	border-radius: 5px;
+}
+div.intro {
+	padding-bottom: 10px;
+	background: #808080;
+}
+div.introimage {
+	margin:10px 0px 0px 10px;
+	float: left;
+}
+div.introtext {
+	text-align: center;
+	padding-top: 18px;
+	font-size: 22px;
+}
+div.introtext h4{
+	font-size: 22px;
+	font-family: fantasy;
+	color: brown;
+}
+div.introtext p{
+	font-size: 16px;
+	font-style: italic;
+}
+div.introtext h4:hover{
+	color: gold;
+}
+div.introtext p:hover{
+	color: silver;
+}
+div.column{
+	background: #3a3a3a;
+	padding-left: 10px;
+}
+div.column h3{
+	font-size: 24px;
+	font-family: sans-serif;
+	color: white;
+	padding-left: 10px;
+}
+
+div.column ul{
+	list-style: none;
+	font-size: 17px;
+	color: white;
+}
+div.column ul li{
+	margin-bottom: 8px;
+}
+
+div.icon1{
+	float: left;
+	margin-right: 5px;
+}
+
+
+
+table.sem_result {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.sem_result th {
+	background: #aaa;
+	text-align: left;
+}
+
+table.sem_result th, table.sem_result td {
+	padding: 10px;
+	border-bottom: 1px solid #aaa;
+}
+.module_name {
+	width: 70%;
+}
+.grade {
+	width: 30%;
+}
+@media only screen and (min-width: 900px) {
+	table.sem_result th, table.sem_result td {
+		padding-left:4%;
+	}
+}

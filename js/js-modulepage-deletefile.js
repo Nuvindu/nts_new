@@ -8,7 +8,7 @@ function DeleteFile(fileId) {
     $("#confirm-delete").click(function () {
         $.ajax({
             type: 'POST',
-            url: '/nts_new/dbOperations/db_delete_file.php',
+            url: '/nts_new/Model/db_delete_file.php',
             data: {
                 Name: Name,
                 fileName: FileName

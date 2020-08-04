@@ -40,16 +40,38 @@ if (!isset($_SESSION['index_no'])) {
         <ul>
 
             <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
-                            echo "lecturer-db.php";
+                            echo "Model/lecturer-db.php";
                         } else if (strlen($_SESSION['index_no']) == 6) {
-                            echo "student-db.php";
+                            echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php">
+                    <?php
+                    if (isset($_SESSION['seen'])) {
+                        echo '<i class="far fa-bell"></i>';
+                    } else {
+                        echo '<i class="fas fa-bell"></i>';
+                    }
+                    ?>
+                    Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
             <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
             <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
         </ul>
     </div>
+
+
+    <?php
+    $url_components = parse_url($_SERVER['REQUEST_URI']);
+
+    // Use parse_str() function to parse the 
+    // string passed via URL 
+    parse_str($url_components['query'], $params);
+    if (isset($_SESSION[$params['moduleName']])) {
+    } else {
+        header('Location:404.html');
+    }
+    ?>
     <!-- header -->
     <div class="header">
         <?php include_once('header.php'); ?>
@@ -72,9 +94,9 @@ if (!isset($_SESSION['index_no'])) {
     <div class="navbar" id="navbar">
         <ul>
             <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
-                            echo "lecturer-db.php";
+                            echo "Model/lecturer-db.php";
                         } else if (strlen($_SESSION['index_no']) == 6) {
-                            echo "student-db.php";
+                            echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
@@ -85,15 +107,9 @@ if (!isset($_SESSION['index_no'])) {
 
     <div class="card" id="info-area">
         <!-- module description -->
-        <h3 id="name"><?php
-                        $url_components = parse_url($_SERVER['REQUEST_URI']);
-
-                        // Use parse_str() function to parse the 
-                        // string passed via URL 
-                        parse_str($url_components['query'], $params);
-
-                        // Display result 
-                        echo $params['moduleName'] ?>
+        <h3 id="name"><?php // Display result 
+                        echo $params['moduleName']
+                        ?>
         </h3>
         <p style="margin: 20px;border: 1px solid;padding: 15px;border-radius: 15px;">
             <?php echo $_SESSION[$params['moduleName']]; ?></p>
@@ -231,7 +247,7 @@ if (!isset($_SESSION['index_no'])) {
     $(document).ready(function() {
         $.ajax({
             type: 'POST',
-            url: '/newdb/dbOperations/db_load_profilePicture.php',
+            url: 'Model/db_load_profilePicture.php',
             data: {
                 // send this variable to server to identify user to database manipulate
                 UserSessionName: document.getElementById('index-no').textContent

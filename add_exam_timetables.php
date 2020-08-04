@@ -39,15 +39,21 @@
                     padding-left: 17px;
                 "></i></span>
         <ul>
-            <li><a href="lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php">
+                <?php 
+                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
+                    else{echo '<i class="fas fa-bell"></i>';}
+                ?>
+                Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+            <li><a href="add_exam_timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
             <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
             <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
             <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
         </ul>
     </div> <!-- side-bar -->
-<!-- <span><a href="lecturer-db.php"><< Back to Dashboard</a></span> -->
+<!-- <span><a href="Model/lecturer-db.php"><< Back to Dashboard</a></span> -->
 	
 		<center><h1>Exam Timetables</h1></center>
         

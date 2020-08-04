@@ -35,7 +35,7 @@ class UserController extends Controller implements IUserController{
 		global $connection;
 		$user_index = mysqli_real_escape_string($connection, $_POST['user_index']);
 		$password = mysqli_real_escape_string($connection, $_POST['password']);
-		$hashed_password=sha1($password);
+		$hashed_password=password_hash($password, PASSWORD_BCRYPT, array('cost'=>14));
 		return UserDB::changePassword($user_index,$hashed_password);
 	}
 
@@ -75,8 +75,8 @@ class UserController extends Controller implements IUserController{
 			// save username and password into variables
 			$index_no 	= mysqli_real_escape_string($connection, $_POST['index_no']);
 			$password 	= mysqli_real_escape_string($connection, $_POST['password']);
-			$hashed_password = sha1($password);
-			return UserDB::userLogin($index_no,$hashed_password);
+			$hashed_password = password_hash($password, PASSWORD_BCRYPT, array('cost'=>14));
+			return UserDB::userLogin($index_no,$password);
 			
 
 	}
@@ -99,7 +99,7 @@ class UserFactory extends Factory{
 		$index_no= mysqli_real_escape_string($connection, $_POST['index_no']);
 		$nic= mysqli_real_escape_string($connection, $_POST['nic']);
 		$email= mysqli_real_escape_string($connection, $_POST['email']);
-		$hashed_password = sha1($password);
+		$hashed_password = password_hash($password, PASSWORD_BCRYPT, array('cost'=>14));
 		if (strlen($index_no)==4) {
 			return new Lecturer($first_name, $last_name, $nic, $email, $password, $index_no);
 		}

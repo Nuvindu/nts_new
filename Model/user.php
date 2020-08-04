@@ -21,7 +21,7 @@ abstract class User{
 		$this->last_name = $last_name;
 		$this->nic = $nic;
 		$this->email = $email;
-		$this->password = sha1($password);
+		$this->password = password_hash($password, PASSWORD_BCRYPT, array('cost'=>14));
 		$this->index_no = $index_no;
 		$this->batch = "20".substr($index_no,0,2)+0;
 	}
@@ -78,8 +78,8 @@ abstract class User{
 	public function setType($type){
 		$this->type = $type;
 	}
-	public function distributeEmail($subject,$message){  //mediator design pattern
-		return $this->controller->distributeEmail($this->email,$subject,$message);
+	public function distributeEmail($subject,$message,$index_no){  //mediator design pattern
+		return $this->controller->distributeEmail($index_no,$this->email,$subject,$message);
 	}
 	public function setController($controller){
 		$this->controller = $controller;

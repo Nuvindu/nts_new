@@ -16,7 +16,6 @@
 	$query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";
 	$users = mysqli_query($connection, $query);
 	while ($user = mysqli_fetch_assoc($users)) {
-
 		$user_list .= "<tr>";
 		$user_list .= "<td>{$user['first_name']}</td>";
 		$user_list .= "<td>{$user['last_name']}</td>";

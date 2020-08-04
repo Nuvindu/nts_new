@@ -40,7 +40,7 @@ $(document).ready(function () {
 	// after loading html page update profile picture
 	$.ajax({
 		type: 'POST',
-		url: '/nts_new/dbOperations/db_load_profilePicture.php',
+		url: '/nts_new/Model/db_load_profilePicture.php',
 		data: {
 			// send this variable to server to identify user to database manipulate
 			UserSessionName: UserSessionName
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
 		$.ajax({
 			type: 'POST',
-			url: '/nts_new/dbOperations/db_update_profilePicture.php',
+			url: '/nts_new/Model/db_update_profilePicture.php',
 			data: fd,
 			processData: false,
 			contentType: false,

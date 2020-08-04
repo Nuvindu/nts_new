@@ -18,7 +18,7 @@
 
         <div class="form-input">
             <div class="div-relative">
-                <form action="./dbOperations/db_add_student-db.php" method="POST" id="form-props">
+                <form action="./Model/db_add_student-db.php" method="POST" id="form-props">
                     <label for="Full Name">Full Name:</label>
                     <input class="texbox-styles" type="text" name="fname" placeholder="Full name" value="<?php if (isset($_GET['fname'])) {
                                                                                                                 echo $_GET['fname'];

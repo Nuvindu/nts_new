@@ -19,7 +19,7 @@
 		
 	else {
 		// query unsuccessful
-		header('Location: lecturer-db.php');
+		header('Location: Model/lecturer-db.php');
 	}
 
 		

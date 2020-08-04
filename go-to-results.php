@@ -11,33 +11,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Module Selection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/feedback.css">
     <link rel="stylesheet" type="text/css" href="css/go-to-results.css">
     <link rel="stylesheet" href="./style/style-header.css">
     <script src="./js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
-    <div class="header">
-        <div class="header">
-            <?php include_once('header.php'); ?>
-        </div>
+<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+            Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
     </div>
-    <div class="middle">
-        <div class="dash"><span><a href="lecturer-db.php">
-                    << Back to Dashboard</a> </span> </div>
-        <div class="login">
+
+<div class="header">
+        <?php include_once('header.php'); ?>
+    </div>
+
+    <!-- navbar -->
+    <?php include_once('navbar.php'); ?>
+	<div class="side-bar">
+        <span style="
+                                    text-align: center;
+                                    margin: 0;
+                                    height: 50px;
+                                    align-items: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    /* padding-left: 11px; */
+                                "><i class="fas fa-align-justify" aria-hidden="true" style="
+                    padding-left: 17px;
+                "></i></span>
+        <ul>
+        <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php">
+                <?php 
+                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
+                    else{echo '<i class="fas fa-bell"></i>';}
+                ?>
+                Notifications</a></li>
+            <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="add_exam_timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+        </ul>
+    </div> <!-- side-bar -->
+    <div class="container" style="padding-bottom:10%;">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				
 
             <form action="results.php" method="post">
 
-                <fieldset>
+                <!-- <fieldset> -->
                     <legend>
                         <h1> Select Module </h1>
                     </legend>
 
                     <p>
                         <label for="">Batch:</label>
-                        <select name="batch" id="batch">
+                        <select name="batch" id="batch" class="field" >
                             <option></option>
                             <?php $year = date("Y");
 										for ($i = $year - 3; $i <= $year + 1; $i++) {
@@ -49,7 +82,7 @@
                     </p>
                     <p>
                         <label for="">Year:</label>
-                        <select name="year" id="year">
+                        <select name="year" id="year" class="field">
                             <option></option>
                             <?php for ($i = 1; $i <= 3; $i++) {
 											echo "<option value = {$i}>{$i}</option>";
@@ -60,18 +93,19 @@
                     </p>
                     <p>
                         <label for="">Module:</label>
-                        <select name="module" id="module">
+                        <select name="module" id="module" class="field">
                             <option></option>
                         </select>
                     </p>
                     <p>
-                        <button type="submit" name="submit">Add/Modify Results</button>
+                        <button type="submit" name="submit" class="btn">Add/Modify Results</button>
                     </p>
 
-                </fieldset>
+                <!-- </fieldset> -->
             </form>
         </div> <!-- .login -->
-
+        </div>
+	</div>
 
     </div>
 

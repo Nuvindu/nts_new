@@ -1,5 +1,5 @@
-$(document).ready(function() {
-	$('#new_password').on('input', function() {
+$(document).ready(function () {
+	$('#new_password').on('input', function () {
 		var re = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
 		var pswd = $(this).val();
 		if (pswd.length < 8) {
@@ -14,7 +14,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#change_pass').on('click', function(event) {
+	$('#change_pass').on('click', function (event) {
 		event.preventDefault();
 		var current_pass = $('#current_password').val();
 		var new_pass = $('#new_password').val();
@@ -35,18 +35,18 @@ $(document).ready(function() {
 		} else if (new_pass == confirm_new_pass) {
 			if (new_pass.length > 7) {
 				$.ajax({
-					url: 'dbOperations/db_reset_passwordstudent-db.php',
+					url: '/nts_new/Model/db_reset_passwordstudent.php',
 					method: 'POST',
 					data: {
 						current_pass: current_pass,
 						new_pass: new_pass,
 						UserSessionName: UserSessionName
 					},
-					success: function(msg) {
+					success: function (msg) {
 						alert(msg);
 						location.reload(true);
 					},
-					error: function(error) {
+					error: function (error) {
 						alert('Error changing password!!!' + error);
 						location.reload(true);
 					}
@@ -59,7 +59,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#reent_new_password').on('input', function() {
+	$('#reent_new_password').on('input', function () {
 		var pass = $('#new_password').val();
 		var pswd = $(this).val();
 		if (pass == pswd) {

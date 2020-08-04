@@ -76,10 +76,16 @@ if (!isset($_SESSION['index_no'])) {
 		<ul>
 
             <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
-                            echo "lecturer-db.php";
+                            echo "Model/lecturer-db.php";
                         } else if (strlen($_SESSION['index_no']) == 6) {
-                            echo "student-db.php";
+                            echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php">
+                <?php 
+                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
+                    else{echo '<i class="fas fa-bell"></i>';}
+                ?>
+                Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
             <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
@@ -103,7 +109,7 @@ if (!isset($_SESSION['index_no'])) {
     $(document).ready(function() {
         $.ajax({
             type: 'POST',
-            url: '/nts_new/dbOperations/db_load_profilePicture.php',
+            url: '/nts_new/Model/db_load_profilePicture.php',
             data: {
                 // send this variable to server to identify user to database manipulate
                 UserSessionName: document.getElementById('index-no').textContent

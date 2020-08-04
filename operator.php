@@ -9,6 +9,8 @@
     <meta charset="UTF-8">
     <title>Users</title>
     <link rel="stylesheet" type="text/css" href="css/user.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/view-exam-timeTables.css"> -->
     <link rel="stylesheet" href="./style/style-header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
         integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
@@ -40,9 +42,7 @@
 
 <body>
 
-    <header>
-        <div class="icon"><img src="img/home.ico" width="22" height="22"></div>
-        <div class="top"><a href="index.php">Home</a></div>
+    <header>       
         <div class="logger" style="padding-top: 5px;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a
                 href="Service/logout.php">Log Out</a> </div>
     </header>
@@ -55,7 +55,7 @@
 
         <?php include "dropdown.php" ?>
 
-        <div class="add"><a href="add-user.php">Add New User</a> </br></div>
+        <div class="add"><a href="add-user-responsive.php">Add New User</a> </br></div>
         <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;"><a href="distributemail.php">Send Notifications</a> </br></div>
         <h1>Users</h1>
         <div class="search">
@@ -80,6 +80,18 @@
 
         </table>
 </body>
-
+<footer>
+    <div class="column clearfix">
+        <h3>Contact Us</h3>
+        <ul>
+            <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+            <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+            <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+            <li>Email - nts-galle@gov.lk</li>
+            <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+            <li>Telephone Number - 0912234452</li>
+        </ul>
+    </div>
+</footer>
 </html>
 <?php mysqli_close($connection); ?>

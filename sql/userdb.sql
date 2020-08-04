@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2020 at 10:00 PM
+-- Generation Time: Aug 04, 2020 at 06:37 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `userdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anatomy`
+--
+
+CREATE TABLE `anatomy` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `anatomy`
+--
+
+INSERT INTO `anatomy` (`date`, `fileUrl`) VALUES
+('2020-07-20', '14A IP Telephony.pptx'),
+('2020-07-21', 'flyweight.docx');
 
 -- --------------------------------------------------------
 
@@ -47,6 +66,24 @@ INSERT INTO `department` (`department_code`, `department_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `english`
+--
+
+CREATE TABLE `english` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `english`
+--
+
+INSERT INTO `english` (`date`, `fileUrl`) VALUES
+('2020-07-19', 'Sustainable Design.pptx');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lecturers`
 --
 
@@ -61,7 +98,10 @@ CREATE TABLE `lecturers` (
 
 INSERT INTO `lecturers` (`index_no`, `department`) VALUES
 ('0001', 1),
-('0002', 2);
+('0002', 2),
+('0003', 3),
+('0004', 4),
+('0005', 5);
 
 -- --------------------------------------------------------
 
@@ -114,6 +154,97 @@ INSERT INTO `modules` (`module_code`, `module_name`, `year`, `department`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `index_no` varchar(6) NOT NULL,
+  `notification` varchar(1000) NOT NULL,
+  `seen` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notifications`
+--
+
+INSERT INTO `notifications` (`index_no`, `notification`, `seen`) VALUES
+('0001', 'a:1:{i:0;a:2:{s:7:\"Subject\";s:5:\"CHECK\";s:7:\"Message\";s:31:\"Hello World 0001 lec1@gmail.com\";}}', '0'),
+('0002', 'a:1:{i:0;a:2:{s:7:\"Subject\";s:5:\"CHECK\";s:7:\"Message\";s:31:\"Hello World 0002 lec2@gmail.com\";}}', '0'),
+('0003', 'a:1:{i:0;a:2:{s:7:\"Subject\";s:5:\"CHECK\";s:7:\"Message\";s:31:\"Hello World 0003 lec3@gmail.com\";}}', '0'),
+('0004', 'a:1:{i:0;a:2:{s:7:\"Subject\";s:5:\"CHECK\";s:7:\"Message\";s:31:\"Hello World 0004 lec4@gmail.com\";}}', '0'),
+('0005', 'a:1:{i:0;a:2:{s:7:\"Subject\";s:5:\"CHECK\";s:7:\"Message\";s:31:\"Hello World 0005 lec5@gmail.com\";}}', '0'),
+('190001', 'a:4:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:25:\"1 190001 mahesh@gmail.com\";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:25:\"2 190001 mahesh@gmail.com\";}i:2;a:2:{s:7:\"Subject\";s:7:\"Check 3\";s:7:\"Message\";s:25:\"3 190001 mahesh@gmail.com\";}i:4;a:2:{s:7:\"Subject\";s:7:\"Check 5\";s:7:\"Message\";s:25:\"5 190001 mahesh@gmail.com\";}}', '0'),
+('200001', 'a:6:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:26:\"1 200001 kaveesh@gmail.com\";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:26:\"2 200001 kaveesh@gmail.com\";}i:2;a:2:{s:7:\"Subject\";s:7:\"Check 3\";s:7:\"Message\";s:26:\"3 200001 kaveesh@gmail.com\";}i:3;a:2:{s:7:\"Subject\";s:7:\"Check 4\";s:7:\"Message\";s:26:\"4 200001 kaveesh@gmail.com\";}i:4;a:2:{s:7:\"Subject\";s:7:\"Check 5\";s:7:\"Message\";s:26:\"5 200001 kaveesh@gmail.com\";}i:5;a:2:{s:7:\"Subject\";s:7:\"Check 6\";s:7:\"Message\";s:24:\"6 200001 stude@gmail.com\";}}', '0'),
+('210001', 'a:1:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 6\";s:7:\"Message\";s:25:\"6 210001 studen@gmail.com\";}}', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nutrition`
+--
+
+CREATE TABLE `nutrition` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `nutrition`
+--
+
+INSERT INTO `nutrition` (`date`, `fileUrl`) VALUES
+('2020-07-25', '2016 A Exam List.docx');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `obstetricpractice`
+--
+
+CREATE TABLE `obstetricpractice` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pharmacologyi`
+--
+
+CREATE TABLE `pharmacologyi` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pharmacologyi`
+--
+
+INSERT INTO `pharmacologyi` (`date`, `fileUrl`) VALUES
+('2020-07-21', 'creational design patterns (1).pptx');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `psychology`
+--
+
+CREATE TABLE `psychology` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `psychology`
+--
+
+INSERT INTO `psychology` (`date`, `fileUrl`) VALUES
+('2020-07-25', '09 Switching.pptx');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `result`
 --
 
@@ -144,8 +275,9 @@ CREATE TABLE `result` (
 --
 
 INSERT INTO `result` (`index_no`, `first_name`, `last_name`, `batch`, `1Y01`, `1Y02`, `1Y03`, `1Y04`, `1Y05`, `1Y06`, `1Y07`, `2Y01`, `2Y02`, `3Y01`, `3Y02`, `3Y03`, `3Y04`, `3Y05`, `is_deleted`) VALUES
-('190001', 'Mahesh', 'Madushan', 2019, 'PASS', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('200001', 'Kaveesh', 'Charuka', 2020, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
+('190001', 'Student1', 'NTS', 2019, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('200001', 'Student2', 'NTS', 2020, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('210001', 'Student3', 'NTS', 2021, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
 
 -- --------------------------------------------------------
 
@@ -164,7 +296,8 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`index_no`, `year`) VALUES
 ('190001', 1),
-('200001', 2);
+('200001', 2),
+('210001', 3);
 
 -- --------------------------------------------------------
 
@@ -244,7 +377,7 @@ CREATE TABLE `user` (
   `NIC` char(10) DEFAULT NULL,
   `batch` int(4) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `last_login` datetime NOT NULL,
   `is_deleted` tinyint(1) NOT NULL,
   `profile_picture_dir` varchar(255) NOT NULL
@@ -255,12 +388,28 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`index_no`, `type`, `first_name`, `last_name`, `NIC`, `batch`, `email`, `password`, `last_login`, `is_deleted`, `profile_picture_dir`) VALUES
-('0001', 'Lecturer', 'Kavinda', 'Pathirana', '1234567895', 1111, 'geeth@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-16 01:25:19', 0, '0001.png'),
-('0002', 'Lecturer', 'Gowantha', 'Charithal', '0000002345', 1111, 'gowan@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 0, ''),
-('01', 'Operator', 'Nuvindu', 'Nirmana', '1234567890', 9999, 'nuvidu@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-06-26 16:29:24', 0, ''),
-('02', 'Operator', 'Vinoja', 'Rathnayake', '1234567890', 9999, 'vinoja1@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-13 16:36:14', 0, ''),
-('190001', 'Student', 'Mahesh', 'Madushan', '7777777771', 1111, 'mahesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '2020-07-16 00:59:20', 0, ''),
-('200001', 'Student', 'Kaveesh', 'Charuka', '7777777772', 1111, 'kaveesh@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '0000-00-00 00:00:00', 0, '');
+('0001', 'Lecturer', 'Lecturer 1', 'NTS', '1111111117', 1111, 'lec1@gmail.com', '$2y$14$K5xzpsSAXWD1fVKBxMp0Ce6ur.ZzSYZ7O9DO7xZa5cpM7XtV9ohTO', '2020-08-04 09:52:22', 0, ''),
+('0002', 'Lecturer', 'Lecturer2', 'NTS', '1111111118', 1111, 'lec2@gmail.com', '$2y$14$7LcM8k9IKizQDKmeJGScqejVIq.8UbdOmvFnVIaZ8ElXtHas9Jncq', '0000-00-00 00:00:00', 0, ''),
+('0003', 'Lecturer', 'Lecturer3', 'NTS', '1111111119', 1111, 'lec3@gmail.com', '$2y$14$deocN.bXHGjlY2XAyixapekRO15J3V1le26WTQTbqwATZwEjed3Gu', '0000-00-00 00:00:00', 0, ''),
+('0004', 'Lecturer', 'Lecturer4', 'NTS', '2222222223', 1111, 'lec4@gmail.com', '$2y$14$FjJV0ZwaicKlI8TMW0mpZu5jzAyoUrBje2BgiJgkhND9FjUsrshTS', '0000-00-00 00:00:00', 0, ''),
+('0005', 'Lecturer', 'Lecturer5', 'NTS', '2222222224', 1111, 'lec5@gmail.com', '$2y$14$C90JgZP4VQuFAO1aaR6pROaVNykD1F4C/WZdwdU03IWOTloHdaPWW', '0000-00-00 00:00:00', 0, ''),
+('01', 'Operator', 'Operator1', 'NTS', '1111111112', 1111, 'operator1@gmail.com', '$2y$14$YcjUxn9avfhZIcDrBfnUDuXdzKzhYUQ/K7JY8Ry/3XAYJNip8fqn2', '2020-08-04 00:02:28', 0, ''),
+('02', 'Operator', 'Operator2', 'NTS', '1111111113', 1111, 'operator2@gmail.com', '$2y$14$1ACZKjKxCWkbinGLK0G1Gu2BdDWuu641NNw/80.K3cMVBvVl3fEk2', '2020-08-04 00:05:06', 0, ''),
+('190001', 'Student', 'Student1', 'NTS', '1111111114', 1111, 'stud@gmail.com', '$2y$14$j2dAarrsKVNiybqm1YJaT.tfoNqiKbzwkwLT7p0joXUVrxtYQ5VTC', '2020-08-04 10:01:31', 0, ''),
+('200001', 'Student', 'Student2', 'NTS', '1111111115', 1111, 'stude@gmail.com', '$2y$14$C8yMsKyXiqkQhojT3N/E/OKBZqQac60RnKWFJMGU2MAp2RwpnF576', '0000-00-00 00:00:00', 0, ''),
+('210001', 'Student', 'Student3', 'NTS', '1111111116', 1111, 'studen@gmail.com', '$2y$14$n50xBSVdWKh25O5nDYmqb.ChSTgH7Lly3AGDrATrETYoWY4OAEfES', '2020-08-04 00:20:05', 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verifypassword`
+--
+
+CREATE TABLE `verifypassword` (
+  `index_no` varchar(6) NOT NULL,
+  `request_time` varchar(20) NOT NULL,
+  `code` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -277,6 +426,12 @@ ALTER TABLE `lecturers`
 --
 ALTER TABLE `modules`
   ADD PRIMARY KEY (`module_code`);
+
+--
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`index_no`);
 
 --
 -- Indexes for table `result`
@@ -312,6 +467,12 @@ ALTER TABLE `timetable3`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
+  ADD PRIMARY KEY (`index_no`);
+
+--
+-- Indexes for table `verifypassword`
+--
+ALTER TABLE `verifypassword`
   ADD PRIMARY KEY (`index_no`);
 COMMIT;
 

@@ -8,6 +8,7 @@
     <head>
         <meta charset="UTF-8"> 
         <title>Add/Modify Results</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./style/style-header.css">
         <link rel="stylesheet" type="text/css" href="css/results.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
@@ -18,49 +19,79 @@
     </head>  
     <body>  
 
-    <header>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
-    <div class="header">
-            <div class="nts-text" style="margin:10px 10px 5px 10px">
-                <div>
-                    <a href="index.php">
-                    <img class="logo" src="./img/logo-0.png" alt="logo">
-                    </a>
-                </div>
-                <div style="flex-grow: 8">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
+    <body>
+<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+            Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+    </div>
 
-            </div>
-        </div>
-    </header>
-       
-        <div class="container">  
-        <div class="dash"><span><a href="lecturer-db.php"><< Back to Dashboard</a></span> </div>
-            <br />
-   <div class="table-responsive">  
-    <h1>Year <?php echo $year; ?></h1>
-    <h1><?php echo $module; ?> Results <div class="change"><span><a href="go-to-results.php"> Change Module</a></span></div></h1>
+<div class="header">
+        <?php include_once('header.php'); ?>
+    </div>
+
+    <!-- navbar -->
+    <?php include_once('navbar.php'); ?>
+	<div class="side-bar">
+        <span style="
+                                    text-align: center;
+                                    margin: 0;
+                                    height: 50px;
+                                    align-items: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    /* padding-left: 11px; */
+                                "><i class="fas fa-align-justify" aria-hidden="true" style="
+                    padding-left: 17px;
+                "></i></span>
+        <ul>
+        <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php">
+                <?php 
+                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
+                    else{echo '<i class="fas fa-bell"></i>';}
+                ?>
+                Notifications</a></li>
+            <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="add_exam_timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+        </ul>
+    </div> <!-- side-bar -->
+   <div class="table-responsive" style="padding-left:3.5%;">  
+    <h1 >Year <?php echo $year; ?></h1>
+    <h2 style="font-size:20px;"><?php echo $module; ?> Results <div class="change"><span><a href="go-to-results.php"> Change Module</a></span></div></h2>
     <form method="post" id="update_form">
                     <div align="left">
-                        <input type="submit" name="multiple_update" id="multiple_update" class="btn btn-info" value="Multiple Update" />
+                        <input type="submit" name="multiple_update" id="multiple_update" class="btn btn-info"  value="Multiple Update" />
                     </div>
                     <br />
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
-                            <thead>
+                            <thead style="background-color:rgb(133, 128, 128);">
                                 <th width="5%"></th>
-                                <th width="20%">Index Number</th>
+                                <th width="11%">Index_no</th>
                                 <th width="30%">First Name</th>
                                 <th width="30%">Last Name</th>
                                 <th width="15%"> Grade </th>
                             </thead>
-                            <tbody></tbody>
+                            <tbody style="background-color:lightgray;"></tbody>
                         </table>
                     </div>
                 </form>
    </div>  
   </div>
+  <footer>
+        <div class="column clearfix">
+            <h3>Contact Us</h3>
+            <ul>
+                <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
+                <li>Nurses Training School, Mahamodara, Galle, Sri Lanka</li>
+                <div class="icon1"><img src="img/at.ico" width="20" height="20"></div>
+                <li>Email - nts-galle@gov.lk</li>
+                <div class="icon1"><img src="img/tele.ico" width="20" height="20"></div>
+                <li>Telephone Number - 0912234452</li>
+            </ul>
+        </div>
+    </footer>
     </body>  
 </html>  
 <script>  

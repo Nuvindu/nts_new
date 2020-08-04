@@ -2,7 +2,7 @@ $(document).ready(function () {
 	var UserSessionName = document.getElementById('id-html').innerHTML;
 	$.ajax({
 		type: 'POST',
-		url: '/nts_new/dbOperations/db_load_profileInfo.php',
+		url: '/nts_new/Model/db_load_profileInfo.php',
 		data: {
 			// send this variable to server to identify user to database manipulate
 			UserSessionName: UserSessionName
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 		$.ajax({
 			type: 'POST',
-			url: '/nts_new/dbOperations/db_update_profileInfo.php',
+			url: '/nts_new/Model/db_update_profileInfo.php',
 			data: {
 				// data to send to server that to be updated
 				name: name,
@@ -40,7 +40,7 @@ $(document).ready(function () {
 				alert('Data updated');
 				$.ajax({
 					type: 'POST',
-					url: '/nts/dbOperations/db_load_profileInfo.php',
+					url: '/nts/Model/db_load_profileInfo.php',
 					data: {
 						// send this variable to server to identify user to database manipulate
 						UserSessionName: UserSessionName

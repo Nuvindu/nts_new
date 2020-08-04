@@ -1,5 +1,5 @@
-<?php session_start(); ?>
 <?php require_once __DIR__ . "/../inc/dbconnection.php" ?>
+<?php session_start(); ?>
 <?php 
     if (!isset($_SESSION['index_no'])){
         header('Location: ../login.php');

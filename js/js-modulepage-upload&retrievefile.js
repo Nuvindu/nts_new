@@ -88,7 +88,7 @@ $(document).ready(function() {
 	// get list of files
 	$.ajax({
 		type: 'POST',
-		url: '/nts_new/dbOperations/db_load_files.php',
+		url: '/nts_new/Model/db_load_files.php',
 		data: {
 			Name: Name
 		},
@@ -127,7 +127,7 @@ $(document).ready(function() {
 
 			$.ajax({
 				type: 'POST',
-				url: '/nts_new/dbOperations/db_upload_file.php',
+				url: '/nts_new/Model/db_upload_file.php',
 				data: fd,
 				processData: false,
 				contentType: false,

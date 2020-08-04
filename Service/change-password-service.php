@@ -6,6 +6,7 @@
 
 
 <?php 
+	
 	if (isset($_POST['submit'])) {
 		$contrl = new UserController();
 		$errors = ErrorCheck::changePasswordErrorCheck();

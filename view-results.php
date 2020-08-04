@@ -8,31 +8,53 @@
 <head>
 	<meta charset="UTF-8"> 
 	<title>Results</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/viewResultsRes.css">
 	<link rel="stylesheet" type="text/css" href="css/view-results.css">
 	<link rel="stylesheet" href="./style/style-header.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<header>
-		<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>! <a href="logout.php">Log Out</a></div>
-		<div class="header clearfix">
-            <div class="nts-text" >
-                <div>
-                    <a href="index.php"><img class="logo" src="./img/logo-0.png" alt="logo"></a>
-                </div>
-                <div style="flex-grow: 8">
-                    <h1 class="nts-text1">NURSES TRAINING SCHOOL</h1>
-                </div>
+<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+            Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
+    </div>
 
-            </div>
-        </div>
-	</header>
+<div class="header">
+        <?php include_once('header.php'); ?>
+    </div>
+
+    <!-- navbar -->
+    <?php include_once('navbar.php'); ?>
+	<div class="side-bar">
+        <span style="
+                                    text-align: center;
+                                    margin: 0;
+                                    height: 50px;
+                                    align-items: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    /* padding-left: 11px; */
+                                "><i class="fas fa-align-justify" aria-hidden="true" style="
+                    padding-left: 17px;
+                "></i></span>
+        <ul>
+        <li><a href="Model/student-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php">
+                <?php 
+                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
+                    else{echo '<i class="fas fa-bell"></i>';}
+                ?>
+                Notifications</a></li>
+            <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="add_exam_timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+        </ul>
+    </div> <!-- side-bar -->
 
 	<main>
-	<h1>View Academic Results  <span id="backtodashboardlink"><a href="student-db.php"><< Back to Dashboard</a></span></h1>
+	<h1 style="padding-left:4%;">View Academic Results</h1>
 
-	<h2 id="year">First Year </h2>
+	<h2 id="year" style="padding-left:4%;">First Year </h2>
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
@@ -41,7 +63,7 @@
 		<?php echo $first_year; ?>
 	</table>
 		
-	<h2 id="year">Second Year </h2>	
+	<h2 id="year" style="padding-left:4%;">Second Year </h2>	
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
@@ -50,7 +72,7 @@
 		<?php echo $second_year; ?>
 	</table>
 		
-	<h2 id="year">Third Year </h2>		
+	<h2 id="year" style="padding-left:4%;">Third Year </h2>		
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>

@@ -5,11 +5,11 @@
 <?php 
 	if (isset($_SESSION['user_id'])) {
 		if (strlen($_SESSION['index_no']) == 6) {
-			header('Location: student-db.php');
+			header('Location: Model/student-db.php');
 		} elseif (strlen($_SESSION['index_no']) == 2) {
 			header('Location: operator.php');
 		}elseif (strlen($_SESSION['index_no']) == 4) {
-			header('Location: lecturer-db.php');
+			header('Location: Model/lecturer-db.php');
 		}
 	}
 	unset($_SESSION['w']);
