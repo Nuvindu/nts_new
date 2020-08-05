@@ -46,21 +46,24 @@ if (!isset($_SESSION['index_no'])) {
                     padding-left: 17px;
                 "></i></span>
             <ul>
-            <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
-                            echo "Model/lecturer-db.php";
-                        } else if (strlen($_SESSION['index_no']) == 6) {
-                            echo "Model/student-db.php";
-                        } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                <?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>
-                Notifications</a></li>
-            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+                <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
+                                echo "Model/lecturer-db.php";
+                            } else if (strlen($_SESSION['index_no']) == 6) {
+                                echo "Model/student-db.php";
+                            } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="notifications.php">
+                        <?php
+                        if (isset($_SESSION['seen'])) {
+                            echo '<i class="far fa-bell"></i>';
+                        } else {
+                            echo '<i class="fas fa-bell"></i>';
+                        }
+                        ?>
+                        Notifications</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+                <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+                <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
             </ul>
         </div>
 
@@ -85,21 +88,24 @@ if (!isset($_SESSION['index_no'])) {
         <div class="navbar" id="navbar">
             <ul>
 
-            <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
-                            echo "Model/lecturer-db.php";
-                        } else if (strlen($_SESSION['index_no']) == 6) {
-                            echo "Model/student-db.php";
-                        } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                <?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>
-                Notifications</a></li>
-            <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+                <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
+                                echo "Model/lecturer-db.php";
+                            } else if (strlen($_SESSION['index_no']) == 6) {
+                                echo "Model/student-db.php";
+                            } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="notifications.php">
+                        <?php
+                        if (isset($_SESSION['seen'])) {
+                            echo '<i class="far fa-bell"></i>';
+                        } else {
+                            echo '<i class="fas fa-bell"></i>';
+                        }
+                        ?>
+                        Notifications</a></li>
+                <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
+                <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
+                <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
             </ul>
         </div>
 
@@ -115,7 +121,7 @@ if (!isset($_SESSION['index_no'])) {
                 <div id="profile-tab" class="tabContent" style="display: flex;flex-wrap: wrap;">
                     <h1 class="heading">Profile information</h1>
                     <div class="profile-img profile-img-mobile">
-                        <div id="change-pp" style="
+                        <div style="
     height: 145px;
     top: 24px;
     position: relative;
@@ -131,7 +137,7 @@ if (!isset($_SESSION['index_no'])) {
     /* align-content: center; */
     top: -32px;
 ">
-                                <img src="./img/camera.png" style="
+                                <img id="change-pp" src="./img/camera.png" style="
     height: 50px;
     top: 56px;
     position: relative;
@@ -214,7 +220,8 @@ if (!isset($_SESSION['index_no'])) {
         <!-- modalinfo content -->
         <div class="modal-content">
             <div class="info">
-                Name : <input type="text" id="name" value="" required>
+                First Name : <input type="text" id="name" value="" required>
+                Last Name : <input type="text" id="lname" value="" required>
                 NIC : <input type="text" id="NIC" value="" required>
                 email : <input type="email" id="email" value="" required>
             </div>
