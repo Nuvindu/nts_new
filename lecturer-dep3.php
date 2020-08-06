@@ -65,7 +65,6 @@
                 <li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-book"></i>Exam
                         Timetables</a></li>
                 <li><a href="feedback.php"><i class="fas fa-blog"></i>Feedback</a></li>
-                <li><a href="#"><i class="fas fa-map-pin"></i>Student Details</a></li>
             </ul>
         </div> <!-- side-bar -->
         <?php include_once('navbar.php'); ?>

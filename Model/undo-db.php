@@ -26,6 +26,9 @@ if(isset($_COOKIE['memento'])){
 
 
 }
+else{
+	header('Location: ../notifications.php?error=timed_out');
+}
 
 
  ?>
