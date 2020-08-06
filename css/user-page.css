@@ -29,7 +29,26 @@ body {
   background-size: cover;
   /* background: #efbb00; */
 }
-
+.num {
+  position: absolute;
+  right: -4px;
+  top: 27px;
+  color: red;
+}
+.numberCircle {
+    top: 136px;
+    left: 27px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    padding: 1px;
+    background-color: red;
+    border: 2px solid black;
+    color: black;
+    text-align: center;
+    font: 10px Arial, sans-serif;
+    font-weight: bold;
+}
 .wrapper {
   display: flex;
   position: relative;
