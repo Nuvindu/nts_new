@@ -34,6 +34,7 @@ $(document).ready(function () {
 			alert('Re-entering new password is required!!!');
 		} else if (new_pass == confirm_new_pass) {
 			if (new_pass.length > 7) {
+				$(".change-btn").prop('disabled', true);
 				$.ajax({
 					url: '/nts_new/Model/db_reset_passwordstudent.php',
 					method: 'POST',
