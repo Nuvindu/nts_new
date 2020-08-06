@@ -89,7 +89,7 @@ abstract class Factory {
 	abstract protected function newUser();
 }
 
-class UserFactory extends Factory{
+class UserFactory extends Factory{      //factory design pattern
 
 	public function newUser(){
 		global $connection;

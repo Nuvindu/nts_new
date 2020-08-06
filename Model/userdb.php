@@ -196,10 +196,26 @@ class UserDB extends Model implements IUserDB{
 				verify_query($result_set);
 
 				if (strlen($_SESSION['index_no']) == 6) {
+					$sql ="SELECT * FROM notifications WHERE index_no = '{$_SESSION['index_no']}' LIMIT 1";
+				    $resulttable = mysqli_query($connection, $sql);
+				    if($resulttable){
+					    $result = mysqli_fetch_assoc($resulttable);
+					    if($result){  
+					        $_SESSION['count'] = $result['seen'];       
+					    }				    	
+				    }
 					header('Location: Model/student-db.php');
 				} elseif (strlen($_SESSION['index_no']) == 2) {
 					header('Location: operator.php');
 				}elseif (strlen($_SESSION['index_no']) == 4) {
+					$sql ="SELECT * FROM notifications WHERE index_no = '{$_SESSION['index_no']}' LIMIT 1";
+				    $resulttable = mysqli_query($connection, $sql);
+				    if($resulttable){
+					    $result = mysqli_fetch_assoc($resulttable);
+					    if($result){  
+					        $_SESSION['count'] = $result['seen'];       
+					    }				    	
+				    }
 					header('Location: Model/lecturer-db.php');
 				}
 				return 0;

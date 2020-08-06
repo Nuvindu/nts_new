@@ -4,17 +4,24 @@
 if (!isset($_SESSION['index_no'])) {
     header('Location: login.php');
 }
-$_SESSION['seen'] = 1;
 ?>
 
 
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Notifications</title>
     <link rel="stylesheet" type="text/css" href="css/notifications.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/js-notifications.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "notifications.php?status=" + str, true);
+        xmlhttp.send();
+    </script>
 </head>
 <body>
 <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
@@ -29,22 +36,27 @@ $_SESSION['seen'] = 1;
     
     <div class="container">
         <h1 style="font-size:36px;">Notifications</h1>
-        <?php 
+        <?php
+        
+        
+        if(isset($_COOKIE["memento"])){ //undo link works only when the cookie is set
+            echo '<div class="undo" id = "undo" style="float: right;font-size:18px;margin-top: -31px;margin-right: 35px;"><a href="Model/undo-db.php">undo</a></div>';
+        }
         if(!empty($notification)){
             $count=0;
-            $i=200;
+            $i=50;
             while($i>=0){
-                if(isset($notification[$i])){
+                if(isset($notification[$i])){ //display the notification if it is not empty
                     $count+=1;
                     echo 
                     "<fieldset>
                         <legend style = 'font-weight:bold;font-size:24px;padding:8px;'>{$notification[$i]["Subject"]}</legend>
-                        <a href='Model/del-notify-db.php?id={$i}' style = 'float:right;' ><i class='fas fa-trash-alt fa-1x'></i></a>  
+                        <a href='Model/del-notify-db.php?id={$i}' id = 'd' style = 'float:right;' ><i class='fas fa-trash-alt fa-1x'></i></a>  
                         <br>
                         <div class='message'>{$notification[$i]["Message"]}</div>
                                          
                     </fieldset>"; 
-                    if($count==4){
+                    if($count==4){  // to make sure only displaying four notifications
                         break;
                     }
                 }

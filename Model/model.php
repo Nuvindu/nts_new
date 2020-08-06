@@ -19,30 +19,61 @@ class Model {
 		global $connection;
 		$sql ="SELECT * FROM notifications WHERE index_no = '{$index_no}' LIMIT 1";
 		$resulttable = mysqli_query($connection, $sql);
-		$result = mysqli_fetch_assoc($resulttable);
+		$result = mysqli_fetch_assoc($resulttable); // get the record of notifications of the current user
 		$finalarray = array();		
 		if($result){
-			$arraylist = $result['notification'];
+			$arraylist = $result['notification']; //get the serialized array of notifications
+			$seen = $result['seen'];  //get the count of unread messages
 			$array = array('Subject' => $subject, 'Message' => $email_body);
 			// var_dump(json_decode($q));	
 			$finalarray = unserialize($arraylist);
-			$finalarray[sizeof($finalarray)] = $array;
+			$finalarray[sizeof($finalarray)] = $array; //add the notification to the end of the array
+			$lenarray = $finalarray;
 			$finalarray = serialize($finalarray);
-			$query = "UPDATE notifications SET notification = '{$finalarray}' , seen = 0 WHERE index_no = $index_no LIMIT 1";
-			$result = mysqli_query($connection,$query);	
+			$seen++;   //mark the unread message
+			$query = "UPDATE notifications SET notification = '{$finalarray}' , seen = {$seen} WHERE index_no = $index_no LIMIT 1";
+			$result = mysqli_query($connection,$query);	//update the datatbase
 			return true;	
 		}
 		else{
-			$finalarray = array('Subject' => $subject, 'Message' => $email_body);
+			$finalarray = array('Subject' => $subject, 'Message' => $email_body);  //if the array is empty create a new one
 			$finalarray = array($finalarray);
 			$finalarray = serialize($finalarray);
-			$query = "INSERT INTO notifications (index_no,notification,seen) VALUES ('{$index_no}','{$finalarray}',0)";
-			$result = mysqli_query($connection,$query);	
+			$query = "INSERT INTO notifications (index_no,notification,seen) VALUES ('{$index_no}','{$finalarray}',1)";
+			$result = mysqli_query($connection,$query);	//update the datatbase
 			return true;	
 		}
 
 	}
 
+	public static function undoNotification($id,$index_no,$subject,$message){
+		global $connection;
+		$sql ="SELECT * FROM notifications WHERE index_no = '{$index_no}' LIMIT 1";
+		$resulttable = mysqli_query($connection, $sql);
+		$result = mysqli_fetch_assoc($resulttable);  // get the record of notifications of the current user
+		$finalarray = array();		
+		if($result){
+			$arraylist = $result['notification'];
+			$array = array('Subject' => $subject, 'Message' => $message);
+			// var_dump(json_decode($q));	
+			$finalarray = unserialize($arraylist);
+			$finalarray[$id] = $array;  //save the notification on array in its own index
+			$lenarray = $finalarray;
+			$finalarray = serialize($finalarray);
+			$query = "UPDATE notifications SET notification = '{$finalarray}' , seen = 0 WHERE index_no = $index_no LIMIT 1";
+			$result = mysqli_query($connection,$query);	//update the datatbase
+			return true;	
+		}
+		else{
+			$finalarray = array('Subject' => $subject, 'Message' => $message); //if the array is empty create a new one
+			$finalarray = array($finalarray);
+			$finalarray = serialize($finalarray);
+			$query = "INSERT INTO notifications (index_no,notification,seen) VALUES ('{$index_no}','{$finalarray}',0)";
+			$result = mysqli_query($connection,$query);	//update the datatbase
+			return true;	
+		}
+
+	}
 
 	public static function compareCode($verifycode,$index){    
 		global $connection;
@@ -90,7 +121,7 @@ class Model {
 	public static function createPasswordTable($code,$time,$index){
 		global $connection;
 		$query = "INSERT INTO verifypassword (index_no, request_time, code) VALUES ('{$index}','{$time}','{$code}')";
-		$record = mysqli_query($connection, $query);
+		$record = mysqli_query($connection, $query); //update the database with the code required to change the password
 	}
 	public static function viewResults(){
 		global $connection;

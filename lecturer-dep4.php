@@ -226,10 +226,14 @@
                 <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="notifications.php">
                     <?php 
-                        if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                        else{echo '<i class="fas fa-bell"></i>';}
-                    ?>
-                    Notifications</a></li>
+                        if(isset($_SESSION['seen'])){
+                            echo '<i class="far fa-bell"></i>';
+                        }
+                        else{
+                            echo '<i class="fas fa-bell"></i>';
+                        }
+                    ?><span class="num numberCircle" style=<?php if(!isset($_SESSION['count'])){echo "display:none;";} ?>><?php echo $_SESSION["count"];?></span>
+                    Notifications</a></li> 
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
                 <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>

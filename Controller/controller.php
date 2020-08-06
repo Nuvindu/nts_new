@@ -88,6 +88,37 @@ class Controller implements IController{
 	}
 }
 
+class Originator{            // memento design pattern
+	private $state;
+	private Memento $memento;
+
+	public function setState($id,$subject,$message,$index_no){
+		$this->state = array('id' => $id, 'index' => $index_no, 'subject' => $subject, 'message' => $message);
+	}
+	public function getState(){
+		return $this->state;
+	}
+	public function saveStateToMemento(){
+		return new Memento($this->state);
+	}
+
+	public function getMemento($memento){
+		$this->state = $memento->getState();
+	}
+
+}
+
+class Memento{
+	private $state;
+
+	public function __construct($state){
+		$this->state = $state;
+	}
+
+	public function getState(){
+		return $this->state;
+	}
+}
 ?>
 
 
