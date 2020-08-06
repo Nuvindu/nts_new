@@ -185,14 +185,15 @@ if (!isset($_SESSION['index_no'])) {
         <ul>
             <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="notifications.php">
-                    <?php
-                    if (isset($_SESSION['seen'])) {
+                <?php 
+                    if(isset($_SESSION['seen'])){
                         echo '<i class="far fa-bell"></i>';
-                    } else {
+                    }
+                    else{
                         echo '<i class="fas fa-bell"></i>';
                     }
-                    ?>
-                    Notifications</a></li>
+                ?><span class="num numberCircle" style=<?php if(!isset($_SESSION['count'])){echo "display:none;";} ?>><?php echo $_SESSION["count"];?></span>
+                Notifications</a></li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="view-exam-timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
             <li><a href="view-results.php"><i class="fas fa-address-card"></i>Results</a></li>
