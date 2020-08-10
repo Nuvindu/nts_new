@@ -1,11 +1,6 @@
-<?php session_start(); ?>
+
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('Model/lecturer-profile-db.php'); ?>
-<?php
-if (!isset($_SESSION['index_no'])) {
-    header('Location: login.php');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,19 +46,17 @@ if (!isset($_SESSION['index_no'])) {
                             } else if (strlen($_SESSION['index_no']) == 6) {
                                 echo "Model/student-db.php";
                             } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="notifications.php">
-                        <?php
+                <li><a href="notifications.php"><?php
                         if (isset($_SESSION['seen'])) {
                             echo '<i class="far fa-bell"></i>';
                         } else {
                             echo '<i class="fas fa-bell"></i>';
                         }
-                        ?>
-                        Notifications</a></li>
+                        ?>Notifications</a></li>
                 <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-                <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-                <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+                <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam TimeTables</a></li>
+                <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+                <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
             </ul>
         </div>
 
@@ -93,19 +86,17 @@ if (!isset($_SESSION['index_no'])) {
                             } else if (strlen($_SESSION['index_no']) == 6) {
                                 echo "Model/student-db.php";
                             } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="notifications.php">
-                        <?php
+                <li><a href="notifications.php"><?php
                         if (isset($_SESSION['seen'])) {
                             echo '<i class="far fa-bell"></i>';
                         } else {
                             echo '<i class="fas fa-bell"></i>';
                         }
-                        ?>
-                        Notifications</a></li>
+                        ?>Notifications</a></li>
                 <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-                <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-                <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+                <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+                <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+                <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
             </ul>
         </div>
 
@@ -172,10 +163,10 @@ if (!isset($_SESSION['index_no'])) {
 
 
                         <!-- change profile info -->
-                        <button class="change-btn" id="change-Info">change Info</button>
+                        <button class="change-btn" id="change-Info">change info</button>
 
 
-                        <button class="change-btn" id="change-password">Change
+                        <button class="change-btn" id="change-password">change
                             password</button>
 
                     </div>
@@ -219,6 +210,8 @@ if (!isset($_SESSION['index_no'])) {
     <div id="modal-Info" class="modal">
         <!-- modalinfo content -->
         <div class="modal-content">
+            <button style="width: 28px;height: 18px;background: red;color: white;border: none;" onclick="document.getElementById('modal-Info').style.display='none';" class="close-confirm-modal"
+            title="Close Modal" style="float: right;">X</button>
             <div class="info">
                 First Name : <input type="text" id="name" value="" required>
                 Last Name : <input type="text" id="lname" value="" required>
@@ -232,9 +225,12 @@ if (!isset($_SESSION['index_no'])) {
     <div id="modal-password" class="modal">
         <!-- modalinfo content -->
         <div class="modal-content" style="display: block;">
+            <button style="width: 28px;height: 18px;background: red;color: white;border: none;" onclick="document.getElementById('modal-password').style.display='none';" class="close-confirm-modal"
+            title="Close Modal" style="float: right;">X</button>
             <div class="password-reset-content" id="password-reset">
                 <label class="lable" for="password" style="color:black">Current Password</label>
                 <input id="current_password" name="password" type="password">
+                <br>
                 <label class="lable" for="password" style="color:black;">New Password</label>
                 <input id="new_password" name="newpassword" type="password">
                 <span id="error" class="error">include 8
@@ -243,14 +239,15 @@ if (!isset($_SESSION['index_no'])) {
                 <label class="lable" for="confirmpassword" style="color:black;">Confirm
                     Password</label>
                 <input id="reent_new_password" name="confirmpassword" type="password">
-                <button class="change-btn" id="password-reset-abort"
-                    style="width: 100%;margin: 20px 0px;">Cancel</button>
+                <button class="change-btn" id="reset-abort"
+                    style="width: 100%;margin: 20px 0px;" onclick="document.getElementById('modal-password').style.display='none';">Cancel</button>
                 <button class="change-btn" id="change_pass" style="width: 100%;margin: 20px 0px;">Confirm</button>
             </div>
 
         </div>
 
     </div>
+    <br><br><br><br><br><br>
     <footer id="footer">
         <div class="column clearfix">
             <h3>Contact Us</h3>

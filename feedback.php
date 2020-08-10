@@ -1,29 +1,6 @@
-<?php session_start(); ?>
 <?php require_once('inc/dbconnection.php'); ?>
-<?php
-if (!isset($_SESSION['index_no'])) {
-    header('Location: login.php');
-}
-?>
-<?php
-	if(isset($_POST['submit'])) {
-		$subject = $_POST['subject'];
-		$feedback = $_POST['feedback'];
-		$to = 'feed.back12569@gmail.com';
-		$mail_subject = 'Feedback for the Website';
-		// $email_body = "From: Anonymous <br>";
-		$email_body = "<b>Subject: </b> {$subject} <br>";
-		$email_body .= "<b>Message: </b> <br>".nl2br(strip_tags($feedback));
-		$header = "Content-Type: text/html;";
-		$sending = mail($to,$mail_subject,$email_body,$header);
-		if(!$sending){
-			echo "<script>alert('Error ocurred in sending the feedback');</script>";
-		}
-		else{
-			header('Location: login.php');
-		}
-	}
-?>
+<?php require_once('Service/feedback-service.php'); ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -50,10 +27,10 @@ if (!isset($_SESSION['index_no'])) {
 			<div class="right">
 				<h2>Feedback About This Website</h2>
 				<form action="feedback.php" method="post" class="userform">
-				<input type="text" class="field" placeholder="Subject" name="subject">
+				<input type="text" class="field" placeholder="Subject (optional)" name="subject">
 				<!-- <input type="text" class="field" placeholder="Your Email"> -->
 				<!-- <input type="text" class="field" placeholder="Phone"> -->
-				<textarea placeholder="Feedback" class="field" name="feedback"></textarea>
+				<textarea placeholder="Feedback (required)" class="field" name="feedback" required></textarea>
 				<button name="submit" class="btn">Send</button>
 			</form>
 			</div>
@@ -80,18 +57,17 @@ if (!isset($_SESSION['index_no'])) {
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                <?php 
+            <li><a href="notifications.php"><?php 
                     if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
                     else{echo '<i class="fas fa-bell"></i>';}
-                ?>
-                Notifications</a></li>
+                ?>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="#"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="#"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div> <!-- side-bar -->
+    <br><br><br><br><br>
 	<footer>
         <div class="column clearfix">
             <h3>Contact Us</h3>

@@ -26,11 +26,14 @@
 			
 				<img src="img/logo-0.png">
 				<h2 style="font-size:1.5rem;">Welcome</h2>
+
+        <div class="errors" style="color: red;">
               <?php 
                 if (!empty($errors)) {
                   display_errors($errors);
                 }
               ?>  
+        </div>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>

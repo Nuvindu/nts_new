@@ -1,10 +1,15 @@
+<?php session_start(); ?>
 <?php include_once('inc/dbconnection.php'); ?>
 <?php include_once('inc/functions.php'); ?>
 <?php 
 	//checking if a user is logged in
-	if (!isset($_SESSION['first_name'])) {
-		header('Location: index.php');
-	}
+if (!isset($_SESSION['index_no'])) {
+    header('Location: login.php');
+}
+else if(strlen($_SESSION['index_no'])!= 6){
+    header('Location: login.php');
+}
+else{
 	$timeTable_list = '';
 	$sqlget="SELECT * FROM timeTable WHERE is_deleted=0 ORDER BY Date,Time";
 	$sqldata=mysqli_query($connection, $sqlget) or die("error getting");
@@ -58,5 +63,5 @@
 	
 	}
 
-
+}
 ?>

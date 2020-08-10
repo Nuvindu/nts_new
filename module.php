@@ -4,9 +4,10 @@
 if (!isset($_SESSION['index_no'])) {
     header('Location: login.php');
 }
-if (strlen($_SESSION['index_no']) == 6) {
-    header('Location:404.html');
-} ?>
+if (strlen($_SESSION['index_no']) != 4) {
+    header('Location:404.php');
+} 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +24,9 @@ if (strlen($_SESSION['index_no']) == 6) {
 </head>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log
+    <div class="logger" style="float: right;padding-right: 5px;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log
             Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span> </div>
-
+    <br>
 
     <!-- sidebar -->
     <div class="side-bar" onmouseover="resizeInfoAreaUp()" onmouseout="resizeInfoAreaDown()">
@@ -47,19 +48,17 @@ if (strlen($_SESSION['index_no']) == 6) {
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                    <?php
+            <li><a href="notifications.php"><?php
                     if (isset($_SESSION['seen'])) {
                         echo '<i class="far fa-bell"></i>';
                     } else {
                         echo '<i class="fas fa-bell"></i>';
                     }
-                    ?>
-                    Notifications</a></li>
+                    ?>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div>
 
@@ -72,7 +71,7 @@ if (strlen($_SESSION['index_no']) == 6) {
     parse_str($url_components['query'], $params);
     if (isset($_SESSION[$params['moduleName']])) {
     } else {
-        header('Location:404.html');
+        header('Location:404.php');
     }
     ?>
     <!-- header -->
@@ -101,14 +100,21 @@ if (strlen($_SESSION['index_no']) == 6) {
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php"><?php
+                    if (isset($_SESSION['seen'])) {
+                        echo '<i class="far fa-bell"></i>';
+                    } else {
+                        echo '<i class="fas fa-bell"></i>';
+                    }
+                    ?>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div>
 
-    <div class="card" id="info-area">
+    <div class="card" id="info-area" style="padding-bottom: 258px;">
         <!-- module description -->
         <h3 id="name"><?php // Display result 
                         echo $params['moduleName']
@@ -130,8 +136,8 @@ if (strlen($_SESSION['index_no']) == 6) {
     </div>
     <!-- confirmation modal for deletefile -->
     <div id="id01" class="confirm-modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close-confirm-modal"
-            title="Close Modal">×</span>
+<!--         <span onclick="document.getElementById('id01').style.display='none';" class="close-confirm-modal"
+            title="Close Modal">×</span> -->
         <form class="confirm-modal-content" action="/action_page.php">
             <div class="container">
                 <h1>Delete File</h1>
@@ -159,9 +165,10 @@ if (strlen($_SESSION['index_no']) == 6) {
     <div id="fileUploadModal" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content" id="modal-content">
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span onclick="document.getElementById('fileUploadModal').style.display='none';" class="close-confirm-modal"
+            title="Close Modal" style="">&times;</span>
                 <h2>Upload file (.pdf/.docx/.pptx)</h2>
             </div>
             <div class="modal-body">
@@ -195,7 +202,8 @@ if (strlen($_SESSION['index_no']) == 6) {
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span onclick="document.getElementById('fileUpdateModal').style.display='none';" class="close-confirm-modal"
+            title="Close Modal">&times;</span>
                 <h2>Update file (.pdf/.docx/.pptx)</h2>
             </div>
             <div class="modal-body">
@@ -228,6 +236,7 @@ if (strlen($_SESSION['index_no']) == 6) {
         </div>
 
     </div>
+
     <footer id="footer">
         <div class="column clearfix">
             <h3>Contact Us</h3>

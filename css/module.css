@@ -250,6 +250,8 @@ hr {
     font-size: 40px;
     font-weight: bold;
     color: #f1f1f1;
+    height: 35px;
+    width: 21px;
 }
 
 .close-confirm-modal:hover,
@@ -719,6 +721,7 @@ footer {
     .card {
         margin-left: 20px;
         min-height: 444px;
+        padding-bottom: 125px;
     }
 
     #name {

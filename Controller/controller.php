@@ -27,13 +27,14 @@ class Controller implements IController{
 			echo "<script>alert('Error ocurred in sending email.');</script>";
 		}
 		else{
-			$hashed_code = sha1($code); //hash the entered code
+			// $hashed_code = sha1($code); //hash the entered code
+			$hashed_code = password_hash($code, PASSWORD_BCRYPT, array('cost'=>14));
 			$time = getTime();	
 			return Model::createPasswordTable($hashed_code,$time,$index); 
 		}
 	}
 	public function distributeEmail($index_no,$email,$subject,$email_body){
-		$email_body .= ' '.$email;
+		$email_body .= ' ';
 		$email = 'feed.back12569@gmail.com';
 		$header = "Content-Type: text/html;";
 		// $sending = mail($email,$subject,$email_body,$header);

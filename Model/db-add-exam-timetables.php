@@ -1,11 +1,12 @@
+<?php session_start(); ?>
 <?php require_once('inc/dbconnection.php'); ?>
 <?php
     if (!isset($_SESSION['index_no'])){
-        header('Location: login.php');
+            header('Location: login.php');
+        }
+    if (strlen($_SESSION['index_no']) != 4) {
+        header('Location: index.php');
     }
-	//if ($_SESSION['admin']!=1){
-	//	header('Location: user-page.php');
-	//}
 	$timeTable_list = '';
 	$query = "SELECT * FROM timeTable";
 	$query = "SELECT * FROM timeTable WHERE is_deleted=0 ORDER BY Date,Time";
@@ -16,7 +17,7 @@
 		$timeTable_list .= "<td>{$timeTable['Time']}</td>";
 		$timeTable_list .= "<td>{$timeTable['Place']}</td>";
 		$timeTable_list .= "<td>{$timeTable['Module_name']}</td>";
-		$timeTable_list .= "<td><a href=\"delete-row.php?variable=timetable&del=$timeTable[Module_name]\">Delete</a></td>";
+		$timeTable_list .= "<td><a href=\"Model/delete-row.php?variable=timetable&del=$timeTable[Module_name]\">Delete</a></td>";
 		$timeTable_list .= "</tr>";
 	}
 }
@@ -34,7 +35,7 @@
 		$timeTable2_list .= "<td>{$timeTable2['Time']}</td>";
 		$timeTable2_list .= "<td>{$timeTable2['Place']}</td>";
 		$timeTable2_list .= "<td>{$timeTable2['Module_name']}</td>";
-		$timeTable2_list .= "<td><a href=\"delete-row.php?variable=timetable2&del=$timeTable2[Module_name]\">Delete</a></td>";
+		$timeTable2_list .= "<td><a href=\"Model/delete-row.php?variable=timetable2&del=$timeTable2[Module_name]\">Delete</a></td>";
 		$timeTable2_list .= "</tr>";
 		}
 	}
@@ -51,7 +52,7 @@
 		$timetable3_list .= "<td>{$timetable3['Time']}</td>";
 		$timetable3_list .= "<td>{$timetable3['Place']}</td>";
 		$timetable3_list .= "<td>{$timetable3['Module_name']}</td>";
-		$timetable3_list .= "<td><a href=\"delete-row.php?variable=timetable3&del=$timetable3[Module_name]\">Delete</a></td>";
+		$timetable3_list .= "<td><a href=\"Model/delete-row.php?variable=timetable3&del=$timetable3[Module_name]\">Delete</a></td>";
 		$timetable3_list .= "</tr>";
 		}
 	}

@@ -80,47 +80,61 @@ class Model {
 		$sql ="SELECT * FROM verifypassword WHERE index_no = '{$index}' LIMIT 1";
 		$resulttable = mysqli_query($connection, $sql);
 		$result = mysqli_fetch_assoc($resulttable);
-		$table_time_str = $result['request_time'];  // get the code requested time from the table 
-		$compare = compareTime($table_time_str); // compare the current time table time and check the difference is less than 10 mins
-		if($compare){
-			$table_code = $result['code'];  // get the hash code from the table
-			if(sha1($verifycode)==$table_code){  
-				$_SESSION['fgtpw'] = "true";  //setting a session to access the change password page
-				echo "<script>window.location.href = 'changepw-verify.php?user_index={$index}';</script>";
+		if(!$result){
+			$x = array("1","2","3","4");
+			foreach ($x as $alpha) {
+				if($_SESSION['w']==$alpha){
+					$key = array_search($alpha, $x)+1;
+					$_SESSION['w'] = $x[$key];
+					// echo $_SESSION['w'];
+					break;
+				}
 			}
-			else{   //count the tries and if it is more than three redirect to index page and blocking the access to the change password page
-				
-				if(intval($_SESSION['w'])==3){      
-					unset($_SESSION['fgtpw']);
-					echo "<script>alert('You tried three times.Password change is not accessible!!!');</script>";
-					echo "<script>window.location.href = 'index.php';</script>";
-				}
-				else{
-					echo "<script>alert('Verify Code is Invalid');</script>";
-				}
-				$x = array("1","2","3","4");
-				foreach ($x as $alpha) {
-					if($_SESSION['w']==$alpha){
-						$key = array_search($alpha, $x)+1;
-						$_SESSION['w'] = $x[$key];
-						// echo $_SESSION['w'];
-						break;
-					}
-				}
-				
-				
-				
-				
-			}
+			echo "<script>alert('Verify Code is Invalid');</script>";
+			return;
 		}
 		else{
-			echo "<script>alert('Error Ocurred!!!!');</script>";
+			$table_time_str = $result['request_time'];  // get the code requested time from the table 
+			// $compare = compareTime($table_time_str); // compare the current time table time and check the difference is less than 10 mins
+			if($table_time_str){ // (added an event to auto delete the row after certain time)
+				$table_code = $result['code'];  // get the hash code from the table
+				if(password_verify($verifycode, $table_code)){ 
+					$_SESSION['fgtpw'] = "true";  //setting a session to access the change password page
+					echo "<script>window.location.href = 'changepw-verify.php?user_index={$index}';</script>";
+				}
+				else{   //count the tries and if it is more than three redirect to index page and blocking the access to the change password page
+					
+					if(intval($_SESSION['w'])==3){      
+						unset($_SESSION['fgtpw']);
+						echo "<script>alert('You tried three times.Password change is not accessible!!!');</script>";
+						echo "<script>window.location.href = 'index.php';</script>";
+					}
+					else{
+						echo "<script>alert('Verify Code is Invalid');</script>";
+					}
+					$x = array("1","2","3","4");
+					foreach ($x as $alpha) {
+						if($_SESSION['w']==$alpha){
+							$key = array_search($alpha, $x)+1;
+							$_SESSION['w'] = $x[$key];
+							// echo $_SESSION['w'];
+							break;
+						}
+					}
+						
+				}
+			}
+			else{
+				echo "<script>alert('Error Ocurred!!!!');</script>";
+				return;
+			}
+
 		}
 
 	}
 	public static function createPasswordTable($code,$time,$index){
 		global $connection;
-		$query = "INSERT INTO verifypassword (index_no, request_time, code) VALUES ('{$index}','{$time}','{$code}')";
+		$query = "INSERT INTO verifypassword (index_no, request_time, code) VALUES ('{$index}',NOW(),'{$code}')";
 		$record = mysqli_query($connection, $query); //update the database with the code required to change the password
 	}
 	public static function viewResults(){

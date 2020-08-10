@@ -1,11 +1,5 @@
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('Model/notifications-db.php'); ?>
-<?php
-if (!isset($_SESSION['index_no'])) {
-    header('Location: login.php');
-}
-?>
-
 
 <!DOCTYPE html>
 
@@ -40,7 +34,7 @@ if (!isset($_SESSION['index_no'])) {
         
         
         if(isset($_COOKIE["memento"])){ //undo link works only when the cookie is set
-            echo '<div class="undo" id = "undo" style="float: right;font-size:18px;margin-top: -31px;margin-right: 35px;"><a href="Model/undo-db.php">undo</a></div>';
+            echo '<div class="undo" id = "undo" style="float: right;font-size:18px;margin-top: -22px;margin-right: 18px;"><a href="Model/undo-db.php">undo</a></div>';
         }
         if(!empty($notification)){
             $count=0;
@@ -88,15 +82,15 @@ if (!isset($_SESSION['index_no'])) {
             <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
             <!-- <li><a href="notifications.php"><i class="fas fa-bell"></i>Notifications</a></li> -->
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="#"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="#"><i class="fas fa-comment-dots"></i>Feedback</a></li>
 
         </ul>
     </div> <!-- side-bar -->
     <br>
     <br>
-    <br>
+    <br><br><br><br><br><br><br><br>
     <footer>
         <div class="column clearfix">
             <h3>Contact Us</h3>

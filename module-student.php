@@ -20,10 +20,10 @@ if (!isset($_SESSION['index_no'])) {
 </head>
 
 <body>
-    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log
+    <div class="logger" style="float: right;padding-right: 5px;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log
             Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span> </div>
 
-
+    <br>
     <!-- sidebar -->
     <div class="side-bar" onmouseover="resizeInfoAreaUp()" onmouseout="resizeInfoAreaDown()">
         <span style="
@@ -54,9 +54,9 @@ if (!isset($_SESSION['index_no'])) {
                     ?>
                     Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div>
 
@@ -69,7 +69,7 @@ if (!isset($_SESSION['index_no'])) {
     parse_str($url_components['query'], $params);
     if (isset($_SESSION[$params['moduleName']])) {
     } else {
-        header('Location:404.html');
+        header('Location:404.php');
     }
     ?>
     <!-- header -->
@@ -99,13 +99,13 @@ if (!isset($_SESSION['index_no'])) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-project-diagram"></i>Exams</a></li>
-            <li><a href="results_nav.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div>
 
-    <div class="card" id="info-area">
+    <div class="card" id="info-area" style="padding-bottom: 258px;">
         <!-- module description -->
         <h3 id="name"><?php // Display result 
                         echo $params['moduleName']

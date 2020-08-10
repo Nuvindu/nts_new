@@ -1,12 +1,16 @@
+<?php session_start(); ?>
 <?php require_once('Model/delete_students-db.php'); ?>
+<?php require_once('Service/operator-service.php'); ?>
 <!DOCTYPE html>
 <html>
- <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Delete Students</title>
+  <link rel="stylesheet" href="./style/style-header.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   
   <style>
@@ -22,11 +26,20 @@
   </style>
  </head>
  <body style="background-color:rgb(218, 213, 213);">
+      <header>
+            <div class="logger" style="padding-top: 5px;float: right;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a
+            href="Service/logout.php">Log Out</a> </div>  
+    </header>
+    <br>
+    <br>
+    <div class="header">
+            <?php include_once('header.php'); ?>
+    </div>
   <div class="container">
    <br />
-   <h3 align="center">Delete Students</h3>
+   <h3 align="center" style="font-weight: bold;">Delete Students</h3>
    <button type="button" name="btn_delete" id="btn_delete" class="btn btn-success" style="background-color:black;float:left;">Delete</button><br>
-   <div class="add" style="float:right;"><a href="operator.php" style="color:black;">&nbsp&nbsp  Back &gt&gt</a> </div><br>
+   <div class="add" style="float:right;"><a href="operator.php" style="color:black;"><i class="fas fa-angle-double-left fa-2x"></i></a> </div><br>
    <br>
    <?php
    if(mysqli_num_rows($result) > 0)

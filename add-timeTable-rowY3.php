@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('inc/functions.php'); ?>
 <?php require_once('Service/add-timetable-rowY3-service.php'); ?>
@@ -45,9 +45,9 @@
                 ?>
                 Notifications</a></li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="add_exam_timetables.php"><i class="fa fa-graduation-cap"></i>Exam Timetables</a></li>
-            <li><a href="go-to-results.php"><i class="fas fa-address-card"></i>Results</a></li>
-            <li><a href="feedback.php"><i class="fas fa-map-pin"></i>Feedback</a></li>
+            <li><a href="add_exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
+            <li><a href="go-to-results.php"><i class="fas fa-poll"></i>Results</a></li>
+            <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div> <!-- side-bar -->
     <!-- <div class="add" style="text-align:right"><a href="add_exam_timetables.php">Back &gt&gt</a> </br></div> -->

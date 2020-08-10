@@ -19,14 +19,22 @@
 		$new_time_int = intval($new_time_str);
 		$table_time_int = intval($table_time_str);
 		$compare= true;	
-		for($i=0;$i<9;$i++){
+		for($i=0;$i<8;$i++){
 			if($table_time_str[$i]!=$new_time_str[$i]){  // compare the the date is similar in both codes
 				$compare= false;
 				return false;
 			}
 		}
 		if($compare){
-			if(($new_time_int-$table_time_int)<1000){  // check the time difference is less than 10 mins
+			if(substr($table_time_str,8,2)!=substr($new_time_str,8,2)){
+				if(($new_time_int-$table_time_int)<5000){  // check the time difference is less than 10 mins
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else if(($new_time_int-$table_time_int)<1000){  // check the time difference is less than 10 mins
 				return true;
 			}
 			else{

@@ -1,19 +1,32 @@
+<?php session_start(); ?>
+<?php require_once('Service/operator-service.php'); ?>
 <html>  
     <head>  
     <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Update Student Year</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update Student Year</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style/style-header.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
           
     </head>  
     <body style="background-color:rgb(218, 213, 213);">  
+    <header>
+            <div class="logger" style="padding-top: 5px;float: right;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a
+            href="Service/logout.php">Log Out</a> </div>  
+    </header>
+    <br>
+    <br>
+    <div class="header">
+            <?php include_once('header.php'); ?>
+    </div>
         <div class="container" >  
             <br />
    <div class="table-responsive">  
-    <h3 align="center">Update Student Year</h3><br />
-    <div class="add" style="float:right"><a href="operator.php" style="color:black;">Back &gt&gt</a> </br></div>
+    <h3 align="center" style="font-weight: bold;margin-right: 110px;">Update Student Year</h3><br />
+    <div class="add" style="float:right"><a href="operator.php" style="color:black;"><i class="fas fa-angle-double-left fa-2x"></i></a> </br></div>
     <form method="post" id="update_form">
                     <div align="left" > 
                         <input type="submit" style="background-color:black;" name="multiple_update" id="multiple_update" class="btn btn-info"  value="Multiple Update" />

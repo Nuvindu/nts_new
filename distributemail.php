@@ -6,21 +6,26 @@
 	<link rel="stylesheet" type="text/css" href="css/feedback.css">
 	<link rel="stylesheet" href="./style/style-header.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 </head>
 <body>
 <header>
-	<div class="back" style="float:right;"><a href="operator.php">&gt&gtBack</a></div>
-    <div class="icon"><img src="img/home.ico" width="22" height="22"><a href="index.php">Home</a></div>
-        
+	
+   <!--  <div class="icon"><img src="img/home.ico" width="22" height="22"><a href="index.php">Home</a></div> -->
+    <div class="logger" style="padding-top: 5px;float: right;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a
+            href="Service/logout.php">Log Out</a> </div>  
         
     </header>
-   
+   <br>
+   <br>
 	<!-- header -->
     <div class="header">
             <?php include_once('header.php'); ?>
     </div>
-     
+    <br>
+    <div class="back" style="float:right;padding-right: 35px;font-size: 18px;font-weight: bold;"><a href="operator.php"><i class="fas fa-angle-double-left fa-2x"></i></a></div>
      <div class="container" style="padding-bottom:10%;">
 		<div class="contact-box">
 			<div class="left"></div>
@@ -31,8 +36,8 @@
 					<option value = 'Lecturer'> Lecturers </option>
      				<option value = 'Student' selected> Students </option>
         		</select>
-				<input type="text" class="field" placeholder="Subject" name="subject">
-				<textarea placeholder="Feedback" class="field" name="message"></textarea>
+				<input type="text" class="field" placeholder="Subject" name="subject" required>
+				<textarea placeholder="Feedback" class="field" name="message" required></textarea>
 				<button name="submit" class="btn">Send</button>
 			</form>
 			</div>

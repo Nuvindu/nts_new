@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('inc/functions.php'); ?>
 <?php require_once('Model/result.php'); ?>
@@ -5,9 +6,13 @@
 
 <?php 
 	//checking if a user is logged in
-	if (!isset($_SESSION['first_name'])) {
-		header('Location: index.php');
-	}
+if (!isset($_SESSION['index_no'])) {
+    header('Location: login.php');
+}
+else if(strlen($_SESSION['index_no'])!= 6){
+    header('Location: login.php');
+}
+else{
 	$errors = array();
 	$first_year = '';
 	$second_year = '';
@@ -29,4 +34,5 @@
 	for ($i=13; $i < 18 ; $i++) { 
 		$third_year .= generate_result_table_row($i);
 	}
+}
 

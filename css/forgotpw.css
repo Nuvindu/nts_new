@@ -11,7 +11,7 @@ body{
 }
 
 #entercode{
-    margin-left: 101px;
+    margin-left: 91px;
     margin-top: 16px;
 }
 input {
@@ -22,12 +22,12 @@ label{
     font:30px;
 }
 button{
-    padding: 20px 20px 20px 20px;
-    border-radius: 2px;
+    padding: 14px 14px 14px 14px;
+    border-radius: 45px;
     font-family: 'Audiowide';
 }
 #verifylabel{
-    padding-left: 130px;
+    padding-left: 126px;
     font-size: 19px;
 }
 #verifycode{
@@ -39,7 +39,7 @@ button{
     margin-top: 32px;
 }
 .enterbtn{
-    margin-left: 160px;
+    margin-left: 140px;
     margin-top: 12px;
 }
 #submitlabel{

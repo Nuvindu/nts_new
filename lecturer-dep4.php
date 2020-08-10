@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('Service/Lecturer-service.php'); ?>
 
@@ -168,19 +168,19 @@
                         
 
                     </div>
-                    <div class="psychiatricpractice background">
-                        <?php $_SESSION['psychiatricpractice'] = "This course is designed to give students in-depth knowledge in psychiatric practice. There will be concurrent practical sessions." ?>
+                    <div class="paediatricpractice background">
+                        <?php $_SESSION['paediatricpractice'] = "This course is designed to give students in-depth knowledge in psychiatric practice. There will be concurrent practical sessions." ?>
                         <div class="fix">
                             <div class="heading">
                                 <h3>Paediatric Practice</h3>
                             </div>
                             <div class="para">
                                 <p>
-                                    <?php echo $_SESSION['psychiatricpractice'] ?>
+                                    <?php echo $_SESSION['paediatricpractice'] ?>
                                 </p>
                             </div>
                             <div class="link">
-                                <a href="module.php?moduleName=psychiatricpractice">
+                                <a href="module.php?moduleName=paediatricpractice">
                                     <button class="apply">
                                         <img id="arrow-icon"
                                             src="https://img.icons8.com/fluent/48/000000/long-arrow-right.png" />
@@ -232,15 +232,12 @@
                         else{
                             echo '<i class="fas fa-bell"></i>';
                         }
-                    ?><span class="num numberCircle" style=<?php if(!isset($_SESSION['count'])){echo "display:none;";} ?>><?php echo $_SESSION["count"];?></span>
-                    Notifications</a></li> 
+                    ?><span class="num numberCircle" style=<?php if(!isset($_SESSION['count'])){echo "display:none;";} ?>><?php echo $_SESSION["count"];?></span>Notifications</a></li>                
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-                <li><a href="go-to-results.php"><i class="fas fa-project-diagram"></i>Results</a></li>
+                <li><a href="go-to-results.php"><i class="fas fa-table"></i>Results</a></li>
                 <li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-book"></i>Exam
                         Timetables</a></li>
-                <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-                <li><a href="#"><i class="fas fa-address-book"></i>Hostel Info</a></li>
+                <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
             </ul>
         </div> <!-- side-bar -->
 

@@ -1,23 +1,23 @@
-var Iterator = function(items) {
+var Iterator = function (items) {
 	this.index = 0;
 	this.items = items;
 };
 
 Iterator.prototype = {
-	first: function() {
+	first: function () {
 		this.reset();
 		return this.next();
 	},
-	next: function() {
+	next: function () {
 		return this.items[this.index++];
 	},
-	hasNext: function() {
+	hasNext: function () {
 		return this.index < Object.keys(this.items).length;
 	},
-	reset: function() {
+	reset: function () {
 		this.index = 0;
 	},
-	each: function(callback) {
+	each: function (callback) {
 		for (var item = this.first(); this.hasNext(); item = this.next()) {
 			callback(item);
 		}
@@ -76,7 +76,7 @@ function Iterate(Iterator, Name, fileCounter, index) {
 	sessionStorage.setItem('fileCounter', fileCounter);
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 	var Name = document.getElementById('name').textContent;
 	// get the table element for update its elements
 	var tableElement = document.getElementById('file-table');
@@ -92,7 +92,7 @@ $(document).ready(function() {
 		data: {
 			Name: Name
 		},
-		success: function(data) {
+		success: function (data) {
 			var arrayOfFilenames = $.parseJSON(data);
 			console.log(arrayOfFilenames);
 			var itr = new Iterator(arrayOfFilenames);
@@ -100,9 +100,11 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#save-file').click(function(event) {
+	$('#save-file').click(function (event) {
+		$("#save-file").prop('disabled', true);
 		if ($('#input-file').get(0).files.length === 0) {
 			$('#No_file').css('display', 'block');
+			$("#save-file").prop('disabled', false);
 		} else {
 			$('#No_file').css('display', 'none');
 			var date = new Date();
@@ -118,10 +120,10 @@ $(document).ready(function() {
 			fd.append('moduleName', Name);
 			fd.append('date', d);
 
-			$(document).ajaxStart(function() {
+			$(document).ajaxStart(function () {
 				$('#wait').css('display', 'block');
 			});
-			$(document).ajaxComplete(function() {
+			$(document).ajaxComplete(function () {
 				$('#wait').css('display', 'none');
 			});
 
@@ -131,7 +133,7 @@ $(document).ready(function() {
 				data: fd,
 				processData: false,
 				contentType: false,
-				success: function(data) {
+				success: function (data) {
 					var fileCounterInSession = sessionStorage.getItem('fileCounter');
 					if (indexNo.length == 4) {
 						var ElementRow =
@@ -175,6 +177,9 @@ $(document).ready(function() {
 					}
 					fileCounterInSession++;
 					sessionStorage.setItem('fileCounter', fileCounterInSession);
+					$("#save-file").prop('disabled', false);
+					$('#input-file').val('');
+					console.log($('#input-file').val());
 				}
 			});
 		}
