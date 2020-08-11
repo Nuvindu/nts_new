@@ -6,6 +6,7 @@
 .header {
     position: sticky;
     top: 0;
+    z-index: 99;
 }
 
 body,
@@ -15,10 +16,10 @@ html {
 	/* 	height: 100%; */
 	width: 100%;
 	box-sizing: border-box;
-	background-image: url("../img/new.jpg");
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center;
+	/* background-image: url("../img/new.jpg"); */
+	/* background-attachment: fixed; */
+	/* background-size: cover; */
+	/* background-position: center; */
 	/* background-position-y: -131px; */
 }
 
@@ -119,7 +120,7 @@ i {
 
 .tab button:hover {
 	background: rgb(0, 0, 0);
-	color: snow;
+	color: #ead800;
 }
 
 .tab button:focus {
@@ -127,7 +128,7 @@ i {
 }
 
 .tab button.active {
-	background: #1626c000;
+	background: #c0bb1600;
 }
 
 .change-btn {
@@ -210,7 +211,7 @@ i {
 	/* Hidden by default */
 	position: fixed;
 	/* Stay in place */
-	z-index: 1;
+	z-index: 100;
 	/* Sit on top */
 	padding-top: 100px;
 	/* Location of the box */
@@ -237,7 +238,7 @@ i {
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 50%;
+	/* width: 50%; */
 	z-index: 99;
 }
 
@@ -280,7 +281,7 @@ textarea.valid {
 
 #profile-tab {
 	padding-bottom: 45px;
-	backdrop-filter: blur(50px);
+	/* backdrop-filter: blur(50px); */
 	border-radius: 20px;
 }
 
@@ -311,11 +312,11 @@ div.column ul {
 }
 
 .info {
-	background: #f9f9f900;
+	background: #4dca2400;
 	width: 100%;
 	border-radius: 90px;
 	margin: 3px;
-	backdrop-filter: blur(330px);
+	/* backdrop-filter: blur(330px); */
 	font-weight: 900;
 }
 
@@ -402,7 +403,7 @@ footer {
 		display: block;
 		position: sticky;
 		position: -webkit-sticky;
-		top: 60px;
+		top: 100px;
 		height: 204px;
 		animation-name: navbar;
 		animation-duration: 500ms;
@@ -449,7 +450,7 @@ footer {
 		padding: 0;
 		margin: 0;
 		/* list-style-type: none; */
-		background-color: #1728ca08;
+		background-color: #fff050;
 		box-shadow: 10px 10px 8px #888888;
 		/* opacity: 3.9; */
 		backdrop-filter: blur(50px);
@@ -480,7 +481,7 @@ footer {
 		padding-left: 10px;
 		position: sticky;
 		position: -webkit-sticky;
-		top: 10px;
+		top: 50px;
 		width: 97px;
 		height: 47px;
 		/* backdrop-filter: blur(50px); */

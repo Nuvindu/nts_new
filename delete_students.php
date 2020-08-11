@@ -1,6 +1,9 @@
 <?php session_start(); ?>
 <?php require_once('Model/delete_students-db.php'); ?>
+<?php require_once('Model/delete.php'); ?>
+
 <?php require_once('Service/operator-service.php'); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -99,8 +102,8 @@ $(document).ready(function(){
    else
    {
     $.ajax({
-     url:'delete.php',
-     method:'POST',
+     url:'/nts_new/Model/delete.php',
+     type:'POST',
      data:{id:id},
      success:function()
      {

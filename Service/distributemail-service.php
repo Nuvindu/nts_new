@@ -22,7 +22,7 @@ if(isset($_POST['submit'])) {
 		$index_no = $rec[0];
 		if($type=='Lecturer'){
 			$subject  = mysqli_real_escape_string($connection, $_POST['subject']);
-			$message  = mysqli_real_escape_string($connection, trim($_POST['message']));
+			$message  = mysqli_real_escape_string($connection, $_POST['message']);
 			// $message.=' '.$index_no;  
 			$user =  new Lecturer('','','','','',$index_no);
 			$user->setEmail($emailval);

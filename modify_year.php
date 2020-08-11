@@ -1,5 +1,7 @@
 <?php session_start(); ?>
 <?php require_once('Service/operator-service.php'); ?>
+
+<?php require_once('Model/multiple_update.php'); ?>
 <html>  
     <head>  
     <meta charset="UTF-8">
@@ -55,7 +57,7 @@ $(document).ready(function(){
     function fetch_data()
     {
         $.ajax({
-            url:"select.php",
+            url:"/nts_new/Model/select.php",
             method:"POST",
             dataType:"json",
             success:function(data)
@@ -100,7 +102,7 @@ $(document).ready(function(){
         if($('.check_box:checked').length > 0)
         {
             $.ajax({
-                url:"multiple_update.php",
+                url:"/nts_new/Model/multiple_update.php",
                 method:"POST",
                 data:$(this).serialize(),
                 success:function()

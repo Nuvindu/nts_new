@@ -58,6 +58,7 @@ $(document).ready(function () {
 				// document.getElementsByClassName('profile-img').setAttribute('src', './profile-pictures/' + profPicDir);
 				// $('img').attr('src', './profile-pictures/' + profPicDir);
 			}
+			sessionStorage.setItem('ProfilePictureDir', profPicDir);
 		}
 	});
 
@@ -69,6 +70,7 @@ $(document).ready(function () {
 		var UserSessionName = document.getElementById('id-html').innerHTML;
 		fd.append('imageFile', imageFile);
 		fd.append('UserSessionName', UserSessionName);
+		$('#save-img').prop('disabled', true);
 
 		$.ajax({
 			type: 'POST',
@@ -78,19 +80,6 @@ $(document).ready(function () {
 			contentType: false,
 
 			success: function (data) {
-				var profPicDir = data;
-				if (profPicDir == '') {
-					Iterate(itr, 'src', './img/empty-pp.png');
-					//$('img').attr('src', './img/empty-pp.png');
-				} else {
-					Iterate(itr, 'src', profPicDir);
-					alert(profPicDir);
-
-					//$('img').attr('src', profPicDir);
-				}
-
-				var modalpp = document.getElementById('modal-pp');
-				modalpp.style.display = 'none';
 				location.reload(true);
 			},
 			error: function (error) {

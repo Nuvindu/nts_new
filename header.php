@@ -14,8 +14,8 @@
 <body>
     <div class="nts-text">
         <div>
-            <a href="index.php"><img class="logo" src="./img/logo-highres.png" alt="logo"></a>
-            <a href="index.php"><img class="logo-lowres" src="./img/logo-highres.png" alt="logo"></a>
+            <img class="logo" src="./img/logo-highres.png" alt="logo">
+            <img class="logo-lowres" src="./img/logo-highres.png" alt="logo">
 
         </div>
         <div style="flex-grow: 8;overflow: hidden;height: 108px;">
@@ -42,14 +42,57 @@
                 }
             });
             </script>
-            <a href="Service/profile-locate.php"><img class="nts-text-image" src="./img/NTS-text.png"></a>
+            <img class="nts-text-image" src="./img/NTS-text.png">
         </div>
         <div>
-            <a href="Service/profile-locate.php"><img class="logo-pp profile-pic" src="./img/logo-highres.png" alt="logo"
-                    id="profile-pic" style="border-radius: 100px;"></a>
+            <a href="index.php"><img class="logo-pp profile-pic" src="" alt="profile-picture" id="profile-pic"
+                    style="border-radius: 100px;"></a>
         </div>
 
     </div>
+
+    <!-- retrieveing profile picture -->
+    <script>
+    $(document).ready(function() {
+        if (sessionStorage.getItem('ProfilePictureDir') == null) {
+            $.ajax({
+                type: 'POST',
+                url: '/nts_new/Model/db_load_profilePicture.php',
+                data: {
+                    // send this variable to server to identify user to database manipulate
+                    UserSessionName: document.getElementById('index-no').textContent
+                },
+                dataType: 'JSON',
+                success: function(data) {
+                    var profPicDir = data[0];
+                    if (profPicDir == '') {
+                        // $('img').attr('src', './img/empty-pp.png');
+                        document.getElementById('profile-pic').setAttribute('src',
+                            './img/empty-pp.png');
+                    } else {
+
+                        document.getElementById('profile-pic').setAttribute('src',
+                            './profile-pictures/' + profPicDir);
+
+                    }
+                    sessionStorage.setItem('ProfilePictureDir', profPicDir);
+                }
+            });
+        } else {
+
+            if (sessionStorage.getItem('ProfilePictureDir') == '') {
+                // $('img').attr('src', './img/empty-pp.png');
+                document.getElementById('profile-pic').setAttribute('src',
+                    './img/empty-pp.png');
+            } else {
+
+                document.getElementById('profile-pic').setAttribute('src',
+                    './profile-pictures/' + sessionStorage.getItem('ProfilePictureDir'));
+
+            }
+        }
+    })
+    </script>
 </body>
 
 </html>

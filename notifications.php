@@ -50,9 +50,9 @@
                         <div class='message'>{$notification[$i]["Message"]}</div>
                                          
                     </fieldset>"; 
-                    if($count==4){  // to make sure only displaying four notifications
-                        break;
-                    }
+                    // if($count==4){  // to make sure only displaying four notifications
+                    //     break;
+                    // }
                 }
                 $i--;
             }         
@@ -82,15 +82,13 @@
             <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
             <!-- <li><a href="notifications.php"><i class="fas fa-bell"></i>Notifications</a></li> -->
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam TimeTables</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
-            <li><a href="#"><i class="fas fa-comment-dots"></i>Feedback</a></li>
+            <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
 
         </ul>
     </div> <!-- side-bar -->
-    <br>
-    <br>
-    <br><br><br><br><br><br><br><br>
+
     <footer>
         <div class="column clearfix">
             <h3>Contact Us</h3>

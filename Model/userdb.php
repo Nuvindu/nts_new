@@ -172,7 +172,7 @@ class UserDB extends Model implements IUserDB{
 	public static function userLogin($index_no,$password){
 		global $connection;
 		$query = "SELECT * FROM user 
-						WHERE index_no = '{$index_no}' 
+						WHERE index_no = '{$index_no}' AND is_deleted = 0 
 						LIMIT 1";
 
 		$result_set = mysqli_query($connection, $query);

@@ -1,4 +1,3 @@
-
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('Service/Lecturer-service.php'); ?>
 
@@ -66,7 +65,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="pharmacologyII background">
@@ -91,7 +90,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="nutrition background">
@@ -116,7 +115,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="firstaid background">
@@ -141,7 +140,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="firstaidpractice background">
@@ -166,7 +165,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="fundamentalofnursing background">
@@ -191,7 +190,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="fundamentalofnursingpractice background">
@@ -216,7 +215,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="psychiatry background">
@@ -241,7 +240,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                     <div class="psychiatricpractice background">
@@ -266,7 +265,7 @@
                         </div>
 
 
-                        
+
 
                     </div>
                 </div>
@@ -288,18 +287,19 @@
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="notifications.php">
-                    <?php 
-                        if(isset($_SESSION['seen'])){
+                        <?php
+                        if (isset($_SESSION['seen'])) {
                             echo '<i class="far fa-bell"></i>';
-                        }
-                        else{
+                        } else {
                             echo '<i class="fas fa-bell"></i>';
                         }
-                    ?><span class="num numberCircle" style=<?php if(!isset($_SESSION['count'])){echo "display:none;";} ?>><?php echo $_SESSION["count"];?></span>Notifications</a></li>                
+                        ?><span class="num numberCircle"
+                            style=<?php if (!isset($_SESSION['count'])) {echo "display:none;";} ?>><?php echo $_SESSION["count"]; ?></span>Notifications</a>
+                </li>
                 <li><a href="lecturer-profile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="go-to-results.php"><i class="fas fa-table"></i>Results</a></li>
-                <li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-book"></i>Exam
+                <li><a href="add_exam_timetables.php" id="timetable"><i class="fas fa-table"></i>Exam
                         Timetables</a></li>
+                <li><a href="go-to-results.php"><i class="fas fa-poll"></i>Results</a></li>
                 <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
             </ul>
         </div> <!-- side-bar -->
@@ -316,34 +316,6 @@
                 </ul>
             </div>
         </footer>
-        <script>
-        $(document).ready(function() {
-            $.ajax({
-                type: 'POST',
-                url: '/nts_new/Model/db_load_profilePicture.php',
-                data: {
-                    // send this variable to server to identify user to database manipulate
-                    UserSessionName: document.getElementById('index-no').textContent
-                },
-                dataType: 'JSON',
-                success: function(data) {
-                    var profPicDir = data[0];
-                    if (profPicDir == '') {
-                        // $('img').attr('src', './img/empty-pp.png');
-                        document.getElementById('profile-pic').setAttribute('src',
-                            './img/empty-pp.png');
-                    } else {
-
-                        document.getElementById('profile-pic').setAttribute('src',
-                            './profile-pictures/' + profPicDir);
-
-                    }
-                }
-            });
-
-
-        })
-        </script>
     </body>
 
 </html>

@@ -20,7 +20,8 @@ if (!isset($_SESSION['index_no'])) {
 </head>
 
 <body>
-    <div class="logger" style="float: right;padding-right: 5px;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="logout.php">Log
+    <div class="logger" style="float: right;padding-right: 5px;">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a
+            href="logout.php">Log
             Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span> </div>
 
     <br>
@@ -138,34 +139,6 @@ if (!isset($_SESSION['index_no'])) {
     </footer>
     </div>
     <script src="./js/js-modulepage-upload&retrievefile.js"></script>
-    <script>
-    $(document).ready(function() {
-        $.ajax({
-            type: 'POST',
-            url: 'Model/db_load_profilePicture.php',
-            data: {
-                // send this variable to server to identify user to database manipulate
-                UserSessionName: document.getElementById('index-no').textContent
-            },
-            dataType: 'JSON',
-            success: function(data) {
-                var profPicDir = data[0];
-                if (profPicDir == '') {
-
-                    document.getElementById('profile-pic').setAttribute('src',
-                        './img/empty-pp.png');
-                } else {
-
-                    document.getElementById('profile-pic').setAttribute('src',
-                        './profile-pictures/' + profPicDir);
-
-                }
-            }
-        });
-
-
-    })
-    </script>
     <script>
     function resizeInfoAreaUp() {
         $("#info-area").css("margin-left", "199px");

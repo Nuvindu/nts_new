@@ -1,4 +1,3 @@
-
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('Model/student-profile-db.php'); ?>
 <!DOCTYPE html>
@@ -49,12 +48,12 @@
                                 echo "Model/student-db.php";
                             } ?>><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="notifications.php"><?php
-                        if (isset($_SESSION['seen'])) {
-                            echo '<i class="far fa-bell"></i>';
-                        } else {
-                            echo '<i class="fas fa-bell"></i>';
-                        }
-                        ?>Notifications</a></li>
+                                                if (isset($_SESSION['seen'])) {
+                                                    echo '<i class="far fa-bell"></i>';
+                                                } else {
+                                                    echo '<i class="fas fa-bell"></i>';
+                                                }
+                                                ?>Notifications</a></li>
                 <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
                 <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -201,8 +200,9 @@
         <!-- modalpp content -->
 
         <div class="modal-content" style="display: block;">
-            <button style="width: 28px;height: 18px;background: red;color: white;border: none;" onclick="document.getElementById('modal-pp').style.display='none';" class="close-confirm-modal"
-            title="Close Modal" style="float: right;">X</button>
+            <button style="width: 28px;height: 18px;background: red;color: white;border: none;"
+                onclick="document.getElementById('modal-pp').style.display='none';" class="close-confirm-modal"
+                title="Close Modal" style="float: right;">X</button>
             <form action="" method="post" enctype="multipart/form-data" id="myform">
                 Enter image file here(.jpg,.jpeg,.png):
                 <input type="file" name="image-file" id="image-file" accept=".jpg,.jpeg,.png">
@@ -215,8 +215,9 @@
     <div id="modal-Info" class="modal">
         <!-- modalinfo content -->
         <div class="modal-content">
-            <button style="width: 28px;height: 18px;background: red;color: white;border: none;" onclick="document.getElementById('modal-Info').style.display='none';" class="close-confirm-modal"
-            title="Close Modal" style="float: right;">X</button>
+            <button style="width: 28px;height: 18px;background: red;color: white;border: none;"
+                onclick="document.getElementById('modal-Info').style.display='none';" class="close-confirm-modal"
+                title="Close Modal" style="float: right;">X</button>
             <div class="info">
                 First Name : <input type="text" id="name" value="" required>
                 Last Name : <input type="text" id="lname" value="" required>
@@ -230,8 +231,9 @@
     <div id="modal-password" class="modal">
         <!-- modalinfo content -->
         <div class="modal-content" style="display: block;">
-            <button style="width: 28px;height: 18px;background: red;color: white;border: none;" onclick="document.getElementById('modal-password').style.display='none';" class="close-confirm-modal"
-            title="Close Modal" style="float: right;">X</button>
+            <button style="width: 28px;height: 18px;background: red;color: white;border: none;"
+                onclick="document.getElementById('modal-password').style.display='none';" class="close-confirm-modal"
+                title="Close Modal" style="float: right;">X</button>
             <div class="password-reset-content" id="password-reset">
                 <label class="lable" for="password" style="color:black">Current Password</label>
                 <input id="current_password" name="password" type="password">
@@ -244,8 +246,8 @@
                 <label class="lable" for="confirmpassword" style="color:black;">Confirm
                     Password</label>
                 <input id="reent_new_password" name="confirmpassword" type="password">
-                <button class="change-btn" id="reset-abort"
-                    style="width: 100%;margin: 20px 0px;" onclick="document.getElementById('modal-password').style.display='none';">Cancel</button>
+                <button class="change-btn" id="reset-abort" style="width: 100%;margin: 20px 0px;"
+                    onclick="document.getElementById('modal-password').style.display='none';">Cancel</button>
                 <button class="change-btn" id="change_pass" style="width: 100%;margin: 20px 0px;">Confirm</button>
             </div>
 

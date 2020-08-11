@@ -54,7 +54,7 @@
             <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div> <!-- side-bar -->
-   <div class="table-responsive" style="padding-left:3.5%;">  
+   <div class="table-responsive" style="padding-left:5%;">  
     <h1 >Year <?php echo $year; ?></h1>
     <h2 style="font-size:20px;"><?php echo $module; ?> Results <div class="change"><span><a href="go-to-results.php"> Change Module</a></span></div></h2>
     <form method="post" id="update_form">
@@ -78,7 +78,7 @@
    </div>  
   </div>
   <footer>
-        <div class="column clearfix">
+        <div class="column clearfix" style="padding-top:25%;">
             <h3>Contact Us</h3>
             <ul>
                 <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>
@@ -101,7 +101,7 @@ $(document).ready(function(){
     function fetch_data()
     {
         $.ajax({
-            url:"select_results.php"+"?batch="+batch+"&module_code="+module_code,
+            url:"/nts_new/Model/select_results.php"+"?batch="+batch+"&module_code="+module_code,
             method:"POST",
             dataType:"json",
             success:function(data)
@@ -153,7 +153,7 @@ $(document).ready(function(){
         if($('.check_box:checked').length > 0)
         {
             $.ajax({
-                url:"multiple_results_update.php?module_code="+module_code,
+                url:"/nts_new/Model/multiple_results_update.php?module_code="+module_code,
                 method:"POST",
                 data:$(this).serialize(),
                 success:function()

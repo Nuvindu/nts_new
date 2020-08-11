@@ -180,14 +180,16 @@
         <ul>
             <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="notifications.php">
-                <?php 
-                    if(isset($_SESSION['seen'])){
+                    <?php
+                    if (isset($_SESSION['seen'])) {
                         echo '<i class="far fa-bell"></i>';
-                    }
-                    else{
+                    } else {
                         echo '<i class="fas fa-bell"></i>';
                     }
-                ?><span class="num numberCircle" style=<?php if(!isset($_SESSION['count'])){echo "display:none;";} ?>><?php echo $_SESSION["count"];?></span>Notifications</a></li>
+                    ?><span class="num numberCircle" style=<?php if (!isset($_SESSION['count'])) {
+                                                            echo "display:none;";
+                                                        } ?>><?php echo $_SESSION["count"]; ?></span>Notifications</a>
+            </li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="view-exam-timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="view-results.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -207,34 +209,6 @@
             </ul>
         </div>
     </footer>
-    <script>
-    $(document).ready(function() {
-        $.ajax({
-            type: 'POST',
-            url: '/nts_new/Model/db_load_profilePicture.php',
-            data: {
-                // send this variable to server to identify user to database manipulate
-                UserSessionName: document.getElementById('index-no').textContent
-            },
-            dataType: 'JSON',
-            success: function(data) {
-                var profPicDir = data[0];
-                if (profPicDir == '') {
-                    // $('img').attr('src', './img/empty-pp.png');
-                    document.getElementById('profile-pic').setAttribute('src',
-                        './img/empty-pp.png');
-                } else {
-
-                    document.getElementById('profile-pic').setAttribute('src',
-                        './profile-pictures/' + profPicDir);
-
-                }
-            }
-        });
-
-
-    })
-    </script>
 </body>
 
 </html>

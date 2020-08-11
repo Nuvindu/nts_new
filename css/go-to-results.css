@@ -50,11 +50,10 @@ fieldset legend {
 }
 
 div.column{
-  position: relative;
+  /* position: relative; */
   background: #3a3a3a;
   padding-left: 10px;
   padding-bottom: 8px;
-
 }
 div.column h3{
   padding: 15px;
@@ -79,8 +78,8 @@ div.icon1{
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  /* position: fixed; */
+  /* left: 0; */
+  /* bottom: 0; */
+  /* width: 100%; */
 }

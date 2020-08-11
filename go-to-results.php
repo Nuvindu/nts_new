@@ -19,17 +19,17 @@
 </head>
 
 <body>
-<div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
+    <div class="logger">Welcome <?php echo $_SESSION['first_name'] ?>!&nbsp <a href="Service/logout.php">Log
             Out</a><span id="index-no" style="display: none;"><?php echo $_SESSION['index_no']; ?></span>
     </div>
 
-<div class="header">
+    <div class="header">
         <?php include_once('header.php'); ?>
     </div>
 
     <!-- navbar -->
     <?php include_once('navbar.php'); ?>
-	<div class="side-bar">
+    <div class="side-bar">
         <span style="
                                     text-align: center;
                                     margin: 0;
@@ -42,40 +42,43 @@
                     padding-left: 17px;
                 "></i></span>
         <ul>
-        <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php"><?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>Notifications</a></li>
+            <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php"><?php
+                                            if (isset($_SESSION['seen'])) {
+                                                echo '<i class="far fa-bell"></i>';
+                                            } else {
+                                                echo '<i class="fas fa-bell"></i>';
+                                            }
+                                            ?>Notifications</a></li>
             <li><a href="Service/profile-locate.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="add_exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
             <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
         </ul>
     </div> <!-- side-bar -->
-    <div class="container" style="padding-bottom:10%;">
-		<div class="contact-box">
-			<div class="left"></div>
-			<div class="right">
-				
+    <div class="container">
+        <div class="contact-box">
+            <div class="left"></div>
+            <div class="right">
 
-            <form action="results.php" method="post">
 
-                <!-- <fieldset> -->
+                <form action="results.php" method="post">
+
+                    <!-- <fieldset> -->
                     <legend>
                         <h1> Select Module </h1>
                     </legend>
 
                     <p>
                         <label for="">Batch:</label>
-                        <select name="batch" id="batch" class="field" >
+                        <select name="batch" id="batch" class="field">
                             <option></option>
                             <?php $year = date("Y");
-										for ($i = $year - 3; $i <= $year + 1; $i++) {
-											echo "<option value = {$i}>{$i}</option>";
-										}
+                            for ($i = $year - 3; $i <= $year + 1; $i++) {
+                                echo "<option value = {$i}>{$i}</option>";
+                            }
 
-										?>
+                            ?>
                         </select>
                     </p>
                     <p>
@@ -83,10 +86,10 @@
                         <select name="year" id="year" class="field">
                             <option></option>
                             <?php for ($i = 1; $i <= 3; $i++) {
-											echo "<option value = {$i}>{$i}</option>";
-										}
+                                echo "<option value = {$i}>{$i}</option>";
+                            }
 
-										?>
+                            ?>
                         </select>
                     </p>
                     <p>
@@ -99,11 +102,11 @@
                         <button type="submit" name="submit" class="btn">Add/Modify Results</button>
                     </p>
 
-                <!-- </fieldset> -->
-            </form>
-        </div> <!-- .login -->
+                    <!-- </fieldset> -->
+                </form>
+            </div> <!-- .login -->
         </div>
-	</div>
+    </div>
 
     </div>
 
