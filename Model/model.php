@@ -110,6 +110,7 @@ class Model {
 						echo "<script>window.location.href = 'index.php';</script>";
 					}
 					else{
+						unset($_SESSION['fgtpw']);
 						echo "<script>alert('Verify Code is Invalid');</script>";
 					}
 					$x = array("1","2","3","4");
@@ -125,6 +126,7 @@ class Model {
 				}
 			}
 			else{
+				unset($_SESSION['fgtpw']);
 				echo "<script>alert('Error Ocurred!!!!');</script>";
 				return;
 			}

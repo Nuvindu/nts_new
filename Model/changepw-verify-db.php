@@ -4,6 +4,7 @@ if(!isset($_SESSION['fgtpw'])){
 	header('Location: index.php');
 }
 unset($_SESSION['w']);
+unset($_SESSION['fgtpw']);
 $index_no = '';
 	global $connection;
 	if (isset($_GET['user_index'])) {

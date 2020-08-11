@@ -28,9 +28,9 @@
 		<form id="verifyform" autocomplete="off">
 			<label id= "verifylabel" style="text-align: center;">Verify Code</label>
 			<br>
-			<input type="Number" name="entercode" id="entercode" class="entercode" >
+			<input type="text" name="entercode" id="entercode" class="entercode" >
 			<br>
-			<button type="submit" class="enterbtn" style="text-align: center;">Verify</button>
+			<button type="submit" class="enterbtn" id="enterbtn" style="text-align: center;">Verify</button>
 					<br><br>
 		<div class="warning" style="color: gold;padding-left: 45px;font-size:12px;">*You must enter the code before 10 minutes</div>
 		</form>

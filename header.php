@@ -45,7 +45,7 @@
             <img class="nts-text-image" src="./img/NTS-text.png">
         </div>
         <div>
-            <a href="index.php"><img class="logo-pp profile-pic" src="" alt="profile-picture" id="profile-pic"
+            <a href="index.php"><img class="logo-pp profile-pic" src="./img/logo-highres.png" alt="profile-picture" id="profile-pic"
                     style="border-radius: 100px;"></a>
         </div>
 

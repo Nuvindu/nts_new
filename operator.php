@@ -66,6 +66,7 @@
             </form>
             <span id="hint"></span>
         </div>
+        <div class="table-responsive" >
         <table class="masterlist" id="table">
             <tr>
                 <th>Index Number</th>
@@ -79,10 +80,10 @@
             <?php echo $user_list; ?>
         </table>
 
-        </table>
+       </div>
 </body>
 <footer>
-    <div class="column clearfix">
+    <div class="column clearfix" style="padding-top:25%;padding-left:0;">
         <h3>Contact Us</h3>
         <ul>
             <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>

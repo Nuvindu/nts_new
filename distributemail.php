@@ -14,6 +14,7 @@
 			var x = event.keyCode;
 			if (x == 13){
 				document.getElementById('submit').click();
+				$("#message").prop('disabled', true);
 			}
 		}
 	</script>

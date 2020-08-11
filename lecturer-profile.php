@@ -256,7 +256,6 @@ if (!isset($_SESSION['index_no'])) {
         </div>
 
     </div>
-    <br><br><br><br><br><br>
     <footer id="footer">
         <div class="column clearfix">
             <h3>Contact Us</h3>

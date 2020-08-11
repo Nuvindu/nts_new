@@ -42,7 +42,7 @@
                     else{echo '<i class="fas fa-bell"></i>';}
                 ?>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
-            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
+            <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
             <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
             

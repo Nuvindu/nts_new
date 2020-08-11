@@ -56,12 +56,13 @@
         
 		
 		<h1 style="padding-left:4%;">First Year</h1>
-		<div class="add" style="text-align:right;"><a href="add-timeTable-rowY1.php">Add Timetable row &gt&gt</a> </div>
-
+		<div class="add" style="text-align:right;"><a href="add-timeTable-rowY1.php"><b>Add Timetable row</b></a> </div>
+<div class="table-responsive" >
 <table class="masterlist">
 	<tr>
 		<th>Date </th>
 		<th>Time </th>
+		
 		<th>Place</th>
 		<th>Module name</th>
 		<th>Delete</th>
@@ -70,9 +71,11 @@
 	<?php echo $timeTable_list; ?>
 
 </table>
+</div>
 <br><br>
 <h1 style="padding-left:4%;">Second Year</h1>
-<div class="add" style="text-align:right;"><span><a href="add-timeTable-rowY2.php">Add Timetable row &gt&gt</a></span></div>
+<div class="add" style="text-align:right;"><span><a href="add-timeTable-rowY2.php"><b>Add Timetable row</b></a></span></div>
+<div class="table-responsive" >
 <table class="masterlist">
 	<tr>
 		<th>Date </th>
@@ -84,10 +87,13 @@
 
 	<?php echo $timeTable2_list; ?>
 
-</table><br><br>
+</table>
+</div>
+<br><br>
 
 <h1 style="padding-left:4%;">Third Year</h1>
-<div class="add" style="text-align:right;"><a href="add-timeTable-rowY3.php">Add Timetable row &gt&gt</a> </div>
+<div class="add" style="text-align:right;"><a href="add-timeTable-rowY3.php"><b>Add Timetable row</b></a> </div>
+<div class="table-responsive" >
 <table class="masterlist">
 	<tr>
 		<th>Date </th>
@@ -99,7 +105,10 @@
 
 	<?php echo $timetable3_list; ?>
 
-</table><br><br>
+</table>
+</div>
+<br><br>
+
 </main>
 <footer>
 	<div class="column clearfix">
