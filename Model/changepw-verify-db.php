@@ -3,13 +3,14 @@
 if(!isset($_SESSION['fgtpw'])){
 	header('Location: index.php');
 }
-unset($_SESSION['w']);
+unset($_SESSION['counting']);
 unset($_SESSION['fgtpw']);
 $index_no = '';
 	global $connection;
-	if (isset($_GET['user_index'])) {
+	if (isset($_SESSION['request_index'])) {
 		// getting the user information
-		$user_index = mysqli_real_escape_string($connection, $_GET['user_index']);
+		$user_index = mysqli_real_escape_string($connection, $_SESSION['request_index']);
+		unset($_SESSION['request_index']);
 		$query = "SELECT * FROM user WHERE index_no = '{$user_index}' LIMIT 1";
 
 		$result_set = mysqli_query($connection, $query);

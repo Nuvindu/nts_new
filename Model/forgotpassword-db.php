@@ -4,8 +4,8 @@
 <?php include_once('Controller/controller.php'); ?>
 <?php include_once('Model/model.php'); ?>
 <?php 
-	if(!isset($_SESSION['w'])){
-		$_SESSION['w'] = 1;
+	if(!isset($_SESSION['counting'])){
+		$_SESSION['counting'] = 1;
 	}
 	$index = '';
 	$contrl = new Controller(); //creating a new controller object
@@ -44,11 +44,18 @@
 	}
 	else if(isset($_POST['entercode'])){   // execute only when the verify button is submitted
 		$verifycode = mysqli_real_escape_string($connection, $_POST['entercode']);
-		$index = $_SESSION['verifyindex'];  // get the index in the session 
-		// $table_time_str = "20200723195221";
-		// $compare = compareTime($table_time_str);
-		$contrl->compareCode($verifycode,$index);  //compare the time difference is less than 10 mins and it is true, then allow to change the password
-		unset($_SESSION['verifyindex']);
+		if(isset($_SESSION['verifyindex'])){
+			$index = $_SESSION['verifyindex'];  // get the index in the session 
+			// $table_time_str = "20200723195221";
+			// $compare = compareTime($table_time_str);
+			$contrl->compareCode($verifycode,$index);  //compare the time difference is less than 10 mins and it is true, then allow to change the password
+			// unset($_SESSION['verifyindex']);
+		}
+		else{
+			echo "<script>alert('Password change is not accessible!!!');</script>";
+		}
+		
+
 		exit;
 		
 		

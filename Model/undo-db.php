@@ -16,11 +16,11 @@ if(isset($_COOKIE['memento'])){
 
 	$x = Model::undoNotification($id,$index_no,$subject,$message);
 	if($x){
-		setcookie("memento",null, time() + (600), "/"); 
+		setcookie("memento",null, time() + (1), "/"); 
 		header('Location: ../notifications.php');
 	}
 	else{
-		setcookie("memento",null, time() + (600), "/");
+		setcookie("memento",null, time() + (1), "/");
 		header('Location: ../notifications.php?error=could_not_undo');
 	}
 

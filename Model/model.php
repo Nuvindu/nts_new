@@ -83,10 +83,10 @@ class Model {
 		if(!$result){
 			$x = array("1","2","3","4");
 			foreach ($x as $alpha) {
-				if($_SESSION['w']==$alpha){
+				if($_SESSION['counting']==$alpha){
 					$key = array_search($alpha, $x)+1;
-					$_SESSION['w'] = $x[$key];
-					// echo $_SESSION['w'];
+					$_SESSION['counting'] = $x[$key];
+					// echo $_SESSION['counting'];
 					break;
 				}
 			}
@@ -100,12 +100,14 @@ class Model {
 				$table_code = $result['code'];  // get the hash code from the table
 				if(password_verify($verifycode, $table_code)){ 
 					$_SESSION['fgtpw'] = "true";  //setting a session to access the change password page
-					echo "<script>window.location.href = 'changepw-verify.php?user_index={$index}';</script>";
+					$_SESSION['request_index'] = "{$index}";
+					echo "<script>window.location.href = 'changepw-verify.php';</script>";
 				}
 				else{   //count the tries and if it is more than three redirect to index page and blocking the access to the change password page
 					
-					if(intval($_SESSION['w'])==3){      
+					if(intval($_SESSION['counting'])==3){      
 						unset($_SESSION['fgtpw']);
+						unset($_SESSION['verifyindex']);
 						echo "<script>alert('You tried three times.Password change is not accessible!!!');</script>";
 						echo "<script>window.location.href = 'index.php';</script>";
 					}
@@ -115,10 +117,10 @@ class Model {
 					}
 					$x = array("1","2","3","4");
 					foreach ($x as $alpha) {
-						if($_SESSION['w']==$alpha){
+						if($_SESSION['counting']==$alpha){
 							$key = array_search($alpha, $x)+1;
-							$_SESSION['w'] = $x[$key];
-							// echo $_SESSION['w'];
+							$_SESSION['counting'] = $x[$key];
+							// echo $_SESSION['counting'];
 							break;
 						}
 					}
@@ -127,6 +129,7 @@ class Model {
 			}
 			else{
 				unset($_SESSION['fgtpw']);
+				unset($_SESSION['verifyindex']);
 				echo "<script>alert('Error Ocurred!!!!');</script>";
 				return;
 			}
