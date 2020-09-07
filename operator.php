@@ -52,12 +52,16 @@
         <div class="header">
             <?php include_once('header.php'); ?>
         </div>
-
+        <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;float:left;"><a href="add_modules_details.php">Add Modules</a></div>
+        <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;float:left;"><a href="department-head.php">Department Head</a></div>
         <?php include "dropdown.php" ?>
 
-        <div class="add"><a href="add-user-responsive.php">Add New User</a> </br></div>
+        <!-- <div class="add"></br></div> -->
+        <!-- <a href="add_users_excel-mvc.php">Add User Excel</a>  -->
         <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;"><a href="distributemail.php">Send Notifications</a> </br></div>
-        <h1>Users</h1>
+        <?php include "dropdown-adduser.php" ?>
+        <br>
+        <h1><!-- Users --></h1>
         <div class="search">
             <form action="operator.php">
                 <input type="text" onkeyup="Suggest(this.value)" name="search" placeholder="Search by Username or Type"
@@ -83,7 +87,7 @@
        </div>
 </body>
 <footer>
-    <div class="column clearfix" style="padding-top:25%;padding-left:0;">
+    <div class="column clearfix" style="padding-top:5%;padding-left:0;">
         <h3>Contact Us</h3>
         <ul>
             <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>

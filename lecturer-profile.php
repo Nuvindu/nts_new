@@ -12,6 +12,7 @@ if (!isset($_SESSION['index_no'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/lecturer-profile.css">
+    <link rel="stylesheet" href="./css/notificationbar.css">
     <link rel="stylesheet" href="./style/style-header.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
@@ -50,13 +51,7 @@ if (!isset($_SESSION['index_no'])) {
                             } else if (strlen($_SESSION['index_no']) == 6) {
                                 echo "Model/student-db.php";
                             } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="notifications.php"><?php
-                                                if (isset($_SESSION['seen'])) {
-                                                    echo '<i class="far fa-bell"></i>';
-                                                } else {
-                                                    echo '<i class="fas fa-bell"></i>';
-                                                }
-                                                ?>Notifications</a></li>
+                <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
                 <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam TimeTables</a></li>
                 <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -275,6 +270,7 @@ if (!isset($_SESSION['index_no'])) {
     <script src="./js/js-student-profile-updateInfo.js"></script>
     <script src="./js/js-student-profile-updateAvatar.js"></script>
     <script src="./js/js-student-profile-changePassword.js"></script>
+    <script src="./js/js-notify-counter.js"></script>
 
 </body>
 

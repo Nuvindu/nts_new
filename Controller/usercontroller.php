@@ -41,7 +41,7 @@ class UserController extends Controller implements IUserController{
 
 	public function updateUser($user_index){
 		global $connection;		
-		$department = "Fundamentals of Nursing";
+		// $department = "Fundamentals of Nursing";
 		$email = mysqli_real_escape_string($connection, $_POST['email']);
 		$index_no = mysqli_real_escape_string($connection, $_POST['index_no']);
 		$first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
@@ -50,7 +50,18 @@ class UserController extends Controller implements IUserController{
 		if(strlen($index_no)==4){
 			$d = str_replace('_',' ' , $_POST['department']);
 			$department = mysqli_real_escape_string($connection, $d);
+			$pst = str_replace('_',' ' , $_POST['post']);
+			$post = mysqli_real_escape_string($connection, $pst);
+
+			$title = mysqli_real_escape_string($connection, $_POST['title']);
+
+			$degree = mysqli_real_escape_string($connection, $_POST['degree']);
+
 			$user->setDepartment($department); 
+			$user->setPost($post); 
+			$user->setTitle($title); 
+			$user->setDegree($degree); 
+
 		}
 		else if(strlen($index_no)==6){
 			$year = mysqli_real_escape_string($connection,$_POST['year']);
@@ -112,6 +123,51 @@ class UserFactory extends Factory{      //factory design pattern
 		else{
 			return null;
 		}
+	}
+
+	public function newUserExcel(){
+		global $connection;
+		
+		global $row;
+		global $worksheet;
+		global $output;
+		$output .= "<tr>";
+		$index_no = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
+		//$type = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(1, $row)->getValue());
+		$first_name = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(1, $row)->getValue());
+		$last_name = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(2, $row)->getValue());
+		$nic = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(3, $row)->getValue());
+		//$batch = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(5, $row)->getValue());
+		$email = mysqli_real_escape_string($connection, $worksheet->getCellByColumnAndRow(4, $row)->getValue());
+		if (strlen($index_no) == 2) {
+			$password="password";
+			}
+		if (strlen($index_no) == 6) {
+		$password="password";
+		}
+		if (strlen($index_no) == 4) {
+		  $password = "password";}
+		$hashed_password = password_hash($password, PASSWORD_BCRYPT, array('cost'=>14));
+		$output .= '<td>'.$index_no.'</td>';
+		$output .= '<td>'.$first_name.'</td>';
+		$output .= '<td>'.$last_name.'</td>';
+		$output .= '<td>'.$nic.'</td>';
+		$output .= '<td>'.$email.'</td>';
+		$output .= '</tr>';
+		
+		if (strlen($index_no)==4) {
+			return new Lecturer($first_name, $last_name, $nic, $email, $password, $index_no);
+		}
+		else if (strlen($index_no)==6) {
+			return new Student($first_name, $last_name, $nic, $email, $password, $index_no);
+		}
+		else if (strlen($index_no)==2) {
+			return new Operator($first_name, $last_name, $nic, $email, $password, $index_no);
+		}
+		else{
+			return null;
+		}
+	
 	}
 }
 ?>

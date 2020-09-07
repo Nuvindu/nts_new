@@ -30,7 +30,7 @@
     <div class="back" style="float:right;padding-right: 35px;font-size: 18px;font-weight: bold;"><a href="operator.php"><i class="fas fa-angle-double-left fa-2x"></i></a></div>
         <br>
         <br>
-        <br>
+        
      <div class="container" style="padding-bottom:10%;">
 		<div class="contact-box">
 			<div class="left"></div>

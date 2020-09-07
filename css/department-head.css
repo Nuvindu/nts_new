@@ -1,0 +1,125 @@
+* {
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    /* height: 100%; */
+    /* width: 100%; */
+    box-sizing: border-box;
+}
+
+.logger {
+    text-align: right;
+    padding-right: 5px;
+}
+
+.header {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header h1 {
+    padding-top: 25px;
+    text-align: center;
+}
+
+main {
+    padding-bottom: 150px;
+}
+
+main h1 {
+    margin: 10px 0px 0px 10px;
+}
+
+main .back {
+    text-align: right;
+}
+
+main h1 span a {
+    float: right;
+    font-size: 17px;
+    padding-right: 5px;
+}
+
+div.column {
+    position: relative;
+    background: #3a3a3a;
+    padding-left: 10px;
+}
+
+div.column h3 {
+    font-size: 22px;
+    font-family: sans-serif;
+    color: white;
+    padding: 2px 0px 0px 10px;
+}
+
+div.column ul {
+    list-style: none;
+    font-size: 16px;
+    color: white;
+}
+
+div.column ul li {
+    padding-bottom: 8px;
+}
+
+div.icon1 {
+    float: left;
+    margin-left: 10px;
+}
+
+table.masterlist {
+    background: white;
+    margin-top: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-collapse: collapse;
+    border-color: black;
+    border: 2px solid;
+    font-weight: bold;
+    /* overflow-wrap: anywhere; */
+    /* overflow: scroll; */
+    /* font-size: 4vw; */
+}
+
+table.masterlist th {
+    text-align: center;
+}
+
+table.masterlist th, table.masterlist td {
+    padding: 10px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    font-weight: bold;
+}
+select{
+    font-weight: bold;
+}
+.submit{
+    padding: 2px 20px 2px 20px;
+    border: 2px solid;
+    border-radius: 9px;
+    font-weight: bold;
+}
+@media only screen and (max-width: 900px) {
+    table.masterlist {
+        width: 100%;
+        font-size: 1.908vh;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    table.masterlist {
+        width: 100%;
+        font-size: 1.8vh;
+    }
+}

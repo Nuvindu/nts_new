@@ -13,7 +13,7 @@
 	// }
 	$user_list = '';
 	$search = '';
-	$query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no";
+	$query = "SELECT * FROM user WHERE is_deleted=0 ORDER BY index_no ASC";
 	$users = mysqli_query($connection, $query);
 	while ($user = mysqli_fetch_assoc($users)) {
 		$user_list .= "<tr>";

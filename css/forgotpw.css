@@ -1,13 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=Audiowide';
 body{
-    max-width: 500px;
+    /* max-width: 500px; */
     margin: auto;
-    margin-top: 200px;
+    /* margin-top: 200px; */
     background: linear-gradient(-45deg, blue, #e73c7e, brown, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 25s ease infinite;
     font-family: 'Audiowide';
-
 }
 
 #entercode{
@@ -20,6 +19,11 @@ input {
 }
 label{
     font:30px;
+}
+form{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
 }
 button{
     padding: 14px 14px 14px 14px;
@@ -47,7 +51,9 @@ button{
     font-size: 25px;
 }
 .progress{
-    padding-left: 125px;
+    max-width: 150px;
+    margin: auto;
+    margin-top: 100px;
 }
 @keyframes gradient {
     0% {
@@ -59,4 +65,24 @@ button{
     100% {
         background-position: 10% 50%;
     }
+}
+@media only screen and (max-width: 350px) {
+
+.verifybtn{
+    margin-left: 10px;
+}
+#verifycode{
+    margin-left: 10px;
+}
+#submitlabel{
+    font-size: 19px;
+    padding-left: 10px;
+}
+.verify{
+    margin-left: -80px;
+}
+div.warning{
+    margin-left: 40px;
+}
+
 }

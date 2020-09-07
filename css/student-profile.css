@@ -25,7 +25,6 @@ html {
 	/* background-position: center; */
 	/* 	background-position-y: -131px; */
 }
-
 .logger {
 	text-align: right;
 	padding-right: 5px;
@@ -419,7 +418,7 @@ footer {
 		position: sticky;
 		position: -webkit-sticky;
 		top: 100px;
-		height: 204px;
+		height: 225px;
 		animation-name: navbar;
 		animation-duration: 500ms;
 		overflow: hidden;

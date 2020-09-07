@@ -6,9 +6,10 @@
 
   <button onclick="myFunction()" class="dropbtn">Student Updates&nbsp&nbsp<i class="fa fa-caret-square-o-down"></i></button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="modify_year.php">Modify Years</a>
-    <a href="delete_students.php">Delete Students</a>
     
+    <a href="delete_students.php">Delete Students</a>
+    <a href="modify_year.php">Modify Years</a>
+    <a href="modify-year-excel.php">Modify Years - Excel</a>
   </div>
 </div>
 </html>

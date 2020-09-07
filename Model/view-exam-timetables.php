@@ -63,5 +63,58 @@ else{
 	
 	}
 
+	$timeTable_listB = '';
+	$sqlget="SELECT * FROM timeTable1b WHERE is_deleted=0 ORDER BY Date,Time";
+	$sqldata=mysqli_query($connection, $sqlget) or die("error getting");
+	
+	while ($row =mysqli_fetch_array($sqldata,MYSQLI_ASSOC)){
+		$timeTable_listB .=  "<tr><td>";
+		$timeTable_listB .=  $row['Date'];
+		$timeTable_listB .=  "</td><td>";
+		$timeTable_listB .=  $row['Time'];
+		$timeTable_listB .=  "</td><td>";
+		$timeTable_listB .=  $row['Place'];
+		$timeTable_listB .=  "</td><td>";
+		$timeTable_listB .=  $row['Module_name'];
+		$timeTable_listB .=  "</td><tr>";
+	
+	
+	}
+	$timeTable2_listB = '';
+	$sqlget="SELECT * FROM timeTable2b where is_deleted!=1 ORDER BY Date,Time";
+	$sqldata=mysqli_query($connection, $sqlget) or die("error getting");
+	
+	while ($row =mysqli_fetch_array($sqldata,MYSQLI_ASSOC)){
+		$timeTable2_listB .=  "<tr><td>";
+		$timeTable2_listB .=  $row['Date'];
+		$timeTable2_listB .=  "</td><td>";
+		$timeTable2_listB .=  $row['Time'];
+		$timeTable2_listB .=  "</td><td>";
+		$timeTable2_listB .=  $row['Place'];
+		$timeTable2_listB .=  "</td><td>";
+		$timeTable2_listB .=  $row['Module_name'];
+		$timeTable2_listB .=  "</td><tr>";
+	
+	
+	}
+
+	$timeTable3_listB = '';
+	$sqlget="SELECT * FROM timetable3b where is_deleted!=1 ORDER BY Date,Time";
+	$sqldata=mysqli_query($connection, $sqlget) or die("error getting");
+	
+	while ($row =mysqli_fetch_array($sqldata,MYSQLI_ASSOC)){
+		$timeTable3_listB .=  "<tr><td>";
+		$timeTable3_listB .=  $row['Date'];
+		$timeTable3_listB .=  "</td><td>";
+		$timeTable3_listB .=  $row['Time'];
+		$timeTable3_listB .=  "</td><td>";
+		$timeTable3_listB .=  $row['Place'];
+		$timeTable3_listB .=  "</td><td>";
+		$timeTable3_listB .=  $row['Module_name'];
+		$timeTable3_listB .=  "</td><tr>";
+	
+	
+	}
+
 }
 ?>

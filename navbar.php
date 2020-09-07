@@ -37,10 +37,7 @@
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php"><?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>Notifications</a></li>
+            <li><a href="notifications.php"><i class="fas fa-bell"></i>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>

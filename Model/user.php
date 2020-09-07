@@ -13,6 +13,9 @@ abstract class User{
 	private $type = '';
 	private $batch = '';
 	private $department = '';
+	private $post = '';
+	private $degree = '';
+	private $title = '';
 	private $year= '';
 	private Controller $controller;
 
@@ -79,7 +82,7 @@ abstract class User{
 		$this->type = $type;
 	}
 	public function distributeEmail($subject,$message,$index_no){  //mediator design pattern
-		return $this->controller->distributeEmail($index_no,$this->email,$subject,$message);
+		return $this->controller->distributeEmail($type,$this->email,$subject,$message);
 	}
 	public function setController($controller){
 		$this->controller = $controller;
@@ -127,6 +130,23 @@ class Lecturer extends User{
 	public function getDepartment(){
 		return $this->department;
 	}
-
+	public function setPost($post){
+		$this->post = $post;
+	}
+	public function getPost(){
+		return $this->post;
+	}
+	public function setDegree($degree){
+		$this->degree = $degree;
+	}
+	public function getDegree(){
+		return $this->degree;
+	}	
+	public function setTitle($title){
+		$this->title = $title;
+	}
+	public function getTitle(){
+		return $this->title;
+	}
 }
 

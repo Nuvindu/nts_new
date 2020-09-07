@@ -71,5 +71,8 @@ if (isset($_POST['submit']) || isset($_GET['batch'])) {
 		exit;
 	}
 }
-
+if(!isset($year) || !isset($module)){
+	header('Location: go-to-results.php?error=parameters_are_not_set');
+	exit;	
+}
 ?>

@@ -13,6 +13,7 @@ if (!isset($_SESSION['index_no'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/module.css" type="text/css">
+    <link rel="stylesheet" href="css/notificationbar.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="./style/style-header.css">
@@ -45,15 +46,7 @@ if (!isset($_SESSION['index_no'])) {
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                    <?php
-                    if (isset($_SESSION['seen'])) {
-                        echo '<i class="far fa-bell"></i>';
-                    } else {
-                        echo '<i class="fas fa-bell"></i>';
-                    }
-                    ?>
-                    Notifications</a></li>
+            <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -99,6 +92,7 @@ if (!isset($_SESSION['index_no'])) {
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php"><i class="fas fa-bell"></i>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exams</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -156,6 +150,7 @@ if (!isset($_SESSION['index_no'])) {
         // document.getElementById('').style.marginLeft = '80px';
     }
     </script>
+    <script src="./js/js-notify-counter.js"></script>
 </body>
 
 </html>

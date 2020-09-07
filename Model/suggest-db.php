@@ -50,6 +50,7 @@ if ($q !== "") {
 $users = mysqli_query($connection, $query);
 while ($user = mysqli_fetch_assoc($users)) {
         $user_list .= "<tr>";
+        $user_list .= "<td>{$user['index_no']}</td>";
         $user_list .= "<td>{$user['first_name']}</td>";
         $user_list .= "<td>{$user['last_name']}</td>";
         $user_list .= "<td>{$user['last_login']}</td>";

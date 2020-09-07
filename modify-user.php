@@ -71,6 +71,42 @@
 									}
 									?>
                     </select>
+                    <br><br>
+                    <label for="">Post:</label>
+                    <select name="post" id="post"
+                        style="border: black;border-radius: 3px;padding: 5px;padding-right: 20px;">
+
+                        <?php $posts = array('The_Principal', 'Senior_Lecturer', 'Lecturer', 'Assistant_Lecturer');
+                        // $thepost = 'Lecturer';
+                                    foreach ($posts as $post) {
+                                        $y = str_replace("_", " ", $post);
+                                        if ($thepost == $y) {
+                                            echo "<option value = {$post} selected>{$y}</option>";
+                                        } else {
+                                            echo "<option value = {$post}>{$y}</option>";
+                                        }
+                                    }
+                                    ?>
+                    </select>
+                    <br><br>
+                    <label for="">Title:</label>
+                    <select name="title" id="title"
+                        style="border: black;border-radius: 3px;padding: 5px;padding-right: 20px;">
+
+                        <?php $titles = array('Mr','Mrs','Ms');
+                        // $thetitle = 'Mr';
+                                    foreach ($titles as $title) {
+                                        if ($thetitle == $title) {
+                                            echo "<option value = {$title} selected>{$title}</option>";
+                                        } else {
+                                            echo "<option value = {$title}>{$title}</option>";
+                                        }
+                                    }
+                                    ?>
+                    </select>
+                    <br><br>
+                    <label for="">Degree:</label>
+                    <input type="text" name="degree" <?php echo 'value="' . $thedegree . '"'; ?>>
                 </p>
                 <p <?php if (strlen($index_no) != 6) {
 									echo "style = display:none; ";

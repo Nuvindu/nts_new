@@ -1,3 +1,4 @@
+
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('Model/notifications-db.php'); ?>
 
@@ -12,9 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <script>
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "notifications.php?status=" + str, true);
-        xmlhttp.send();
+        // var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.open("GET", "notifications.php?status=" + str, true);
+        // xmlhttp.send();
+
+
     </script>
 </head>
 <body>
@@ -27,7 +30,7 @@
      <!-- navbar -->
      <?php include_once('navbar.php'); ?>
 
-    
+
     <div class="container">
         <h1 style="font-size:36px;">Notifications</h1>
         <?php
@@ -79,7 +82,7 @@
                         } else if (strlen($_SESSION['index_no']) == 6) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="#"><i class="far fa-bell"></i>Notifications</a></li>
+            <li><a href="#"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <!-- <li><a href="notifications.php"><i class="fas fa-bell"></i>Notifications</a></li> -->
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam TimeTables</a></li>
@@ -90,7 +93,7 @@
     </div> <!-- side-bar -->
 
     <footer>
-        <div class="column clearfix">
+        <div class="column clearfix" style="padding-top:8%;">
             <h3>Contact Us</h3>
             <ul>
                 <div class="icon1"><img src="img/location.ico" width="22" height="22"></div>

@@ -51,6 +51,10 @@
 						$new_rec1 = mysqli_fetch_assoc($myrec);
 						$department = $new_rec1['department_name'];
 						$department = str_replace(" ", "_", $department);
+
+						$thepost = $new_rec['post'];
+						$thedegree = $new_rec['degree'];
+						$thetitle = $new_rec['title'];
 					}
 				}
 

@@ -11,6 +11,7 @@
     <title>Exam Time Table</title>
     <link rel="stylesheet" type="text/css" href="css/addTimetable.css">
     <link rel="stylesheet" href="./style/style-header.css">
+    <link rel="stylesheet" href="./css/notificationbar.css">
 </head>
 
 <body>
@@ -38,12 +39,7 @@
                 "></i></span>
         <ul>
             <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                <?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>
-                Notifications</a></li>
+            <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="add_exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="go-to-results.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -51,7 +47,7 @@
         </ul>
     </div> <!-- side-bar -->
     <!-- <div class="add" style="text-align:right"><a href="add_exam_timetables.php">Back &gt&gt</a> </br></div> -->
-    <h2 style="padding-left:4%">Add Third Year Exam Timetable</h2>
+    <h2 style="padding-left:4%">Third Year-Batch A</h2>
     <table class="masterlist">
     <thead>
 			<th>Date </th>
@@ -70,6 +66,7 @@
 			<td data-label="Submit"><button type="submit" name="submit">Save</button></td>
 		</tr>
 	</tbody>
+    <script src="./js/js-notify-counter.js"></script>
 </body>
 
 </html>

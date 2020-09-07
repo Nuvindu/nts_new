@@ -77,16 +77,49 @@ class ErrorCheck extends Controller{
 	}
 
 	public static function userUpdateErrorCheck(){
-		$errors = array();
 		global $connection;
+		$errors = array();
+		$req_fields = array('first_name', 'last_name', 'index_no', 'email');
+
+		foreach ($req_fields as $field) {
+			if (empty(trim($_POST[$field]))) {
+				$errors[] = $field . ' is required';
+			}
+		}
+		if(!isset($user_index)){
+			echo "<script>
+				alert('User updating failed.Please try again...');
+				window.location.href='operator.php?user_update_failed';
+				</script>";
+		}
+		if (!empty($errors)) {
+			return $errors;
+		}
 			// getting the user information
 		//$user_id = $_POST['user_id'];
 		$first_name = $_POST['first_name'];
 		$last_name = $_POST['last_name'];
 		$index_no = $_POST['index_no'];
 		$email = $_POST['email'];
+
+		if(strlen($index_no)==4){
+			$req_fields = array('first_name', 'last_name', 'index_no', 'email','department','post','title','degree');
+			foreach ($req_fields as $field) {
+				if (empty(trim($_POST[$field]))) {
+					$errors[] = $field . ' is required';
+				}
+			}	
+			if (!empty($errors)) {
+				return $errors;
+			}		
+			$department = $_POST['department'];
+			$post = $_POST['post'];
+			$title = $_POST['title'];
+			$degree = $_POST['degree'];	
+		}
+
 		// checking required fields
-		$req_fields = array( 'first_name', 'last_name', 'index_no', 'email');
+		//$req_fields = array( 'first_name', 'last_name', 'index_no', 'email');
 		$errors = array_merge($errors, check_req_fields($req_fields));
 
 		// checking max length
@@ -186,6 +219,25 @@ class ErrorCheck extends Controller{
 		$Time = $_POST['Time'];
 		$Place= $_POST['Place'];
 		$Module_name= $_POST['Module_name'];
+		
+
+		$string1="(";
+		$string2=")";
+		$string3="<";
+		$string4=">";
+		$string5=";";
+		//check whether place contains <> or () or ;
+		if(strpos($Place,$string1)==true or strpos($Place,$string2)==true or strpos($Place,$string3)==true or strpos($Place,$string4)==true or strpos($Place,$string5)==true){
+			$errors[]='should not contain unnecessary characters in'.$Place;
+			header('Location: add_exam_timetables.php?record_created=false');
+		}
+		//check whether name contains <> or () or ;
+		if(strpos($Module_name,$string1)==true or strpos($Module_name,$string2)==true or strpos($Module_name,$string3)==true or strpos($Module_name,$string4)==true or strpos($Module_name,$string5)==true){
+			$errors[]='should not contain unnecessary characters in'.$Module_name;
+			header('Location: add_exam_timetables.php?record_created=false');
+		}
+
+
 
 		// checking required fields
 		$req_fields = array('Date', 'Time', 'Place',  'Module_name');
@@ -207,6 +259,51 @@ class ErrorCheck extends Controller{
 
 		return $errors;
 	}
+	
+	public static function addModuleCheck(){
+		$errors = array();
+		$module_code = $_POST['module_code'];
+		$year= $_POST['year'];
+		$department= $_POST['department'];
+		$module_name= $_POST['module_name'];
+
+		
+		$string1="(";
+		$string2=")";
+		$string3="<";
+		$string4=">";
+		$string5=";";
+		
+		//check whether name contains <> or () or ;
+		if(strpos($module_name,$string1)==true or strpos($module_name,$string2)==true or strpos($module_name,$string3)==true or strpos($module_name,$string4)==true or strpos($module_name,$string5)==true){
+			$errors[]='should not contain unnecessary characters in'.$module_name;
+			header('Location: add_modules_details.php?record_created=false');
+		}
+
+
+
+		// checking required fields
+		$req_fields = array('module_name', 'module_code', 'year',  'department');
+
+		foreach ($req_fields as $field) {
+			if (empty(trim($_POST[$field]))) {
+				$errors[] = $field . ' is required';
+			}
+		}
+
+		// checking max length
+		$max_len_fields = array('module_name' => 70, 'module_code' =>5, 'year' =>2,  'department' => 2);
+
+		foreach ($max_len_fields as $field => $max_len) {
+			if (strlen(trim($_POST[$field])) > $max_len) {
+				$errors[] = $field . ' must be less than ' . $max_len . ' characters';
+			}
+		}
+
+		return $errors;
+	}
+
+
 
 
 }

@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="css/forgotpw.css">
 </head>
 <body>
+	<div class="header">
+        <?php include_once('header.php'); ?>
+    </div>
 	<div class="sendindex" id="sendindex" style="align-content:center;">
 		<form id="subform" autocomplete="off">
 			<label id = "submitlabel" class="enterIndex" style="align-self:center;">Enter Index Number</label>

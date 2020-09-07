@@ -10,6 +10,8 @@
 	<title>Exam Time Table</title>
 	<link rel="stylesheet" type="text/css" href="css/view-exam-timeTables.css">
 	<link rel="stylesheet" href="./style/style-header.css">
+	<link rel="stylesheet" href="./css/notificationbar.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
     <!-- <link rel="stylesheet" href="./style/style-header.css"> .css">
 	<link rel="stylesheet" type="text/css" href="css/">
 	<link rel="stylesheet" href="./style/style-header.css"> -->
@@ -40,10 +42,7 @@
                 "></i></span>
         <ul>
             <li><a href="Model/lecturer-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php"><?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>Notifications</a></li>
+            <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="add_exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -55,15 +54,14 @@
 		<center><h1>Exam Timetables</h1></center>
         
 		
-		<h1 style="padding-left:4%;">First Year</h1>
+		<h1 style="padding-left:4%;">First Year-Batch A</h1>
 		<div class="add" style="text-align:right;"><a href="add-timeTable-rowY1.php"><b>Add Timetable row</b></a> </div>
 <div class="table-responsive" >
 <table class="masterlist">
 	<tr>
 		<th>Date </th>
 		<th>Time </th>
-		
-		<th>Place</th>
+	    <th>Place</th>
 		<th>Module name</th>
 		<th>Delete</th>
 	</tr>
@@ -73,7 +71,24 @@
 </table>
 </div>
 <br><br>
-<h1 style="padding-left:4%;">Second Year</h1>
+<h1 style="padding-left:4%;">First Year-Batch B</h1>
+		<div class="add" style="text-align:right;"><a href="add-timetable-rowY1B.php"><b>Add Timetable row</b></a> </div>
+<div class="table-responsive" >
+<table class="masterlist">
+	<tr>
+		<th>Date </th>
+		<th>Time </th>
+	    <th>Place</th>
+		<th>Module name</th>
+		<th>Delete</th>
+	</tr>
+
+	<?php echo $timeTable_listB; ?>
+
+</table>
+</div>
+<br><br>
+<h1 style="padding-left:4%;">Second Year-Batch A</h1>
 <div class="add" style="text-align:right;"><span><a href="add-timeTable-rowY2.php"><b>Add Timetable row</b></a></span></div>
 <div class="table-responsive" >
 <table class="masterlist">
@@ -90,8 +105,24 @@
 </table>
 </div>
 <br><br>
+<h1 style="padding-left:4%;">Second Year-Batch B</h1>
+		<div class="add" style="text-align:right;"><a href="add-timetable-rowY2B.php"><b>Add Timetable row</b></a> </div>
+<div class="table-responsive" >
+<table class="masterlist">
+	<tr>
+		<th>Date </th>
+		<th>Time </th>
+	    <th>Place</th>
+		<th>Module name</th>
+		<th>Delete</th>
+	</tr>
 
-<h1 style="padding-left:4%;">Third Year</h1>
+	<?php echo $timeTable2_listB; ?>
+
+</table>
+</div>
+<br><br>
+<h1 style="padding-left:4%;">Third Year-Batch A</h1>
 <div class="add" style="text-align:right;"><a href="add-timeTable-rowY3.php"><b>Add Timetable row</b></a> </div>
 <div class="table-responsive" >
 <table class="masterlist">
@@ -108,7 +139,23 @@
 </table>
 </div>
 <br><br>
+<h1 style="padding-left:4%;">Third Year-Batch B</h1>
+		<div class="add" style="text-align:right;"><a href="add-timetable-rowY3B.php"><b>Add Timetable row</b></a> </div>
+<div class="table-responsive" >
+<table class="masterlist">
+	<tr>
+		<th>Date </th>
+		<th>Time </th>
+	    <th>Place</th>
+		<th>Module name</th>
+		<th>Delete</th>
+	</tr>
 
+	<?php echo $timeTable3_listB; ?>
+
+</table>
+</div>
+<br><br>
 </main>
 <footer>
 	<div class="column clearfix">
@@ -123,6 +170,7 @@
         </ul>
     </div>
 	</footer>
+	<script src="./js/js-notify-counter.js"></script>
 </body>
 </html>
 

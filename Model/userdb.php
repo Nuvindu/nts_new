@@ -28,8 +28,8 @@ class UserDB extends Model implements IUserDB{
 				$result = mysqli_query($connection, $query);
 
 				if ($result) {
-					$update = mysqli_query($connection,"INSERT INTO students (index_no,year) VALUES ('{$user->getIndexNo()}','1')");
-					if($update){
+					$update = mysqli_query($connection,"INSERT INTO students (index_no,year) VALUES ('{$user->getIndexNo()}','1')");}
+					/*if($update){
 						// query successful... redirecting to users page
 						header('Location: add-user-responsive.php?user_added=true&result_created=true&student_added=true');}
 					else{
@@ -38,11 +38,11 @@ class UserDB extends Model implements IUserDB{
 				} else {
 					die("Database query failed: ".mysqli_error($connection));
 					header('Location: add-user-responsive.php?user_added=true&result_created=false');
-				}
+				}*/
 			} 
 			else if(strlen($user->getIndexNo()) == 4){
 				$update = mysqli_query($connection,"INSERT INTO lecturers (index_no,department) VALUES ('{$user->getIndexNo()}','1')");
-				if($update){
+				/*if($update){
 					// query successful... redirecting to users page
 					header('Location: add-user-responsive.php?user_added=true&lecturer_added=true');
 				}
@@ -56,8 +56,9 @@ class UserDB extends Model implements IUserDB{
 
 		} else{
 			$errors[] = 'Failed to add the new record';
-		}
+		*/}
 	}
+}
 	public static function changePassword($user_index,$password){
 		global $connection;
 		$query = "UPDATE user SET ";
@@ -146,7 +147,10 @@ class UserDB extends Model implements IUserDB{
 				if($department_code!=0){
 					$mysql = "UPDATE lecturers SET ";
 					$mysql .= "index_no = '{$user->getIndexNo()}', ";	
-					$mysql .= "department = '{$department_code}' ";	
+					$mysql .= "department = '{$department_code}', ";	
+					$mysql .= "post = '{$user->getPost()}', ";	
+					$mysql .= "degree = '{$user->getDegree()}', ";	
+					$mysql .= "title = '{$user->getTitle()}' ";	
 					$mysql .= "WHERE index_no = '{$user_index}' LIMIT 1";
 					$res = mysqli_query($connection, $mysql); 
 
@@ -196,14 +200,6 @@ class UserDB extends Model implements IUserDB{
 				verify_query($result_set);
 
 				if (strlen($_SESSION['index_no']) == 6) {
-					$sql ="SELECT * FROM notifications WHERE index_no = '{$_SESSION['index_no']}' LIMIT 1";
-				    $resulttable = mysqli_query($connection, $sql);
-				    if($resulttable){
-					    $result = mysqli_fetch_assoc($resulttable);
-					    if($result){  
-					        $_SESSION['count'] = $result['seen'];       
-					    }				    	
-				    }
 					header('Location: Model/student-db.php');
 				} elseif (strlen($_SESSION['index_no']) == 2) {
 					header('Location: operator.php');

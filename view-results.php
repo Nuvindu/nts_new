@@ -9,6 +9,7 @@
 	<title>Results</title>
 	<link rel="stylesheet" type="text/css" href="css/viewResultsRes.css">
 	<link rel="stylesheet" type="text/css" href="css/view-results.css">
+	<link rel="stylesheet" type="text/css" href="css/notificationbar.css">
 	<link rel="stylesheet" href="./style/style-header.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -36,11 +37,8 @@
                     padding-left: 17px;
                 "></i></span>
         <ul>
-        <li><a href="Model/student-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php"><?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>Notifications</a></li>
+        	<li><a href="Model/student-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="view-exam-timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href=""><i class="fas fa-poll"></i>Results</a></li>
@@ -55,7 +53,7 @@
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
+			<th class="grade">Grade</th>
 		</tr>
 		<?php echo $first_year; ?>
 	</table>
@@ -64,7 +62,7 @@
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
+			<th class="grade">Grade</th>
 		</tr>
 		<?php echo $second_year; ?>
 	</table>
@@ -73,7 +71,7 @@
 	<table class="sem_result">
 		<tr>
 			<th class="module_name">Module Name</th>
-			<th class="grade">Grade/Mark</th>
+			<th class="grade">Grade</th>
 		</tr>
 		<?php echo $third_year; ?>
 	</table><br><br><br>
@@ -92,5 +90,6 @@
         </ul>
     </div>
 	</footer>
+	<script src="./js/js-notify-counter.js"></script>
 </body>
 </html> 

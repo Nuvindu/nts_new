@@ -12,7 +12,7 @@
 			header('Location: Model/lecturer-db.php');
 		}
 	}
-	unset($_SESSION['counting']);
+	unset($_SESSION['w']);
 	unset($_SESSION['fgtpw']);
 
 	// check for form submission

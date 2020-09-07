@@ -20,7 +20,7 @@
       <div class="nav-bar">
       
         <div class="brand">
-          <a href="#home"><h1><span>N</span>urses <span>T</span>raining <span>S</span>chool </h1></a>
+          <!-- <a href="#home"><h1><span>N</span>urses <span>T</span>raining <span>S</span>chool </h1></a> -->
           <br><div class="name">
       
     
@@ -29,11 +29,14 @@
         </div>
         <div class="nav-list">
           <div class="hamburger"><div class="bar"></div></div>
-          <ul>
-		  <li><a href="#home" data-after="Home" onclick="topFunction()"><b>Home</b></a></li>
-		  <li><a href="#about" data-after="About"><b>About</b></a></li>
-		  <li><a href="#contact" data-after="Contact"><b>Contact</b></a></li>
-		  <li><a href="login.php"><b>Login</b></a></li>
+          <ul >
+		  <li><a style="font-size: 22px;" href="#home" data-after="Home" onclick="topFunction()"><b>Home</b></a></li>
+		  <li><a style="font-size: 22px;" href="#about" data-after="About"><b>About</b></a></li>
+      <li><a style="font-size: 22px;" href="#about" data-after="About"><b>Staff Members</b></a></li>
+      <li><a style="font-size: 22px;" href="departments.php" data-after="About"><b>Departments</b></a></li>
+      <li><a style="font-size: 22px;" href="#about" data-after="About"><b>Gallery</b></a></li>
+		  <li><a style="font-size: 22px;" href="#contact" data-after="Contact"><b>Contact</b></a></li>
+		  <li><a style="font-size: 22px;" href="login.php"><b>Login</b></a></li>
           </ul>
         </div>
       </div>

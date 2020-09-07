@@ -1,7 +1,6 @@
 <?php require_once('Service/student-service.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Side Navigation Bar</title>
@@ -10,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/student.css">
     <link rel="stylesheet" href="./style/style-header.css">
-    <link rel="stylesheet" href="./css/student-profile.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="./js/jquery-3.3.1.js"></script>
+
 </head>
 
 <body>
@@ -43,15 +42,7 @@
                 "></i></span>
         <ul>
             <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php">
-                <?php
-                    if (isset($_SESSION['seen'])) {
-                        echo '<i class="far fa-bell"></i>';
-                    } else {
-                        echo '<i class="fas fa-bell"></i>';
-                    }
-                    ?><span class="num numberCircle" style=<?php if (!isset($_SESSION['count'])) {echo "display:none;";} ?>><?php echo $_SESSION["count"]; ?></span>Notifications</a>
-            </li>
+            <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href="view-exam-timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="view-results.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -481,6 +472,7 @@
             </ul>
         </div>
     </footer>
+    <script src="./js/js-notify-counter.js"></script>
 </body>
 
 </html>

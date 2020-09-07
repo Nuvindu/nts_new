@@ -5,6 +5,7 @@
 	<meta charset="UTF-8"> 
 	<title>Exam Timetables</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/notificationbar.css">
 	<link rel="stylesheet" type="text/css" href="css/view-exam-timeTables.css">
 	<link rel="stylesheet" href="./style/style-header.css">
 </head>
@@ -33,10 +34,7 @@
                 "></i></span>
         <ul>
             <li><a href="Model/student-db.php"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="notifications.php"><?php 
-                    if(isset($_SESSION['seen'])){echo '<i class="far fa-bell"></i>';}
-                    else{echo '<i class="fas fa-bell"></i>';}
-                ?>Notifications</a></li>
+            <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
             <li><a href="student-profile.php"><i class="fas fa-user"></i>Profile</a></li>
             <li><a href=""><i class="fas fa-table"></i>Exam Timetables</a></li>
             <li><a href="view-results.php"><i class="fas fa-poll"></i>Results</a></li>
@@ -46,7 +44,7 @@
     </div> <!-- side-bar -->
 	<h1 style="padding-left:4%;">View Exam Timetables<span></h1>
 	
-	<center><h1>First Year </h1></center>
+	<center><h1>First Year-Batch A </h1></center>
 
 <table class="masterlist">
 		<tr>
@@ -59,7 +57,24 @@
 		<?php echo $timeTable_list; ?>
 
 	</table>
-	<br><br><br><center><h1>Second Year </h1></center>
+	<br><br><br>
+
+    <center><h1>First Year-Batch B </h1></center>
+
+<table class="masterlist">
+		<tr>
+			<th>Date </th>
+            <th>Time </th>
+			<th>Place</th>
+			<th>Module name</th>
+		</tr>
+
+		<?php echo $timeTable_listB; ?>
+
+	</table>
+	<br><br><br>
+    
+    <center><h1>Second Year-Batch A </h1></center>
 
 <table class="masterlist">
 		<tr>
@@ -72,8 +87,23 @@
 		<?php echo $timeTable2_list; ?>
 
 	</table>
+    <br><br><br>
+    
+    <center><h1>Second Year-Batch B </h1></center>
 
-	<br><br><br><center><h1>Third Year </h1></center>
+<table class="masterlist">
+		<tr>
+			<th>Date </th>
+            <th>Time </th>
+			<th>Place</th>
+			<th>Module name</th>
+		</tr>
+
+		<?php echo $timeTable2_listB; ?>
+
+	</table>
+
+	<br><br><br><center><h1>Third Year-Batch A</h1></center>
 
 <table class="masterlist">
 		<tr>
@@ -87,7 +117,19 @@
 
 	</table>
 	
-	
+	<br><br><center><h1>Third Year-Batch B</h1></center>
+
+<table class="masterlist">
+		<tr>
+			<th>Date </th>
+            <th>Time </th>
+			<th>Place</th>
+			<th>Module name</th>
+		</tr>
+
+		<?php echo $timeTable3_listB; ?>
+
+	</table>
 	
 	
 	</main>
@@ -104,5 +146,6 @@
         </ul>
     </div>
 	</footer>
+	<script src="./js/js-notify-counter.js"></script>
 </body>
 </html> 

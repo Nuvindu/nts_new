@@ -7,6 +7,7 @@
 <body>
 <table class="masterlist" id="table">
         <tr>
+        	<th>Index Number</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Last Login</th>

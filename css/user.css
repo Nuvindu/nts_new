@@ -27,24 +27,22 @@ header {
 .add {
 	
 	float: right;
-	padding-left: 16px;
-	padding-top: 17px;
-	padding-right: 16px;
-	padding-bottom: 16px;
+	padding: 16px;
+	
 }
 .add a{
-	background-color: #bdb3ff;
-    color: white;
+	/*background-color: #bdb3ff;*/
+    /*color: white;*/
     padding: 16px;
     font-size: 16px;
     border: none;
 }
 .add a:hover{
-    color: white;
+    /*color: white;*/
     padding: 16px;
     font-size: 16px;
     border: none;
-    background-color: #29b9ad;
+    /*background-color: #29b9ad;*/
 }
 
 .distribute {
@@ -100,7 +98,7 @@ table.masterlist {
 }
 
 table.masterlist th {
-	background-color: #4CAF50;
+	background-color: #f3cd17;
 	text-align: left;
 }
 
@@ -145,6 +143,8 @@ form.userform p{
 		margin-top: 20px;
 		float: right;
 		padding-left: 28%;
+		margin-bottom: 20px;
+		margin-bottom: 20px;
 	}
 
 }
@@ -154,6 +154,7 @@ form.userform p{
 		margin-top: 20px;
 		float: right;
 		padding-left: 28%;
+		margin-bottom: 20px;
 	}
 
 
