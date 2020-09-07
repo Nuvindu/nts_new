@@ -17,8 +17,16 @@ if(isset($_POST['submit'])) {
 	$type = mysqli_real_escape_string($connection, $_POST['receiver']);
 	$subject  = mysqli_real_escape_string($connection, $_POST['subject']);
 	$message  = mysqli_real_escape_string($connection, $_POST['message']);
-
-	$x = $control->distributeEmail($type,$subject,$message);
+	if($type=='Student'){
+		$user = new Student('','','','','','');
+		$user->setType($type);
+		$x = $user->distributeEmail($control,$subject,$message);
+	}
+	else if($type=='Lecturer'){
+		$user = new Lecturer('','','','','','');
+		$user->setType($type);
+		$x = $user->distributeEmail($control,$subject,$message);
+	}
 
 	if($x==false){
 		echo "<script>alert('Error Occurred.');</script>";

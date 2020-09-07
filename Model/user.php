@@ -78,12 +78,13 @@ abstract class User{
 	}
 
 	abstract public function getType();
+
 	public function setType($type){
 		$this->type = $type;
 	}
-	public function distributeEmail($subject,$message,$index_no){  //mediator design pattern
-		return $this->controller->distributeEmail($type,$this->email,$subject,$message);
-	}
+
+	public abstract function distributeEmail($mediator,$subject,$message);
+
 	public function setController($controller){
 		$this->controller = $controller;
 	}
@@ -106,20 +107,36 @@ class Student extends User{
 	public function getYear(){
 		return $this->year;
 	}
-
+	public function distributeEmail($mediator,$subject,$message){  //mediator design pattern
+		return $mediator->distributeEmail($this->type,$subject,$message);
+	}
 }
 
 class Operator extends User{
-	public $type = "Operator";
+	private $type = "Operator";
 
+	public function __construct($first_name, $last_name, $nic, $email, $password, $index_no){
+		parent::__construct($first_name, $last_name, $nic, $email, $password, $index_no);
+	}
 	public function getType(){
 		return $this->type;
+	}
+	public function distributeEmail($mediator,$subject,$message){
+		return false;
 	}
 
 }
 
 class Lecturer extends User{
-	public $type = "Lecturer";
+	private $type = "Lecturer";
+
+	public function __construct($first_name, $last_name, $nic, $email, $password, $index_no){
+		parent::__construct($first_name, $last_name, $nic, $email, $password, $index_no);
+	}
+
+	public function distributeEmail($mediator,$subject,$message){  //mediator design pattern
+		return $mediator->distributeEmail($this->type,$subject,$message);
+	}	
 
 	public function getType(){
 		return $this->type;
