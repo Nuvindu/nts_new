@@ -47,3 +47,21 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+@media screen and (min-width: 325px){
+  .dropdown {
+    padding-top:2%;
+    padding-right: 2%;
+  }
+	
+
+}
+@media screen and (min-width: 768px){
+  .dropdown {
+    padding: 16px;
+    margin-top: -15px;
+}
+  }
+	
+

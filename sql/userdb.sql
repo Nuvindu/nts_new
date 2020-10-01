@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2020 at 02:37 PM
+-- Generation Time: Oct 01, 2020 at 08:09 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -67,11 +67,37 @@ INSERT INTO `english` (`date`, `fileUrl`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `name` varchar(100) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `folder_name` varchar(100) NOT NULL,
+  `clicks` int(100) NOT NULL,
+  `imageID` varchar(199) NOT NULL,
+  `time_stamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`name`, `description`, `folder_name`, `clicks`, `imageID`, `time_stamp`) VALUES
+('Ythara 99', 'yathra - symphony of the wind next level', 'Ythara 99', 1002, 'Ythara 99/n4.jpg', '2020-09-10 06:12:12'),
+('New Gallery', 'Newest Gallery', 'New Gallery', 2, 'New Gallery/bg-999.jpg', '2020-09-13 18:14:54'),
+('Ythara 999', 'yathra - symphony of the wind \" the next next level - ft . ts\"', 'Ythara 999', 8901, 'Ythara 999/new.jpg', '2020-09-21 05:39:45'),
+('Piritha', 'yathra - symphony of the wind', 'Pirith', 1011, 'Pirith/IMG_2439.jpg', '2020-09-21 05:40:00'),
+('Yathra 9999', 'The next next level - ft jorsi', 'Yathra 9999', 10008, 'Yathra 9999/85.jpg', '2020-09-23 11:31:16');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lecturers`
 --
 
 CREATE TABLE `lecturers` (
-  `index_no` varchar(6) NOT NULL,
+  `index_no` varchar(10) NOT NULL,
   `department` int(2) NOT NULL,
   `post` varchar(50) NOT NULL,
   `degree` varchar(100) NOT NULL,
@@ -146,39 +172,11 @@ INSERT INTO `modules` (`module_code`, `module_name`, `year`, `department`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nestedqueries`
---
-
-CREATE TABLE `nestedqueries` (
-  `index_no` varchar(6) NOT NULL,
-  `department` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `nestedqueries`
---
-
-INSERT INTO `nestedqueries` (`index_no`, `department`) VALUES
-('0001', 'Fundamentals of Nursing'),
-('0002', 'Fundamentals of Nursing'),
-('0003', 'Fundamentals of Nursing'),
-('0004', 'Fundamentals of Nursing'),
-('0005', 'Fundamentals of Nursing'),
-('0006', 'Fundamentals of Nursing'),
-('0007', 'Fundamentals of Nursing'),
-('0008', 'Fundamentals of Nursing'),
-('0009', 'Fundamentals of Nursing'),
-('1234', 'Fundamentals of Nursing'),
-('1700', 'Fundamentals of Nursing');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `notifications`
 --
 
 CREATE TABLE `notifications` (
-  `index_no` varchar(6) NOT NULL,
+  `index_no` varchar(10) NOT NULL,
   `notification` varchar(1000) NOT NULL,
   `seen` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -188,7 +186,7 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`index_no`, `notification`, `seen`) VALUES
-('0001', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '3'),
+('0001', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '0'),
 ('0002', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '3'),
 ('0003', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '3'),
 ('0004', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '3'),
@@ -199,10 +197,29 @@ INSERT INTO `notifications` (`index_no`, `notification`, `seen`) VALUES
 ('0009', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '3'),
 ('1234', 'a:2:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}}', '0'),
 ('1700', 'a:3:{i:0;a:2:{s:7:\"Subject\";s:8:\"Checking\";s:7:\"Message\";s:14:\"123           \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:14:\"456           \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:14:\"789           \";}}', '3'),
-('180004', 'a:4:{i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}}', '2'),
-('190001', 'a:3:{i:2;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}i:1;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}}', '0'),
-('200001', 'a:4:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}}', '4'),
-('210001', 'a:4:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}}', '4');
+('18A0004', 'a:4:{i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}}', '2'),
+('19A0001', 'a:2:{i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}}', '0'),
+('20B0001', 'a:4:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}}', '4'),
+('21A0001', 'a:4:{i:0;a:2:{s:7:\"Subject\";s:7:\"Check 1\";s:7:\"Message\";s:9:\"11111    \";}i:1;a:2:{s:7:\"Subject\";s:7:\"Check 2\";s:7:\"Message\";s:10:\"qwerty    \";}i:2;a:2:{s:7:\"Subject\";s:9:\"Checking2\";s:7:\"Message\";s:7:\"456    \";}i:3;a:2:{s:7:\"Subject\";s:9:\"Checking3\";s:7:\"Message\";s:7:\"789    \";}}', '4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pharmacologyi`
+--
+
+CREATE TABLE `pharmacologyi` (
+  `date` date DEFAULT NULL,
+  `fileUrl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pharmacologyi`
+--
+
+INSERT INTO `pharmacologyi` (`date`, `fileUrl`) VALUES
+('2020-09-23', 'Basic-routing-online (1).docx'),
+('2020-09-23', 'Basic-routing-online (1).docx');
 
 -- --------------------------------------------------------
 
@@ -211,10 +228,10 @@ INSERT INTO `notifications` (`index_no`, `notification`, `seen`) VALUES
 --
 
 CREATE TABLE `result` (
-  `index_no` varchar(6) NOT NULL,
+  `index_no` varchar(10) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(100) NOT NULL,
-  `batch` int(4) NOT NULL,
+  `batch` varchar(7) NOT NULL,
   `1Y01` varchar(4) NOT NULL,
   `1Y02` varchar(4) NOT NULL,
   `1Y03` varchar(4) NOT NULL,
@@ -237,10 +254,12 @@ CREATE TABLE `result` (
 --
 
 INSERT INTO `result` (`index_no`, `first_name`, `last_name`, `batch`, `1Y01`, `1Y02`, `1Y03`, `1Y04`, `1Y05`, `1Y06`, `1Y07`, `2Y01`, `2Y02`, `3Y01`, `3Y02`, `3Y03`, `3Y04`, `3Y05`, `is_deleted`) VALUES
-('180004', 'Student6', 'NTS', 2018, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('190001', 'Student1', 'NTS', 2019, 'C', 'Null', 'Null', 'Null', 'Null', 'D', 'Null', 'A', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('200001', 'Student2', 'NTS', 2020, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
-('210001', 'Student3', 'NTS', 2021, 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
+('19A0001', 'Student 1', 'NTS', '2019A', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('19B0002', 'Student 2', 'NTS', '2019B', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('20A0001', 'Student 3', 'NTS', '2020A', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('20B0002', 'Student 4', 'NTS', '2020B', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('21A0001', 'Student 5', 'NTS', '2021A', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0),
+('21B0002', 'Student 6', 'NTS', '2021B', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 'Null', 0);
 
 -- --------------------------------------------------------
 
@@ -249,7 +268,7 @@ INSERT INTO `result` (`index_no`, `first_name`, `last_name`, `batch`, `1Y01`, `1
 --
 
 CREATE TABLE `students` (
-  `index_no` varchar(6) NOT NULL,
+  `index_no` varchar(10) NOT NULL,
   `year` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -258,10 +277,12 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`index_no`, `year`) VALUES
-('180004', 1),
-('190001', 1),
-('200001', 2),
-('210001', 2);
+('19A0001', 1),
+('19B0002', 1),
+('20A0001', 2),
+('20B0002', 2),
+('21A0001', 3),
+('21B0002', 3);
 
 -- --------------------------------------------------------
 
@@ -397,12 +418,12 @@ INSERT INTO `timetable3b` (`Date`, `Time`, `Place`, `Module_name`, `is_deleted`)
 --
 
 CREATE TABLE `user` (
-  `index_no` varchar(6) NOT NULL,
+  `index_no` varchar(10) NOT NULL,
   `type` varchar(8) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `NIC` char(10) DEFAULT NULL,
-  `batch` int(4) NOT NULL,
+  `batch` varchar(7) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
   `last_login` datetime NOT NULL,
@@ -415,25 +436,27 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`index_no`, `type`, `first_name`, `last_name`, `NIC`, `batch`, `email`, `password`, `last_login`, `is_deleted`, `profile_picture_dir`) VALUES
-('0001', 'Lecturer', 'Lecturer 1', 'NTS', '1111111117', 1111, 'lec1@gmail.com', '$2y$14$kJ/9QF4BHrYEf2jS8jxhgeb1ZfKm67Q/pAGWkkxHOzQpd.PcFJtTe', '2020-09-07 18:03:11', 0, '0001.png'),
-('0002', 'Lecturer', 'Lecturer2', 'NTS', '1111111118', 1111, 'lec2@gmail.com', '$2y$14$7LcM8k9IKizQDKmeJGScqejVIq.8UbdOmvFnVIaZ8ElXtHas9Jncq', '2020-09-04 12:50:56', 0, ''),
-('0003', 'Lecturer', 'Lecturer3', 'NTS', '1111111119', 1111, 'lec3@gmail.com', '$2y$14$deocN.bXHGjlY2XAyixapekRO15J3V1le26WTQTbqwATZwEjed3Gu', '2020-08-10 11:18:25', 0, ''),
-('0004', 'Lecturer', 'Lecturer4', 'NTS', '2222222223', 1111, 'lec4@gmail.com', '$2y$14$FjJV0ZwaicKlI8TMW0mpZu5jzAyoUrBje2BgiJgkhND9FjUsrshTS', '2020-08-10 11:38:18', 0, ''),
-('0005', 'Lecturer', 'Lecturer5', 'NTS', '2222222224', 1111, 'lec5@gmail.com', '$2y$14$C90JgZP4VQuFAO1aaR6pROaVNykD1F4C/WZdwdU03IWOTloHdaPWW', '2020-08-25 11:19:13', 0, ''),
-('0006', 'Lecturer', 'Lecturer 6', 'NTS', '9998887776', 2000, 'klhfslfd@gmail.com', '$2y$14$38xjDR2ohlX9EEwEpSO.Bexn6PoWb0HKzNLaqQa/h3EVMEjJuOPRq', '2020-08-31 01:56:19', 0, ''),
-('0007', 'Lecturer', 'Lecturer 7', 'NTS', '1234098767', 2000, 'idhisdgh@gmail.com', '$2y$14$DSzkPkqhD9WYMxm3p348MuKXf2ghO4TkSY5ULB..dYbHpxEYN0WRy', '2020-08-28 19:54:56', 0, '0007.png'),
-('0008', 'Lecturer', 'Lecturer 7', 'NTS', '0009998886', 2000, 'jf@gmail.com', '$2y$14$sSV/UKD3.7k1tD8mpeqxYObVyN8mlEmIUDgdsaKNDXSeih8S/1d/2', '0000-00-00 00:00:00', 0, ''),
-('0009', 'Lecturer', 'Lecturer 9', 'NTS', '1112228886', 2000, 'knl@gmail.com', '$2y$14$Xqm5oMfRBfevs6xryv8SGufIZiBSQUcSfCnSIqYPXzzr/IwYRUgnK', '0000-00-00 00:00:00', 0, ''),
-('01', 'Operator', 'Operator1', 'NTS', '1111111112', 1111, 'operator1@gmail.com', '$2y$14$YcjUxn9avfhZIcDrBfnUDuXdzKzhYUQ/K7JY8Ry/3XAYJNip8fqn2', '2020-08-04 00:02:28', 0, ''),
-('02', 'Operator', 'Operator2', 'NTS', '1111111113', 1111, 'operator2@gmail.com', '$2y$14$1ACZKjKxCWkbinGLK0G1Gu2BdDWuu641NNw/80.K3cMVBvVl3fEk2', '2020-08-04 00:05:06', 0, ''),
-('03', 'Operator', 'Operator3', 'NTS', '4444444446', 2003, 'op3@gmail.com', '$2y$14$Lk4GVRMmlj7NRSWYJXhdp.vAwl4ZrNxnl5JWxZoq6/fpzTIZQl8P6', '0000-00-00 00:00:00', 0, ''),
-('1234', 'Lecturer', 'Mahesh', 'Madushan', '2334509010', 2012, 'mahesh@gmail.com', '$2y$14$PaZDchMDqLa7A0dLxHeFYeFUGt25a57FDJVrqndWXy2FAsdarcLAO', '2020-09-04 01:57:33', 0, ''),
-('1700', 'Lecturer', 'Lecturer6', 'NTS', '986699342V', 2017, 'vb@gmail.com', '$2y$14$4z4sc2mBp9h41YDDYAfx.eyICPqH16obGFFK6OEGiwGGGlCcnz462', '0000-00-00 00:00:00', 0, ''),
-('180004', 'Student', 'Student6', 'NTS', '987199388V', 2018, 'v@gmail.com', '$2y$14$TLcj3E3umv4/qdTVW3tpGuKNdurv9trCrapM3Ph2BWO6R3nXpjgOy', '2020-09-04 01:54:46', 0, ''),
-('190001', 'Student', 'Student1', 'NTS', '1111111118', 1111, 'student1@gmail.com', '$2y$14$YRVzXvp.9ymUzh5FkryEOevFWcEDZ.e0Cq3BRkBxwcBfg61ZDYrpW', '2020-09-07 17:57:19', 0, '190001.png'),
-('200001', 'Student', 'Student2', 'NTS', '8888888881', 2020, 'student2@gmail.com', '$2y$14$g1LIEA6uXsPo4prWnok9R.UyO/K41Rmie1yvjUAACdjTPyfOrwzZG', '2020-09-02 23:25:54', 0, '200001.png'),
-('21', 'Operator', 'Operator4', 'NTS', '566692380V', 2021, 'w@gmail.com', '$2y$14$NYSvKPLQq4A99PCkOyYI8e2IWSJqRYvUJKVGLR3ftqFA50mmAp1Qi', '0000-00-00 00:00:00', 0, ''),
-('210001', 'Student', 'Student3', 'NTS', '9999999991', 2021, 'student3@gmail.com', '$2y$14$47eI8Ov2KfRGyYMHo4nzv.4T.3I7x5NMrhkCDl5.oh1aLQvswf.Kq', '2020-08-27 22:37:47', 0, '210001.png');
+('0001', 'Lecturer', 'Lecturer 1', 'NTS', '1111111117', '11111', 'lec1@gmail.com', '$2y$14$kJ/9QF4BHrYEf2jS8jxhgeb1ZfKm67Q/pAGWkkxHOzQpd.PcFJtTe', '2020-09-29 21:57:08', 0, '0001.png'),
+('0002', 'Lecturer', 'Lecturer2', 'NTS', '1111111118', '11111', 'lec2@gmail.com', '$2y$14$7LcM8k9IKizQDKmeJGScqejVIq.8UbdOmvFnVIaZ8ElXtHas9Jncq', '2020-09-04 12:50:56', 0, ''),
+('0003', 'Lecturer', 'Lecturer3', 'NTS', '1111111119', '11111', 'lec3@gmail.com', '$2y$14$deocN.bXHGjlY2XAyixapekRO15J3V1le26WTQTbqwATZwEjed3Gu', '2020-08-10 11:18:25', 0, ''),
+('0004', 'Lecturer', 'Lecturer4', 'NTS', '2222222223', '11111', 'lec4@gmail.com', '$2y$14$FjJV0ZwaicKlI8TMW0mpZu5jzAyoUrBje2BgiJgkhND9FjUsrshTS', '2020-08-10 11:38:18', 0, ''),
+('0005', 'Lecturer', 'Lecturer5', 'NTS', '2222222224', '11111', 'lec5@gmail.com', '$2y$14$C90JgZP4VQuFAO1aaR6pROaVNykD1F4C/WZdwdU03IWOTloHdaPWW', '2020-08-25 11:19:13', 0, ''),
+('0006', 'Lecturer', 'Lecturer 6', 'NTS', '9998887776', '20000', 'klhfslfd@gmail.com', '$2y$14$38xjDR2ohlX9EEwEpSO.Bexn6PoWb0HKzNLaqQa/h3EVMEjJuOPRq', '2020-08-31 01:56:19', 0, ''),
+('0007', 'Lecturer', 'Lecturer 7', 'NTS', '1234098767', '20000', 'idhisdgh@gmail.com', '$2y$14$DSzkPkqhD9WYMxm3p348MuKXf2ghO4TkSY5ULB..dYbHpxEYN0WRy', '2020-08-28 19:54:56', 0, '0007.png'),
+('0008', 'Lecturer', 'Lecturer 7', 'NTS', '0009998886', '20000', 'jf@gmail.com', '$2y$14$sSV/UKD3.7k1tD8mpeqxYObVyN8mlEmIUDgdsaKNDXSeih8S/1d/2', '0000-00-00 00:00:00', 0, ''),
+('0009', 'Lecturer', 'Lecturer 9', 'NTS', '1112228886', '20000', 'knl@gmail.com', '$2y$14$Xqm5oMfRBfevs6xryv8SGufIZiBSQUcSfCnSIqYPXzzr/IwYRUgnK', '0000-00-00 00:00:00', 0, ''),
+('01', 'Operator', 'Operator1', 'NTS', '1111111112', '11111', 'operator1@gmail.com', '$2y$14$YcjUxn9avfhZIcDrBfnUDuXdzKzhYUQ/K7JY8Ry/3XAYJNip8fqn2', '2020-09-29 21:57:26', 0, ''),
+('02', 'Operator', 'Operator2', 'NTS', '1111111113', '11111', 'operator2@gmail.com', '$2y$14$1ACZKjKxCWkbinGLK0G1Gu2BdDWuu641NNw/80.K3cMVBvVl3fEk2', '2020-09-20 12:06:46', 0, ''),
+('03', 'Operator', 'Operator3', 'NTS', '4444444446', '20003', 'op3@gmail.com', '$2y$14$Lk4GVRMmlj7NRSWYJXhdp.vAwl4ZrNxnl5JWxZoq6/fpzTIZQl8P6', '0000-00-00 00:00:00', 0, ''),
+('1234', 'Lecturer', 'Mahesh', 'Madushan', '2334509010', '20012', 'mahesh@gmail.com', '$2y$14$PaZDchMDqLa7A0dLxHeFYeFUGt25a57FDJVrqndWXy2FAsdarcLAO', '2020-09-04 01:57:33', 0, ''),
+('1700', 'Lecturer', 'Lecturer6', 'NTS', '986699342V', '20017', 'vb@gmail.com', '$2y$14$4z4sc2mBp9h41YDDYAfx.eyICPqH16obGFFK6OEGiwGGGlCcnz462', '0000-00-00 00:00:00', 0, ''),
+('19A0001', 'Student', 'Student 1', 'NTS', '987199388V', '2019A', 'student1@gmail.com', '$2y$14$1I2Tarprg84CtJxllmSuZe0Tr1a9JtLGih7xlEA2OEz7ciS80navu', '2020-09-29 21:56:54', 0, ''),
+('19B0002', 'Student', 'Student 2', 'NTS', '987199389V', '2019B', 'student2@gmail.com', '$2y$14$qvZlaAcLychroNa5zXu85uQD4/dcjzlFDly5zqkURyleMFneOnzXC', '0000-00-00 00:00:00', 0, ''),
+('20A0001', 'Student', 'Student 3', 'NTS', '987299388V', '2020A', 'student3@gmail.com', '$2y$14$DKZJveXntH2l.83wfm1C4OWdXAyAcMgzCoxiI3CeCYty/wXxqpQlK', '0000-00-00 00:00:00', 0, ''),
+('20B0002', 'Student', 'Student 4', 'NTS', '987399388V', '2020B', 'student4@gmail.com', '$2y$14$f9jAg36o3QuvC8lDjlW6ke533JZCxkzvd3okpHqzKGnSFo1ti4GkK', '0000-00-00 00:00:00', 0, ''),
+('21', 'Operator', 'Operator4', 'NTS', '566692380V', '20211', 'w@gmail.com', '$2y$14$NYSvKPLQq4A99PCkOyYI8e2IWSJqRYvUJKVGLR3ftqFA50mmAp1Qi', '0000-00-00 00:00:00', 0, ''),
+('21A0001', 'Student', 'Student 5', 'NTS', '987499388V', '2021A', 'student5@gmail.com', '$2y$14$vlRiNMmjAYErCccat.cigeKnrsg3c/iG2ebzlp8TbE/DLkJeATBB6', '0000-00-00 00:00:00', 0, ''),
+('21B0002', 'Student', 'Student 6', 'NTS', '987599388V', '2021B', 'student6@gmail.com', '$2y$14$yhdmq8mCMCKG.ZzWY4IuNOISDwPLbTwmlbQbYVfm.v/v5.y1knWPa', '0000-00-00 00:00:00', 0, '');
 
 -- --------------------------------------------------------
 
@@ -442,7 +465,7 @@ INSERT INTO `user` (`index_no`, `type`, `first_name`, `last_name`, `NIC`, `batch
 --
 
 CREATE TABLE `verifypassword` (
-  `index_no` varchar(6) NOT NULL,
+  `index_no` varchar(7) NOT NULL,
   `request_time` varchar(20) NOT NULL,
   `code` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -458,6 +481,17 @@ ALTER TABLE `department`
   ADD PRIMARY KEY (`department_code`);
 
 --
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`time_stamp`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD UNIQUE KEY `name_3` (`name`),
+  ADD UNIQUE KEY `time_stamp_2` (`time_stamp`),
+  ADD KEY `time_stamp` (`time_stamp`),
+  ADD KEY `name_2` (`name`);
+
+--
 -- Indexes for table `lecturers`
 --
 ALTER TABLE `lecturers`
@@ -468,12 +502,6 @@ ALTER TABLE `lecturers`
 --
 ALTER TABLE `modules`
   ADD PRIMARY KEY (`module_code`);
-
---
--- Indexes for table `nestedqueries`
---
-ALTER TABLE `nestedqueries`
-  ADD PRIMARY KEY (`index_no`);
 
 --
 -- Indexes for table `notifications`

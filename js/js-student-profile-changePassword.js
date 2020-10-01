@@ -36,7 +36,7 @@ $(document).ready(function () {
 			if (new_pass.length > 7) {
 				$(".change-btn").prop('disabled', true);
 				$.ajax({
-					url: '/nts_new/Model/db_reset_passwordstudent.php',
+					url: '/nts_new/Model/db_reset_passwordStudent.php',
 					method: 'POST',
 					data: {
 						current_pass: current_pass,

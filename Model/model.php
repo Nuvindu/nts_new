@@ -141,7 +141,7 @@ class Model {
 			$finalarray[$id] = $array;  //save the notification on array in its own index
 			$lenarray = $finalarray;
 			$finalarray = serialize($finalarray);
-			$query = "UPDATE notifications SET notification = '{$finalarray}' , seen = 0 WHERE index_no = $index_no LIMIT 1";
+			$query = "UPDATE notifications SET notification = '{$finalarray}' , seen = 0 WHERE index_no = '{$index_no}' LIMIT 1";
 			$result = mysqli_query($connection,$query);	//update the datatbase
 			return true;	
 		}

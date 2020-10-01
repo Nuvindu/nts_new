@@ -50,9 +50,9 @@
     </div>
     <div class="back" style="float:right;padding-right: 35px;font-size: 18px;font-weight: bold;"><a href="operator.php"><i class="fas fa-angle-double-left fa-2x"></i></a></div>
     <div class="table-responsive" >    
-  <div class="container box" style="width: 90%;">
-   <h3 align="center">Newly Added Excel Users</h3><br />
-   <form method="post" enctype="multipart/form-data">
+    <div class="container box" style="width: 90%;">
+    <h3 align="center">Add Users via Excel</h3><br />
+    <form method="post" enctype="multipart/form-data">
     <label>Select Excel File</label>
     <input type="file" name="excel" />
     <br />

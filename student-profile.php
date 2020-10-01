@@ -45,11 +45,11 @@
 
                 <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
                                 echo "Model/lecturer-db.php";
-                            } else if (strlen($_SESSION['index_no']) == 6) {
+                            } else if (strlen($_SESSION['index_no']) == 7) {
                                 echo "Model/student-db.php";
                             } ?>><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
-                <li><a href="profiles.php"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="exam_timetables.php"><i class="fas fa-table"></i>Exam Timetables</a></li>
                 <li><a href="results_nav.php"><i class="fas fa-poll"></i>Results</a></li>
                 <li><a href="feedback.php"><i class="fas fa-comment-dots"></i>Feedback</a></li>
@@ -76,7 +76,7 @@
 
                 <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
                                 echo "Model/lecturer-db.php";
-                            } else if (strlen($_SESSION['index_no']) == 6) {
+                            } else if (strlen($_SESSION['index_no']) == 7) {
                                 echo "Model/student-db.php";
                             } ?>><i class="fas fa-home"></i>Dashboard</a></li>
                 <li><a href="notifications.php">

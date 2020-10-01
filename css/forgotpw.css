@@ -1,20 +1,22 @@
-@import 'https://fonts.googleapis.com/css?family=Audiowide';
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
 body{
     /* max-width: 500px; */
     margin: auto;
     /* margin-top: 200px; */
-    background: linear-gradient(-45deg, blue, #e73c7e, brown, #23d5ab);
+    background: linear-gradient(-45deg, #61ea11, #779c06, #405403ed, #e16115);
     background-size: 400% 400%;
     animation: gradient 25s ease infinite;
-    font-family: 'Audiowide';
+    font-family: 'Montserrat';
+    padding-bottom: 900px;
 }
-
+::placeholder{
+    color: gold;
+}
 #entercode{
     margin-left: 91px;
     margin-top: 16px;
 }
-input {
-    
+input { 
     padding: 10px 10px 10px 10px;
 }
 label{
@@ -23,18 +25,32 @@ label{
 form{
     max-width: 400px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 130px;
+    padding-top: 138px;
+}
+.progress{
+    padding-top: 90px;
+}
+.progress h2{
+    font-size: 20px;
+    padding-left: 10px;
+}
+.progress img{
+    padding-top: 15px;
 }
 button{
+    font-weight: bold;
     padding: 14px 14px 14px 14px;
     border-radius: 45px;
     font-family: 'Audiowide';
 }
 #verifylabel{
-    padding-left: 126px;
-    font-size: 19px;
+    font-weight: bold;
+    padding-left: 110px;
+    font-size: 25px;
 }
 #verifycode{
+    border-radius: 5px;
     margin-left: 98px;
     margin-top: 39px;
 }
@@ -43,17 +59,19 @@ button{
     margin-top: 32px;
 }
 .enterbtn{
+    font-weight: bold;
     margin-left: 140px;
     margin-top: 12px;
 }
 #submitlabel{
+    font-weight: bold;
     padding-left: 64px;
     font-size: 25px;
 }
 .progress{
     max-width: 150px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 190px;
 }
 @keyframes gradient {
     0% {
@@ -85,4 +103,3 @@ div.warning{
     margin-left: 40px;
 }
 
-}

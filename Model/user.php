@@ -26,7 +26,7 @@ abstract class User{
 		$this->email = $email;
 		$this->password = password_hash($password, PASSWORD_BCRYPT, array('cost'=>14));
 		$this->index_no = $index_no;
-		$this->batch = "20".substr($index_no,0,2)+0;
+		$this->batch = "20".substr($index_no,0,3);
 	}
 
 	public function getFirstName(){

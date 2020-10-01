@@ -20,7 +20,7 @@
 
 .color-change {
 	background-color: #f3cd17;
-	height: 50px;
+	height: 75px;
 	overflow: hidden;
 	border-radius: 0;
 }
@@ -29,7 +29,7 @@
 
 .nts-text-image {
 	position: relative;
-	top: -149px;
+	top: -90px;
 	right: 50;
 	transform: scale(1);
 	transition: all 0.88s ease;
@@ -44,8 +44,8 @@
 }
 
 .logo-change {
-	width: 40px;
-	height: 40px;
+	width: 53px;
+	height: 53px;
 }
 
 .logo-pp {
@@ -54,11 +54,12 @@
 	float: right;
 	transition: all 0.8s ease;
 	/* top: 51px; */
+	/* object-fit: cover; */
 }
 
 .logo-pp-change {
-	width: 40px;
-	height: 40px;
+	width: 53px;
+	height: 53px;
 }
 
 .logo-lowres {
@@ -141,5 +142,5 @@
 
 .nts-text-image-none {
 	transform: scale(0.5);
-	top: -180px;
+	top: -153px;
 }

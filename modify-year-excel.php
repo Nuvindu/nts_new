@@ -103,7 +103,7 @@ if(isset($_POST["import"]))
 
 
   <div class="container box">
-   <h3 align="center">Newly Modified Excel Students</h3><br />
+   <h3 align="center">Modify Years via Excel</h3><br />
    <form method="post" enctype="multipart/form-data">
     <label>Select Excel Students File</label>
     <input type="file" name="excel" />

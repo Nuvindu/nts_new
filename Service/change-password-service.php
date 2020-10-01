@@ -1,6 +1,5 @@
 <?php require_once('inc/dbconnection.php'); ?>
 <?php require_once('inc/functions.php'); ?>
-
 <?php include_once('Controller/usercontroller.php'); ?>
 <?php include_once('Controller/errorscheck.php'); ?>
 

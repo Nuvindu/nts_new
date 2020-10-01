@@ -43,7 +43,7 @@ if (!isset($_SESSION['index_no'])) {
 
             <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
                             echo "Model/lecturer-db.php";
-                        } else if (strlen($_SESSION['index_no']) == 6) {
+                        } else if (strlen($_SESSION['index_no']) == 7) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="notifications.php"><i id = "icon" class="far fa-bell"></i><span id="notify"></span>Notifications</a></li>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['index_no'])) {
         <ul>
             <li><a href=<?php if (strlen($_SESSION['index_no']) == 4) {
                             echo "Model/lecturer-db.php";
-                        } else if (strlen($_SESSION['index_no']) == 6) {
+                        } else if (strlen($_SESSION['index_no']) == 7) {
                             echo "Model/student-db.php";
                         } ?>><i class="fas fa-home"></i>Dashboard</a></li>
             <li><a href="notifications.php"><i class="fas fa-bell"></i>Notifications</a></li>

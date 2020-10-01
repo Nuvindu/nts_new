@@ -6,7 +6,7 @@ $module_code = $_GET['module_code'];
 
 
 
-$query = "SELECT index_no,first_name,last_name,{$module_code} FROM result WHERE batch={$batch} and is_deleted=0 ORDER BY index_no";
+$query = "SELECT index_no,first_name,last_name,{$module_code} FROM result WHERE batch='{$batch}' and is_deleted=0 ORDER BY index_no";
 
 $statement = $connect->prepare($query);
 

@@ -4,7 +4,7 @@
     if (!isset($_SESSION['index_no'])){
             header('Location: login.php');
         }
-    if ((strlen($_SESSION['index_no']) != 4) && (strlen($_SESSION['index_no']) != 6)) {
+    if ((strlen($_SESSION['index_no']) != 4) && (strlen($_SESSION['index_no']) != 7)) {
         header('Location: index.php');
     }
 

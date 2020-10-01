@@ -63,7 +63,7 @@ class UserController extends Controller implements IUserController{
 			$user->setDegree($degree); 
 
 		}
-		else if(strlen($index_no)==6){
+		else if(strlen($index_no)==7){
 			$year = mysqli_real_escape_string($connection,$_POST['year']);
 			$user->setYear($year);
 		}
@@ -114,7 +114,7 @@ class UserFactory extends Factory{      //factory design pattern
 		if (strlen($index_no)==4) {
 			return new Lecturer($first_name, $last_name, $nic, $email, $password, $index_no);
 		}
-		else if (strlen($index_no)==6) {
+		else if (strlen($index_no)==7) {
 			return new Student($first_name, $last_name, $nic, $email, $password, $index_no);
 		}
 		else if (strlen($index_no)==2) {
@@ -142,7 +142,7 @@ class UserFactory extends Factory{      //factory design pattern
 		if (strlen($index_no) == 2) {
 			$password="password";
 			}
-		if (strlen($index_no) == 6) {
+		if (strlen($index_no) == 7) {
 		$password="password";
 		}
 		if (strlen($index_no) == 4) {
@@ -158,7 +158,7 @@ class UserFactory extends Factory{      //factory design pattern
 		if (strlen($index_no)==4) {
 			return new Lecturer($first_name, $last_name, $nic, $email, $password, $index_no);
 		}
-		else if (strlen($index_no)==6) {
+		else if (strlen($index_no)==7) {
 			return new Student($first_name, $last_name, $nic, $email, $password, $index_no);
 		}
 		else if (strlen($index_no)==2) {

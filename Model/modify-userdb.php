@@ -58,7 +58,7 @@
 					}
 				}
 
-				else if(strlen($index_no) ==6){
+				else if(strlen($index_no) ==7){
 					$sql = "SELECT * FROM students WHERE index_no = '{$index_no}' LIMIT 1";
 				    $rec_set = mysqli_query($connection, $sql);
 				    $rec = mysqli_fetch_assoc($rec_set);

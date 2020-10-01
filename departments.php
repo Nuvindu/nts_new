@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Departments</title>
-    <link rel="stylesheet" type="text/css" href="css/department.css">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/student.css">
     <link rel="stylesheet" href="./style/style-header.css">
     <link rel="stylesheet" href="./css/student-profile.css">
+    <link rel="stylesheet" href="./css/front-style.css">
+    <link rel="stylesheet" type="text/css" href="css/department.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
@@ -29,11 +31,42 @@
         echo $_SESSION["index_no"];
         echo '</span></div>';
     } ?>
-    <div class="header">
-        <?php include_once('header.php'); ?>
-    </div>
-    <div class="wrapper">
+        <section id="header">
+        <div class="header container" style="background-color:yellow;">
+            <div class="logo" style="float:left;width: 688px;
+    height: 211px;padding-left:20px;">
+                <img src="./img/web/ntslogopng.png" alt="Logo" style="width:35%;">
+            </div>
+            <div class="nav-bar">
 
+                <div class="brand">
+                    <!-- <a href="#home"><h1><span>N</span>urses <span>T</span>raining <span>S</span>chool </h1></a> -->
+                    <br>
+                    <div class="name">
+
+
+                    </div>
+
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a style="font-size: 20px;" href="index.php" data-after="Home"
+                                onclick="topFunction()"><b>Home</b></a></li>
+                        <li><a style="font-size: 20px;" href="index.php#about" data-after="About"><b>About</b></a></li>                   
+                        <li><a style="font-size: 20px;" href="" data-after="Departments"><b>Departments</b></a>
+                        </li>
+                        <li><a style="font-size: 20px;" href="gallery.php" data-after="Gallery"><b>Gallery</b></a></li>
+                        <li><a style="font-size: 20px;" href="index.php#contact" data-after="Contact"><b>Contact</b></a></li>
+                        <li><a style="font-size: 20px;" href="login.php" data-after="Login"><b>Login</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="wrapper">
         <div class="main_content">
             <div class="header">DEPARTMENTS</div>
 
@@ -541,7 +574,8 @@
         </div>
 
     </div>
-    <script src="./js/js-dep.js"></script>
+<script src="./js/js-dep.js"></script>
+<script src="js/frontPage.js"></script> 
 
 </body>
 

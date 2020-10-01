@@ -46,9 +46,8 @@ header {
 }
 
 .distribute {
-	margin-top: 6px;
-	float: right;
-	/*padding: 10px;*/
+	
+	padding-bottom: 16px;padding-top: 16px;float:left;
 }
 .distribute a{
 	background-color: #bdb3ff;
@@ -58,6 +57,24 @@ header {
     border: none;
 }
 .distribute a:hover{
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #29b9ad;
+}
+.distribute2 {
+	margin-top: 6px;
+	padding-bottom: 16px;padding-top: 16px;float:right;
+}
+.distribute2 a{
+	background-color: #bdb3ff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.distribute2 a:hover{
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -141,7 +158,12 @@ form.userform p{
 @media screen and (max-width: 322px){
 	.distribute {
 		margin-top: 20px;
-		float: right;
+		padding-left: 28%;
+		margin-bottom: 20px;
+		margin-bottom: 20px;
+	}
+	.distribute2{
+		margin-top: 20px;
 		padding-left: 28%;
 		margin-bottom: 20px;
 		margin-bottom: 20px;
@@ -151,22 +173,35 @@ form.userform p{
 @media screen and (min-width: 325px){
 
 	.distribute {
-		margin-top: 20px;
-		float: right;
-		padding-left: 28%;
-		margin-bottom: 20px;
+		/* margin-top: 20px; */
+		padding-left: 1%;
+		padding-right: 4%;
+		padding-top: 20px;
 	}
-
+	.distribute2{
+		/* margin-top: 20px; */
+		
+		margin-bottom: 20px;
+		padding-top: 5%;
+    padding-right: 2%;
+	}
+	#notify{
+		padding-top: 10%;
+	}
 
 }
 @media screen and (min-width: 768px){
 	.distribute {
-		padding: 10px;
-		margin-top: 1px;
-		float: right;
-	}
+		padding: 16px;
+		}
+	.distribute2 {
+			padding: 16px;
+			margin-top: 1px;
+			
+		
+	
 }
-
+}
 
 div.column {
 	position: static;

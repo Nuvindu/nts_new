@@ -4,7 +4,7 @@
 <?php include_once('Controller/errorscheck.php'); ?>	
 <?php 
 	if (isset($_SESSION['user_id'])) {
-		if (strlen($_SESSION['index_no']) == 6) {
+		if (strlen($_SESSION['index_no']) == 7) {
 			header('Location: Model/student-db.php');
 		} elseif (strlen($_SESSION['index_no']) == 2) {
 			header('Location: operator.php');

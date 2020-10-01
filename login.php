@@ -22,7 +22,7 @@
 		<div class="login-content">
 			<form action="login.php" method="post">
 
-			<h2 style="font-size:1.5rem;">Nurses Training School<br>Galle</h2>
+			<h2 style="font-size:1.5rem;">College of Nursing<br>Galle</h2>
 			
 				<img src="img/logo-0.png">
 				<h2 style="font-size:1.5rem;">Welcome</h2>

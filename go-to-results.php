@@ -68,8 +68,11 @@
                         <select name="batch" id="batch" class="field">
                             <option></option>
                             <?php $year = date("Y");
-                            for ($i = $year - 3; $i <= $year + 1; $i++) {
-                                echo "<option value = {$i}>{$i}</option>";
+                            for ($i = $year - 3; $i <= $year + 3; $i++) {
+                                $iA = "$i"."A";
+                                $iB = "$i"."B";
+                                echo "<option value = {$iA}>{$iA}</option>";
+                                echo "<option value = {$iB}>{$iB}</option>";
                             }
 
                             ?>

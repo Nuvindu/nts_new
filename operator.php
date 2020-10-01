@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
         integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/upload.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/xl.css">
+
 
     <script>
     //to make a live search 
@@ -52,13 +55,16 @@
         <div class="header">
             <?php include_once('header.php'); ?>
         </div>
-        <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;float:left;"><a href="add_modules_details.php">Add Modules</a></div>
-        <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;float:left;"><a href="department-head.php">Department Head</a></div>
+        <div class="distribute" style="float:left;" ><a href="add_modules_details.php">Add Modules</a></div>
+        <div class="distribute" style="float:left;"><a href="department-head.php">Department Head</a></div>
+        <div class="distribute" style="float:left;"><a href="UploadPhotos.php">Update Gallery</a></div>
+        <div class="distribute" style="float:right;" id="xlsheet-upload"><a href="resultUploadXlSheet.php">Upload
+                Result(excel)</a> </br></div>
         <?php include "dropdown.php" ?>
 
         <!-- <div class="add"></br></div> -->
         <!-- <a href="add_users_excel-mvc.php">Add User Excel</a>  -->
-        <div class="distribute" style="padding-bottom: 16px;padding-top: 16px;"><a href="distributemail.php">Send Notifications</a> </br></div>
+        <div class="distribute2"><a href="distributemail.php">Send Notifications</a> </br></div>
         <?php include "dropdown-adduser.php" ?>
         <br>
         <h1><!-- Users --></h1>
@@ -85,7 +91,34 @@
         </table>
 
        </div>
+
+       <div id="model_result_xl_sheet_upload" style="display:none;">
+            <div id="wrap-form">
+                <span id="close">x</span>
+                <div class="form">
+
+                    <div class="input-field">
+                        <input type="file" name="input-file" id="input-file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+                        <button id="save-file">Save</button>
+                    </div>
+                    <span id="uploadStatus">
+
+                        <div class="progressbar"></div>
+                    </span>
+                    <span class="import-status-uploading" id="import-status-uploading">
+                    </span>
+                </div>
+            </div>
+        </div>
 </body>
+<script>
+    document.getElementById("xlsheet-upload").addEventListener("click", function() {
+        document.getElementById("model_result_xl_sheet_upload").style.display = 'flex';
+    });
+    document.getElementById("close").addEventListener("click", function() {
+        document.getElementById("model_result_xl_sheet_upload").style.display = 'none';
+    });
+</script>
 <footer>
     <div class="column clearfix" style="padding-top:5%;padding-left:0;">
         <h3>Contact Us</h3>

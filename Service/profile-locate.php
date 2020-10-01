@@ -8,7 +8,7 @@ else{
     if (strlen($_SESSION['index_no']) == 4) {
         header('Location: ../lecturer-profile.php');
     }
-    else if (strlen($_SESSION['index_no']) == 6) {
+    else if (strlen($_SESSION['index_no']) == 7) {
         header('Location: ../student-profile.php');
     }	
     else{

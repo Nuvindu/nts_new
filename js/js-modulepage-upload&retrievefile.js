@@ -3,7 +3,7 @@ var Iterator = function (items) {
 	this.items = items;
 };
 
-Iterator.prototype = {
+Iterator.prototype = {           
 	first: function () {
 		this.reset();
 		return this.next();
@@ -24,7 +24,7 @@ Iterator.prototype = {
 	}
 };
 
-function Iterate(Iterator, Name, fileCounter, index) {
+function Iterate(Iterator, Name, fileCounter, index) {      //iterator design pattern
 	while (Iterator.hasNext()) {
 		var docTypeFile = Iterator.next();
 

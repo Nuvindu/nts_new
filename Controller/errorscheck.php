@@ -19,7 +19,7 @@ class ErrorCheck extends Controller{
 			return $errors;
 		}
 
-		$max_len_fields = array('first_name' => 50, 'last_name' =>100, 'nic' =>10, 'index_no' =>6, 'email' => 100, 'password' => 40);
+		$max_len_fields = array('first_name' => 50, 'last_name' =>100, 'nic' =>10, 'index_no' =>7, 'email' => 100, 'password' => 40);
 
 		foreach ($max_len_fields as $field => $max_len) {
 			if (strlen(trim($_POST[$field])) > $max_len) {

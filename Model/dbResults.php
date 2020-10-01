@@ -40,8 +40,9 @@ if (isset($_POST['submit']) || isset($_GET['batch'])) {
 			$user_list = '';
 
 			// getting result list
-			$query = "SELECT index_no,first_name,last_name,{$module_code} FROM result WHERE batch={$batch} and is_deleted=0 ORDER BY index_no";
+			$query = "SELECT index_no,first_name,last_name,{$module_code} FROM result WHERE batch='{$batch}' and is_deleted=0 ORDER BY index_no";
 			$users = mysqli_query($connection, $query);
+
 			if (!$users) {
 				header('Location: go-to-results.php?error=parameters_not_set');
 				exit();

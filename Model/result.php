@@ -18,7 +18,7 @@ class Result{
 		$this->last_name = $last_name;
 		$this->index_no = $index_no;
 		$this->module_code = $module_code;
-		$this->batch = '20'.substr($index_no, 0,2) ;
+		$this->batch = '20'.substr($index_no, 0,3) ;
 		$this->year = substr($module_code, 0,1);
 		$modules = Result::$modules;
 		$this->result = $result;

@@ -108,7 +108,7 @@
                     <label for="">Degree:</label>
                     <input type="text" name="degree" <?php echo 'value="' . $thedegree . '"'; ?>>
                 </p>
-                <p <?php if (strlen($index_no) != 6) {
+                <p <?php if (strlen($index_no) != 7) {
 									echo "style = display:none; ";
 								} ?>>
                     <label for="">Year:</label>

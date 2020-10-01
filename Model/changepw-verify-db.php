@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php 
 if(!isset($_SESSION['fgtpw'])){
-	header('Location: index.php');
+	// header('Location: index.php');
 }
 else{
 	unset($_SESSION['w']);
@@ -20,7 +20,7 @@ else{
 				// user found
 				$result = mysqli_fetch_assoc($result_set);
 				$index_no = $result['index_no'];
-				$sql = "DELETE from verifypassword WHERE index_no = {$user_index} LIMIT 1";
+				$sql = "DELETE FROM verifypassword WHERE index_no = '{$user_index}' LIMIT 1";
 				$del = mysqli_query($connection,$sql);
 				unset($_SESSION['request_index']);
 			}
