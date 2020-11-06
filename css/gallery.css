@@ -110,7 +110,7 @@ body {
 	grid-template-rows: 1fr;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	background: rgb(0 0 0);
+	background: rgb(35 32 32);
 }
 
 .card_stats .stat {

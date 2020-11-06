@@ -3,13 +3,12 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-
 }
 html {
 	/*font-size: 10px;*/
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
-	background: #ffffcc;
+	background: #a4e738;
 }
 a {
 	text-decoration: none;
@@ -59,7 +58,7 @@ img {
 	z-index: 1000;
 	left: 0;
 	top: 0;
-	width: 100vw;
+	width: 100%;
 	height: auto;
 }
 
@@ -626,4 +625,10 @@ img {
 .text-box span:nth-child(10)
 {
     animation-delay: 5s;
+}
+
+@media screen and (max-width: 800px) {
+	#header .nav-list ul{
+		width: 100%;
+	}
 }

@@ -10,7 +10,7 @@ body{
     padding-bottom: 900px;
 }
 ::placeholder{
-    color: gold;
+    color: green;
 }
 #entercode{
     margin-left: 91px;

@@ -53,11 +53,9 @@
                         <div class="bar"></div>
                     </div>
                     <ul>
-                        <li><a style="font-size: 20px;" href="index.php" data-after="Home"
-                                onclick="topFunction()"><b>Home</b></a></li>
-                        <li><a style="font-size: 20px;" href="index.php#about" data-after="About"><b>About</b></a></li>                   
-                        <li><a style="font-size: 20px;" href="" data-after="Departments"><b>Departments</b></a>
-                        </li>
+                        <li><a style="font-size: 20px;" href="index.php" data-after="Home" onclick="topFunction()"><b>Home</b></a></li>
+                        <li><a style="font-size: 20px;" href="index.php#about" data-after="About"><b>About</b></a></li>                 
+                        <li><a style="font-size: 20px;" href="" data-after="Departments"><b>Departments</b></a></li>
                         <li><a style="font-size: 20px;" href="gallery.php" data-after="Gallery"><b>Gallery</b></a></li>
                         <li><a style="font-size: 20px;" href="index.php#contact" data-after="Contact"><b>Contact</b></a></li>
                         <li><a style="font-size: 20px;" href="login.php" data-after="Login"><b>Login</b></a></li>
